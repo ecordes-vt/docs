@@ -34,6 +34,10 @@ Training for the Face Verification Engine is done by using the `enroll` mode of 
 
 *Note*: The `verify` mode of the engine retrieves the hashed faceprint from the library corresponding to the specified username, decrypts the faceprint using the hash key, and compares the decrypted faceprint to the faceprint extracted from the input image.
 
+## Engine Input
+
+The face verification engine performs [segment processing](/developer/engines/processing-modes/segment-processing/). It accepts as input JPEG images.
+
 ## Engine Output
 
 Face verification engine output should be stored as an `object` in the [vtn-standard](/developer/engines/standards/engine-output/).

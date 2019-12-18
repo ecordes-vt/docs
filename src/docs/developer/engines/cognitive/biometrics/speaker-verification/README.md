@@ -34,6 +34,12 @@ Training for the Speaker Verification Engine is done by using the `enroll` mode 
 
 *Note*: The `verify` mode of the engine retrieves the hashed voiceprint from the library corresponding to the specified username, decrypts the voiceprint using the hash key, and compares the decrypted voiceprint to the voiceprint extracted from the input image.
 
+## Engine Input
+
+The speaker verification engine is an audio processing engine that performs [segment processing](/developer/engines/processing-modes/segment-processing/).
+
+[](../../_snippets/audio-engine-mime-type.md ':include')
+
 ## Engine Output
 
 Speaker verification engine output should be stored as an `object` in the [vtn-standard](/developer/engines/standards/engine-output/).
