@@ -42,8 +42,8 @@ The speaker verification engine is an audio processing engine that performs [seg
 
 ## Engine Output
 
-Speaker verification engine output should be stored as an `object` in the [vtn-standard](/developer/engines/standards/engine-output/).
-Each `object` should be of type `speaker`, and because each verified speaker always maps back to a specified user identity which corresponds to an entity in a library, each object should include the `entityId` of the entity in the library, along with the `libraryId`.
+The speaker verification engine output should be stored as an `object` in the [vtn-standard](/developer/engines/standards/engine-output/).
+The `type` of the object is `speaker`. Each speaker maps back to a specified user identity which corresponds to an entity in a library; hence the object includes the `entityId` along with the `libraryId`. The similarity score of the speaker's audio to the audio sample(s) for the entity is the `confidence`. The `mode` specifies whether the engine is run in `enroll` or `verify` mode.
 
 ### Example
 

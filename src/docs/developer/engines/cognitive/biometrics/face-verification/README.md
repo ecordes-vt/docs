@@ -40,8 +40,8 @@ The face verification engine performs [segment processing](/developer/engines/pr
 
 ## Engine Output
 
-Face verification engine output should be stored as an `object` in the [vtn-standard](/developer/engines/standards/engine-output/).
-Each `object` should be of type `face`, and because each verified face always maps back to a specified user identity which corresponds to an entity in a library, each object should include the `entityId` of the entity in the library, along with the `libraryId`.
+The face verification engine output should be stored as an `object` in the [vtn-standard](/developer/engines/standards/engine-output/).
+The `type` of the object is `face`. Each face maps back to a specified user identity which corresponds to an entity in a library; hence the object includes the `entityId` along with the `libraryId`. The similarity score of the face to the face(s) for the entity is the `confidence`. The `mode` specifies whether the engine is run in `enroll` or `verify` mode.
 
 ### Example
 
