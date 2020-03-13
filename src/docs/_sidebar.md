@@ -18,6 +18,8 @@
 
 - [Applications](apps/)
 
+  - [Benchmark](benchmark/)
+
 - [APIs](apis/)
 
   - Developer Guide
