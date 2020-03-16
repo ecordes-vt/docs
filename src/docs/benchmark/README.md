@@ -8,9 +8,23 @@ One of the main benefits of AIWare is the ability to run engines from different 
 
 > **What is an asset?** An asset is simply a piece of data on a [TDO](apis/tutorials/upload-and-process?id=_1-create-a-temporal-data-object-tdo). Most of the time an asset will be the result from a specific run of a cognitive engine for a specific engine capability. For example, a transcription job will produce a _transcript_ as an asset on the appropriate TDO.
 
-## How do I Run a Benchmark?
+## Where Can I Find Benchmark?
 
-First, go to [benchmark.veritone.com](https://benchmark.veritone.com). (Obtain a Veritone account, if you have not already done so.)
+There are several ways to access Benchmark. All of them require a Veritone account, so be sure to [get a free Veritone account](https://www.veritone.com/login/#/), if you have not already done so.
+
+Once you have your Veritone account, you can:
+
+* Go directly to [benchmark.veritone.com](https://benchmark.veritone.com) &mdash; This is the **Benchmark Home** page.  Alternatively:
+
+* Go to [Veritone CMS](https://cms.veritone.com/#/) and access Benchmark from the **Switch Apps** ("hamburger") button on the far right of the banner bar, next  to the Profile button. Or:
+
+* Go to [developer.veritone.com/](https://developer.veritone.com/) and access Benchmark from the nav sidebar. Or:
+
+* Go to [developer.veritone.com/](https://developer.veritone.com/), click the **NEW** button (at the top of the nav sidebar), and then choose **Benchmark**. See below:
+
+![Benchmark Access](bk-10.png)
+
+## How Can I Run a Benchmark?
 
 1\. From the Benchmark Home page, **click the SELECT TDO button.** ![Select TDO](bk-1.png)
 
