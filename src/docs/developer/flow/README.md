@@ -44,3 +44,25 @@ Your debugging experience in Automate Studio can be thought of as two steps:
 You can use several types of input nodes to run your node, and keep in mind that this run is intended to simulate how the flow will behave running as a flow engine on aiWARE’s processing framework. Drag an inject node onto the canvas, wire it to the node containing your logic that you wish to process next, click deploy to save your changes and operationalize the flow in Automate Studio, and then click the “inject button” on the left side of the node.
 
 To view your logic outputs, drag the debug node from the palette menu on the left and connect an output wire from one or more nodes that you wish to evaluate. The outputs sent to the debug node are then logged on the right hand menu in the “debug” tab with the “bug” icon.
+
+### Flow Engine examples
+
+Let's get started with some walkthroughs of introductory and real use-cases of flow engines currently in use by aiWARE customers
+
+#### Logo Recognition
+
+This flow example illustrates how you can publish flows in Automate Studio as cognitive engines that introduce new cognitive models onto aiWARE.
+
+*Note: There are multiple ways to creative cognitive engines, including running the cognitive model and wrapping in the engine or (as seen in this example) making calls to a third party API to send each chunk message (eg, a slice of a file) to that service for processing*
+
+**Steps**
+
+1. Like any flow in Automate Studio, we can read the logic from left to right like reading a book, and let’s examine this flow by slicing it up into thirds
+2. In the first third of this flow, we see two http in nodes as well as an http response node. These nodes are part of the webhook pattern for how the flow engine communicates with aiWARE at runtime. 
+3. This is what the engine toolkit expects, and all flow engines need to conform to this design to successfully run as engines on aiWARE
+4. The function node performs a filtering function, checking the msg.payload properties of the chunk msg injected into the flow engine at runtime and evaluating if the message is indeed a “media_chunk” and the “mimeType” is “image/jpeg”
+5. If there are chunk msgs injected into the flow engine at runtime that do not meet the criteria, the if statement formats an ignore msg that is then sent back as the http response at runtime.
+6. The middle third of the flow is the most straight forward. Starting with the “set payload and headers” function node, we prepare the msg details for making an API http request to the Logo Recognition service, in this case, Google’s Logo Recognition model
+7. Please note: you will need your own Google API key if you are trying to run and publish your own version of this flow engine
+8. Each image chunk is sent to the Google Logo API and returns a response that the http request node captures and sends to the “transform VTN” function node, which parses the response, and assuming the response was successful, outputs to the chunk msg to the “output to Edge” http response node.
+9. Behind the scenes, aiWARE Edge will stitch the results of the Logo Recognition process back together and write to the Temporal Data Object media file that the user invoked the engine to run on.
