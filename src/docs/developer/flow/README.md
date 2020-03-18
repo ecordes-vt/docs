@@ -57,7 +57,7 @@ This flow example illustrates how you can publish flows in Automate Studio as co
 
 ?> Note: There are multiple ways to creative cognitive engines, including running the cognitive model and wrapping in the engine or (as seen in this example) making calls to a third party API to send each chunk message (eg, a slice of a file) to that service for processing*
 
-**Steps**
+#### Tutorial Steps
 
 1. Like any flow in Automate Studio, we can read the logic from left to right like reading a book, and let’s examine this flow by slicing it up into thirds.
 2. In the first third of this flow, we see two *http in* nodes as well as an *http response* node. These nodes are part of the webhook pattern for how the flow engine communicates with aiWARE at runtime.
@@ -65,8 +65,7 @@ This flow example illustrates how you can publish flows in Automate Studio as co
 4. The *function* node performs a filtering function, checking the msg.payload properties of the chunk msg injected into the flow engine at runtime and evaluating if the message is indeed a “media_chunk” and the “mimeType” is “image/jpeg”
 5. If there are chunk messages injected into the flow engine at runtime that do not meet the criteria, the if statement formats an ignore msg that is then sent back as the http response at runtime.
 6. The middle third of the flow is the most straightforward. Starting with the “set payload and headers” function node, we prepare the msg details for making an API http request to the Logo Recognition service, in this case, Google’s Logo Recognition model.
-
-!> Please note: you will need your own Google API key if you are trying to run and publish your own version of this flow engine.
-
 7. Each image chunk is sent to the Google Logo API and returns a response that the http request node captures and sends to the “transform VTN” function node, which parses the response, and assuming the response was successful, formats the updated chunk message to include the cognitive results and then propagates the entire `msg` to the “output to Edge” *http response* node.
 8. Behind the scenes (and outside the flow engine runtime), aiWARE Edge will stitch the results of the Logo Recognition process back together and attach the output data (as an asset) to the Temporal Data Object that the user invoked the engine to run on.
+
+!> Please note: you will need your own Google API key if you are trying to run and publish your own version of this flow engine.
