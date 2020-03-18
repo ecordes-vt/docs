@@ -60,7 +60,7 @@ This flow example illustrates how you can publish flows in Automate Studio as co
 **Steps**
 
 1. Like any flow in Automate Studio, we can read the logic from left to right like reading a book, and let’s examine this flow by slicing it up into thirds.
-2. In the first third of this flow, we see two *http in* nodes as well as an *http response* node. These nodes are part of the webhook pattern for how the flow engine communicates with aiWARE at runtime. 
+2. In the first third of this flow, we see two *http in* nodes as well as an *http response* node. These nodes are part of the webhook pattern for how the flow engine communicates with aiWARE at runtime.
 3. This is what the engine toolkit expects, and all flow engines need to conform to this design to successfully run as engines on aiWARE
 4. The *function* node performs a filtering function, checking the msg.payload properties of the chunk msg injected into the flow engine at runtime and evaluating if the message is indeed a “media_chunk” and the “mimeType” is “image/jpeg”
 5. If there are chunk messages injected into the flow engine at runtime that do not meet the criteria, the if statement formats an ignore msg that is then sent back as the http response at runtime.
