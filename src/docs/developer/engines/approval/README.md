@@ -13,6 +13,8 @@ Your engine will be checked in terms of:
 
 You will be notified (within 72 hours) as to the status of your engine. If the engine is Approved, you can Deploy it immediately. If it is not Approved, you'll be told the status of the engine, and you can take appropriate steps to address any problems.
 
+> For information on how to build engines that are compatible with the latest aiWARE Edge infrastructure, please refer to [Engines in aiWARE Edge](developer/edge/engines).
+
 ## Certification Process
 
 The relationship between engine states, VDA build status, and the onboarding process is depicted in the diagram below.
@@ -86,3 +88,39 @@ You can do this with GraphQL queries in the [GraphiQL sandbox](https://api.verit
 You can run the task locally by passing the payload into your engine as an environment variable.
 
 Alternatively, if you are using the [Veritone Engine Developer's Toolkit](/developer/engines/toolkit/) to build your engine there is a local testing harness available as part of toolkit SDK.
+
+## FAQ
+
+### Manifest Issues
+
+Be sure to consult the [manifest documentation](https://docs.veritone.com/#/developer/engines/standards/engine-manifest/).
+
+**Q:** My manifest failed with an error: “invalid <MANIFEST_FIELD>”. How can I fix it?
+
+**A:** This means you provided an invalid value for a manifest field. Check [the docs](https://docs.veritone.com/#/developer/engines/standards/engine-manifest/?id=fields) to find the field, correct data type, and an example. (Note that for URL fields, you must provide a real URL.)
+
+**Q:** My manifest failed with an error: “Unknown media format: <MEDIA_FORMAT>”. How can I fix it?
+
+**A:** You are trying to include a media format not included in our [list of supported MIME types](https://docs.veritone.com/#/developer/engines/standards/engine-manifest/?id=mimetypes). If the media format you want to use is not listed, please contact us at _support@veritone.com_.
+
+**Q:** My manifest failed with an error: “Need a valid <MANIFEST_FIELD>”. How can I fix it?
+
+**A:** You are missing a required manifest field. Go to [the manifest documentation](https://docs.veritone.com/#/developer/engines/standards/engine-manifest/?id=fields) to see which fields are required for cognitive engines.
+
+### Vulnerability Issues
+
+**Q:** My engine failed certification due to a critical security vulnerability. How can I fix it?
+
+**A:** Most likely, you need to update the base image specified in your Dockerfile; using the “latest” tag will always point to the latest stable release and should fix this.
+
+### VTN Standard Issues
+
+VTN Standard describes aiWARE's standard format for data output. Read about [in the documentation](https://docs.veritone.com/#/developer/engines/standards/engine-output/) as well as in the [master.json file](https://docs.veritone.com/schemas/vtn-standard/master.json).
+
+**Q:** My engine failed the VTN Standard check with an error “json: unknown field <UNKNOWN_FIELD>”
+
+**A:** An additional, unexpected field has been found in the results from your engine. The relevant results from your engine can be found as an attachment in the e-mail containing your certification results. Compare that with the expected VTN Standard output for your cognitive category using the resource links given above.
+
+**Q:** My engine failed the VTN standard check with an error: “label is required”
+
+**A:** You forgot to include a label for custom data in the result. Label and type are both required.
