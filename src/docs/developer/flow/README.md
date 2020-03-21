@@ -49,6 +49,20 @@ To view your logic outputs, drag the debug node from the palette menu on the lef
 
 Let's get started with some walkthroughs of introductory and real use-cases of flow engines currently in use by aiWARE customers.
 
+#### Confidence Bot flow
+
+The Confidence Bot runs as a flow engine and displays the confidence score of each word as part of the transcript that can be viewed both from the API as well as the CMS UI.
+
+![confidence bot flow](confidence-bot-flow.png)
+
+##### Tutorial Steps
+
+1. The start of the Confidence Bot flow evaluates an inbound chunk sent from the Edge processing framework. The `inject` node payload mocks what the JSON of this chunk will resemble when it is injected into the flow engine at runtime.
+2. First, the flow assigns some variables with the `change` node and then using the *tdoId*, we create a transcription processing job, assign two new variables and then use the aiWARE Poll subflow to poll the transcription engine job.
+3. Once the transcription job has finished, we then query the newly created asset for the transcription engine results.
+4. Next, the flow then parses the transcript and creates a new file that contains both the transcribed words *and* the confidence score next to each word.
+5. The flow then retrieves the active user details associated with creating this flow engine request, formats the email with an aiWARE HTML template (you are welcome to reuse and modify! :blue_heart: ) and then sends to the user who created the processing request!
+
 #### Logo Recognition
 
 This flow example illustrates how you can publish flows in Automate Studio as cognitive engines that introduce new cognitive models onto aiWARE.
@@ -57,7 +71,7 @@ This flow example illustrates how you can publish flows in Automate Studio as co
 
 ?> Note: There are multiple ways to creative cognitive engines, including running the cognitive model and wrapping in the engine or (as seen in this example) making calls to a third party API to send each chunk message (eg, a slice of a file) to that service for processing*
 
-#### Tutorial Steps
+##### Tutorial Steps
 
 1. Like any flow in Automate Studio, we can read the logic from left to right like reading a book, and let’s examine this flow by slicing it up into thirds.
 2. In the first third of this flow, we see two *http in* nodes as well as an *http response* node. These nodes are part of the webhook pattern for how the flow engine communicates with aiWARE at runtime.
