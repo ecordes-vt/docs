@@ -31,15 +31,20 @@
       <div class="divider"></div>
       <div class="news-content">
         <div class="news-item">
-                    <div class="news-item-header">02/10/2020</div>
-            <ul>
-              <li>You can now search across all the Cognitive and Ingestion engines your Veritone organization has access to</li>
-              <li>The brand new and enhanced engines table now lets you filter and sort your engine results</li>
-              <li>All of your engines, both ingestion (aka Adapters) and cognitive types are displayed in one centralized table for you to view, filter, and query
-              </li>
-            </ul>
-          </div>
-          <div class="news-item-header">12/20/2019</div>
+        <div class="news-item-header">03/24/2020</div>
+          <ul>
+            <li><a href="https://docs.veritone.com/#/benchmark/">New documentation tells how you can benchmark your engines with the Benchmark app (beta)</a>.</li>
+            <li><a href="https://docs.veritone.com/#/developer/edge/engines">New documentation on how to update cognitive engines for the latest version of aiWARE Edge.</a></li>
+            <li><a href="https://docs.veritone.com/#/developer/flow/faq">New Automate Studio FAQ.</a></li>
+          </ul>
+        <div class="news-item-header">02/10/2020</div>
+          <ul>
+            <li>You can now search across all the Cognitive and Ingestion engines your Veritone organization has access to</li>
+            <li>The brand new and enhanced engines table now lets you filter and sort your engine results</li>
+            <li>All of your engines, both ingestion (aka Adapters) and cognitive types are displayed in one centralized table for you to view, filter, and query
+            </li>
+          </ul>
+        <div class="news-item-header">12/20/2019</div>
           <ul>
             <li>New Cognitive Capability: <a href="https://docs.veritone.com/#/developer/engines/cognitive/text/anomaly-detection/">Building an Anomaly Detection Engine</a></li>
             <li>New Biometric Capabilities: <a href="https://docs.veritone.com/#/developer/engines/cognitive/biometrics/face-verification/">Face Verification</a> and <a href="https://docs.veritone.com/#/developer/engines/cognitive/biometrics/speaker-verification/">Speaker Verification</a><</li>
