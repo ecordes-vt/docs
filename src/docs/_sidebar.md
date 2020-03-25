@@ -142,7 +142,8 @@
     - [Testing & Debugging](developer/engines/testing-and-debugging/)
 
   - [Building **Flows**](developer/flow/)
-
+    - [Getting Started](developer/flow/getting-started/README.md)
+    - [Flow Examples](developer/flow/flow-examples/README.md)
     - [FAQ](developer/flow/faq.md)
 
   - [Building **Adapters**](developer/adapters/)
