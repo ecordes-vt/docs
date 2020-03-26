@@ -53,8 +53,8 @@
 - [Automate Studio](automate-studio/)
 
   - [Getting Started](automate-studio/getting-started/README.md)
-  - [Flow Samples](automate-studio/flow-samples/README.md)
-  - [FAQ](developer/flow/faq.md)
+  - [Flow Samples](automate-studio/flow-examples/README.md)
+  - [FAQ](automate-studio/faq.md)
 
 - [Developer](developer/)
 
