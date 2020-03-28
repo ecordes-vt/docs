@@ -2,7 +2,7 @@
 
 Use these flow walkthroughs to quickly get a sense of what Automate Studio and flow engines can by understanding how these introductory and real use-cases of flow engines were created, step by step.
 
-## Confidence Bot flow
+## Confidence Bot
 
 The Confidence Bot runs as a flow engine and displays the confidence score of each word as part of the transcript that can be viewed both from the API as well as the CMS UI.
 
