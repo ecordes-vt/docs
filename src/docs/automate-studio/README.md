@@ -1,8 +1,8 @@
-# Building Flows with Automate Studio
+# Build with Automate Studio
 
 With Veritone Automate Studio, less-technical users can create their own AI Solutions that incorporate Veritone's cognitive engines and real time services directly into custom business applications.
 
-## Overview
+### Overview
 
 Automate Studio has three components:
 
