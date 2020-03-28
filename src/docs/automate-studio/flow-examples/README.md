@@ -1,8 +1,6 @@
 # Flow Examples
 
-## Flow Engine examples
-
-Let's get started with some walkthroughs of introductory and real use-cases of flow engines currently in use by aiWARE customers.
+Use these flow walkthroughs to quickly get a sense of what Automate Studio and flow engines can by understanding how these introductory and real use-cases of flow engines were created, step by step.
 
 ### Confidence Bot flow
 
