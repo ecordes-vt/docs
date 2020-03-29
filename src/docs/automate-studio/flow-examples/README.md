@@ -6,7 +6,7 @@ Use these flow walkthroughs to quickly get a sense of what Automate Studio and f
 
 The Confidence Bot runs as a flow engine and displays the confidence score of each word as part of the transcript that can be viewed both from the API as well as the CMS UI.
 
-![confidence bot flow](flow/confidence-bot-flow.png)
+![confidence bot flow](src/docs/developer/flow/confidence-bot-flow.png)
 
 ### Tutorial Steps
 
@@ -20,7 +20,7 @@ The Confidence Bot runs as a flow engine and displays the confidence score of ea
 
 This flow example illustrates how you can publish flows in Automate Studio as cognitive engines that introduce new cognitive models onto aiWARE.
 
-![logo recognition flow](flow/automate-logo-recognition.png)
+![logo recognition](src/docs/developer/flow/automate-logo-recognition.png)
 
 ?> Note: There are multiple ways to creative cognitive engines, including running the cognitive model and wrapping in the engine or (as seen in this example) making calls to a third party API to send each chunk message (eg, a slice of a file) to that service for processing.
 
