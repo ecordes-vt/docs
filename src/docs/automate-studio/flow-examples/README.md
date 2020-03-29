@@ -20,7 +20,7 @@ The Confidence Bot runs as a flow engine and displays the confidence score of ea
 
 This flow example illustrates how you can publish flows in Automate Studio as cognitive engines that introduce new cognitive models onto aiWARE.
 
-![logo recognition](/automate-studio/automate-logo-recognition.png)
+![logo recognition](automate-logo-recognition.png)
 
 ?> Note: There are multiple ways to creative cognitive engines, including running the cognitive model and wrapping in the engine or (as seen in this example) making calls to a third party API to send each chunk message (eg, a slice of a file) to that service for processing.
 
