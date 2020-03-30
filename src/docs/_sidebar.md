@@ -50,6 +50,12 @@
     - [Asset Types](apis/tutorials/asset-types.md)
     - [All Tutorials](apis/tutorials/)
 
+- [Automate Studio](automate-studio/)
+
+  - [Getting Started](automate-studio/getting-started/README.md)
+  - [Flow Samples](automate-studio/flow-examples/README.md)
+  - [FAQ](automate-studio/faq.md)
+
 - [Developer](developer/)
 
   - [Developer Benefits](developer/benefits.md)
@@ -142,8 +148,6 @@
     - [Testing & Debugging](developer/engines/testing-and-debugging/)
 
   - [Building **Flows**](developer/flow/)
-
-    - [FAQ](developer/flow/faq.md)
 
   - [Building **Adapters**](developer/adapters/)
 
