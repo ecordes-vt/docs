@@ -9,6 +9,7 @@
           <li><a href="/#/quickstart/"><h3>Quickstart</h3></a></li>
           <li><a href="/#/apps/"><h3>Applications</h3></a></li>
           <li><a href="/#/apis/"><h3>APIs</h3></a></li>
+          <li><a href="/#/automate-studio/"><h3>Automate Studio</h3></a></li>
           <li><a href="/#/developer/"><h3>Developer</h3></a></li>
           <li><a href="/#/apis/tutorials/"><h3>Tutorials</h3></a></li>
         </ul>
