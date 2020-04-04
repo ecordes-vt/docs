@@ -13,7 +13,7 @@ There are 3 key concepts we would like you to know:
 
 ?> Tip: Hover your cursor over a node in the palette in the left menu to learn what it does.
 
-![node-hover](automate-0-studioNodeHover.png)
+![node-hover](automate-0-studioNodeHover.png | width=720)
 
 ## Step 2: Run and debug your flow
 
@@ -25,7 +25,7 @@ Nice! Now that you have connected your nodes together and deployed your changes,
 2. We then click the Deploy button to save our latest change. Once we have saved our changes, we can then run the latest version of this flow in the Automate Studio editor runtime.
 3. Now, click the blue inject node to "inject" a `msg` JSON object into the flow.
 
-![node-hover](automate-1-deployandsaveflow.gif)
+![node-hover](automate-1-deployandsaveflow.gif | width=720)
 
 ## Step 3: Design your business logic
 
@@ -39,7 +39,7 @@ You may have noticed that a snackbar notification appears in the bottom left cor
 Tip: you can read more about flows and aiWARE's engine framework here.
 Clicking the Deploy button saves the draft as a new flow engine build that is viewable in your Developer app.
 
-![node-hover](automate-2-deploy-intoDeveloper.gif)
+![node-hover](automate-2-deploy-intoDeveloper.gif | width=720)
 
 ## Step 5: Manage your new Automation Engine
 
@@ -48,7 +48,7 @@ Here in Developer, we are in an engine detail page and observe we have a new bui
 
 Next, click on the “Submit” button next to the build, and then when the status changes, click the newly available “Deploy” button, to promote this version to the one actually that processes data.
 
-![node-hover](automate-3-developerbuilds.gif)
+![node-hover](automate-3-developerbuilds.gif | width=720)
 
 Right now, the Developer app UI does not support the creation of new Automate Engines (we are working on it!). The easiest way to create a new Automation Engine is via the GraphQL API in api.veritone.com/v3/graphiql.
 
@@ -137,7 +137,7 @@ query flowJob{
 
 Secondly, navigate to the CMS app using the app switcher (top right), and select the file as seen in the GIF below. When the engine completes, you can view a new output of that engine as well as a notification sent to the email of your Veritone account!
 
-![node-hover](automate-4-cms-runflow.gif)
+![node-hover](automate-4-cms-runflow.gif | width=720)
 
 **Congrats!** You’ve built and run your first flow engine.
 Now, take for a spin the existing pre-built flows in your organization, or create your own flow engines.
