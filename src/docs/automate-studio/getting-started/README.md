@@ -39,7 +39,7 @@ You may have noticed that a snackbar notification appears in the bottom left cor
 Tip: you can read more about flows and aiWARE's engine framework here.
 Clicking the Deploy button saves the draft as a new flow engine build that is viewable in your Developer app.
 
-![into-developer](automate-2-deploy-intoDeveloper.gif)
+![into-developer](automate-2-deploy-intoDeveloper.gif | width=1400px)
 
 ## Step 5: Manage your new Automation Engine
 
@@ -48,7 +48,7 @@ Here in Developer, we are in an engine detail page and observe we have a new bui
 
 Next, click on the “Submit” button next to the build, and then when the status changes, click the newly available “Deploy” button, to promote this version to the one actually that processes data.
 
-![node-hover](automate-3-developerbuilds.gif)
+![developer-builds](automate-3-developerbuilds.gif)
 
 Right now, the Developer app UI does not support the creation of new Automate Engines (we are working on it!). The easiest way to create a new Automation Engine is via the GraphQL API in api.veritone.com/v3/graphiql.
 
