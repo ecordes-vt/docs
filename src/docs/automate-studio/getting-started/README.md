@@ -15,7 +15,7 @@ There are 3 key concepts we would like you to know:
 
 ## Step 2: Run and debug your flow
 
-You've got the lingo, now let's start building! 
+You've got the lingo, now let's start building!
 In this sample flow below, the flow will display the user information. Connect the wire from the aiWARE api node to the green "debug" node like below and then click the blue Deploy button.
 Nice! Now that you have connected your nodes together and deployed your changes, let's review what we have done:
 
@@ -46,7 +46,7 @@ Right now, the Developer app UI does not support the creation of new Automate En
 
 ?> If you are using the “My Little Hello World” flow engine in your org, you can skip this step for now.
 
-```
+```javascript
 mutation createFlowEng{
   createEngine(input:{
     name:"Andy's Dev Flow Engine - Batch"
@@ -80,7 +80,7 @@ mutation createFlowEng{
 You can run your new Engine and view the results in 2 easy steps:
 First, run this mutation in the [Veritone GraphiQL tool](https://api.veritone.com/v3/graphiql)
 
-```
+```javascript
 mutation runYourFlow {
   createJob(input: {
     clusterId:"rt-1cdc1d6d-a500-467a-bc46-d3c5bf3d6901"
@@ -107,7 +107,7 @@ mutation runYourFlow {
 
 You can monitor and the progress of your Flow engine task using either the CMS application, or by running this query:
 
-```
+```javascript
 query flowJob{
   job(id:"<job id>"){
   # Get the job id after running the createJob mutation above and use it here
@@ -129,7 +129,7 @@ query flowJob{
 
 Secondly, navigate to the CMS app using the app switcher (top right), and select the file as seen in the GIF below. When the engine completes, you can view a new output of that engine as well as a notification sent to the email of your Veritone account!
 
-**Congrats!** You’ve built and run your first flow engine. 
+**Congrats!** You’ve built and run your first flow engine.
 Now, take for a spin the existing pre-built flows in your organization, or create your own flow engines.
 
 ?> Need help or have a question? Contact us in our Slack Community.
