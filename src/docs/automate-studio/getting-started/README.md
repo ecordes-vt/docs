@@ -132,4 +132,4 @@ Secondly, navigate to the CMS app using the app switcher (top right), and select
 **Congrats!** You’ve built and run your first flow engine.
 Now, take for a spin the existing pre-built flows in your organization, or create your own flow engines.
 
-?> Need help or have a question? Contact us in our Slack Community.
+?> Need help or have a question? Contact us in our [Slack Community.](http://veritonedev.slack.com/)
