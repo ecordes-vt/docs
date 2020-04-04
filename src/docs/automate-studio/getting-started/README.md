@@ -39,6 +39,8 @@ You may have noticed that a snackbar notification appears in the bottom left cor
 Tip: you can read more about flows and aiWARE's engine framework here.
 Clicking the Deploy button saves the draft as a new flow engine build that is viewable in your Developer app.
 
+![into-developer](automate-2-deploy-intoDeveloper.gif)
+
 ## Step 5: Manage your new Automation Engine
 
 You can manage, and deploy AI engines and applications in the Developer app.
