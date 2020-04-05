@@ -55,17 +55,19 @@ Right now, the Developer app UI does not support the creation of new Automate En
 ```javascript
 mutation createFlowEng{
   createEngine(input:{
-    name:"Andy's Dev Flow Engine - Batch"
+    name:"<Write a name for your engine>"
     description:"Test flow engine for determining if batch right off the bat works"
     categoryId:"c5458876-43d2-41e8-a340-f734702df04a"
+    # CategoryId for the Automation engine category
     deploymentModel:NonNetworkIsolated
     edgeVersion:3
     libraryRequired:false
     useCases:["batch testing","flow testing"]
     industries:["Media and entertainment","Other"]
     testingDetails:{
-      email:"andrew+devtest2020029@veritone.com"
+      email:"<write an email you test runs to be sent to>"
       mediaFileUri:""
+      #Optional field that is left empty in this example
     }
     isPublic:false
     manifest:{
@@ -92,11 +94,10 @@ mutation runYourFlow {
     clusterId:"rt-1cdc1d6d-a500-467a-bc46-d3c5bf3d6901"
     #V3 Prod cluster
     targetId:"952071774"
-    #this is the Media File ID
+    #this is the temporalDataObject/Media File ID -- copy+paste your own TDO ID
     tasks:[
       {
-        engineId:"365c246c-6409-456a-826d-92ca72539a0a"
-        # Your Little Hello World Flow
+        engineId:"<Input the Engine ID>"
       }
     ]
   }) {
