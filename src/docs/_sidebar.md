@@ -8,7 +8,6 @@
   
   - [Build with aiWARE](developer/)
   - [aiWARE Features](overview/?id=key-platform-features)
-  - [aiWARE Pricing](http://aiware.com/pricing)
   - [How to get started?](quickstart/?id=quickstarts)
   - [aiWARE Architecture](overview/architecture-overview/)
   - [Veritone Applications](apps/)
@@ -22,8 +21,11 @@
 
 - [Tutorials](apis/tutorials/)
 
-- [Build with **Veritone Automate**](developer/flow/)
-
+- [Build with Automate Studio](automate-studio/)
+  - [Getting Started](automate-studio/getting-started/README)
+  - [Flow Examples](automate-studio/flow-examples/README)
+  - [FAQ](automate-studio/faq)
+  
 - [Build **Applications**](developer/applications/)
 
   - [Quickstart](developer/applications/quick-start/)
@@ -86,7 +88,8 @@
       - [Object Detection](developer/engines/cognitive/vision/object-detection/)
       - [Text Recognition (OCR)](developer/engines/cognitive/vision/text-recognition/)
   - [Overview: **Correlation Engines**](developer/engines/correlation/)
-  - [Engine Developer's Toolkit](developer/engines/toolkit/)
+  - [Engine Developer's Toolkit (V2F)](developer/engines/toolkit/)
+  - [Engine Developer's Toolkit (V3F)](developer/edge/engines)
   - [Tutorial: Build Your Own Engine](developer/engines/tutorial/)
     - [Step 0 - Introduction and Project Setup](developer/engines/tutorial/)
     - [Step 1 - Register Your Project with Veritone](developer/engines/tutorial/engine-tutorial-step-1.md)

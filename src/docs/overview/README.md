@@ -68,3 +68,7 @@ The possibilities are within reach.
 
 The Veritone ecosystem of best-of-breed AI cognitive engines in a single platform eliminates the need for businesses, agencies, and individuals to select one vendor from the landscape of thousands of engines.
 This effectively future-proofs AI technology choices and ensures timely and common access to the latest AI advances.
+
+### Cost-Effective
+
+Veritone's offerings are designed to be affordable to customers of all sizes. (And, you can [get started](quickstart/) for free.) To learn more about Veritone aiWARE pricing, visit [this link](https://www.aiware.com/pricing/).
