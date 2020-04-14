@@ -63,12 +63,15 @@ Fields that are not marked as being required are optional; they should be includ
 * sentiment
 * fingerprint
 * facial detection
+* face verification
 * object detection
 * translate
 * geolocation
 * conductor
 * station playout
 * text recognition
+* speaker verification
+* facial features
 * logo recognition
 * thumbnail
 * correlation

@@ -36,12 +36,37 @@ Training for the Face Verification Engine is done by using the `enroll` mode of 
 
 ## Engine Input
 
-The face verification engine performs [segment processing](/developer/engines/processing-modes/segment-processing/). It accepts as input JPEG images.
+The face verification engine performs [segment processing](/developer/engines/processing-modes/segment-processing/).
+
+It accepts as input a custom binary file containing the following in the respective order:
+
+    1. 8 bytes containing the number of bytes of a byte-encrypted json string
+    2. A byte-encrypted JSON string
+    3. 8 bytes containing the number of bytes of a binary image file
+    4. Binary image file
+
+Note: An example of the byte-encrypted JSON string is as follows:
+
+    {
+        "mode": "verify",
+        "username": "jsmith@veritone.com",
+        "libraryId": "13e6f4a3-0d5c-4e11-9a30-913e981cb9ad",
+        "dbUser": "postgres",
+        "dbHost": "127.0.0.1",
+        "dbDatabase": "postgresdb",
+        "dbSchema": "public",
+        "dbPort": 5432,
+        "veritoneToken": "39ffd7a5-e962-4632-87c0-4d1616c7a9f6",
+        "veritoneApiBaseUrl": "https://api.veritone.com/v3/graphql",
+    }
+
 
 ## Engine Output
 
 The face verification engine output should be stored as an `object` in the [vtn-standard](/developer/engines/standards/engine-output/).
-The `type` of the object is `face`. Each face maps back to a specified user identity which corresponds to an entity in a library; hence the object includes the `entityId` along with the `libraryId`. The similarity score of the face to the face(s) for the entity is the `confidence`. The `mode` specifies whether the engine is run in `enroll` or `verify` mode.
+The `type` of the object is `verification`. Each face maps back to a specified user identity which corresponds to an entity in 
+a library; hence the object includes the `entityId` along with the `libraryId`. The similarity score of the face to the 
+face(s) for the entity is the `confidence`. The `mode` specifies whether the engine is run in `enroll` or `verify` mode.
 
 ### Example
 

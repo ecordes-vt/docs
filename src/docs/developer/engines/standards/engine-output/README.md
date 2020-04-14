@@ -27,6 +27,7 @@ Validation Contract | Applicable Capabilities | json-schema Definition
 `anomaly` | [Anomaly Detection](/developer/engines/cognitive/text/anomaly-detection/) | [anomaly.json](/schemas/vtn-standard/anomaly/anomaly.json ':ignore')
 `concept` | [Content Classification](/developer/engines/cognitive/text/content-classification/) | [concept.json](/schemas/vtn-standard/concept/concept.json ':ignore')
 `entity` | [Entity Extraction](/developer/engines/cognitive/text/entity-extraction/) | [entity.json](/schemas/vtn-standard/entity/entity.json ':ignore')
+`facial-features` | [Facial Features](/developer/engines/cognitive/facial-features/) | [facial-features.json](/schemas/vtn-standard/entity/facial-features.json ':ignore')
 `keyword` | [Keyword Extraction](/developer/engines/cognitive/text/keyword-extraction/) | [keyword.json](/schemas/vtn-standard/keyword/keyword.json ':ignore')
 `language` | [Language Identification](/developer/engines/cognitive/text/language-identification/) | [language.json](/schemas/vtn-standard/language/language.json ':ignore')
 `media-translated` | [Plain Text Translation](/developer/engines/cognitive/text/translation/plain-text/), [Rich Text Translation](/developer/engines/cognitive/text/translation/rich-text/) | [media-translated.json](/schemas/vtn-standard/media-translated/media-translated.json ':ignore')
@@ -35,6 +36,7 @@ Validation Contract | Applicable Capabilities | json-schema Definition
 `summary` | [Summarization](/developer/engines/cognitive/text/summarization/) | [summary.json](/schemas/vtn-standard/summary/summary.json ':ignore')
 `text` | [Text Extraction](/developer/engines/cognitive/text/text-extraction/), [Text Recognition (OCR)](/developer/engines/cognitive/vision/text-recognition/), [Extracted Text Translation](/developer/engines/cognitive/text/translation/extracted-text/), [Recognized (OCR) Text Translation](/developer/engines/cognitive/text/translation/recognized-text/) | [text.json](/schemas/vtn-standard/text/text.json ':ignore')
 `transcript` | [Transcription](/developer/engines/cognitive/speech/transcription/), [Transcript Translation](/developer/engines/cognitive/text/translation/transcript/) | [transcript.json](/schemas/vtn-standard/transcript/transcript.json ':ignore')
+`verification` | [Verification](/developer/engines/cognitive/verification/) | [verification.json](/schemas/vtn-standard/verification/verification.json ':ignore')
 
 Other validation contracts are in the process of being formalized.
 In the meantime, please see the example engine outputs for various capabilities under [Building Cognitive Engines](/developer/engines/cognitive/).
