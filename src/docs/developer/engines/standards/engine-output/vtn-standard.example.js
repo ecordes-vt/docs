@@ -122,7 +122,8 @@ sample = {
     // - keyword: Keyword detection
     // - text: Recognized or extracted text (OCR / text extraction)
     // - namedEntity: Entity extraction
-    // - verification: Face / Speaker / Other verification
+    // - face-verification: Face verification
+    // - speaker-verification: Speaker (voice) verification
 
     "type": "object",
 
