@@ -4,8 +4,8 @@
 [badge/Search/Yes/green]
 [badge/UI/Yes/green]
 
-The facial features engines accepts as input a set of face landmarks and associated timestamps, along with an audio input 
-and its associated timestamp. It computes the correlation between the movement of the face landmarks and the audio. It is 
+The facial features engines accepts as input a set of face landmarks and associated timestamps, along with an audio input
+and its associated timestamp. It computes the correlation between the movement of the face landmarks and the audio. It is
 expected that for an actual person, the correlation between the face landmarks and the audio is close to 1.0.
 
 ## Engine Manifest
@@ -56,12 +56,11 @@ Note: An example of the byte-encrypted JSON string is as follows:
         "voiceStartTime": <the millisecond timestamp of the beginning of the audio file>
     }
 
-
 ## Engine Output
 
 The facial features engine output should be stored as an `object` in the [vtn-standard](/developer/engines/standards/engine-output/).
-The `type` of the object is `facial-features`. Each face maps back to a specified user identity which corresponds to an entity in a library; 
-hence the object includes the `entityId` along with the `libraryId`. The similarity score of the face to the face(s) for 
+The `type` of the object is `facial-features`. Each face maps back to a specified user identity which corresponds to an entity in a library;
+hence the object includes the `entityId` along with the `libraryId`. The similarity score of the face to the face(s) for
 the entity is the `confidence`. The `mode` specifies whether the engine is run in `enroll` or `verify` mode.
 
 ### Example

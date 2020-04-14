@@ -60,12 +60,11 @@ Note: An example of the byte-encrypted JSON string is as follows:
         "veritoneApiBaseUrl": "https://api.veritone.com/v3/graphql",
     }
 
-
 ## Engine Output
 
 The face verification engine output should be stored as an `object` in the [vtn-standard](/developer/engines/standards/engine-output/).
-The `type` of the object is `verification`. Each face maps back to a specified user identity which corresponds to an entity in 
-a library; hence the object includes the `entityId` along with the `libraryId`. The similarity score of the face to the 
+The `type` of the object is `verification`. Each face maps back to a specified user identity which corresponds to an entity in
+a library; hence the object includes the `entityId` along with the `libraryId`. The similarity score of the face to the
 face(s) for the entity is the `confidence`. The `mode` specifies whether the engine is run in `enroll` or `verify` mode.
 
 ### Example

@@ -36,7 +36,7 @@ Training for the Speaker Verification Engine is done by using the `enroll` mode 
 
 ## Engine Input
 
-The speaker verification engine is an audio processing engine that performs [segment processing](/developer/engines/processing-modes/segment-processing/). 
+The speaker verification engine is an audio processing engine that performs [segment processing](/developer/engines/processing-modes/segment-processing/).
 
 It accepts as input a custom binary file containing the following in the respective order:
 
@@ -68,11 +68,11 @@ Note: The userPhrase is for the engine's transcription functionality. It's the p
 ## Engine Output
 
 The speaker verification engine output should be stored as an `object` in the [vtn-standard](/developer/engines/standards/engine-output/).
-The `type` of the object is `verification`. Each speaker maps back to a specified user identity which corresponds to an entity in a library; 
-hence the object includes the `entityId` along with the `libraryId`. The similarity score of the speaker's 
-audio to the audio sample(s) for the entity is the `confidence`. 
+The `type` of the object is `verification`. Each speaker maps back to a specified user identity which corresponds to an entity in a library;
+hence the object includes the `entityId` along with the `libraryId`. The similarity score of the speaker's
+audio to the audio sample(s) for the entity is the `confidence`.
 
-The `mode` specifies whether the engine 
+The `mode` specifies whether the engine
 is run in `enroll` or `verify` mode. An (optional) auxiliary object contains a score showing the degree of match
 between the transcribed audio and the `userPhrase` in the input JSON object.
 
