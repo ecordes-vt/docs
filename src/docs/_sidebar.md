@@ -49,6 +49,18 @@
   - [Working with the Edge HTTP API](apis/edge/index.html)
 
 - [Tutorials](apis/tutorials/)
+  - [GraphQL API Basics](apis/tutorials/graphql-basics.md)
+  - [Clean up TDO data](apis/tutorials/cleanup-tdo.md)
+  - [Creating Export Requests](apis/tutorials/create-export-request/)
+  - [Posting Engine Results](apis/tutorials/engine-results.md)
+  - [Lookup Available Engines](apis/tutorials/get-engines.md)
+  - [Error Handling in the GraphQL API](apis/tutorials/graphql-error-handling.md)
+  - [Uploading and Processing Files](apis/tutorials/upload-and-process.md)
+  - [Uploading Large Files](apis/tutorials/uploading-large-files.md)
+  - [Handling File Upload Errors](apis/tutorials/file-upload-error-handling.md)
+  - [Authentication and Authorization Tokens](apis/tutorials/tokens.md)
+  - [Paging](apis/tutorials/paging.md)
+  - [Asset Types](apis/tutorials/asset-types.md)
 
 - [Build with Automate Studio](automate-studio/)
   - [Getting Started](automate-studio/getting-started/README)
