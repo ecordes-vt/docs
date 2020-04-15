@@ -102,7 +102,8 @@ Update Task Status to running or complete | Do not update task status back to co
 
 ## Engine Toolkit Docker image
 
-Engine Toolkit is available as a Docker image.  To include the Engine Toolkit in your engine Docker, use [multi-stage build](https://docs.docker.com/develop/develop-images/multistage-build/), and copy the toolkit binary to a specific location in your image.  Here is a sample Dockerfile snippet:
+Engine Toolkit is available as a Docker image.
+To include the Engine Toolkit in your engine Docker, use [multi-stage build](https://docs.docker.com/develop/develop-images/multistage-build/), and copy the toolkit binary to a specific location in your image. Here is a sample Dockerfile snippet:
 
 ```pre
 
@@ -123,6 +124,8 @@ NOTES:
 Using Engine Toolkit in an Alpine-based image:  To use Engine Toolkit with an alpine image, make sure to include this in the Dockerfile:
 
 `RUN apk add --no-cache libc6-compat`
+
+2. It is important to specify `/opt/aiware/engine` as the toolkit-binary location. Doing so will ensure that the most up-to-date binary is automatically used.
 
 ## Controller / Engine Toolkit / Node Red engine relationship
 
@@ -187,8 +190,6 @@ Process Webhook (from Engine)
 
 Engine Toolkit invokes the webhook with the following input data in its POST payload:
 
-
-
 name | data type | notes
 -- | -- | --
 chunk | File | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook) - will not be available for stream engine
@@ -228,7 +229,7 @@ Engines performing the processing asynchronously such as stream or batch engines
 
 **Request**
 
-The request to the heartbeatWebhook should have the following data.
+The request to the `heartbeatWebhook` should have the following data.
 
 name | data type | notes
 -- | -- | --
@@ -251,7 +252,7 @@ Whenever the engine has a complete unit of processed work for the task, it shoul
 
 **Request**
 
-The request to the resultWebhook should have the following data.
+The request to the `resultWebhook` should have the following data.
 
 name | data type | notes
 -- | -- | --
