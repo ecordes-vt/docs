@@ -161,7 +161,7 @@
 
 - [API Reference](apis/)
 
-  - [How to Work with the API?](apis/using-graphql.md)
+  - [Working with the GraphQL API](apis/using-graphql.md)
     - [The Veritone API Data Model](apis/data-model.md)
     - [Using GraphQL](apis/using-graphql.md)
     - [Authentication](apis/authentication.md)
@@ -170,10 +170,10 @@
     - [API Examples](apis/examples)
     - [Job Quickstart Guide](apis/job-quickstart/)
     - [Search Quickstart Guide](apis/search-quickstart/)
-  - [Endpoints](apis/endpoints/)
-  - [Mutation Methods](apis/reference/mutation/)
-  - [Query Methods](apis/reference/query/)
-  - [Edge API](apis/edge/index.html)
+    - [Endpoints](apis/endpoints/)
+    - [Mutation Methods](apis/reference/mutation/)
+    - [Query Methods](apis/reference/query/)
+  - [Working with the Edge HTTP API](apis/edge/index.html)
   - [API Examples](apis/examples)
     - [GraphQL API Basics](apis/tutorials/graphql-basics.md)
     - [Clean up TDO data](apis/tutorials/cleanup-tdo.md)
