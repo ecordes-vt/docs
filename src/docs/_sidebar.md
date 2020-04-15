@@ -19,6 +19,35 @@
   - <span class="ml-explorer">[I'm a Data or Biz Analyst](quickstart/ml-explorer/)</span>
   - <span class="engine-developer">[I'm an Engine Developer](quickstart/engine-developer/)</span>
 
+- [API Reference](apis/)
+
+  - [Working with the GraphQL API](apis/using-graphql.md)
+    - [Mutation Methods](apis/reference/mutation/)
+    - [Query Methods](apis/reference/query/)
+    - [The Veritone API Data Model](apis/data-model.md)
+    - [Using GraphQL](apis/using-graphql.md)
+    - [Authentication](apis/authentication.md)
+    - [Error Codes](apis/error-codes.md)
+    - [Jobs, Tasks, and TDOs](apis/jobs-tasks-tdos.md)
+    - [Job Quickstart Guide](apis/job-quickstart/)
+    - [Search Quickstart Guide](apis/search-quickstart/)
+    - [Endpoints](apis/endpoints/)
+    - [API Examples](apis/examples)
+      - [GraphQL API Basics](apis/tutorials/graphql-basics.md)
+      - [Clean up TDO data](apis/tutorials/cleanup-tdo.md)
+      - [Creating Export Requests](apis/tutorials/create-export-request/)
+      - [Posting Engine Results](apis/tutorials/engine-results.md)
+      - [Lookup Available Engines](apis/tutorials/get-engines.md)
+      - [Error Handling in the GraphQL API](apis/tutorials/graphql-error-handling.md)
+      - [Uploading and Processing Files](apis/tutorials/upload-and-process.md)
+      - [Uploading Large Files](apis/tutorials/uploading-large-files.md)
+      - [Handling File Upload Errors](apis/tutorials/file-upload-error-handling.md)
+      - [Authentication and Authorization Tokens](apis/tutorials/tokens.md)
+      - [Paging](apis/tutorials/paging.md)
+      - [Asset Types](apis/tutorials/asset-types.md)
+
+  - [Working with the Edge HTTP API](apis/edge/index.html)
+
 - [Tutorials](apis/tutorials/)
 
 - [Build with Automate Studio](automate-studio/)
@@ -158,36 +187,6 @@
   - [Developer Terms & Conditions](developer/terms-and-conditions.md)
 
 - [Benchmark AI Engines](benchmark/)
-
-- [API Reference](apis/)
-
-  - [Working with the GraphQL API](apis/using-graphql.md)
-    - [The Veritone API Data Model](apis/data-model.md)
-    - [Using GraphQL](apis/using-graphql.md)
-    - [Authentication](apis/authentication.md)
-    - [Error Codes](apis/error-codes.md)
-    - [Jobs, Tasks, and TDOs](apis/jobs-tasks-tdos.md)
-    - [API Examples](apis/examples)
-    - [Job Quickstart Guide](apis/job-quickstart/)
-    - [Search Quickstart Guide](apis/search-quickstart/)
-    - [Endpoints](apis/endpoints/)
-    - [Mutation Methods](apis/reference/mutation/)
-    - [Query Methods](apis/reference/query/)
-  - [Working with the Edge HTTP API](apis/edge/index.html)
-  - [API Examples](apis/examples)
-    - [GraphQL API Basics](apis/tutorials/graphql-basics.md)
-    - [Clean up TDO data](apis/tutorials/cleanup-tdo.md)
-    - [Creating Export Requests](apis/tutorials/create-export-request/)
-    - [Posting Engine Results](apis/tutorials/engine-results.md)
-    - [Lookup Available Engines](apis/tutorials/get-engines.md)
-    - [Error Handling in the GraphQL API](apis/tutorials/graphql-error-handling.md)
-    - [Uploading and Processing Files](apis/tutorials/upload-and-process.md)
-    - [Uploading Large Files](apis/tutorials/uploading-large-files.md)
-    - [Handling File Upload Errors](apis/tutorials/file-upload-error-handling.md)
-    - [Authentication and Authorization Tokens](apis/tutorials/tokens.md)
-    - [Paging](apis/tutorials/paging.md)
-    - [Asset Types](apis/tutorials/asset-types.md)
-    - [All Tutorials](apis/tutorials/)
 
 - [Partner with Veritone](developer/benefits.md)
 
