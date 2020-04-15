@@ -45,7 +45,7 @@ It accepts as input a custom binary file containing the following in the respect
     3. 8 bytes containing the number of bytes of a binary image file
     4. Binary image file
 
-Note: An example of the byte-encrypted JSON string is as follows:
+An example of the byte-encrypted JSON string is as follows:
 
     {
         "mode": "verify",
@@ -55,9 +55,7 @@ Note: An example of the byte-encrypted JSON string is as follows:
         "dbHost": "127.0.0.1",
         "dbDatabase": "postgresdb",
         "dbSchema": "public",
-        "dbPort": 5432,
-        "veritoneToken": "39ffd7a5-e962-4632-87c0-4d1616c7a9f6",
-        "veritoneApiBaseUrl": "https://api.veritone.com/v3/graphql",
+        "dbPort": 5432
     }
 
 ## Engine Output

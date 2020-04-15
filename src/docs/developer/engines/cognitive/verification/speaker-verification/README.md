@@ -45,7 +45,7 @@ It accepts as input a custom binary file containing the following in the respect
     3. 8 bytes containing the number of bytes of a binary audio file
     4. Binary audio file
 
-Note: An example of the byte-encrypted JSON string is as follows:
+An example of the byte-encrypted JSON string is as follows:
 
     {
         "mode": "verify",
@@ -56,9 +56,7 @@ Note: An example of the byte-encrypted JSON string is as follows:
         "dbDatabase": "postgresdb",
         "dbSchema": "public",
         "dbPort": 5432,
-        "userPhrase": "hello world",
-        "veritoneToken": "39ffd7a5-e962-4632-87c0-4d1616c7a9f6",
-        "veritoneApiBaseUrl": "https://api.veritone.com/v3/graphql",
+        "userPhrase": "hello world"
     }
 
 Note: The userPhrase is for the engine's transcription functionality. It's the phrase that the audio needs to match.
