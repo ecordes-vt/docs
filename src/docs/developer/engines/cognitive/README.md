@@ -16,9 +16,11 @@ Class | Description | Inputs | Examples
 Audio | Identifies audio signatures and captures patterns from sounds. | Audio data | Audio recognition, music detection
 Biometrics | Analyzes the unique physical identifiers for identification and categorization. | Pictures, videos and biometric data (fingerprints, scans) | Face detection, facial recognition
 Data | Extracts time-saving actionable insights from data. | All kinds of data | Recommendation, telematics
+Facial Features | Derives metrics based on a person's face landmarks | Face landmarks and audio data | Lip-voice correlation, anomaly detection based on face movement(s)
 Speech | Applies artificial intelligence to human language to locate, capture, identify, and categorize spoken word. | Audio data | Transcription, language detection
 Text | Applies artificial intelligence to text inputs. | Text data | Language translation, text-to-speech, content categorization
 Transformation | Transforms input to produce an enhanced or modified data set.  | All kinds of data | Visual redaction, transcoding
+Verification | Determines the confidence of a person's face or voice matching that of a claimed identity.  | Picture or audio data | Face verification, speaker verification
 Vision | Processes images to identify, segment, and extract details. | Pictures and videos | Object recognition, visual moderation (tagging)
 
 ## Capabilities
