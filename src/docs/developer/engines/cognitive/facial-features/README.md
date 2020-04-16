@@ -44,7 +44,7 @@ It accepts as input a custom binary file containing the following in the respect
     2. A byte-encrypted JSON string
     3. 8 bytes containing the number of bytes of a binary audio file
     4. Binary audio file
-    
+
 Note: In the future, we plan to expand the capabilities of this engine to input image frames and/or video.
 
 An example of the byte-encrypted JSON string is as follows:
@@ -56,7 +56,7 @@ An example of the byte-encrypted JSON string is as follows:
     }
 
 Below is an example of a JSON string containing each of the entries:
-    
+
     {
         "faceLandmarks":[
             [{"type":"leftEye","locationPoly":[{"x":0.3992494462245779,"y":0.4791871959208469}, ... ]},
