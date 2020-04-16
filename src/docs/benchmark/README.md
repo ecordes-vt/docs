@@ -26,13 +26,20 @@ Once you have your Veritone account, you can:
 
 ## How Can I Run a Benchmark?
 
-1\. From the Benchmark Home page, **click the SELECT TDO button.** ![Select TDO](bk-1.png)
+1\. From the Benchmark Home page, **click the SELECT MEDIA button.** ![Select Media](bk-1.png)
 
-2\. Use the navigation dialog to **find the media file (or TDO) that you want to use as the basis of benchmarking.** ![Find the TDO and click Open](bk-2.png)
+2\. Use the navigation dialog to **find the media file (or TDO) that you want to use as the basis of benchmarking.**
 
-Select (highlight) the TDO of interest. Click the **Open** button.
+![Find and  select a file](bk-2a.png)
 
-> Choose a TDO that has 2 or more assets shown under the Assets column. You will need to select one Asset as the _baseline_ asset (see Step 5 below).
+Select (highlight) the file(s) of interest.
+
+> Choose a TDO that has 2 or more assets shown under the Assets column. You will need to select one Asset as the _baseline_ asset (see Step 6 below).
+
+If you don't see the file(s) you wanted to see, you can add files from your local storage or from YouTube.
+To do this, simply use the **+ New** button at the top left corner of the dialog to bring up the File Upload dialog.
+
+Click the **Process and Benchmark** button to continue to the Engine Selection dialog.
 
 3\. In the dialog that opens, called Benchmark History (below), you will see a list of previous Benchmarks (if they exist), or else some summary info about the TDO you selected, plus the words NO BENCHMARKS YET. At the bottom of the dialog, you will see an engine-capability picker (shown as "Transcription" by default) next to a **Start New Benchmark** button.
 
