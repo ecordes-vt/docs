@@ -25,6 +25,7 @@ Scenario('sidebar loads', I => {
   I.see('aiWARE Overview');
 });
 
+/*
 Scenario('sidebar collapse feature', I => {
 
   I.amOnPage('/#/overview/');
@@ -60,7 +61,9 @@ Scenario('sidebar collapse feature', I => {
   I.see('Face Detection', SIDEBAR_CONTEXT); // See grandchild with non-clickable parent
 
 });
+*/
 
+/*
 Scenario('Sidebar sections with extra DOM layers collapse correctly', I => {
   I.amOnPage('/#/overview/');
   I.click(QUICKSTART_TITLE);
@@ -70,7 +73,9 @@ Scenario('Sidebar sections with extra DOM layers collapse correctly', I => {
   I.see(OVERVIEW_TITLE); // See uncle
   I.dontSee(ARCHITECTURE_TITLE); // DON'T see cousin in separate top-level section
 });
+*/
 
+/*
 Scenario('App developer section loads when clicked from sidebar', I => {
   // These pages weren't loading sometimes when flipped back and forth.  We're not sure why.
   I.amOnPage('/#/quickstart/');
@@ -92,3 +97,4 @@ Scenario('navigate to applications', I => {
   I.seeCurrentUrlEquals('/#/apps/');
   I.see('CMS', { css: '.sidebar-nav .active' });
 });
+*/
