@@ -98,11 +98,11 @@
     - Biometrics
       - [Face Detection](developer/engines/cognitive/biometrics/face-detection/)
       - [Face Recognition](developer/engines/cognitive/biometrics/face-recognition/)
-      - [Face Verification](developer/engines/cognitive/biometrics/face-verification/)
-      - [Speaker Verification](developer/engines/cognitive/biometrics/speaker-verification/)
     - Data
       - [Data Correlation](developer/engines/cognitive/data/correlation/)
       - [Geolocation](developer/engines/cognitive/data/geolocation/)
+    - Facial Features
+      - [Facial Features](developer/engines/cognitive/facial-features/)
     - Speech
       - [Speaker Detection](developer/engines/cognitive/speech/speaker-detection/)
       - [Speaker Recognition](developer/engines/cognitive/speech/speaker-recognition/)
@@ -122,6 +122,9 @@
         - [Recognized Text (OCR) Translation](developer/engines/cognitive/text/translation/recognized-text/)
         - [Rich Text Translation](developer/engines/cognitive/text/translation/rich-text/)
         - [Transcript Translation](developer/engines/cognitive/text/translation/transcript/)
+    - Verification
+      - [Face Verification](developer/engines/cognitive/verification/face-verification/)
+      - [Speaker Verification](developer/engines/cognitive/verification/speaker-verification/)
     - Vision
       - [Image classification](developer/engines/cognitive/vision/image-classification/)
       - [License Plate Recognition (ALPR)](developer/engines/cognitive/vision/license-plate/)
@@ -154,7 +157,7 @@
   - [Polling](developer/engines/polling/)
   - [Callbacks](developer/engines/callbacks/)
   - [Testing & Debugging](developer/engines/testing-and-debugging/)
-
+  
   - [Building **Adapters**](developer/adapters/)
 
     - [Quickstart](developer/adapters/quick-start/)

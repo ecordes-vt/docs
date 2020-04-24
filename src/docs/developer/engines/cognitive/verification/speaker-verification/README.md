@@ -38,12 +38,41 @@ Training for the Speaker Verification Engine is done by using the `enroll` mode 
 
 The speaker verification engine is an audio processing engine that performs [segment processing](/developer/engines/processing-modes/segment-processing/).
 
+It accepts as input a custom binary file containing the following in the respective order:
+
+    1. 8 bytes containing the number of bytes of a byte-encrypted json string
+    2. A byte-encrypted JSON string
+    3. 8 bytes containing the number of bytes of a binary audio file
+    4. Binary audio file
+
+An example of the byte-encrypted JSON string is as follows:
+
+    {
+        "mode": "verify",
+        "username": "jsmith@veritone.com",
+        "libraryId": "13e6f4a3-0d5c-4e11-9a30-913e981cb9ad",
+        "dbUser": "postgres",
+        "dbHost": "127.0.0.1",
+        "dbDatabase": "postgresdb",
+        "dbSchema": "public",
+        "dbPort": 5432,
+        "userPhrase": "hello world"
+    }
+
+Note: The userPhrase is for the engine's transcription functionality. It's the phrase that the audio needs to match.
+
 [](../../_snippets/audio-engine-mime-type.md ':include')
 
 ## Engine Output
 
 The speaker verification engine output should be stored as an `object` in the [vtn-standard](/developer/engines/standards/engine-output/).
-The `type` of the object is `speaker`. Each speaker maps back to a specified user identity which corresponds to an entity in a library; hence the object includes the `entityId` along with the `libraryId`. The similarity score of the speaker's audio to the audio sample(s) for the entity is the `confidence`. The `mode` specifies whether the engine is run in `enroll` or `verify` mode.
+The `type` of the object is `verification`. Each speaker maps back to a specified user identity which corresponds to an entity in a library;
+hence the object includes the `entityId` along with the `libraryId`. The similarity score of the speaker's
+audio to the audio sample(s) for the entity is the `confidence`.
+
+The `mode` specifies whether the engine
+is run in `enroll` or `verify` mode. An (optional) auxiliary object contains a score showing the degree of match
+between the transcribed audio and the `userPhrase` in the input JSON object.
 
 ### Example
 

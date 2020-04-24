@@ -113,6 +113,7 @@ sample = {
     // Options:
     // - object: Object detection
     // - face: Face detection
+    // - facial-features: Facial Features
     // - licensePlate: License plate detection
     // - logo: Logo detection
     // - speaker: Speaker recognition
@@ -121,6 +122,9 @@ sample = {
     // - keyword: Keyword detection
     // - text: Recognized or extracted text (OCR / text extraction)
     // - namedEntity: Entity extraction
+    // - face-verification: Face verification
+    // - speaker-verification: Speaker (voice) verification
+
     "type": "object",
 
     // Main label for this object (optional)
@@ -150,6 +154,30 @@ sample = {
     "page": 5,
     "paragraph": 3,
     "sentence": 2,
+
+    // Used for verification engines (optional)
+    // Valid inputs: "enroll" or "verify"
+    "mode": "verify",  // REQUIRED
+
+    // Transcription (optional)
+    // An auxiliary output used for speaker verification engines. Provides a confidence score between the
+    // transcribed audio and a specified phrase.
+    "transcription": {
+      "text": "hello world",  // OPTIONAL
+      "confidence": 0.80      // REQUIRED
+    },
+
+    // Lip Voice Correlation (optional)
+    // Used for the facial-features engine.
+    "lipVoiceCorrelation": {
+      "confidence": 0.9   // REQUIRED
+    },
+
+    // Lip Voice Correlation (optional)
+    // Used for the facial-features engine.
+    "lipMovement": {
+      "confidence": 1.5   // REQUIRED
+    },
 
     // Sentiment (optional)
     // Provides a scale of how negative to positive it is
