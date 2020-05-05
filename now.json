@@ -1,4 +1,15 @@
 {
-  "version": 1,
-  "type": "npm"
+  "version": 2,
+  "build": {
+    "env": {
+      "ENVIRONMENT": "local"
+    }
+  },
+  "builds": [{
+    "src": "package.json",
+    "use": "@now/static-build",
+    "config": {
+      "distDir": "build-local"
+    }
+  }]
 }
