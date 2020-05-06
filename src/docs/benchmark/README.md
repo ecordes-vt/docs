@@ -34,40 +34,45 @@ Once you have your Veritone account, you can:
 
 Select (highlight) the file(s) of interest.
 
-> Choose a TDO that has 2 or more assets shown under the Assets column. You will need to select one Asset as the _baseline_ asset (see Step 6 below).
-
-If you don't see the file(s) you wanted to see, you can add files from your local storage or from YouTube.
+?> If you don't see the file(s) you wanted to see, you can add files from your local storage or from YouTube.
 To do this, simply use the **+ New** button at the top left corner of the dialog to bring up the File Upload dialog.
 
 Click the **Process and Benchmark** button to continue to the Engine Selection dialog.
 
-3\. In the dialog that opens, called Benchmark History (below), you will see a list of previous Benchmarks (if they exist), or else some summary info about the TDO you selected, plus the words NO BENCHMARKS YET. At the bottom of the dialog, you will see an engine-capability picker (shown as "Transcription" by default) next to a **Start New Benchmark** button.
+![Benchmark History](bk-3a.png)
 
-![Benchmark History](bk-3.png)
+3\. In the engine selection dialog (above), you will see a list of engines (10 per page; use  the arrow buttons at the bottom to go through the available choices).
+Check the checkboxes next to any engines you would like to include in this benchmark.  Using the radio buttons in the far right column, select one engine as the **Benchmark Baseline** engine.
 
-4\. Click the **Start New Benchmark** button to bring up the New Benchmark configuration dialog. ![New Benchmark](bk-4.png)
+!> You must designate a Benchmark Baseline in order to make the **Next** button (at the bottom right corner of the dialog) change to an active state.
 
-5\. **Designate a Baseline asset.** Using the checkbox to the left of the asset names, select an Asset. This will make a BASELINE radio button visible. Click the radio button for the asset you wish to use as the *baseline* (or ground truth) for purposes of benchmarking. (This means your benchmarking will assume that the selected asset is the *reference asset* for determining accuracy. A more detailed discussion of accuracy can be found below under [What do these numbers mean?](#what-do-these-numbers-mean)).
+When the **Next** button becomes active (through selection of a Baseline engine), click it. The **Processing/Benchmarking Confirmation** dialog appears.
 
-> If you wish to define a baseline asset manually, you can do so! See [How to Add an Asset Manually](#how-to-add-an-asset-manually) below.
+![Benchmark History](bk-4a.png)
 
-6\. **Designate additional assets/engines for benchmarking.** Check the checkboxes of other files in the list to select their respective engines for benchmarking. (This UI may change in the future. For now, this is the mechanism for choosing engines.)
+4\. Review the summary of media files and engines shown in the **Processing/Benchmarking Confirmation** dialog (above). If the information is not correct, use the **Back** button to go back and change any selections as necessary. Otherwise, click the **Process** button to begin the benchmarking job. The **Benchmarks** page appears (see below).
 
-7\. Click the **Run Benchmark** button to begin benchmarking. A status window will open.
+![Benchmark History](bk-5a.png)
 
-![Benchmarking in progress](bk-5.png)
+This page shows the status of currently running jobs in the top portion (under **Processing and Benchmarking**) as well as a summary of **Completed Benchmarks** further below.
 
-In the status window, current and (if available) past benchmarks will be shown as line items, with a color-coded badge on the right to indicate the status of each benchmarking attempt (shown as PENDING, COMPLETE, or FAILED).
+?> In the Status column under **Processing and Benchmarking**, you'll see a green PROCESSING... badge with an Information icon (circle-i) next to it. Click the Information icon to see a progress dialog showing which engines have finished.
 
-> You may need to refresh the page to see the badges update.
+Note that you can click the Notifications (bell) icon in the page header, on the right, to see a status summary of the last few Benchmark jobs that have run.
 
-8\. Click the **Results** button at the far right edge of any line item to see the results of that row's benchmark. The screen that appears will look something like the following:
+![Benchmark History](bk-6a.png)
 
-![Benchmarking results](bk-6.png)
+## Viewing Results
 
-In this screen, you can see horizontally running histogram bars representing accuracy results for the engines that were tested (along with a blue histogram at the top representing the baseline results).
+1\. Go to the Benchmark Home page at [https://benchmark.veritone.com/](https://benchmark.veritone.com/).
 
-> Use the **Sort By** button near the upper right to sort histrograms by Score, File Name, or Date, as desired.
+2\. Under **Recent Jobs**, find the job that interests you. Then click the **VIEW RESULTS** button at the far right edge of that row (or else click **DELETE** if the job is running but you wish to cancel it). The results screen that appears will look something like the following:
+
+![Benchmarking results](bk-7a.png)
+
+In this screen, you can see histograms representing accuracy and other metrics for the engines that were tested.
+
+?> The screen shot above shows results for a Transcription benchmark. The results will have a different appearance for other cognitive capabilities.
 
 ## How to Add an Asset Manually
 
