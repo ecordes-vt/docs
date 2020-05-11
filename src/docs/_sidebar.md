@@ -46,7 +46,7 @@
       - [Paging](apis/tutorials/paging.md)
       - [Asset Types](apis/tutorials/asset-types.md)
 
-  - [Working with the Edge HTTP API](apis/edge/index.html)
+  - [Working with the Edge REST API](apis/edge/index.html)
 
 - [Tutorials](apis/tutorials/)
   - [GraphQL API Basics](apis/tutorials/graphql-basics.md)
