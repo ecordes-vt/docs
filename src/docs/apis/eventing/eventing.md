@@ -2,7 +2,7 @@
 The aiWARE Core Eventing system is, as its name suggests, Veritone’s answer for providing developers with a Pub-Sub solution that enables them to subscribe to existing events and/or create new events routed to a webhook that you define and handle in your own application.
 
 ## Why use aiWARE Eventing?
-As with any Pub-Sub technology, the advantages of using aiWARE Eventing to is to be able to receive and react to an event occurring in aiWARE which is useful for inconsistent scenarios (eg users logging into your Veritone organization) or getting alerted when an asynchronous process has finished (like a Cognitive Engine task) has finished processing.
+As with any Pub-Sub technology, the advantages of using aiWARE Eventing to is to be able to receive and react to an event occurring in aiWARE which is useful for getting alerts when an asynchronous process (like a Cognitive Engine task) has finished processing.
 
 > If you are familiar with our engine processing GraphQL actions, aiWARE Eventing can be used as the primary mechanism for job status notifications to then trigger next steps in your application integrated with aiWARE.
 
