@@ -121,17 +121,18 @@ mutation createEventSubs{
     }
     #Conditions evaluate the event payload
     # to determine if it should be sent or not
-    conditions:[
-      {
-        operator: "and",  # "and" should be the default operator if it's not specified.
-        conditions: [
-          {field: "watchlist_id", operator: "eq", value: "87234"},
-          {field: "subdocument.schedule_id", operator: "eq", value: "123"},
-          # nested conditions
-          {operator: "and", conditions: []}
-  					]
-				}
-    ]
+    conditions: {
+            operator: "and",
+            conditions: [
+              {
+                field: "watchlistId",
+                operator: "eq",
+                value: 1
+              }
+            ]
+          }
+        })
+      }
   })
 }
 ```
@@ -141,6 +142,6 @@ mutation createEventSubs{
 While we suspect most use-cases will simply require a “Webhook,” we have enumerated the full types of Event Subscription below:
 
 - Webhook -- Webhook protocol should provide the following key-value pair in the json structure of "url":"<your_url>" "encoding":"[protobuf|protobuf_base64|json] "template": string
-- SMS -- SMS protocol should provide the following kvp in the json structure of "number": ##########
-- Email -- Email protocol should provide the following kvp in the json structure of "address":"<your_address>@<your_domain>"
-- CreateJob -- Create Job "targetId": "<ID of the TemporalDataObject trigger this request>" "engineId":"<ID of engine you want to run>"
+- SMS -- SMS protocol should provide the following kvp in the json structure of `"number": ##########`
+- Email -- Email protocol should provide the following kvp in the json structure of `"address":"<your_address>@<your_domain>"`
+- CreateJob -- This action creates a new engine job that runs with the specified parameters: `"targetId": "<ID of the TemporalDataObject trigger this request>" "engineId":"<ID of engine you want to run>"`
