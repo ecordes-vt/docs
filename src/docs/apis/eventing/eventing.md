@@ -1,12 +1,14 @@
 # Core Eventing: Overview
+
 The aiWARE Core Eventing system is, as its name suggests, Veritone’s answer for providing developers with a Pub-Sub solution that enables them to subscribe to existing events and/or create new events routed to a webhook that you define and handle in your own application.
 
 ## Why use aiWARE Eventing?
+
 As with any Pub-Sub technology, the advantages of using aiWARE Eventing to is to be able to receive and react to an event occurring in aiWARE which is useful for getting alerts when an asynchronous process (like a Cognitive Engine task) has finished processing.
 
 > If you are familiar with our engine processing GraphQL actions, aiWARE Eventing can be used as the primary mechanism for job status notifications to then trigger next steps in your application integrated with aiWARE.
 
-!> As an important note, aiWARE Eventing is currently only available in the Core element of your Veritone organization’s environment. It is not an Edge element. 
+!> As an important note, aiWARE Eventing is currently only available in the Core element of your Veritone organization’s environment. It is not an Edge element.
 
 The aiWARE Eventing system enables you to configure flexible and powerful notifications to your applications through a few GraphQL API actions. (See below.)
 
@@ -16,12 +18,15 @@ As a quick note, a useful rule of thumb is that if your application does not nee
 
 ## GraphQL API Examples
 
+You can use aiWARE GraphQL API to view and manipulate events and event subscriptions (actions) for aiWARE's eventing system running in Core.
+
 ### Events
+
 The Event object represents the definition of a specific record that stores metadata like the schema of the event payload, when the event was created, and the type of aiWARE object (e.g. Task, Job, Temporal Data Object) that the event is categorized by.
 
-You can get a list of all events your organization has access to via a GraphQL query like this:
-
 #### Query Events
+
+You can get a list of all events your organization has access to via a GraphQL query like this:
 
 ```graphql
 query events{
@@ -135,7 +140,7 @@ mutation createEventSubs{
 
 While we suspect most use-cases will simply require a “Webhook,” we have enumerated the full types of Event Subscription below:
 
-* Webhook -- Webhook protocol should provide the following kvp in the json structure of "url":"<protocol>://<your_url>" "encoding":"[protobuf|protobuf_base64|json] "template": string
-* SMS -- SMS protocol should provide the following kvp in the json structure of "number": ##########
-* Email -- Email protocol should provide the following kvp in the json structure of "address":"<your_address>@<your_domain>"
-* CreateJob -- Create Job "targetId": "<ID of the TemporalDataObject trigger this request" "engineId":"<Engine ID you want to launch>"
+- Webhook -- Webhook protocol should provide the following key-value pair in the json structure of "url":"<your_url>" "encoding":"[protobuf|protobuf_base64|json] "template": string
+- SMS -- SMS protocol should provide the following kvp in the json structure of "number": ##########
+- Email -- Email protocol should provide the following kvp in the json structure of "address":"<your_address>@<your_domain>"
+- CreateJob -- Create Job "targetId": "<ID of the TemporalDataObject trigger this request>" "engineId":"<ID of engine you want to run>"
