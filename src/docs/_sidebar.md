@@ -31,6 +31,7 @@
     - [Jobs, Tasks, and TDOs](apis/jobs-tasks-tdos.md)
     - [Job Quickstart Guide](apis/job-quickstart/)
     - [Search Quickstart Guide](apis/search-quickstart/)
+    - [Using Eventing](apis/eventing/eventing.md)
     - [Endpoints](apis/endpoints/)
     - [API Examples](apis/examples)
       - [GraphQL API Basics](apis/tutorials/graphql-basics.md)
