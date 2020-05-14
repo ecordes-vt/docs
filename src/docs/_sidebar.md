@@ -12,6 +12,14 @@
   - [aiWARE Architecture](overview/architecture-overview/)
   - [Veritone Applications](apps/)
 
+  - [Architecture Overview](overview/architecture-overview/)
+  - [Working with Self-Hosted aiWARE](overview/aiWARE-in-depth/)
+    - [Controller](overview/aiWARE-in-depth/controller)
+    - [Engines](overview/aiWARE-in-depth/engines)
+    - [Job Processing](overview/aiWARE-in-depth/job-processing)
+    - [File System](overview/aiWARE-in-depth/file-system)
+    - [Stream Ingestor 2](overview/aiWARE-in-depth/stream-ingestor)
+
 - [Getting Started](quickstart/)
 
   - <span class="app-developer">[I'm an Application Developer](quickstart/app-developer/)</span>
