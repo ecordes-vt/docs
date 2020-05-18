@@ -27,7 +27,7 @@ Engine Toolkit (ET) abstracts the input/output layer between the Engine and Veri
 
 The figure below shows at a high level the V3 Framework (V3F), which is where Engine Toolkit makes requests to Controller for work. The requests are made on behalf of the engines that the Engine Toolkit represents, including native engines such as Webstream Adaptor, TV&Radio, Stream Ingestors and Output Writer.
 
-![](V3F-engine-framework.png)
+![](../../developer/edge/V3F-engine-framework.png)
 
 Controller queries the database for tasks that are assigned to the engines, formulates the task IO information and assigns work requests, batches of work items, back to Engine Toolkit.
 
