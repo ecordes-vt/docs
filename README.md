@@ -178,7 +178,7 @@ docker run -it --rm -p 9000:9000 docs:latest
 
 This is for local testing only.  Production builds happen through Jenkins.
 
-# License
+## License
 
 Copyright 2017, Veritone Inc.
 
