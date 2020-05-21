@@ -10,9 +10,11 @@ If you would like to suggest an edit to the docs, feel free to submit a pull req
 You'll probably want to chat with us in our [Slack community][veri-slack] first if it's a large change
 to make sure we're in alignment.
 
-Veritone engineers should consult [this page](https://steel-ventures.atlassian.net/wiki/spaces/VT/pages/888279528/Contribute+to+docs.veritone.com) for detailed information on how best to submit content. The process is typically to create a branch, work on new content, push a commit, then open a pull request with @kasthomas2 as reviewer. When you are creating a brand new page, try to find a suitable slot for it in the nav sidebar; and create an entry for your new page in src/docs/\_sidebar.md. (Commit the \_sidebar.md edit along with your other content and submit a PR on the whole thing.)
+The process is typically to create a branch, work on new content, push a commit, then open a pull request with @kasthomas2 as reviewer. When you are creating a brand new page, try to find a suitable slot for it in the nav sidebar; and create an entry for your new page in src/docs/\_sidebar.md. (Commit the \_sidebar.md edit along with your other content and submit a PR on the whole thing.)
 
-### Overview
+Veritone engineers may consult [this page](https://steel-ventures.atlassian.net/wiki/spaces/VT/pages/888279528/Contribute+to+docs.veritone.com) for detailed information on how best to submit content, however this not required in order to contribute content.
+
+## Overview
 
 Veritone Docs is a static site built using Markdown files and powered by [Docsify][docsify].
 
@@ -60,7 +62,6 @@ Our conventions for this repo are as follows:
 - `?>` is used for more important hints and tips.
 While `>` notes could probably be skipped over by the reader and they'd still be successful, we expect they need to read the `?>` notes.
 - `!>` is used for warnings about deprecated or otherwise problematic "land mines" the user should stay away from.
-
 
 
 #### How to add code examples
