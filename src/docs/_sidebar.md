@@ -14,6 +14,7 @@
 
   - [Architecture Overview](overview/architecture-overview/)
   - [Working with Self-Hosted aiWARE](overview/aiWARE-in-depth/)
+    - [Installation](overview/aiWARE-in-depth/edge-installation)
     - [Controller](overview/aiWARE-in-depth/controller)
     - [Engines](overview/aiWARE-in-depth/engines)
     - [Job Processing](overview/aiWARE-in-depth/job-processing)
