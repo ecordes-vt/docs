@@ -35,6 +35,13 @@ yarn start
 
 This will spin up a local instance of the docs at http://localhost:3000.
 
+If you get an error like `node\r: No such file or directory` it's because docsify has DOS line endings, 
+and you need to remove them with 
+
+```bash
+sed -i.bak s/$'\r'// node_modules/docsify-cli/bin/docsify
+```
+
 ### Submitting Changes
 
 To submit changes, create a branch off master, add your commits, and create a pull request from your branch to master.
