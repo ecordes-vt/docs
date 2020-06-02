@@ -1,348 +1,273 @@
 <!-- markdownlint-disable -->
 
-# Engines in Veritone aiWARE Edge
+# Engine Developer's Toolkit
 
-## Engine Types
+Engines allow you to process data such as live camera streams, files or structured data in the Veritone platform.  Data, such as video, can be broken down into parts
 
-Veritone engine types include `chunk`, `stream`, and `batch`.  The runtime of the engines can be packaged via Docker for traditional cognitive engines, or [Node-RED](https://nodered.org/) for engines built in Automate Studio.
+The [Veritone Engine Developer's Toolkit](https://github.com/veritone/engine-toolkit/releases/latest) is designed to help you develop [cognitive engines](/developer/engines/cognitive/) that process [segments](/developer/engines/processing-modes/segment-processing/).
+For example, images, frames from videos, video clips, and audio files.
+If you are building a different kind of engine, you may need to use lower level APIs.
 
-See the following table for the difference between the different engine types.
+Engines are deployed to the Veritone platform in Docker containers, which can be thought of as being like lightweight virtual machines. The platform will automatically spin up instances of your engine to meet demand.
 
-Chunk | Stream | Batch
- -- | -- | --
-Processes a chunk at a time, producing vtn-standard outputs which are then aggregated by Output Writer to produce engine results for the task.<br/><br/>The chunks are normally the outputs of a parent task (e.g. Stream Ingestor splitting a stream into chunks of wav files), and can be processed in any order and by multiple engine instances to produce a quicker result. | Receives stream input from either an external source or a parent task, may produce vtn-standard outputs as the stream is processed, or other stream data (e.g. Stream Ingestor).<br/><br/>The engine needs the data in a single context to avoid losing accuracy or incurring complexity. For example, tracking objects across frames would be easier in a single stream than collating them across multiple chunks. | May not consume any input data from a parent task of the job.  However, it typically uses the payload for the task to perform the business logic, and outputs often produced directly into the container TDO.<br/><br/>Batch engines are typically associated with V1F (Iron-based) engines.
+To deploy an engine into production, you will need to perform the following tasks:
 
+1. [Build your engine executable](#how-to-build-an-engine)
+1. [Consume HTTP webhooks to provide integration and respond with appropriate JSON](#webhooks)
+1. [Download the Engine Toolkit SDK](#download-the-engine-toolkit-sdk)
+1. [Write tests for your code](#testing-your-webhooks)
+1. [Write a `Dockerfile` which describes your engine](#writing-a-dockerfile)
+1. [Deploy your engine to the Veritone platform](#deploy-to-veritone)
+
+The rest of this guide describes how to do this, and provides additional reading for more advanced use cases.
+
+## How to build an engine
+
+An engine is an executable program, packaged along with its dependencies, into a [Docker container](#writing-a-dockerfile).
+Engines listen on an HTTP address and implement [Webhooks](#webhooks), which are called when they receive work.
+
+### Sample engines
+
+To see the code for a complete working engine, choose from the list below:
+
+* **Go** - [Golang EXIF engine](https://github.com/veritone/engine-toolkit/tree/master/engine/examples/exif)
+* **JavaScript (NodeJS)** * - [hello-world](https://github.com/veritone/engine-toolkit/tree/master/engine/examples/hello-world), a simple vocabulary extraction engine
+* **Python** - [Python Keras/Tensorflow Imagenet image tagging engine](https://github.com/veritone/engine-toolkit/tree/master/engine/examples/python_imagenet)
+
+> If you would like to contribute an additional example engine, please [open an issue to start a conversation](https://github.com/veritone/engine-toolkit/issues/new?title=sample+project).
 
 ## Engine Toolkit
 
-Engine Toolkit (ET) abstracts the input/output layer between the Engine and Veritone platform, freeing engine developers of having to deal with the nuances of getting input data (e.g. from queues) and producing the engine outputs (e.g. back to queue).
-
-## New Engine Toolkit
+Engine Toolkit (ET) abstracts the input/output layer between the Engine and Veritone platform, freeing engine developers of having to deal with the nuances of getting input data and producing the engine outputs.
 
 1.  Backward compatible -- For chunk engines and other current functionality as described in Veritone docs.
 
 2.  Unified protocol -- The new version of Engine Toolkit strives to provide support to all engine types - keeping the interface consistent so that the choice of implementing chunk, stream, or batch shouldn't be depending on how engines should get their data.
 
-## V3F Framework
+## Engine Interaction with Engine Toolkit
 
-The figure below shows at a high level the V3 Framework (V3F), which is where Engine Toolkit makes requests to Controller for work. The requests are made on behalf of the engines that the Engine Toolkit represents, including native engines such as Webstream Adaptor (WSA), Stream Ingestor (SI), and Output Writer.
-
-![](V3F-engine-framework.png)
-
-The Controller queries the database for tasks that are assigned to the engines, formulates the task I/O information, and assigns work requests, batches of work items, back to Engine Toolkit.
-
-For each work item in the work request, Engine Toolkit:
-
-1.  Retrieves the input data from the filesystem (FS) for the tasks.
-
-2.  Invokes the core engine's `/process` webhook.
-
-3.  Stores the result back to the filesystem for the next task.
-
-Engine Toolkit also has a heartbeat loop to report back to Controller the work item progress: number of processed chunks, errors, etc.
-
-There is a RunTimeTTL set by Controller as directive to Engine Toolkit to terminate when the time is up. In addition, Controller may issue a `terminate` action as a response to the `getWork` request.
-
-Note that besides the databases, the File System contains the state of jobs/tasks as work is being done: processed chunks, in-processing chunks, or error chunks.  The input/output relationship between tasks is specified in the Edge database and represented in the file system accordingly. For engines to emit input/output chunks or streams, the interaction with the File System should be done by Engine Toolkit to ensure correctness. To learn more about the File System, see [File System](overview/aiWARE-in-depth/file-system).
-
-## Native Engines in Engine Toolkit
-
-Engine Toolkit for V3F includes a number of native engines such as Webstream Adapter, TV & Radio Adapter, Stream Ingestors (various flavors), and Output Writer. This provides the flexibility to turn engine instances into "super-workers," helping to push data through the initial ingestion pipeline as well as to finalize the engine outputs.
-
-To activate the adapters or stream ingestors, it is recommended that the Docker image containing the Engine Toolkit binary should have `ffmpeg` and `streamlink` modules included. <!-- INTERNAL Internal engines built by Veritone engineers should include these applications and add them to the system path if not installed properly (e.g. via apt-get or apk add). -->
-
-**Engine IDs:**
-
-1.  Web stream adaptor (engineId:9e611ad7-2d3b-48f6-a51b-0a1ba40feab4)
-
-2.  TV & Radio adaptor (engineId: 74dfd76b-472a-48f0-8395-c7e01dd7fd24)
-
-3.  Stream Ingestor v2 for playback (engineId:352556c7-de07-4d55-b33f-74b1cf237f25 )
-
-4.  Stream Ingestor v2 for asset creation (engineId: 75fc943b-b5b0-4fe1-bcb6-9a7e1884257a)
-
-5.  Stream Ingestor v2 for FFMPEG (engineId: 8bdb0e3b-ff28-4f6e-a3ba-887bd06e6440)
-
-6.  OutputWriter (engineId: 8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3)
-
-For more details, see the [Stream Ingestor v2](overview/aiWARE-in-depth/stream-ingestor) page.
-
-## Engine Interaction with Engine Toolkit in V3F
-
-Chunk engines continue to provide the `/process` webhook endpoint as documented earlier ([see V2F Toolkit page](https://docs.veritone.com/#/developer/engines/toolkit/)).
+Chunk engines continue to provide the `/process` webhook endpoint. 
 The input chunk is provided in the `cacheUri` parameter.  The chunk result can be returned in the response for the `/process` call, or it can be sent asynchronously at a later time. (In the latter case, chunk engines act like stream engines for one chunk.)
 
 Stream engines should also expose the `/process` webhook endpoint. Its input data will also be from `cacheURI`, and produces either [VTN Standard](developer/engines/standards/engine-output/) or other format(s) as task outputs back to ET using the heartbeat/callback endpoint.  Naturally, stream engines will respond almost immediately in handling the `/process` webhook, providing some ACK on the response or other informative response to ET.
 
 Batch engines are similarly invoked and are required to provide heartbeats back to ET for status update with a completion status (per discussion further below). Batch engines can be used to perform their own business logic, and produce the results in a freeform fashion, e.g., producing assets directly to the TDO associated with the job that the task is in. However, they can also produce task outputs for downstream tasks in the job by following the pattern of chunk or stream engines -- producing output results by posting back to ET's `/callback` endpoint. Naturally, this should be set up as part of the job DAG with output of the engine defined in the task routes and I/Os.
 
-## Converting V2F Engines to V3F
+## Webhooks
 
-In V3F, Kafka has been deprecated. Converting an engine from V2F to V3F requires taking this into account.
+Engines must implement the following webhooks:
 
-For chunk Engines that already use the Engine Toolkit (and thus do not have any direct interaction with Kafka), conversion to V3F is an easy process. Just pick up the latest distribution of the Engine Toolkit. (Follow the best practices described below when you create your Dockerfile.)
+* [Ready webhook](#ready-webhook)
+* [Process webhook](#process-webhook)
 
-Stream Engines need to be updated to move away from consuming directly from Kafka. Think of a stream engine as a chunk engine processing just a single chunk. The payload would come from the `payload` field in the post request to the `/process` webhook (vs. PAYLOAD_JSON env variable in V2F). Pay heed to the Heartbeat Webhook and Result Webhook discussions further below. If your engine takes more than one second to process a unit of work, plan on sending one heartbeat per second to the `heartbeatWebhook`.
+Each webhook provides unique functionality, and is therefore triggered by a unique HTTP request. The requests are described in the following sections.
 
-From V2F | Converting to V3F
--- | --
-Upon start up, read PAYLOAD_JSON for job info | Need to expose 2 webhooks :  `/readyz` and `/process` - set environment variables accordingly ([See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=webhook-environment-variables)). Job information is in the `payload` field of the `/process` request.
-Read input stream from Kafka | Read input stream from the `cacheURI` which is set in the POST request to /process webhook
-Output results to Kafka | Post the result to the resultWebhook of Engine Toolkit.  See [Result Webhook (from Engine Toolkit)](overview/aiWARE-in-depth/engines?id=result-webhook-from-engine-toolkit)
-Heartbeat to Kafka | Post heartbeat message to the heartbeatWebhook of Engine Toolkit.  See [Heartbeat Webhook (from EngineToolkit)](overview/aiWARE-in-depth/engines?id=heartbeat-webhook-from-enginetoolkit)
+> The webhook endpoints are configurable and are specified using environment variables in the [`Dockerfile`](#writing-a-dockerfile).
 
-Batch Engines should provide the `/process` webhook, similarly to stream engines. The payload to the engine is available in the request to the webhook.  The batch engine SHOULD NOT update task status or output directly. Heartbeats should be provided by posting back to the `/callback` endpoint from ET
+The webhooks are expected to return a `200 OK` successful response, otherwise the engine toolkit will retry the operation by making the same requests again.
 
-From V2F | Converting to V3F
--- | --
-Upon start up, read PAYLOAD_JSON for job info | Need to provide 2 webhooks :  `/readyz` and `/process` - set environment variables accordingly ([See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=webhook-environment-variables)).  Job information is in the `payload` field of the /process request
-Update Task Status to `running` or `complete` | Do not update task status back to core.  Instead submit heartbeat message to the `heartbeatWebhook` of Engine Toolkit.  See [Heartbeat Webhook (from EngineToolkit)](overview/aiWARE-in-depth/engines?id=heartbeat-webhook-from-enginetoolkit)
+### Ready webhook
 
-## Engine Toolkit Docker image
-
-Engine Toolkit is available as a Docker image.
-To include the Engine Toolkit in your engine Docker, use a [multi-stage build](https://docs.docker.com/develop/develop-images/multistage-build/) process, and copy the toolkit binary to a specific location in your image. Below is a sample Dockerfile snippet showing how the multistage build process is designed to work (notice the multiple FROM statements):
-
-```pre
-
-FROM veritone/aiware-engine-toolkit as vt-engine-toolkit
-
-FROM YOUROWN_DOCKER_IMAGE
-
-COPY --from=vt-engine-toolkit /opt/aiware/engine /opt/aiware/engine
-
-ENTRYPOINT ["/opt/aiware/engine", "YOUR_ENGINE_BINARY"]
+The Ready webhook is used to determine if the engine is ready to start doing work or not.
 
 ```
-
-NOTES:
-
-1. Refreshing the Engine Toolkit:  Make sure the docker image is refreshed by doing a `docker pull veritone/aiware-engine-toolkit` prior to your `docker build`. For a local aiWARE environment, it is best to pull before building.
-  
-2. Using Engine Toolkit in an Alpine-based image:  To use Engine Toolkit with an alpine image, make sure to include this in the Dockerfile:
-
-`RUN apk add --no-cache libc6-compat`
-
-3. It is important to specify `/opt/aiware/engine` as the toolkit-binary location. Doing so will ensure that the most up-to-date binary is automatically used.
-
-## Environment Variables
-
-Engine Toolkit will pass on all environment variables defined when the
-engine instance is started to the engine’s process with the exception of
-`AIWARE_` -prefixed environment variables.
-
-For internally developed engines, a white list of environment variables
-can be supplied. When that is set for the engine via an environment
-variable, AIWARE\_ENV\_WHITE\_LIST,  defined in the Dockerfile, Engine
-Toolkit will allow those variables to be accessible to the engine.
-
-For example, the following Dockerfile snippet sets AIWARE\_ENV\_WHITE\_LIST  so
-that the environment variables, AIWARE\_BUILD\_ID,AIWARE\_xyz, can be
-passed on to the engine process:
-
-```
-ENV AIWARE\_ENV\_WHITE\_LIST AIWARE\_BUILD\_ID,AIWARE\_xyz
+GET /ready
 ```
 
-> NOTE: AIWARE\_CONTROLLER is automatically added to the white list.
+The webhook should reply with a `503 Service Unavailable` status until the engine is ready to receive work, at which point it should reply to this webhook with a simple `200 OK` response.
 
-## Controller / Engine Toolkit / Node-Red engine relationship
+If the webhook replies with `500` http status, then ET will shutdown.
 
-For Node-RED engines in V3F, the runtime logic is provided by a single Docker image (node-red-runner) -- which needs the `ENGINE_ID` + runtime definition associated with a build when the container is started.  The difference between Node-RED Engines and other engines is:
+### Process webhook
 
-1. A column exists in the `edge.build` table to hold the build runtime -- which is where the runtime definition is stored.  Controller will retrieve the runtime JSON of a build (via GraphQL) and store that in this column.
-
-2. When Controller asks an agent to start an engine, the runtime JSON needs to be given as well.
- 
-3. Agent on the engine node will start the container with the given `dockerImage` (in this case it should be the `node-red-runner`) with the additional behavior:
-
-    a. Store the `buildRuntime` to a file (e.g. `/cache/engines/{engineId}/{buildId}/runtime.json`). This file will be mounted to the engine Docker container in the same location (e.g. `-v /cache/engines/{engineId}/{buildId}/runtime.json:/cache/engines/{engineId}/{buildId}/runtime.json`).
-    
-    b.  Set the following environment variables when starting the engine Docker container:
-    
- ```pre
-    AIWARE_BUILD_RUNTIME t= to the file location as set in a)
-    
-    ENGINE_ID = the engine id (from the HostActionLaunch)
-    
-    BUILD_ID = the build id (from the HostActionLaunch)
-```
-
-   c. Agent will also set the `ENGINE_ID` and `BUILD_ID` for the engine.
-    
-4. Engine Toolkit will be agnostic about this `AIWARE_BUILD_RUNTIME` -- the Node-RED process, however, will look for this variable -- which points to a file from which it can load the build runtime definition.
-
-5. With this approach, the Engine Toolkit does not have to do anything special for Node-RED engines.  The same framework will work for all kinds of engines.
-
-**Node-RED plugins cache:**
-* Need a folder to cache node-red plugins. 
-* The folder is shared by all engines in an organization.
-* The folder name is given in AIWARE_AUTOMATE_SHARE_FOLDER environment variable.
-
-## Node-RED (Automate) Engine Runner in Engine Toolkit
-
-In V3F, engines actively get their work items from Controller given
-their ENGINE\_IDs (environment variable or /var/manifest.json).  The
-work items can be for any builds with the assumption that the engine
-instance runs with the most recently deployed  build.
-
-For Node Red engines in V3F, the engine logic will be provided by a
-single Docker image (node-red-runner) -- which  will need  ENGINE\_ID +
-runtime definition associated with a build when the container is
-started.  The difference between NR Engines and other engines require
-the following enhancements to the current V3 Edge components:
-
-1.   Need a column in the edge.build table to hold the build runtime --
-    which is where the runtime definition being stored.  Controller will
-    retrieve the runtime JSON of a build (via GraphQL) and store that in
-    this column
-2.  When Controller asks an agent to start an engine, the runtime JSON
-    should be given as well → A new field \`buildRuntime\` ofJSON should
-    be added to the HostActionLaunch struct.
-3.  Agent on the engine node will start the container with the given
-    \`dockerImage\` ( in this case it should be the
-    node-red-runner) with the additional behavior:
-
-a.  Store the buildRuntime to a file (e.g.
-    /cache/engines/{engineId}/{buildId}/runtime.json).  This file will
-    be mounted to the engine Docker container in the same location (e.g.
-    -v
-    /cache/engines/{engineId}/{buildId}/runtime.json:/cache/engines/{engineId}/{buildId}/runtime.json)
-b.  Set the following environment variables when starting the engine
-    Docker container:
+The Process webhook is used to perform some processing on a file (like the frame from a video).
 
 ```
-AIWARE\_BUILD\_RUNTIME t= to the file location as set in a)
-
-ENGINE\_ID = the engine id (from the HostActionLaunch)
-
-BUILD\_ID = the build id (from the HostActionLaunch)
+POST /process
 ```
 
-c.  Agent should also set the ENGINE\_ID and BUILD\_ID for the engine.
+The body of the request is a multipart form (Where `Content-Type` is `multipart/form-data`) containing everything the engine needs to do its work.
 
-4.  Engine toolkit will be agnostic about this AIWARE\_BUILD\_RUNTIME --
-    the Node-RED process however will look for this variable -- again
-    this points to a file where it can load the build runtime
-    definition.
-5.  With this approach, engine toolkit does not have to do anything
-    special for Node-RED engines.
+The following fields will be posted to the Process webhook:
 
-The Node-RED (Automate) engine runner is a Docker image that has Engine Toolkit & Node-RED installed, and it acts as a proxy agent. The ENTRYPOINT for the Docker image should be `/app/engine node main.js`, where main.js is the Node-RED engine runner.
+* `internalJobId` - (string) The internal job ID
+* `internalTaskId` - (string) The internal task ID
+* `chunk` - (File) The file to process (as a path)
+* `chunkMimeType` - (string) The MIME type of the chunk (for example, `image/jpg`)
+* `startOffsetMS` - (int) The start time of the chunk (for example, the timestamp of when a frame was extracted from a video)
+* `endOffsetMS` - (int) The end time of the chunk (see `startOffsetMS`)
+* `cacheURI` - (string) - (string) Stream Engines should use this to retrieve the input stream
+* `veritoneApiBaseUrl` - (string) URI to aiWARE Core if this edge is connected to a core
+* `token` - (string) aiWARE Token to use with aiWARE Core
+* `payload` - (string) task payload
+* `chunk-metadata-xxxx` - (string) The input chunk may have metadata as intended by the parent task -- which is typically sent by the caller to the parent task. Engine Toolkit will make these available to the engine task with the prefix `chunk-metadata-` and stringified value.
+* `inputFolderID` - (string) The ID of the input folder for this chunk
 
-Node-RED engines are denoted with `"runtime":"nodeRed"` in their `manifest.json`.  They may have their own package requirements or custom execution environment that may take some time to install. Some optimizations could be done by having the engines execution runtime setup in a designated location in the File System, e.g., /cache/nodered/engines/{engineId}-{buildId} directory to contain scripts, JSON etc. to set up engine runtime environments.
+If the engine is a chunk, and the chunk is an image or video:
+* `width` - (int) The width of the chunk
+* `height` - (int) The height of the chunk
 
-The work item will be passed on to the Node-RED engine runner `/process` endpoint which then call into the engine's runtime execution code accordingly.
+The following advanced fields are also included:
+* `cacheURI` - (URI) URL of the chunk source file
+* `veritoneApiBaseUrl` - (string) The root URL for Veritone platform API requests
+* `token` - (string) The token to use when making low level API requests
+* `payload` - (string) JSON string containing the entire task payload
 
-<!--
-TODO: The getWork API to Controller would need to be enhanced to allow retrieving Node Red work items (e.g. need runtime parameter). 
--->
+If the engine leverages a library, the following fields will be included:
+* `libraryId` - (string) ID of the library related to this task
+* `libraryEngineModelId` - (string) ID of the library engine model related to this task
+* `libraryModelDirectory` - (string) directory that the engine can use to store library engine models -- either after a training job is done -- or when in matching mode and the engine would like to cache the model for quick access in subsequent tasks.
 
-## Deep Dive: Engine Interaction with Engine Toolkit
+Filesystem related fields:
+* `taskTmpDir` - (string) Temporary directory that serves as a scratchpad for the engine to store temporary data related to the task.  This directory will be purged after a certain time (3 days default).  For any permanent data, use other means.  This directory should already exist when the engine receives its chunk input.
+* `engineDir` - (string) directory that the engine can use to store shared assets across different instances
 
-This section gives more details about the interaction between Engine Toolkit and aiWARE infrastructure.
+Processing control fields:
+* `heartbeatWebhook` - (URI) This is the heartbeat webhook provided by Engine Toolkit.  Engines with async processing for the `/process` webhook, such as stream or batch engines, should submit heartbeats with progress information.  This is the equivalent of stream engines emitting into the engine_status Kafka queue for heartbeats
+* `resultWebhook` - (URI) This is the result webhook provided by Engine Toolkit. The engine should submit results of the processing as soon as it could.  This is the equivalent of stream engines emitting into the chunk_all Kafka queue when it finished processing some data off the input stream.
+* `externalCallbackWebhook` (URI) Engines may pass this callback URI to an external entity performing the real processing
+* `maxTTL` - (int) the maximum  time that engine toolkit can wait for results from the engine.
 
-Discovery of Webhooks
----------------------
+If `AIWARE_CONTROLLER` environment variable is exposed to the engine, then this will be set:
+* `controllerToken` - (string) if `AIWARE_CONTROLLER` is exposed to engine, this will be an edgeToken to use
 
-Engine Toolkit will use the following [environment variables](https://docs.veritone.com/#/developer/engines/toolkit/?id=webhook-environment-variables) to discover the webhooks as provided by the core engine:
+If the aiWARE cluster includes `Redis` server, then this field is exposed:
+* `redisETUrl` - (URI) Only available if REDIS is available for the cluster in which the engine processes its tasks. Engines will not be given direct access to the Redis server, instead engines will GET/POST to Engine Toolkit, which will then call Redis via API for the getting or setting of the keys.
 
-```pre
-ENV VERITONE_WEBHOOK_READY="http://0.0.0.0:8888/readyz"
-ENV VERITONE_WEBHOOK_PROCESS="http://0.0.0.0:8888/process"
+> As the Engine Toolkit evolves, we expect to add more fields here. If you notice something missing, please [open an issue and let us know](https://github.com/veritone/engine-toolkit/issues/new?title=request+fields).
+
+An example request,
+```json
+
+```
+<!-- TODO: @qdang can you add an example here? -->
+
+#### Chunk Metadata
+
+As mentioned above, input chunk metadata can be made available to the
+engine as part of the fields for the `/process` webhook.  The names
+for the metadata fields are prefixed with `chunk-metadata-` to
+minimize name collision with other data.
+
+The values will be strings. Therefore the engine should perform type
+conversion as needed.
+
+#### Process webhook response
+
+The handler for the Process webhook should return the results by writing a JSON response in VTN Standard if applicable.  If the engine returns content in different format such as ttml for transcripts, then engine must set the mime type and send the response
+
+> Most languages and frameworks have very easy ways of consuming HTTP endpoints and writing JSON responses. It is recommended that you use existing libraries where possible.
+
+If the engine cannot return the result synchronously (in the same HTTP request as a response), then the engine must return a JSON payload as defined below:
+* `estimatedProcessingTimeInSeconds` - (int) Amount of seconds that the engine  estimates to produce some results. 
+
+Suggested value for `estimatedProcessingTimeInSeconds` is `maxTTL` - or more if maxTTL is insufficient.  For example, if the engine is to call out to external entity for processing and thus may require more than hours to process.
+
+At that point the engine should use the supplied `heartbeatWebhook` and `resultWebhook` endpoints.
+
+##### Example webhook response: Faces
+
+The following JSON is an example showing some faces that were found in the image.
+
+```json
+{
+	"series": [{
+		"startTimeMs": 1000,
+		"stopTimeMs": 2000,
+		"object": {
+			"type": "face",
+			"confidence": 0.95,
+			"boundingPoly": [
+				{"x":0.3,"y":0.1}, {"x":0.5,"y":0.1},
+				{"x":0.5,"y":0.9}, {"x":0.3,"y":0.9}
+			]
+		}
+	}, {
+		"startTimeMs": 5000,
+		"stopTimeMs": 6000,
+		"object": {
+			"type": "face",
+			"confidence": 0.95,
+			"boundingPoly": [
+				{"x":0,"y":0}, {"x":1,"y":0},
+				{"x":1,"y":1}, {"x":0,"y":1}
+			]
+		}
+	}]
+}
 ```
 
-Process Webhook (from Engine)
------------------------------
+* `series` - (array) List of items found
+* `series[].startTimeMs` - (int) The start time of the chunk
+* `series[].stopTimeMs` - (int) The end time of the chunk
+* `series[].object` - (object) An object describing what was found
+* `series[].object.type` - (string) The type of the object
+* `series[].object.confidence` - (number) A number `0-1` of how confident the engine is about this object
+* `series[].object.boundingPoly` - (array) Array of points that describe the [region within a larger image](#regions)
 
-**Request**
+> If you have a question about what your engine should output and this documentation doesn't cover it, please [open an issue to start a conversation](https://github.com/veritone/engine-toolkit/issues/new).
 
-Engine Toolkit invokes the webhook with the following input data in its POST payload:
+#### Ignoring chunks
 
-name | data type | notes
--- | -- | --
-chunk | File | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook) - will not be available for stream engine
-chunkMimeType | string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-startOffsetMS | int | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-endOffsetMS | int | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-width | int | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-height | int | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-libraryId | string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-libraryEngineModelId | string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-cacheURI | string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook) - stream engine should use this to retrieve the input stream
-veritoneApiBaseUrl | string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-token | string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-payload | JSON string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-chunkContext |  string | **NEW** This gives some context for the result
-heartbeatWebhook | string | **NEW** This is the heartbeat webhook provided by Engine Toolkit.  Engines with async processing for the `/process` webhook, such as stream or batch engines, should submit heartbeats with progress information.  This is the equivalent of stream engines emitting into the engine_status Kafka queue for heartbeats
-resultWebhook | String  | **NEW** This is the result webhook provided by Engine Toolkit. The engine should submit results of the processing as soon as it could.  This is the equivalent of stream engines emitting into the chunk_all Kafka queue when it finished processing some data off the input stream.
-externalCallbackWebhook | string | **NEW** Engines may pass this callback URI to an external entity performing the real processing
-maxTTL | int | NEW the maximum  time that engine toolkit can wait for results from the engine.
-internalJobId            | string                   | **NEW** The internal job id
-internalTaskId           | string                   | **NEW** The internal task id
-taskTmpDir               | string                   | **NEW** temporary directory that serves as a scratchpad for the engine to store temporary data related to the task.  This directory will be purged after a certain time (3 days default).  For any permanent data, use other means.  This directory should already exist when the engine receives its chunk input.
-engineDir                | string                   | **NEW** directory that the engine can use to store shared assets across different instances
-libraryModelDirectory    | string                   | **NEW** directory that the engine can use to store library engine models -- either after a training job is done -- or when in matching mode and the engine would like to cache the model for quick access in subsequent tasks.
-chunk-metadata-xxxx      | string                   | **NEW** -- The input chunk may have metadata as intended by the parent task -- which is typically sent by the caller to the parent task. Engine Toolkit will make these available to the engine task with the prefix `chunk-metadata-` and stringified value.
-redisETUrl               | string                   | **NEW** Only available if REDIS is available for the cluster in which the engine processes its tasks. Engines will not be given direct access to the Redis server, instead engines will GET/POST to Engine Toolkit, which will then call Redis via API for the getting or setting of the keys.
-controllerToken          | string                   | **NEW** For any requests to Controller, engine MUST use this token
+If your engine is not going to process a chunk, the Process webhook should return a `204 No Content` response.
 
-**Response**
+The Engine Toolkit will report the chunk as ignored.
 
-**Synchronous**
+#### Failed responses
 
-Chunk engines that produce JSON response conforming to VTN Standard will continue to do so as [documented here](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook).
+If the chunk cannot be processed, the webhook should return a non-200 response code (e.g. `500`) and 
+a meaningful error should be written as the response.
 
-**Asynchronous**
+> There is no need to return a JSON body on failures, plain text is fine.
 
-For stream or batch engines with async or stand-alone processing mode, it is required that the following be returned in the JSON response.  Suggested value for `v` is `maxTTL` - or more if maxTTL is insufficient.  For example, if the engine is to call out to external entity for processing and thus may require more than hours to process.
+## Engine Toolkit Webhooks
 
-name | data type | notes
--- | -- | --
-estimatedProcessingTimeInSeconds | int | Amount of seconds that the engine  estimates to produce some results. 
+These webhooks provide additional functionality to the engine.
 
-Heartbeat Webhook (from Engine Toolkit)
---------------------------------------
-
+### Heartbeat Webhook
 Engines performing the processing asynchronously such as stream or batch engines should submit heartbeats to Engine Toolkit on a regular interval (suggested: once every second).  The webhook URI can be discovered in the `heartbeatWebhook` field of the original `/process` request.
 
-**Request**
+#### Request
+The POST request to the `heartbeatWebhook` should have the following data as a JSON payload:
+* `status` - (string) Required. Possible values: running, complete, failed
+* `bytesRead` - (int64) Optional
+* `bytesWritten` - (int64) Optional
+* `messagesWritten` - (int64) Optional
+* `infoMs` - (string) Optional. informational message about the running status of the engine
+* `failureReason` (enum)| Required when status is set to failed.  Possible values:<br/>internal_error<br/>external_error<br/>unknown<br/>url_not_found<br/>url_not_allowed<br/>url_timeout<br/>url_connection_refused<br/>url_error<br/>invalid_data<br/>rate_limited<br/>api_not_allowed<br/>api_authentication_error<br/>api_not_found<br/>api_error<br/>file_write_error<br/>stream_read_error<br/>system_dependency_missing<br/>system_error<br/>heartbeat_timeout<br/>other
+* `failureMsg` (string) Optional: supplemental info for `failureReason`
 
-The request to the `heartbeatWebhook` should have the following data.
+#### Response
+Engine Toolkit will return with `204 No Content`
 
-name | data type | notes
--- | -- | --
-status | string (enum) | Required. Possible values: running, complete, failed
-bytesRead | int64 | Optional
-bytesWritten | int64 | Optional
-messagesWritten | int64 | Optional  Number of results submitted thus far
-infoMs | string | Optional: informational message about the running status of the engine
-failureReason | String (enum) | Required when status is set to failed.  Possible values:<br/>internal_error<br/>external_error<br/>unknown<br/>url_not_found<br/>url_not_allowed<br/>url_timeout<br/>url_connection_refused<br/>url_error<br/>invalid_data<br/>rate_limited<br/>api_not_allowed<br/>api_authentication_error<br/>api_not_found<br/>api_error<br/>file_write_error<br/>stream_read_error<br/>system_dependency_missing<br/>system_error<br/>heartbeat_timeout<br/>other
-failureMsg | string | Optional: supplemental info for `failureReason`
+### Result Webhook
+Whenever the engine has a complete unit of processed work for the task, it should submit the result back to Engine Toolkit for persistence.  The webhook is given to the engine in the `resultWebhook` field of the /process request.
 
-**Response**
+This is useful in the following scenarios:
+* Result takes a long time to process
+* Result is non-VTN Standard
+* Result requires chunk metadata
+* Result requires a specific output folder
 
-`204 - No content`
+#### Request
 
-Result Webhook (from Engine Toolkit)
-------------------------------------
+The POST request to the `resultWebhook` should have the following data:
+* `chunkContext` - (string) Optional. This is the value of the `chunkContext` as passed into the request of the `/process` .  It should be present if the engine is chunk engine
+* `startOffsetMs` - (int64)  Optional - offset of the start of the chunk from the beginning of the input stream for which this result was produced | |
+* `endOffsetMs` - (int64)  Optional - offset of the end of the chunk from the beginning of the input stream for which this result was produced
+* `output` - (JSON) Required - VTN-Standard of the result.  See [documentation](https://docs.veritone.com/#/developer/engines/standards/engine-output/) for engine vtn-standard output format.
 
-Whenever the engine has a complete unit of processed work for the task, it should submit the result back to Engine Toolkit for persistence.  The webhook is given to the engine in the `resultWebhook` field of the /process request.  See [resultWebhook](https://docs.google.com/document/d/1VC06SkIlMi-3FoqrqU3N_WGIwV7j2EmphRRSOXzbAi0/edit#bookmark=id.31uhqi2c55f5).
+If the engine wants control over which `outputFolder` gets the chunk, it should pass in:
+* `outputFolderID` - (string) The ID of the output folder to send the chunk.  If this is not specified, all output folders will get the chunk
 
-**Request**
+If the engine wants to specify additional metadata (all metadata on the incoming chunk is copied to output), the following must be added:
+* `chunk-metadata-xxx` - (string) xxx will be the key for the metadata with the value specified as a string.
 
-The request to the `resultWebhook` should have the following data.
-
-name | data type | notes
--- | -- | --
-chunkContext | string | Optional. This is the value of the `chunkContext` as passed into the request of the `/process` .  It should be present if the engine is chunk engine
-startOffsetMs | int64 | Optional - offset of the start of the chunk from the beginning of the input stream for which this result was produced | |
-endOffsetMs | int64 | Optional - offset of the end of the chunk from the beginning of the input stream for which this result was produced
-output | JSON | Required VTN-Standard of the result.  See [documentation](https://docs.veritone.com/#/developer/engines/standards/engine-output/) for engine vtn-standard output format.
+If the engine wants to send binary or non-VTN standard, then the engine must set `multipart` to true and use multi-part uploads.  If more than one file is uploaded, multiple chunks will be created.
+* `multipart` - (bool) Optional - default false, set to true to enable chunks sent as multipart
 
 
 For example:
-
 ```pre
 POST <http://localhost:1234/result/task1234>
 
@@ -391,12 +316,223 @@ POST <http://localhost:1234/result/task1234>
 }
 ```
 
-**Response**
+## Download the Engine Toolkit SDK
 
-`204 - No content`
+To get started, you need to download the Engine Toolkit SDK. It contains the `engine` binrary that will be bundled into the Docker container when you deploy your engine to the Veritone platform.
 
-## 'sendOutputToUris' option
+> **Did you know?** You only need to download the [latest release](https://github.com/veritone/engine-toolkit/releases/latest), there's no need to clone the repo.
 
+* [Download the Engine Toolkit SDK from our GitHub project](https://github.com/veritone/engine-toolkit/releases/latest)
+
+## Testing your webhooks
+
+Since the [Webhooks](#webhooks) are just HTTP endpoints, you can test them by HTTP requests directly
+to your own code.
+
+If you want to manually test the Webhooks, you can access the built-in [Engine Toolkit Test Console](#engine-toolkit-test-console).
+
+### Engine Toolkit Test Console
+
+The Engine Toolkit Test Console is a web based tool that lets you simulate the HTTP
+requests that your engine will receive in production.
+
+The following is a preview of the test console running in the browser:
+
+![A preview of the Engine Toolkit Test Console](test-console-preview.png)
+
+You can upload your own file to process, and use the web form to tune the parameters
+that your engine expects to support.
+
+#### Access the Engine Toolkit Test Console
+
+To access the test console, run your Docker container with the `docker run` command. Set the environment variable `VERITONE_TESTMODE=true` and expose port 9090 with the `-p 9090:9090` argument:
+
+> `-e "VERITONE_TESTMODE=true" -p 9090:9090`
+
+For example, you might run:
+
+```go
+docker build -f Dockerfile -t your-engine .
+docker run -e "VERITONE_TESTMODE=true" -p 9090:9090 -p 8080:8080 --name your-engine -t your-engine
+```
+
+Once the container is running, you can open a browser at `http://localhost:9090/` to access
+the Engine Toolkit Test Console and use it to interact with your engine.
+
+> **Do not** set the `VERITONE_TESTMODE` environment variable in your `Dockerfile` as there is a risk it could be deployed to production in test mode, which will prevent your engine from working.
+
+### Writing a `Dockerfile`
+
+Veritone engines are Docker containers that run in the platform. To provide an engine, you must 
+build a Docker container (or image) that can encapsulate your dependencies and execute your code.
+
+A `Dockerfile` explains the steps that Docker needs to take in order to build a container.
+
+The following is an example of an engine `Dockerfile`:
+
+```docker
+FROM veritone/aiware-engine-toolkit as engine-toolkit
+# Include Engine Toolkit
+FROM alpine:latest
+
+COPY --from=engine-toolkit /opt/aiware/engine /opt/aiware/engine
+
+FROM alpine:latest
+
+# libc6-compat is required for alpine images
+RUN apk --no-cache add ca-certificates libc6-compat
+
+ADD ./your-engine /app/your-engine
+
+# Add and configure the engine
+ADD manifest.json /var/manifest.json
+
+# Environment Variables
+ENV VERITONE_WEBHOOK_READY="http://0.0.0.0:8888/readyz"
+ENV VERITONE_WEBHOOK_PROCESS="http://0.0.0.0:8888/process"
+ENV AIWARE_ENV_WHITE_LIST="AIWARE_CONTROLLER_URL,FOO"
+
+# ET must be the first command followed by the command to run the engine
+ENTRYPOINT [ "/opt/aiware/engine", "/app/your-engine" ]
+```
+
+The most common commands in a `Dockerfile` are:
+
+* `FROM` describes the Docker container you are starting with
+* `RUN` runs a command inside the container (In this case, `apk update && apk --no-cache add ca-certificates` ensures root certificates are installed so that the engine can access secure SSL files. You may or may not need this depending on which base you choose.)
+* `ADD` adds files to the container during the build process
+* `ENV` sets environment variables
+* `ENTRYPOINT` describes the executable that is run when an instance of the container is created by the platform
+
+> To learn more about Docker and what it can do, we recommend that you browse the official [Docker Documentation](https://docs.docker.com/).
+
+> If you want to dig deeper into what can be done in your `Dockerfile`, you can [read the Dockerfile reference manual](https://docs.docker.com/engine/reference/builder/#from) or continue reading for a light overview.
+
+## Engine Toolkit Docker image
+
+Engine Toolkit is available as a Docker image.
+To include the Engine Toolkit in your engine Docker, use a [multi-stage build](https://docs.docker.com/develop/develop-images/multistage-build/) process, and copy the toolkit binary to a specific location in your image. Below is a sample Dockerfile snippet showing how the multistage build process is designed to work (notice the multiple FROM statements):
+
+```pre
+
+FROM veritone/aiware-engine-toolkit as vt-engine-toolkit
+
+FROM YOUROWN_DOCKER_IMAGE
+
+COPY --from=vt-engine-toolkit /opt/aiware/engine /opt/aiware/engine
+
+ENTRYPOINT ["/opt/aiware/engine", "YOUR_ENGINE_BINARY"]
+
+```
+
+NOTES:
+
+1. Refreshing the Engine Toolkit:  Make sure the docker image is refreshed by doing a `docker pull veritone/aiware-engine-toolkit` prior to your `docker build`. For a local aiWARE environment, it is best to pull before building (`docker pull veritone/aiware-engine-toolkit`).
+  
+2. Using Engine Toolkit in an Alpine-based image:  To use Engine Toolkit with an alpine image, make sure to include this in the Dockerfile:
+
+`RUN apk add --no-cache libc6-compat`
+
+3. It is important to specify `/opt/aiware/engine` as the toolkit-binary location. Doing so will ensure that the most up-to-date binary is automatically used.
+
+#### Understand the `Dockerfile`
+
+The `Dockerfile` above describes a simple but complete engine. This section explains the components that make up an engine.
+
+##### Manifest file
+
+```docker
+ADD manifest.json /var/manifest.json
+```
+
+The `manifest.json` file is a JSON configuration file the describes details about your engine, such as its `engineId`, which file-types it supports, what kind of data it outputs, and more.
+
+> The platform will [automatically generate your manifest file](#automatically-generate-your-manifest-file).
+
+Usually your `manifest.json` file sits alongside your `Dockerfile` in your engine project folder.
+
+##### The `engine` executable
+
+```docker
+ADD ./dist/engine /app/engine
+```
+
+The `engine` executable gets added to your docker image as the entry point, and it acts as a proxy between the Veritone platform and your webhooks.
+
+Specifically, it:
+
+* Starts your engine process proxying the stdout and stderr
+* Connects to the Veritone platform and receives work
+* Calls your webhooks
+* Writes your responses back to the platform
+
+It is available when you [download the Engine Toolkit SDK](#download-the-engine-toolkit-sdk).
+
+##### Environment Variables
+
+```docker
+ENV VERITONE_WEBHOOK_READY="http://0.0.0.0:8888/readyz"
+ENV VERITONE_WEBHOOK_PROCESS="http://0.0.0.0:8888/process"
+```
+
+The environment variables specified with the `ENV` command inform the `engine` tool which webhooks to hit.
+
+* `VERITONE_WEBHOOK_READY` - (string) Complete URL (usually local) of your Ready webhook
+* `VERITONE_WEBHOOK_PROCESS` - (string) Complete URL (usually local) of your Process webhook
+* `AIWARE_ENV_WHITE_LIST` - (string)  Comma separated list with environment variable names that will be passed onto the engine from the engine toolkit
+
+Engine Toolkit will pass on all environment variables defined when the
+engine instance is started to the engine’s process with the exception of
+`AIWARE_` -prefixed environment variables.
+
+For example, the following Dockerfile snippet sets AIWARE\_ENV\_WHITE\_LIST  so
+that the environment variables, AIWARE\_BUILD\_ID,AIWARE\_xyz, can be
+passed on to the engine process:
+
+```
+ENV AIWARE\_ENV\_WHITE\_LIST AIWARE\_BUILD\_ID,AIWARE\_xyz
+```
+
+> NOTE: AIWARE\_CONTROLLER is automatically added to the white list.
+
+##### Engine entrypoint
+
+```docker
+ENTRYPOINT [ "/app/engine", "/app/your-engine", "--your-arg-1", "--your-arg-2" ]
+```
+
+The `ENTRYPOINT` must always be the [`engine` executable](#the-engine-executable) as the first argument, but the other arguments are for you to use to specify your engine code process.
+
+* `/app/engine` - (required constant string) Must be `/app/engine` since it refers to the [`engine` executable](#the-engine-executable)
+* `/app/your-engine` - (required string) The path and name of your custom engine executable
+* `--your-arg-n` - (optional strings) Additional arguments to pass when running your custom engine executable
+
+## Deploy to Veritone
+
+To deploy your code in Veritone, you must first create an engine on the platform.
+
+> This process is trivial and easy to clean up, so don't worry about getting the forms exactly right the very first time. This guide will call out any important fields.
+
+1. Go to [https://developer.veritone.com/](https://developer.veritone.com/) and sign in
+1. Click on <strong>ENGINES</strong> in the navigation
+1. Click <strong>NEW</strong> and select <strong>ENGINE</strong> from the menu to create a new engine
+1. Select <strong>Cognition</strong> engine type
+1. Complete the form selecting the appropriate or closest match options from the <strong>Engine Category</strong>
+1. Only check <strong>Library Required</strong> if your engine code knows how to interact with the Veritone Library via the GraphQL API
+1. Click <strong>Next</strong>
+1. Select your deployment model that describes your engine's needs
+1. Click <strong>Next</strong>&mdash;you may skip the <strong>Custom Fields</strong> page if this is the first time creating an engine
+1. Click <strong>Submit</strong>
+
+Your engine will be created and you'll be redirected to its console page.
+
+### Automatically generate your manifest file
+
+In the in-app documentation of your [engine's console page](https://developer.veritone.com), click <strong>GENERATE MANIFEST FILE</strong> to have the platform generate your [manifest.json file](#manifest-file).
+
+The rest of the in-app documentation explains how to authenticate the Docker tools and use them to tag and push your engine.
+
+## Notifications
 When an engine finishes processing a chunk successfully, if its task
 was created with the `sendOutputToUris` option, Engine Toolkit will post the result to that URI following this pattern:
 
@@ -447,24 +583,7 @@ finishes processing the chunk. In this situation:
     header and performs the calculation for the total round trip -- from
     start to finish.
 
-## Chunk Metadata
-
-As mentioned above, input chunk metadata can be made available to the
-engine as part of the fields for the `/process` webhook.  The names
-for the metadata fields are prefixed with `chunk-metadata-` to
-minimize name collision with other data.
-
-The values will be strings. Therefore the engine should perform type
-conversion as needed.
-
-## Engines and Training Libraries
-
-Engines may need training data to produce _library engine models_, which can then
-be passed on to a job for the engine to use in processing.
-
-> See [Library-Enabled Engines](developer/libraries/engines?id=test-libraries) for more information about library engine models. Also see [Training](developer/libraries/training) for information on how to persist training data.
-
-
+## Library Support
 ### Training libraries
 ------------------
 
@@ -557,7 +676,7 @@ This is the recommended patter:
 model at the same time, the engine developer should be prepared to
 devise a scheme to avoid corrupting the model.
 
-## Engines and Redis
+## Redis
 
 An engine may want to share states as chunks being processed for a task
 or job. Engine Toolkit provides limited access to Redis for this. _Note that if
@@ -618,3 +737,90 @@ request outside of the allowed internalTaskId, internalJobId
 
 500 - for other internal server error - e.g. Redis issue
 ```
+
+## Development guides
+
+This section includes some helpful guides for how to solve common problems when building engines.
+
+### Converting V2F Engines to V3
+
+Converting an Engine-Toolkit based V2 Engine to V3 is pretty straight forward.  Converting a non-Engine-Toolkit based engine will require implementing Engine Toolkit APIs.
+
+For chunk Engines that already use the Engine Toolkit (and thus do not have any direct interaction with Kafka), conversion to V3F is an easy process. Just pick up the latest distribution of the Engine Toolkit. (Follow the best practices described below when you create your Dockerfile.)
+
+Stream Engines need to be updated to move away from consuming directly from Kafka. Think of a stream engine as a chunk engine processing just a single chunk. The payload would come from the `payload` field in the post request to the `/process` webhook (vs. PAYLOAD_JSON env variable in V2F). Pay heed to the Heartbeat Webhook and Result Webhook discussions further below. If your engine takes more than one second to process a unit of work, plan on sending one heartbeat per second to the `heartbeatWebhook`.
+
+From V2F | Converting to V3F
+-- | --
+Upon start up, read PAYLOAD_JSON for job info | Need to expose 2 webhooks :  `/readyz` and `/process` - set environment variables accordingly ([See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=webhook-environment-variables)). Job information is in the `payload` field of the `/process` request.
+Read input stream from Kafka | Read input stream from the `cacheURI` which is set in the POST request to /process webhook
+Output results to Kafka | Post the result to the resultWebhook of Engine Toolkit.  See [Result Webhook (from Engine Toolkit)](overview/aiWARE-in-depth/engines?id=result-webhook-from-engine-toolkit)
+Heartbeat to Kafka | Post heartbeat message to the heartbeatWebhook of Engine Toolkit.  See [Heartbeat Webhook (from EngineToolkit)](overview/aiWARE-in-depth/engines?id=heartbeat-webhook-from-enginetoolkit)
+
+Batch Engines should provide the `/process` webhook, similarly to stream engines. The payload to the engine is available in the request to the webhook.  The batch engine SHOULD NOT update task status or output directly. Heartbeats should be provided by posting back to the `/callback` endpoint from ET
+
+From V2F | Converting to V3F
+-- | --
+Upon start up, read PAYLOAD_JSON for job info | Need to provide 2 webhooks :  `/readyz` and `/process` - set environment variables accordingly ([See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=webhook-environment-variables)).  Job information is in the `payload` field of the /process request
+Update Task Status to `running` or `complete` | Do not update task status back to core.  Instead submit heartbeat message to the `heartbeatWebhook` of Engine Toolkit.  See [Heartbeat Webhook (from EngineToolkit)](overview/aiWARE-in-depth/engines?id=heartbeat-webhook-from-enginetoolkit)
+
+### Regions
+
+To specify a region (such as an area on an image) the Veritone platform expects a relative array of `x,y` points where each value is between `0` and `1`, with `0` being the left or top of an image and `1` being the right or bottom.
+
+Relative (or ratio) values are used so that they remain correct regardless of the resolution of the image.
+
+```metadata json
+"boundingPoly": [
+	{"x": 0, "y": 0},
+	{"x": 1, "y": 0},
+	{"x": 1, "y": 1},
+	{"x": 0, "y": 1}
+]
+```
+
+> This example essentially draws a box around the entire image.
+
+The following diagram represents the points for a box describing an object that is `50x50` in the center of a `100x100` image:
+
+![](boundingpoly.png)
+
+The `boundingPoly` array for this object would be:
+
+```metadata json
+"boundingPoly": [
+	{"x": 0.25, "y": 0.25},
+	{"x": 0.75, "y": 0.25},
+	{"x": 0.75, "y": 0.75},
+	{"x": 0.25, "y": 0.75}
+]
+```
+
+#### Calculating the ratio value
+
+To calculate the `x` and `y` ratio values, you divide `x` by the width and `y` by the height:
+
+```
+ratioX = x / width
+ratioY = y / height
+```
+
+## Troubleshooting
+
+This section provides answers to common problems that have been reported by
+engine developers.
+
+### `x509: certificate signed by unknown authority`
+
+If you see an error complaining about an unknown authority, it's likely that you do not have
+root certificates installed inside your Docker container.
+
+Try adding the following line to your `Dockerfile`:
+
+```docker
+RUN apk --no-cache add ca-certificates
+```
+
+This will install the certificates as part of your Docker build.
+
+> This solution has only been tested when the base Docker image is `FROM alpine:latest`. For other base images, you might need to install them with a different command.

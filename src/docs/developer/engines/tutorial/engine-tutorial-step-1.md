@@ -58,25 +58,33 @@ In our case, the Hello World engine is a **Text** engine with **Keyword Extracti
 
 6\. If your engine requires custom input options at runtime (for example, if your engine needs to know a 2-letter ISO 639-1 language code on a per-job basis; or any other custom config options), use the **ADD CUSTOM FIELD** button under **Custom Fields** to set this up. (Read more about [Custom Fields](developer/engines/custom-fields/).)
 
-7\. Click the **NEXT** button (lower right corner of page) to proceed to the next page of the wizard. (This is the Deployment Model page.)
+7\. Click the **NEXT** button (lower right corner of page) to proceed to the next page of the wizard. (This is the Testing Detail page.)
+
+![Select deployment model](NewEngine-Testing.png)
+
+8\. Enter an e-mail address where certification test results can be sent. (The [engine certification and approval process](developer/engines/approval/?id=engine-certification-and-approval-process) is automatic.) Optionally specify the public URL of any media file that should be used for testing of your engine. Also, optionally provide information about any Custom Payload Fields your engine will rely on.
+
+9\. Click the **NEXT** button (lower right corner of page) to proceed to the next page of the wizard. (This is the Deployment Model page.)
 
 ![Select deployment model](NewEngine-deployment.png)
 
 Since the Hello World engine does not need to interact with any external web endpoints, it's okay to select **Network Isolated**.
 
-8\. Click **NEXT** to go to the next page of the wizard. (This is the third and final wizard page, called Customize.)
+10\. Click **NEXT** to go to the next page of the wizard. (This is the final wizard page, called Customize.)
 
-9\. Give your engine a Name, add a Description, specify an icon, and provide other information about the engine.
+11\. Check your engine's Name, add an optional Descriptor (10 charactsers, max), add a Description, specify an icon, and provide other information about the engine.
+
+> A Name that conforms to Veritone's naming conventions will be generated for your engine automatically. Engine names are required to follow a pattern of &lt;Capability&gt;-&lt;Organization&gt;-&lt;Mode&gt;-&lt;Descriptor&gt;-&lt;Edge Cluster Version&gt;.
 
 ![Add Name and Description](NewEngine-Customize.png)
 
-10\. Click the **REVIEW** button (lower right) to bring up an **Engine Summary** dialog in which you can check the accuracy of the selections you've made in the wizard thus far.
+12\. Click the **REVIEW** button (lower right) to bring up an **Engine Summary** dialog in which you can check the accuracy of the selections you've made in the wizard thus far.
 
 > Use the **BACK** button as necessary to go back through your earlier selections and edit them.
 
 ![Engine Summary dialog](NewEngine-summary.png)
 
-11\. Click the **CREATE ENGINE PROFILE** button to exit out of the wizard and be taken to a **Builds** overview page (which has two tabs: **BUILDS** and **TASKS**).
+13\. Click the **CREATE ENGINE PROFILE** button to exit out of the wizard and be taken to a **Builds** overview page (which has two tabs: **BUILDS** and **TASKS**).
 _Note that your engine's ID is shown near the top of the page, under the engine name._
 
 ![Builds overview page](NewEngine-manifest-1.png)

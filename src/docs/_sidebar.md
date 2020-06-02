@@ -142,7 +142,6 @@
       - [Object Detection](developer/engines/cognitive/vision/object-detection/)
       - [Text Recognition (OCR)](developer/engines/cognitive/vision/text-recognition/)
   - [Overview: **Correlation Engines**](developer/engines/correlation/)
-  - [Engine Developer's Toolkit (V2F)](developer/engines/toolkit/)
   - [Engine Developer's Toolkit (V3F)](developer/edge/engines)
   - [Tutorial: Build Your Own Engine](developer/engines/tutorial/)
     - [Step 0 - Introduction and Project Setup](developer/engines/tutorial/)
