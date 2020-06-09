@@ -1,7 +1,7 @@
 # Building an Entity Extraction Engine
 
 [badge/API/Partial/yellow]
-[badge/Search/No/red]
+[badge/Search/Yes/green]
 [badge/UI/No/red]
 
 Entity extraction, sometimes referred to as 'named entity extraction' is an aspect of Natural Language Processing (NLP) that refers to labeling words, phrases or even concepts in text.

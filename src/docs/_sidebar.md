@@ -22,7 +22,7 @@
     - [Stream Ingestor 2](overview/aiWARE-in-depth/stream-ingestor)
 
 - [Getting Started](quickstart/)
-
+  - [Working with Jobs](quickstart/jobs/)
   - <span class="app-developer">[I'm an Application Developer](quickstart/app-developer/)</span>
   - <span class="ml-integrator">[I'm a Solutions Engineer](quickstart/ml-integrator/)</span>
   - <span class="ml-explorer">[I'm a Data or Biz Analyst](quickstart/ml-explorer/)</span>

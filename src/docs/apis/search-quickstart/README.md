@@ -1282,6 +1282,42 @@ The table below defines the possible values currently available for the *field* 
   <td><h4><b>Description</b></h4></td>
   <td><h4><b>Example</b></h4></td>
 </tr>
+
+
+<tr>
+  <td colspan="4"><h5><b>Content Classification</b></h5>
+Searches for various topics from the Content Classification engine output.</td>
+</tr>
+<tr>
+  <td>content-classification</td>
+  <td>string</td>
+  <td>This field is used to find topics from the Content Classification engine output<br><br>     
+      <b>term</b> is used for exact matches, <b>query_string</b> would be for partial word matches
+</td>
+  <td>operator: "term"<br>
+field: "content-classification.concept.class"<br>
+value: "arts, culture and entertainment"
+</td>
+</tr>
+
+
+<tr>
+  <td colspan="4"><h5><b>Entity Extraction</b></h5>
+Searches for entities from the Entity Extraction engine output.</td>
+</tr>
+<tr>
+  <td>entity-extraction</td>
+  <td>string</td>
+  <td>This field is used to find entites from the Entity Extraction engine output<br><br>     
+      <b>term</b> is used for exact matches, <b>query_string</b> would be for partial word matches
+</td>
+  <td>operator: "query_string"<br>
+field: "entity-extraction.entity.label.fulltext"<br>
+value: "Jacob"
+</td>
+</tr>
+
+
 <tr>
   <td colspan="4"><h5><b>Recording</b></h5>
 Searches for various aspects of recordings in public and private indexes.</td>
