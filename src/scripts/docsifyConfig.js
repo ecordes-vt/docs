@@ -8,6 +8,13 @@ import {
 } from "./sidebarHelper";
 
 const docsifyConfig = {
+  tabs: {
+    persist    : true,      // default
+    sync       : true,      // default
+    theme      : 'material', // default
+    tabComments: true,      // default
+    tabHeadings: true       // default
+  },
   basePath: "/docs",
   search: "auto", // default
   maxLevel: 1,
