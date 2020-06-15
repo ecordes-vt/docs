@@ -1,6 +1,6 @@
 # Build with Automate Studio
 
-With Veritone Automate Studio, less-technical users can create their own AI Solutions that incorporate Veritone's cognitive engines and real time services directly into custom business applications.
+With Automate Studio you can easily build AI workflows that leverage hundreds of aiWARE audio, video and text engines - digital workers that review your content for key pieces of information (a name, a face, entity/sentiment, etc.) and make that information searchable and shareable - with no need for Data Science or ML knowledge, DevOps, or heavy coding. 
 
 ## Overview {docsify-ignore}
 
