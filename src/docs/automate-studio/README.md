@@ -1,6 +1,6 @@
 # Build with Automate Studio
 
-With Automate Studio you can easily build AI workflows that leverage hundreds of aiWARE audio, video and text engines - digital workers that review your content for key pieces of information (a name, a face, entity/sentiment, etc.) and make that information searchable and shareable - with no need for Data Science or ML knowledge, DevOps, or heavy coding. 
+With Automate Studio you can easily build AI workflows that leverage hundreds of aiWARE audio, video and text engines - digital workers that review your content for key pieces of information (a name, a face, entity/sentiment, etc.) and make that information searchable and shareable - with no need for Data Science or ML knowledge, DevOps, or heavy coding.
 
 ## Overview {docsify-ignore}
 
