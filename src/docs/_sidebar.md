@@ -208,10 +208,11 @@
       - [Fakebox](/developer/machine-box/boxes/fakebox)
 
   - [Resources: Data Science](developer/resources/)
-  - [Developer Terms & Conditions](developer/terms-and-conditions.md)
 
 - [Benchmark AI Engines](benchmark/)
 
 - [Partner with Veritone](developer/benefits.md)
 
 - [aiWARE Glossary](overview/glossary/)
+
+- [Developer Terms & Conditions](overview/terms-conditions/terms-and-conditions.md)
