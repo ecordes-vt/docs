@@ -1,5 +1,12 @@
 <!-- markdownlint-disable no-inline-html -->
-
+<style>
+section.cover .cover-main {
+    text-align: center;
+    z-index: 1;
+    flex: 1 1 0%;
+    margin: -20px 16px 0px;
+}
+</style>
 <div class="overview">
   <div class="action-bar">
     <div class="wrapper">
