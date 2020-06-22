@@ -2,35 +2,17 @@
 
 # Veritone aiWARE
 
-<div style="display:flex">
-<div style="width: 50%"; display:inline><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-
-<div style="float:right; width: 50%; top: 50%; -ms-transform: translateY(50%);transform: translateY(50%);">
-  <button type="button" style="display:block;" onclick="alert('I <3 APIS!')">EXPLORE API BASICS</button>
-  <br>
-  <button type="button" style="display:block" onclick="alert('I <3 AIWARE!')">LEARN AIWARE IN 15 MINUTES</button>
-</div>
-
-</div>
-
-## What is Veritone aiWARE?
-With Veritone’s aiWARE operating system for AI, leverage tools to develop AI-enabled apps and automated workflows. Use one or combine multiple to architect a custom solution for virtually any use case. The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. 
-
-This approach combined with our proprietary orchestration technology, Conductor, makes it possible to quickly and accurately analyze massive amounts of diverse information — audio, video, image, text, and more — from multiple sources and formats to produce actionable intelligence in a faster, more scalable, and more cost-effective way than humans can.
-
-
-<hr>
-
-## Start building with Veritone aiWARE
-
 <style>
     div.featureBox {
-        border: 1px solid black;
+        -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
         width: 350px;
         height: 100px;
         padding: 7px;
         font-size: 80%;
-        display: flex
+        display: flex;
+        background: #FAFAFA;
     }
 
     div.featureColumn {
@@ -58,12 +40,18 @@ This approach combined with our proprietary orchestration technology, Conductor,
     }
 
     a.link {
+        text-decoration: none;
         bottom: -10px;
         position: relative;
+        font-size:90%;
+        bottom: -5px;
     }
     
     div.joinUsBox {
-        border: 1px solid black;
+        -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        background: #FAFAFA;
         width: 400px;
         height: 100px;
         padding: 7px;
@@ -73,6 +61,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         left: 51%;
         transform: translateX(-50%);
     }
+    
     div.joinUsColumn {
         width: 760px;
     }
@@ -98,7 +87,46 @@ This approach combined with our proprietary orchestration technology, Conductor,
         width: 550px
     }
 
+    .learn-aiware-btn {
+        display: block;
+        background-color: #2F80ED;
+        color: #FFF;
+        width: 300px;
+        height: 30px;
+    }
+
+    .explore-api-basics-btn {
+        display: block;
+        color: #2F80ED;
+        border: 1px solid #2F80ED;
+        width: 300px;
+        height: 30px;
+    }
+
+
+
 </style>
+
+<div style="display:flex;">
+<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+<div style="float:right; width: 200px; padding-top: 125px">
+    <button type="button" class="learn-aiware-btn" onclick="alert('I <3 AIWARE!')">LEARN AIWARE IN 15 MINUTES</button>
+    <br>
+    <button type="button" class="explore-api-basics-btn" onclick="alert('I <3 APIS!')">EXPLORE API BASICS</button>
+</div>
+
+</div>
+
+## What is Veritone aiWARE?
+With Veritone’s aiWARE operating system for AI, leverage tools to develop AI-enabled apps and automated workflows. Use one or combine multiple to architect a custom solution for virtually any use case. The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. 
+
+This approach combined with our proprietary orchestration technology, Conductor, makes it possible to quickly and accurately analyze massive amounts of diverse information — audio, video, image, text, and more — from multiple sources and formats to produce actionable intelligence in a faster, more scalable, and more cost-effective way than humans can.
+
+
+<hr>
+
+## Start building with Veritone aiWARE
 
 <!-- tabs:start -->
 
@@ -290,30 +318,34 @@ This approach combined with our proprietary orchestration technology, Conductor,
 
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
-        May 12th, 2017
+        <div class="date-text">
+            May 12th, 2017
+        </div>
     </div>
     <div class="newsColumn">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
 </div>
 <br>
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
-        May 14th, 1948
+        <div class="date-text">
+            May 14th, 1948
+        </div>
     </div>
     <div class="newsColumn">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
 </div>
 <br>
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
-        July 4th, 1776
+        <div class="date-text">
+            July 4th, 1776
+        </div>
     </div>
     <div class="newsColumn">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
 </div>
 <hr>
-
-

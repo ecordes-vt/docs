@@ -1,49 +1,30 @@
 <!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
 
+# Veritone's Automate Studio
+
 <style>
-
-    div.topVideo {
-        width: 750px
-    }
-
     div.featureBox {
-        border: 1px solid black;
+        -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
         width: 350px;
         height: 100px;
         padding: 7px;
         font-size: 80%;
-        display: flex
-    }
-
-    div.tutorialColumn {
-        width: 760px;
         display: flex;
+        background: #FAFAFA;
     }
 
-    div.buttonColumn {
-        width: 760px;
-        display: flex;
-        margin: 0;
-        position: absolute;
-        left: 335px;
-    }
-
-    div.buttonColumn {
-        width: 760px;
-        display: flex;
-        margin: 0;
-        position: absolute;
-    }
-
-    div.tutorialText {
-        top: -20px;
+    div.featureColumn {
         position:relative;
-        font-size: 80%
+        left:25px;
+        width: 380px;
     }
-
-    div.videoTutorialColumn {
-        width: 250px;
-        padding-right: 10px;
+    
+    div.featureText {
+        width: 75%;
+        position: relative; 
+        top: -40px
     }
 
     div.featureImage {
@@ -66,27 +47,6 @@
         bottom: -10px;
         position: relative;
     }
-    
-    div.joinUsBox {
-        border: 1px solid black;
-        width: 400px;
-        height: 100px;
-        padding: 7px;
-        font-size: 80%;
-        display: flex;
-        position: relative; 
-        left: 51%;
-        transform: translateX(-50%);
-    }
-    div.joinUsColumn {
-        width: 760px;
-    }
-
-    div.joinUsImage {
-        width: 24%;
-        padding: 5px;
-        padding-right: 15px
-    }
 
     div.newsSectionColumn{
         width: 760px;
@@ -103,99 +63,156 @@
         width: 550px
     }
 
+    div.buttonColumn {
+        width: 760px;
+        display: flex;
+        margin: 0;
+        position: absolute;
+        left: 350px;
+    }
+
+    .view-more-templates {
+        display: block;
+        color: #2F80ED;
+        border: 1px solid #2F80ED;
+        width: 200px;
+        height: 30px;
+        left: -50px;
+        position: relative;
+    }
+
+    .learn-automate-studio-btn {
+        display: block;
+        background-color: #2F80ED;
+        color: #FFF;
+        width: 300px;
+        height: 30px;
+    }
+
+    .explore-templates-btn {
+        display: block;
+        color: #2F80ED;
+        border: 1px solid #2F80ED;
+        width: 300px;
+        height: 30px;
+    }
+
+    .date-text {
+        background: white;
+    }
+
 </style>
 
-# {{Topic}} Quick Start
+<div style="display:flex;">
+<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
-<div class="topVideo">
-    <iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<div style="float:right; width: 200px; padding-top: 125px">
+    <button type="button" class="learn-automate-studio-btn" onclick="alert('I <3 AUTOMATE!')">LEARN HOW TO USE AUTOMATE STUDIO</button>
+    <br>
+    <button type="button" class="explore-templates-btn" onclick="alert('I <3 TEMPLATES!')">EXPLORE THE TEMPLATES</button>
 </div>
-<script src="https://player.vimeo.com/api/player.js"></script>
 
+</div>
 
-### Getting Started With {{Topic}}?
-On the aiWARE platform each cognitive artificial intelligence capability is packaged into a container called a cognitive engine. You can write your engine in any language and deploy it as a Docker container. Let us worry about the rest.
+## What is Veritone's Automate Studio?
+With Veritone Automate Studio, less-technical users can create their own AI Solutions that incorporate Veritone's cognitive engines and real time services directly into custom business applications.
 
-Here's the quickest way to get started building your cognitive engine:
-
-1. Pick your cognitive class and capability. If you don't see a matching capability, don't worry. Reach out to Support to discuss how best to implement your custom engine.
-
-2. Create your free account with Veritone Developer, aiWARE's development environment (you will need this in step 3).
-
-3. Use our Engine Toolkit SDK to package, deploy, and test your engine.
-
-4. Once you've packaged and submitted your cognitive engine to Veritone, you're ready to monetize your engine! Review the Path to Monetization guide.
+Automate Studio lets you quickly develop enterprise-grade AI solutions that tap into veritone's 300+ Cognitive engines across more than a dozen classes of AI cognition.
 
 
 <hr>
 
-### Video Tutorial Series: {{ Title of the Series }}
-<div class="tutorialColumn">
-    <div class= "videoTutorialColumn">
-        <div><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-        <div class="tutorialText">
-            Building a Cognitive Engine. Step 0
-        </div>
-    </div>
-    <div class= "videoTutorialColumn">
-        <div><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-        <div class="tutorialText">
-            Building a Cognitive Engine. Step 1
-        </div>
-    </div>
-    <div class= "videoTutorialColumn">
-        <div><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-        <div class="tutorialText">
-            Building a Cognitive Engine. Step 2
-        </div>
-    </div>
-</div>
-<div class="buttonColumn">
-    <button type="button" onclick="alert('Here are some videos!')">VIEW ALL SERIES</button>
-</div>
-<br>
-<hr>
+## Explore Automate Studio Templates
 
-### Video Tutorial Series: {{ Title of the Tutorial }}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut molestie, ex quis egestas ullamcorper, sem eros egestas urna, in venenatis lacus ligula a augue. Sed non eleifend turpis. Duis a facilisis ante.
-<div class="buttonColumnLeft">
-    <button type="button" onclick="alert('Here is the tutorial!')">VIEW TUTORIAL</button>
-</div>
-<br>
 
-### Do More With aiWARE
-<br>
+
 <div style="display: flex">
-    <div class="do-more-aiware-featureColumn">
+    <div class="featureColumn">
         <div class="featureBox"> 
-            <div class="do-more-aiwareFeatureText">
-                <h3>Veritone Automate Studio</h3>
-                <div>Automate workflows and processes using a drag and drop platform.</div>
+            <div class="featureText">
+                <h3>Face Detection</h3>
+                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
                 <a class="link" href="/"> EXPLORE</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Brand Recognition</h3>
+                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
+                <a class="link" href="/"> EXPLORE</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
             </div>
         </div>
     </div>
-    <div class="do-more-aiware-featureColumn">
+    <div class="featureColumn">
         <div class="featureBox"> 
-            <div class="do-more-aiwareFeatureText">
-                <h3>Veritone Benchmark</h3>
-                <div>Compare the performance of different cognitive engines against your own use case.</div>
+            <div class= "featureText">
+                <h3>Content Moderation</h3>
+                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
                 <a class="link" href="/"> EXPLORE</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+        </br>
+        <div class="featureBox">  
+            <div class= "featureText">
+                <h3>Sentiment Extractor</h3>
+                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
+                <a class="link" href="/"> EXPLORE</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
             </div>
         </div>
     </div>
 </div>
 <br>
-<br>
-<div class="joinUsColumn">
-    <div class="joinUsBox"> 
-        <div class= "joinUsImage">
-            <img src="https://s29980.pcdn.co/wp-content/uploads/2017/01/Slack-icon.png" alt="https://s29980.pcdn.co/wp-content/uploads/2017/01/Slack-icon.png">
-        </div>
-        <div class="do-more-aiwareFeatureText">
-            <h3>Join Veritone's Slack Channel</h3>
-            <div>For technical and business-related questions, please reach out to us on Slack. We're here to help!</div>
-            <a class="link" href="/"> JOIN CHANNEL</a>
+<div class="buttonColumn">
+    <button type="button" class="view-more-templates" onclick="alert('Here are some templates!')">VIEW MORE TEMPLATES</button>
+</div>
+
+## Whats New
+
+<div class= "newsSectionColumn">
+    <div class="newsDateColumn">
+        <div class="date-text">
+            May 12th, 2017
         </div>
     </div>
+    <div class="newsColumn">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
 </div>
+<br>
+<div class= "newsSectionColumn">
+    <div class="newsDateColumn">
+        <div class="date-text">
+            May 14th, 1948
+        </div>
+    </div>
+    <div class="newsColumn">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+</div>
+<br>
+<div class= "newsSectionColumn">
+    <div class="newsDateColumn">
+        <div class="date-text">
+            July 4th, 1776
+        </div>
+    </div>
+    <div class="newsColumn">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+</div>
+<hr>
+
+
