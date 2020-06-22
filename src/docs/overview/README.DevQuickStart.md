@@ -28,13 +28,6 @@
         left: 335px;
     }
 
-    div.buttonColumn {
-        width: 760px;
-        display: flex;
-        margin: 0;
-        position: absolute;
-    }
-
     div.tutorialText {
         top: -20px;
         position:relative;
@@ -105,7 +98,7 @@
 
 </style>
 
-# {{Topic}} Quick Start
+# Engine Developer Quick Start
 
 <div class="topVideo">
     <iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe>
@@ -113,7 +106,7 @@
 <script src="https://player.vimeo.com/api/player.js"></script>
 
 
-### Getting Started With {{Topic}}?
+## Getting Started With Engine Development?
 On the aiWARE platform each cognitive artificial intelligence capability is packaged into a container called a cognitive engine. You can write your engine in any language and deploy it as a Docker container. Let us worry about the rest.
 
 Here's the quickest way to get started building your cognitive engine:
@@ -129,7 +122,7 @@ Here's the quickest way to get started building your cognitive engine:
 
 <hr>
 
-### Video Tutorial Series: {{ Title of the Series }}
+## Video Tutorial Series: How to Build a Cognitive Engine
 <div class="tutorialColumn">
     <div class= "videoTutorialColumn">
         <div><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
@@ -153,17 +146,9 @@ Here's the quickest way to get started building your cognitive engine:
 <div class="buttonColumn">
     <button type="button" onclick="alert('Here are some videos!')">VIEW ALL SERIES</button>
 </div>
-<br>
-<hr>
 
-### Video Tutorial Series: {{ Title of the Tutorial }}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut molestie, ex quis egestas ullamcorper, sem eros egestas urna, in venenatis lacus ligula a augue. Sed non eleifend turpis. Duis a facilisis ante.
-<div class="buttonColumnLeft">
-    <button type="button" onclick="alert('Here is the tutorial!')">VIEW TUTORIAL</button>
-</div>
-<br>
 
-### Do More With aiWARE
+## Do More With aiWARE
 <br>
 <div style="display: flex">
     <div class="do-more-aiware-featureColumn">
