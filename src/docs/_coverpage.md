@@ -39,6 +39,12 @@ section.cover .cover-main {
       <div class="divider"></div>
       <div class="news-content">
         <div class="news-item">
+        <div class="news-item-header">06/22/2020</div>
+          <ul>
+            <li><a href="https://docs.veritone.com/#/automate-studio/">Expanded documentation for Automate Studio.</a>.</li>
+            <li><a href="https://docs.veritone.com/#/quickstart/jobs/">New "Working with Jobs" quickstart.</a></li>
+            <li><a href="https://docs.veritone.com/#/overview/aiWARE-in-depth/edge/logs">How to view job and task logs.</a></li>
+          </ul>
         <div class="news-item-header">03/24/2020</div>
           <ul>
             <li><a href="https://docs.veritone.com/#/benchmark/">New documentation tells how you can benchmark your engines with the Benchmark app (beta)</a>.</li>
