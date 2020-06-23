@@ -1,218 +1,74 @@
 <!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
 
-# Veritone's Automate Studio
+# Veritone aiWARE Overview
 
-<style>
-    div.featureBox {
-        -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
-        -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
-        box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
-        width: 350px;
-        height: 100px;
-        padding: 7px;
-        font-size: 80%;
-        display: flex;
-        background: #FAFAFA;
-    }
+**Veritone** is a provider of artificial intelligence (AI) technology and solutions to the media and entertainment, legal and compliance, government, and other industries.
 
-    div.featureColumn {
-        position:relative;
-        left:25px;
-        width: 380px;
-    }
-    
-    div.featureText {
-        width: 75%;
-        position: relative; 
-        top: -40px
-    }
+Our proprietary **aiWARE** platform, much like a traditional operating system, provides a common, open software infrastructure that lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice.
 
-    div.featureImage {
-        width: 25%
-    }
+This approach combined with our proprietary orchestration technology, **Conductor**, makes it possible to quickly and accurately analyze massive amounts of diverse information — audio, video, image, text, and more — from multiple sources and formats to produce actionable intelligence in a faster, more scalable, and more cost-effective way than humans can.
 
-    div.do-more-aiware-featureColumn {
-        width: 380px;
-        position:relative;
-        left:25px
-    }
-    
-    div.do-more-aiwareFeatureText {
-        width: 75%;
-        position: relative; 
-        top: -40px
-    }
+We believe in the wisdom of the crowd.
+That’s why we built a machine learning ecosystem comprised of third-party cognitive engines and native, trainable machine learning models to achieve the breadth of capabilities and depth of specialization needed in AI applications to meet virtually any use case you might have.
+Today, our developer ecosystem supports over 30 different cognitive capabilities and counting within the speech, text, vision, biometrics, audio, data, and transformation cognitive classes.
 
-    a.link {
-        bottom: -10px;
-        position: relative;
-    }
+If you’re looking for a sales channel for your AI software products, to add intelligent features to an existing application, or to leverage robust infrastructure for AI development and custom machine learning model training - Veritone’s aiWARE platform can help.
 
-    div.newsSectionColumn{
-        width: 760px;
-        position:relative;
-        left:10px;
-        display: flex
-    }
-    
-    div.newsDateColumn {
-        width: 150px
-    }
+## Key Platform Features {docsify-ignore}
 
-    div.newsColumn {
-        width: 550px
-    }
+### Ingestion
 
-    div.buttonColumn {
-        width: 760px;
-        display: flex;
-        margin: 0;
-        position: absolute;
-        left: 350px;
-    }
+Veritone aiWARE allows you to ingest both public and private content and media through various adapters from virtually any source, including user computers and network-accessible drives, RSS, Amazon Web Services, YouTube, Google Drive, Dropbox, Vimeo, and FTP.
+The architecture inherently supports simple and rapid addition of new ingestion adapters.
+You can even [write your own](developer/adapters/).
 
-    .view-more-templates {
-        display: block;
-        color: #2F80ED;
-        border: 1px solid #2F80ED;
-        width: 200px;
-        height: 30px;
-        left: -50px;
-        position: relative;
-    }
+### Developer Platform and Ecosystem
 
-    .learn-automate-studio-btn {
-        display: block;
-        background-color: #2F80ED;
-        color: #FFF;
-        width: 300px;
-        height: 30px;
-    }
+[Veritone Developer](developer/) - aiWARE's developer portal - allows developers to bring their ideas to life.
+Veritone Developer connects developers with resources to create, submit, and deploy custom adapters, applications, cognitive engines, and data products into aiWARE.
 
-    .explore-templates-btn {
-        display: block;
-        color: #2F80ED;
-        border: 1px solid #2F80ED;
-        width: 300px;
-        height: 30px;
-    }
+#### A Broad and Growing Cognitive Spectrum
 
-    .date-text {
-        background: white;
-    }
+Veritone aiWARE unlocks unique insights from the sea of unstructured data with a rich and optimized portfolio of cognitive engines.
+Customers can employ multiple AI engines - both within the same category and across different categories - at high rates of cognition.
+Veritone's hundreds of production engines encompass seven cognitive classes and more than 50 categories, including NLP, Computer Vision, Face Recognition, Sentiment, Translation, Audio Fingerprinting, Geolocation, and Content Moderation.
 
-</style>
+### Proprietary Conductor<sup>TM</sup> Orchestration
 
-<div style="display:flex;">
-<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+Proprietary **Veritone Conductor** technology optimizes the cognitive engine selection process by periodically evaluating the cost, speed, and accuracy of each engine to improve results and achieve higher levels of cognition.
+It orchestrates and intelligently routes media to the most appropriate cognitive engines within chosen engine classes to generate the best results.
 
-<div style="float:right; width: 200px; padding-top: 125px">
-    <button type="button" class="learn-automate-studio-btn" onclick="alert('I <3 AUTOMATE!')">LEARN HOW TO USE AUTOMATE STUDIO</button>
-    <br>
-    <button type="button" class="explore-templates-btn" onclick="alert('I <3 TEMPLATES!')">EXPLORE THE TEMPLATES</button>
-</div>
+### A Suite of Proprietary Applications
 
-</div>
+Veritone's [suite of native applications](apps/) enables users to ingest, process, index, manage, search, and share their cognitively-enriched content.
 
-## What is Veritone's Automate Studio?
-With Veritone Automate Studio, less-technical users can create their own AI Solutions that incorporate Veritone's cognitive engines and real time services directly into custom business applications.
+### Philosophy of Open Data
 
-Automate Studio lets you quickly develop enterprise-grade AI solutions that tap into veritone's 300+ Cognitive engines across more than a dozen classes of AI cognition.
+Central to Veritone's value proposition is the philosophy of openly sharing the world's data to accelerate the global pace of machine learning via accessible and ever growing training data sets.
 
+### Flexible Deployment Models
 
-<hr>
+aiWARE offers a variety of implementation and media storage options to match the technical environment and security requirements of clients.
+Current deployment options include Amazon Web Services (AWS), AWS Government, Microsoft Azure Government in the United States, and AWS in the United Kingdom.
+We also offer a hybrid on-premise cloud version of our award-winning solution and a fully on-premise cognition and API suite.
 
-## Explore Automate Studio Templates
+### Process Data in Real-time
 
+aiWARE's engine runtime supports real-time ingestion and processing of content.
+Users can stream live content through the platform, run cognitive engines on the content, and get the results back immediately, as the content continues to stream.
 
+### Expand Your Insights with Structured Data
 
-<div style="display: flex">
-    <div class="featureColumn">
-        <div class="featureBox"> 
-            <div class="featureText">
-                <h3>Face Detection</h3>
-                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
-                <a class="link" href="/"> EXPLORE</a>
-            </div>
-            <div class= "featureImage">
-                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
-            </div>
-        </div>
-        </br>
-        <div class="featureBox"> 
-            <div class="featureText">
-                <h3>Brand Recognition</h3>
-                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
-                <a class="link" href="/"> EXPLORE</a>
-            </div>
-            <div class= "featureImage">
-                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
-            </div>
-        </div>
-    </div>
-    <div class="featureColumn">
-        <div class="featureBox"> 
-            <div class= "featureText">
-                <h3>Content Moderation</h3>
-                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
-                <a class="link" href="/"> EXPLORE</a>
-            </div>
-            <div class= "featureImage">
-                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
-            </div>
-        </div>
-        </br>
-        <div class="featureBox">  
-            <div class= "featureText">
-                <h3>Sentiment Extractor</h3>
-                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
-                <a class="link" href="/"> EXPLORE</a>
-            </div>
-            <div class= "featureImage">
-                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<div class="buttonColumn">
-    <button type="button" class="view-more-templates" onclick="alert('Here are some templates!')">VIEW MORE TEMPLATES</button>
-</div>
+aiWARE allows you to ingest [structured data](developer/data/), either as standalone content or to match up with and enhance another data source.
+Ingest the contents of your private database or use a third-party data feed.
+Use text data to correlate with what's being shown in a video by time.
+The possibilities are within reach.
 
-## Whats New
+### Future-Proof and Ever-Evolving
 
-<div class= "newsSectionColumn">
-    <div class="newsDateColumn">
-        <div class="date-text">
-            May 12th, 2017
-        </div>
-    </div>
-    <div class="newsColumn">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </div>
-</div>
-<br>
-<div class= "newsSectionColumn">
-    <div class="newsDateColumn">
-        <div class="date-text">
-            May 14th, 1948
-        </div>
-    </div>
-    <div class="newsColumn">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </div>
-</div>
-<br>
-<div class= "newsSectionColumn">
-    <div class="newsDateColumn">
-        <div class="date-text">
-            July 4th, 1776
-        </div>
-    </div>
-    <div class="newsColumn">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </div>
-</div>
-<hr>
+The Veritone ecosystem of best-of-breed AI cognitive engines in a single platform eliminates the need for businesses, agencies, and individuals to select one vendor from the landscape of thousands of engines.
+This effectively future-proofs AI technology choices and ensures timely and common access to the latest AI advances.
 
+### Cost-Effective
 
+Veritone's offerings are designed to be affordable to customers of all sizes. (And, you can [get started](quickstart/) for free.) To learn more about Veritone aiWARE pricing, visit [this link](https://www.aiware.com/pricing/).

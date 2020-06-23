@@ -1,25 +1,8 @@
 <!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
 
-# Veritone's Cognitive Technology
+# Veritone's Automate Studio
 
 <style>
-
-    .learn-aiware-btn {
-        display: block;
-        background-color: #2F80ED;
-        color: #FFF;
-        width: 300px;
-        height: 30px;
-    }
-
-    .explore-api-basics-btn {
-        display: block;
-        color: #2F80ED;
-        border: 1px solid #2F80ED;
-        width: 300px;
-        height: 30px;
-    }
-
     div.featureBox {
         -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
         -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
@@ -61,21 +44,8 @@
     }
 
     a.link {
-        text-decoration: none;
         bottom: -10px;
         position: relative;
-        font-size:90%;
-        bottom: -5px;
-    }
-    
-    div.joinUsColumn {
-        width: 760px;
-    }
-
-    div.joinUsImage {
-        width: 24%;
-        padding: 5px;
-        padding-right: 15px
     }
 
     div.newsSectionColumn{
@@ -101,14 +71,30 @@
         left: 350px;
     }
 
-    .view-more-capabilities-btn {
+    .view-more-templates {
         display: block;
         color: #2F80ED;
         border: 1px solid #2F80ED;
-        width: 170px;
+        width: 200px;
         height: 30px;
+        left: -50px;
         position: relative;
-        left: -25px
+    }
+
+    .learn-automate-studio-btn {
+        display: block;
+        background-color: #2F80ED;
+        color: #FFF;
+        width: 300px;
+        height: 30px;
+    }
+
+    .explore-templates-btn {
+        display: block;
+        color: #2F80ED;
+        border: 1px solid #2F80ED;
+        width: 300px;
+        height: 30px;
     }
 
     .date-text {
@@ -126,22 +112,22 @@
 <div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 <div style="float:right; width: 200px; padding-top: 125px">
-    <button type="button" class="learn-aiware-btn" onclick="alert('I <3 ENGINES!')">LEARN TO DEVELOP COGNITIVE ENGINES</button>
+    <button type="button" class="learn-automate-studio-btn" onclick="alert('I <3 AUTOMATE!')">LEARN HOW TO USE AUTOMATE STUDIO</button>
     <br>
-    <button type="button" class="explore-api-basics-btn" onclick="alert('I <3 APIS!')">EXPLORE API BASICS</button>
+    <button type="button" class="explore-templates-btn" onclick="alert('I <3 TEMPLATES!')">EXPLORE THE TEMPLATES</button>
 </div>
 
 </div>
 
-## What is Veritone's Cognitive Technology?
-The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice.
+## What is Veritone's Automate Studio?
+With Veritone Automate Studio, less-technical users can create their own AI Solutions that incorporate Veritone's cognitive engines and real time services directly into custom business applications.
 
-This approach combined with our proprietary orchestration technology, Conductor, makes it possible to quickly and accurately analyze massive amounts of diverse information — audio, video, image, text, and more — from multiple sources and formats to produce actionable intelligence in a faster, more scalable, and more cost-effective way than humans can.
+Automate Studio lets you quickly develop enterprise-grade AI solutions that tap into veritone's 300+ Cognitive engines across more than a dozen classes of AI cognition.
 
 
 <hr>
 
-## Explore aiWARE Cognitive Capabilities
+## Explore Automate Studio Templates
 
 
 
@@ -149,8 +135,8 @@ This approach combined with our proprietary orchestration technology, Conductor,
     <div class="featureColumn">
         <div class="featureBox"> 
             <div class="featureText">
-                <h3>Anomaly Detection</h3>
-                <div>Use any of the existing models to start creating cognitive applications.</div>
+                <h3>Face Detection</h3>
+                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
                 <a class="link" href="/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
@@ -160,19 +146,8 @@ This approach combined with our proprietary orchestration technology, Conductor,
         </br>
         <div class="featureBox"> 
             <div class="featureText">
-                <h3>Content Classification</h3>
-                <div>Use aiWARE to train your models and benchmark their performance.</div>
-                <a class="link" href="/"> EXPLORE</a>
-            </div>
-            <div class= "featureImage">
-                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
-            </div>
-        </div>
-        </br>
-        <div class="featureBox">
-            <div class="featureText">
-                <h3>Entity Extraction</h3>
-                <div>Use aiWARE to run proceses at scale and behine firewalls.</div>
+                <h3>Brand Recognition</h3>
+                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
                 <a class="link" href="/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
@@ -183,8 +158,8 @@ This approach combined with our proprietary orchestration technology, Conductor,
     <div class="featureColumn">
         <div class="featureBox"> 
             <div class= "featureText">
-                <h3>Audio Fingerprinting</h3>
-                <div>Use aiWARE to create custom model based on your own data points.</div>
+                <h3>Content Moderation</h3>
+                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
                 <a class="link" href="/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
@@ -194,19 +169,8 @@ This approach combined with our proprietary orchestration technology, Conductor,
         </br>
         <div class="featureBox">  
             <div class= "featureText">
-                <h3>Correlation</h3>
-                <div>Use your model in production apps and start resolving real technical challenges.</div>
-                <a class="link" href="/"> EXPLORE</a>
-            </div>
-            <div class= "featureImage">
-                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
-            </div>
-        </div>
-        </br>
-        <div class="featureBox">  
-            <div class= "featureText">
-                <h3>Face Detection</h3>
-                <div>Use aiWARE to automate business processes and maximize your speed and output.</div>
+                <h3>Sentiment Extractor</h3>
+                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
                 <a class="link" href="/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
@@ -215,38 +179,10 @@ This approach combined with our proprietary orchestration technology, Conductor,
         </div>
     </div>
 </div>
-<br>
 <br>
 <div class="buttonColumn">
-    <button type="button" class= "view-more-capabilities-btn" onclick="alert('Here are some videos!')">VIEW MORE CAPABILITIES</button>
+    <button type="button" class="view-more-templates" onclick="alert('Here are some templates!')">VIEW MORE TEMPLATES</button>
 </div>
-<br>
-<br>
-<hr>
-
-## Do more with aiWARE
-<br>
-<div style="display: flex">
-    <div class="do-more-aiware-featureColumn">
-        <div class="featureBox"> 
-            <div class="do-more-aiwareFeatureText">
-                <h3>Veritone Automate Studio</h3>
-                <div>Automate workflows and processes using a drag and drop platform.</div>
-                <a class="link" href="/"> EXPLORE</a>
-            </div>
-        </div>
-    </div>
-    <div class="do-more-aiware-featureColumn">
-        <div class="featureBox"> 
-            <div class="do-more-aiwareFeatureText">
-                <h3>Veritone Benchmark</h3>
-                <div>Compare the performance of different cognitive engines against your own use case.</div>
-                <a class="link" href="/"> EXPLORE</a>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 ## Whats New
 
@@ -283,4 +219,5 @@ This approach combined with our proprietary orchestration technology, Conductor,
     </div>
 </div>
 <hr>
+
 

@@ -103,6 +103,15 @@
         height: 30px;
     }
 
+    .date-text {
+        background-color: #d9d9d7;
+        width: 110px;
+        border-radius: 10px;
+        font-size: 95%;
+        padding: 4px 6px;  
+        text-align: center
+    }
+
 
 
 </style>
