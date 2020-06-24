@@ -4,6 +4,13 @@
     "object",
     "geolocation"
   ],
+  "comment1": "This support fixed location for the media such as filming this video at one specific spot",
+  "gps": [
+    {
+      "latitude": 48.858461,
+      "longitude": 2.294351
+    }
+  ],
   "series": [
     {
       "startTimeMs": 5000,
@@ -11,12 +18,14 @@
       "object": {
         "type": "object",
         "label": "Eiffel Tower",
+        "comment2": "This support a moving GPS location based on time",
         "gps": [
           {
             "latitude": 48.858461,
             "longitude": 2.294351
           }
         ]
+
       }
     }
   ]
