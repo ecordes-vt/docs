@@ -48,93 +48,109 @@ Next, click on the “Submit” button next to the build, and then when the stat
 
 ![developer-builds](automate-3-developerbuilds.gif)
 
-Right now, the Developer app UI does not support the creation of new Automate Engines (we are working on it!). The easiest way to create a new Automation Engine is via the GraphQL API in api.veritone.com/v3/graphiql.
+## Step 6: Run your Engine and view the results
 
-?> If you are using the “My Little Hello World” flow engine in your org, you can skip this step for now.
+In this section, we are going to create an Engine job that will allow us to send our own payloads to a custom endpoint.
 
-```javascript
-mutation createFlowEng{
-  createEngine(input:{
-    name:"<Write a name for your engine>"
-    description:"Test flow engine for determining if batch right off the bat works"
-    categoryId:"c5458876-43d2-41e8-a340-f734702df04a"
-    # CategoryId for the Automation engine category
-    deploymentModel:NonNetworkIsolated
-    edgeVersion:3
-    libraryRequired:false
-    useCases:["batch testing","flow testing"]
-    industries:["Media and entertainment","Other"]
-    testingDetails:{
-      email:"<write an email you test runs to be sent to>"
-      mediaFileUri:""
-      #Optional field that is left empty in this example
-    }
-    isPublic:false
-    manifest:{
-      engineId:"12db1483-70d6-4b5a-8a65-fe310017f8f9"
-      runtime:"nodeRed"
-      engineMode:"batch"
-      supportedInputTypes: ["application/json"]
-    }
-  }){
-    id
-    name
-  }
-}
-```
+Once we have created this engine job, we can then run our flow engine by sending custom payloads to the endpoint generated when we created the engine job. Let's do it!
 
-## Step 6: Run and view your engine results
-
-You can run your new Engine and view the results in 2 easy steps:
 First, run this mutation in the [Veritone GraphiQL tool](https://api.veritone.com/v3/graphiql)
 
-```javascript
-mutation runYourFlow {
+```graphql
+mutation createYourFlowEngineJob {
   createJob(input: {
-    clusterId:"rt-1cdc1d6d-a500-467a-bc46-d3c5bf3d6901"
-    #V3 Prod cluster
-    targetId:"952071774"
-    #this is the temporalDataObject/Media File ID -- copy+paste your own TDO ID
-    tasks:[
-      {
-        engineId:"<Input the Engine ID>"
-      }
-    ]
-  }) {
-    id
-    #Make sure you save this ID when you run the createJob mutation!!
-    tasks {
-      records {
-        id
-      }
+    target: {
+      startDateTime:1574311000
+       stopDateTime: 1574315000
     }
-  }
-}
-```
-
-You can monitor and the progress of your Flow engine task using either the CMS application, or by running this query:
-
-```javascript
-query flowJob{
-  job(id:"<job id>"){
-  # Get the job id after running the createJob mutation above and use it here
+    ##V3 Prod Cluster
+    clusterId :"rt-1cdc1d6d-a500-467a-bc46-d3c5bf3d6901"
+    ##Tasks with IOFolders
+    tasks: [
+        {
+          # "correlationTaskId": "PA_TASK_ID",
+          # "dueDateTime": "0001-01-01T00:00:00Z",
+          engineId: "bb544ade-461c-11ea-8604-a3b3a83f5182"
+          ioFolders: [
+            {
+              referenceId: "PA_OUTPUT"
+              mode: chunk
+              type: output
+            }
+          ]
+        }
+        {
+          # This is the task that is an instance of the flow engine you created in Automate Studio!
+          engineId: "<your flow engine id!>"
+          ioFolders: [
+            {
+              referenceId: "MY_INPUT"
+              mode: chunk
+              type: input
+            }
+          ]
+        }
+      ]
+    ##Routes : A route connect a parent output folder to a child input folder
+    routes: [
+        {
+          ## HTTP Push Adapter route
+          # The endpoint MUST be a UUID, you can generate one from a website
+          endpoint: "< YOUR ENDPOINT GUID >"
+          parentIoFolderReferenceId: "PA_OUTPUT"
+          childIoFolderReferenceId: "MY_INPUT"
+          options: {}
+        }
+      ]
+  }) {
+    targetId
     id
-    status
-    tasks{
+    targetId
+    clusterId
+    tasks {
       records{
         id
-        taskOutput
+        engineId
+        payload
+        taskPayload
         status
-        engine{
-          name
+        output
+        ioFolders {
+          referenceId
+          type
+          mode
         }
       }
     }
+    routes {
+      parentIoFolderReferenceId
+      childIoFolderReferenceId
+    }
   }
 }
 ```
 
-Secondly, navigate to the CMS app using the app switcher (top right), and select the file as seen in the GIF below. When the engine completes, you can view a new output of that engine as well as a notification sent to the email of your Veritone account!
+Secondly, we can now send our own payloads to this REST endpoint:
+
+?> You can make REST requests with the cURL program in your computer's Terminal, or you can use a GUI app like Postman or Insomnia
+
+```cURL
+Method: POST
+Url: https://controller-v3f.aws-prod-rt.veritone.com/edge/v1/proc/endpoint/{Your Endpoint GUID here!}
+
+Body:
+{ "edgePayload":
+  {
+  "tdoId":"<File ID from your org>",
+  "sendTo":"<your email>",
+  "firstName":"<your firstname>"
+  }
+}
+```
+
+It is only necessary to make POST request to your custom endpoint with this sample payload. The logic we constructed in the flow earlier was created to handle this payload and serve as an example of all the cool things we can build orchestrating our own cognition in the flow engine!
+
+Once a payload body was submitted to the REST endpoint, navigate to CMS app using the app switcher (top right), and select the file as seen in the GIF below. When the engine completes, you can view a new output of that engine as well as a notification sent to the email of your Veritone account!
 
 ![node-hover](automate-4-cms-runflow.gif)
 

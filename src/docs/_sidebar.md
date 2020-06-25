@@ -14,13 +14,14 @@
   - [How to get started?](quickstart/?id=quickstarts)
   - [aiWARE Architecture](overview/architecture-overview/)
   - [Veritone Applications](apps/)
-
   - [Architecture Overview](overview/architecture-overview/)
   - [Working with Self-Hosted aiWARE](overview/aiWARE-in-depth/)
     - [Installation](overview/aiWARE-in-depth/edge-installation)
     - [Controller](overview/aiWARE-in-depth/controller)
     - [Engines](overview/aiWARE-in-depth/engines)
+      - [Native Engines](overview/aiWARE-in-depth/edge/base-engines)
     - [Job Processing](overview/aiWARE-in-depth/job-processing)
+    - [Viewing Job and Task Logs](overview/aiWARE-in-depth/edge/logs)
     - [File System](overview/aiWARE-in-depth/file-system)
     - [Stream Ingestor 2](overview/aiWARE-in-depth/stream-ingestor)
 
@@ -145,7 +146,7 @@
       - [Object Detection](developer/engines/cognitive/vision/object-detection/)
       - [Text Recognition (OCR)](developer/engines/cognitive/vision/text-recognition/)
   - [Overview: **Correlation Engines**](developer/engines/correlation/)
-  - [Engine Developer's Toolkit (V3F)](developer/edge/engines)
+  - [Engine Developer's Toolkit (V3F)](overview/aiWARE-in-depth/edge/engines)
   - [Tutorial: Build Your Own Engine](developer/engines/tutorial/)
     - [Step 0 - Introduction and Project Setup](developer/engines/tutorial/)
     - [Step 1 - Register Your Project with Veritone](developer/engines/tutorial/engine-tutorial-step-1.md)
@@ -211,10 +212,11 @@
       - [Fakebox](/developer/machine-box/boxes/fakebox)
 
   - [Resources: Data Science](developer/resources/)
-  - [Developer Terms & Conditions](developer/terms-and-conditions.md)
 
 - [Benchmark AI Engines](benchmark/)
 
 - [Partner with Veritone](developer/benefits.md)
 
 - [aiWARE Glossary](overview/glossary/)
+
+- [Developer Terms & Conditions](overview/terms-conditions/terms-and-conditions.md)
