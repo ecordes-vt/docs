@@ -1,60 +1,207 @@
-<!-- markdownlint-disable no-inline-html -->
-<div class="quickstart engine-developer">
+<!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
 
-<img class="banner" src="docs/quickstart/_media/banner-engine-developer.png" />
+<style>
 
-# Engine Development
+    div.topVideo {
+        width: 820px; 
+        height: 300px;
+        display: flex;
+    }
 
-Looking for a sales channel for your custom machine learning models? Veritone's aiWARE platform offers immediate visibility for your AI tech and a fast track to monetization. Let us worry about runtime infrastructure, scalability, and customer recruitment so you can focus on what you do best: solving hard problems with AI.
+    div.featureBox {
+        -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        width: 350px;
+        height: 100px;
+        padding: 7px;
+        font-size: 80%;
+        display: flex;
+        background: #FAFAFA;
+    }
 
-- Leverage a proven, reliable runtime platform.
-- Gain exposure to a diverse and growing customer-base - no sales or marketing on your part needed.
-- Receive payment for every hour of data processed by Veritone aiWARE customers through your machine learning models
+    div.tutorialColumn {
+        width: 760px;
+        display: flex;
+        position: relative;
+        left: 50px
+    }
 
-## Let's Partner
+    div.buttonColumn {
+        width: 760px;
+        display: flex;
+        margin: 0;
+        position: absolute;
+        left: 335px;
+    }
 
-Ready to partner? Let's get the conversation started: follow the steps below to package and deploy your AI tech via the Veritone Developer application for review by the Veritone Ecosystem Team. Once approved and commercial terms agreed upon, launch your tech publicly to Veritone aiWARE customers.
+    div.tutorialText {
+        top: -20px;
+        position:relative;
+        font-size: 80%
+    }
 
-## Start Here
+    div.videoTutorialColumn {
+        width: 250px;
+        padding-right: 50px;
+    }
 
-In the aiWARE platform, cognitive runtimes are called cognitive engines. Write your engine in any language. Deploy it as a Docker container. Let us worry about the rest.
+    div.featureImage {
+        width: 25%
+    }
+
+    div.do-more-aiware-featureColumn {
+        position:relative;
+        left:25px;
+        width: 400px;
+    }
+    
+    div.do-more-aiwareFeatureText {
+        width: 75%;
+        position: relative; 
+        top: -40px
+    }
+
+    a.link {
+        bottom: -10px;
+        position: relative;
+    }
+    
+    div.joinUsBox {
+        -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        background: #FAFAFA;
+        width: 400px;
+        height: 100px;
+        padding: 7px;
+        font-size: 80%;
+        display: flex;
+        position: relative; 
+        left: 400px;
+        transform: translateX(-50%);
+    }
+    div.joinUsColumn {
+        width: 760px;
+    }
+
+    div.joinUsImage {
+        width: 24%;
+        padding: 5px;
+        padding-right: 15px
+    }
+
+    div.newsSectionColumn{
+        width: 760px;
+        position:relative;
+        left:10px;
+        display: flex
+    }
+    
+    div.newsDateColumn {
+        width: 150px
+    }
+
+    div.newsColumn {
+        width: 550px
+    }
+
+    .viewAllSeries {
+        display: block;
+        color: #2F80ED;
+        border: 1px solid #2F80ED;
+        width: 200px;
+        height: 30px;
+        left: -20px;
+        position: relative;
+    }
+
+</style>
+
+# Engine Developer Quick Start
+
+
+<div class="topVideo">
+    <iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+
+## Getting Started With Engine Development?
+On the aiWARE platform each cognitive artificial intelligence capability is packaged into a container called a cognitive engine. You can write your engine in any language and deploy it as a Docker container. Let us worry about the rest.
 
 Here's the quickest way to get started building your cognitive engine:
 
-1. Pick your [cognitive class and capability](/developer/engines/cognitive/). If you don't see a matching capability, don't worry. Reach out to Support to discuss how best to implement your custom engine.
+1. Pick your cognitive class and capability. If you don't see a matching capability, don't worry. Reach out to Support to discuss how best to implement your custom engine.
 
-2. Create your free account with [Veritone Developer](https://www.veritone.com/devsignup/), aiWARE's development environment (you will need this in step 3).
+2. Create your free account with Veritone Developer, aiWARE's development environment (you will need this in step 3).
 
-3. Use our [Engine Toolkit SDK](/developer/engines/toolkit/?id=using-the-engine-toolkit-beta) to package, deploy, and test your engine.
+3. Use our Engine Toolkit SDK to package, deploy, and test your engine.
 
-4. Once you've packaged and submitted your cognitive engine to Veritone, you're ready to monetize your engine! Review the [Path to Monetization](/developer/engines/getting-started/path-to-monetization/) guide.
+4. Once you've packaged and submitted your cognitive engine to Veritone, you're ready to monetize your engine! Review the Path to Monetization guide.
 
-For technical and business-related questions, please reach out to us on [Slack](https://chat.veritone.com/). We're here to help!
 
-## Helpful Resources
+<hr>
 
-### Machine Learning
+## Video Tutorial Series: How to Build a Cognitive Engine
+<div class="tutorialColumn">
+    <div class= "videoTutorialColumn">
+        <div><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        <div class="tutorialText">
+            Building a Cognitive Engine. Step 0
+        </div>
+    </div>
+    <div class= "videoTutorialColumn">
+        <div><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        <div class="tutorialText">
+            Building a Cognitive Engine. Step 1
+        </div>
+    </div>
+    <div class= "videoTutorialColumn">
+        <div><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        <div class="tutorialText">
+            Building a Cognitive Engine. Step 2
+        </div>
+    </div>
+</div>
+<div class="buttonColumn">
+    <button type="button" class="viewAllSeries" onclick="alert('Here are some videos!')">VIEW ALL SERIES</button>
+</div>
 
-See our [Getting Started in Data Science](developer/resources/) page.
 
-### APIs and Standards
-
-By meeting simple JSON-based input/output contracts, your engines achieve unparalleled flexibility and interoperability via Veritone's GraphQL-based API.
-
-- See our API documentation: <https://docs.veritone.com/#/apis/>
-- Veritone's Data Model: <https://docs.veritone.com/#/apis/data-model>
-- See our schema: <https://api.veritone.com/v3/graphqldocs>
-- The VTN Standard ensures engine interoperability: <https://docs.veritone.com/#/developer/engines/engine-output>
-
-### Tutorials
-
-Get up to speed quickly with tutorials on GraphQL API Basics, Error Handling, Uploading, and Processing Files, Authentication, Posting Engine Results, and more. See all tutorials [here](/apis/tutorials/).
-
-Check Out More Developer Guides!
-Engine development not exactly what you're looking for? Want to explore more AI-powered solutions you can build on aiWARE? Check out these additional guides:
-
-- [ML Integrator](/quickstart/ml-integrator) - Integrate aiWARE's cognitive capabilities into your platform or app
-- [ML Explorer](/quickstart/ml-explorer) - Deploy machine learning in your standalone app
-- [App Developer](/quickstart/app-developer) - Build a bespoke app with the configurable aiWARE AI infrastructure and ecosystem of cognitive capabilities
-
+## Do More With aiWARE
+<br>
+<div style="display: flex">
+    <div class="do-more-aiware-featureColumn">
+        <div class="featureBox"> 
+            <div class="do-more-aiwareFeatureText">
+                <h3>Veritone Automate Studio</h3>
+                <div>Automate workflows and processes using a drag and drop platform.</div>
+                <a class="link" href="/"> EXPLORE</a>
+            </div>
+        </div>
+    </div>
+    <div class="do-more-aiware-featureColumn">
+        <div class="featureBox"> 
+            <div class="do-more-aiwareFeatureText">
+                <h3>Veritone Benchmark</h3>
+                <div>Compare the performance of different cognitive engines against your own use case.</div>
+                <a class="link" href="/"> EXPLORE</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="joinUsColumn">
+    <div class="joinUsBox"> 
+        <div class= "joinUsImage">
+            <img src="https://s29980.pcdn.co/wp-content/uploads/2017/01/Slack-icon.png" alt="https://s29980.pcdn.co/wp-content/uploads/2017/01/Slack-icon.png">
+        </div>
+        <div class="do-more-aiwareFeatureText">
+            <h3>Join Veritone's Slack Channel</h3>
+            <div>For technical and business-related questions, please reach out to us on Slack. We're here to help!</div>
+            <a class="link" href="/"> JOIN CHANNEL</a>
+        </div>
+    </div>
 </div>

@@ -4,6 +4,9 @@
 
 <a href="/"><div class="logo"><img src="https://static.veritone.com/assets/favicon/favicon.ico" alt="Veritone logo"/><span class="logo-text">Veritone Docs<span></div></a>
 
+- [Cognitive Technology](new/README.cognitiveTech.md)
+- [Example Topic](new/README.topic.md)
+
 - [What is Veritone aiWARE?](overview/)
   
   - [Build with aiWARE](developer/)

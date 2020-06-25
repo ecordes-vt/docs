@@ -1,74 +1,370 @@
 <!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
 
-# Veritone aiWARE Overview
+# Veritone aiWARE
 
-**Veritone** is a provider of artificial intelligence (AI) technology and solutions to the media and entertainment, legal and compliance, government, and other industries.
+<style>
+    div.featureBox {
+        -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        width: 350px;
+        height: 100px;
+        padding: 7px;
+        font-size: 80%;
+        display: flex;
+        background: #FAFAFA;
+    }
 
-Our proprietary **aiWARE** platform, much like a traditional operating system, provides a common, open software infrastructure that lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice.
+    div.featureColumn {
+        position:relative;
+        left:25px;
+        width: 400px;
+    }
+    
+    div.featureText {
+        width: 75%
+    }
 
-This approach combined with our proprietary orchestration technology, **Conductor**, makes it possible to quickly and accurately analyze massive amounts of diverse information — audio, video, image, text, and more — from multiple sources and formats to produce actionable intelligence in a faster, more scalable, and more cost-effective way than humans can.
+    div.featureImage {
+        width: 25%
+    }
 
-We believe in the wisdom of the crowd.
-That’s why we built a machine learning ecosystem comprised of third-party cognitive engines and native, trainable machine learning models to achieve the breadth of capabilities and depth of specialization needed in AI applications to meet virtually any use case you might have.
-Today, our developer ecosystem supports over 30 different cognitive capabilities and counting within the speech, text, vision, biometrics, audio, data, and transformation cognitive classes.
+    div.do-more-aiware-featureColumn {
+        position:relative;
+        left:50px;
+        width: 400px;
+    }
+    
+    div.do-more-aiwareFeatureText {
+        width: 75%;
+        position: relative; 
+        top: -40px
+    }
 
-If you’re looking for a sales channel for your AI software products, to add intelligent features to an existing application, or to leverage robust infrastructure for AI development and custom machine learning model training - Veritone’s aiWARE platform can help.
+    a.link {
+        text-decoration: none;
+        bottom: -10px;
+        position: relative;
+        font-size:90%;
+        bottom: -5px;
+    }
+    
+    div.joinUsBox {
+        -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
+        background: #FAFAFA;
+        width: 400px;
+        height: 100px;
+        padding: 7px;
+        font-size: 80%;
+        display: flex;
+        position: relative; 
+        left: 425px;
+        transform: translateX(-50%);
+    }
+    
+    div.joinUsColumn {
+        width: 760px;
+    }
 
-## Key Platform Features {docsify-ignore}
+    div.joinUsImage {
+        width: 24%;
+        padding: 5px;
+        padding-right: 15px
+    }
 
-### Ingestion
+    div.newsSectionColumn{
+        width: 760px;
+        position:relative;
+        left:10px;
+        display: flex
+    }
+    
+    div.newsDateColumn {
+        width: 150px
+    }
 
-Veritone aiWARE allows you to ingest both public and private content and media through various adapters from virtually any source, including user computers and network-accessible drives, RSS, Amazon Web Services, YouTube, Google Drive, Dropbox, Vimeo, and FTP.
-The architecture inherently supports simple and rapid addition of new ingestion adapters.
-You can even [write your own](developer/adapters/).
+    div.newsColumn {
+        width: 550px
+    }
 
-### Developer Platform and Ecosystem
+    .learn-aiware-btn {
+        display: block;
+        background-color: #2F80ED;
+        color: #FFF;
+        width: 300px;
+        height: 30px;
+    }
 
-[Veritone Developer](developer/) - aiWARE's developer portal - allows developers to bring their ideas to life.
-Veritone Developer connects developers with resources to create, submit, and deploy custom adapters, applications, cognitive engines, and data products into aiWARE.
+    .explore-api-basics-btn {
+        display: block;
+        color: #2F80ED;
+        border: 1px solid #2F80ED;
+        width: 300px;
+        height: 30px;
+    }
 
-#### A Broad and Growing Cognitive Spectrum
+    .date-text {
+        background-color: #d9d9d7;
+        width: 110px;
+        border-radius: 10px;
+        font-size: 95%;
+        padding: 4px 6px;  
+        text-align: center
+    }
 
-Veritone aiWARE unlocks unique insights from the sea of unstructured data with a rich and optimized portfolio of cognitive engines.
-Customers can employ multiple AI engines - both within the same category and across different categories - at high rates of cognition.
-Veritone's hundreds of production engines encompass seven cognitive classes and more than 50 categories, including NLP, Computer Vision, Face Recognition, Sentiment, Translation, Audio Fingerprinting, Geolocation, and Content Moderation.
 
-### Proprietary Conductor<sup>TM</sup> Orchestration
 
-Proprietary **Veritone Conductor** technology optimizes the cognitive engine selection process by periodically evaluating the cost, speed, and accuracy of each engine to improve results and achieve higher levels of cognition.
-It orchestrates and intelligently routes media to the most appropriate cognitive engines within chosen engine classes to generate the best results.
+</style>
 
-### A Suite of Proprietary Applications
+<div style="display:flex;">
+<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
-Veritone's [suite of native applications](apps/) enables users to ingest, process, index, manage, search, and share their cognitively-enriched content.
+<div style="float:right; width: 200px; padding-top: 125px">
+    <button type="button" class="learn-aiware-btn" onclick="alert('I <3 AIWARE!')">LEARN AIWARE IN 15 MINUTES</button>
+    <br>
+    <button type="button" class="explore-api-basics-btn" onclick="alert('I <3 APIS!')">EXPLORE API BASICS</button>
+</div>
 
-### Philosophy of Open Data
+</div>
 
-Central to Veritone's value proposition is the philosophy of openly sharing the world's data to accelerate the global pace of machine learning via accessible and ever growing training data sets.
+## What is Veritone aiWARE?
+With Veritone’s aiWARE operating system for AI, leverage tools to develop AI-enabled apps and automated workflows. Use one or combine multiple to architect a custom solution for virtually any use case. The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. 
 
-### Flexible Deployment Models
+This approach combined with our proprietary orchestration technology, Conductor, makes it possible to quickly and accurately analyze massive amounts of diverse information — audio, video, image, text, and more — from multiple sources and formats to produce actionable intelligence in a faster, more scalable, and more cost-effective way than humans can.
 
-aiWARE offers a variety of implementation and media storage options to match the technical environment and security requirements of clients.
-Current deployment options include Amazon Web Services (AWS), AWS Government, Microsoft Azure Government in the United States, and AWS in the United Kingdom.
-We also offer a hybrid on-premise cloud version of our award-winning solution and a fully on-premise cognition and API suite.
 
-### Process Data in Real-time
+<hr>
 
-aiWARE's engine runtime supports real-time ingestion and processing of content.
-Users can stream live content through the platform, run cognitive engines on the content, and get the results back immediately, as the content continues to stream.
+## Start building with Veritone aiWARE
 
-### Expand Your Insights with Structured Data
+<!-- tabs:start -->
 
-aiWARE allows you to ingest [structured data](developer/data/), either as standalone content or to match up with and enhance another data source.
-Ingest the contents of your private database or use a third-party data feed.
-Use text data to correlate with what's being shown in a video by time.
-The possibilities are within reach.
+#### ** WHAT ARE YOU TRYING TO ACHIEVE **
 
-### Future-Proof and Ever-Evolving
+<div style="display: flex">
+    <div class="featureColumn">
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Use existing model</h3>
+                <div>Use any of the existing models to start creating cognitive applications.</div>
+                <a class="link" href="/"> GET STARTED</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Train a model</h3>
+                <div>Use aiWARE to train your models and benchmark their performance.</div>
+                <a class="link" href="/"> GET STARTED</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox">
+            <div class="featureText">
+                <h3>Run processes at scale</h3>
+                <div>Use aiWARE to run proceses at scale and behine firewalls.</div>
+                <a class="link" href="/"> GET STARTED</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+    </div>
+    <div class="featureColumn">
+        <div class="featureBox"> 
+            <div class= "featureText">
+                <h3>Build a custom model</h3>
+                <div>Use aiWARE to create custom model based on your own data points.</div>
+                <a class="link" href="/"> GET STARTED</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox">  
+            <div class= "featureText">
+                <h3>Integrate a model into my app</h3>
+                <div>Use your model in production apps and start resolving real technical challenges.</div>
+                <a class="link" href="/"> GET STARTED</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox">  
+            <div class= "featureText">
+                <h3>Automate a process</h3>
+                <div>Use aiWARE to automate business processes and maximize your speed and output.</div>
+                <a class="link" href="/"> GET STARTED</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+    </div>
+</div>
 
-The Veritone ecosystem of best-of-breed AI cognitive engines in a single platform eliminates the need for businesses, agencies, and individuals to select one vendor from the landscape of thousands of engines.
-This effectively future-proofs AI technology choices and ensures timely and common access to the latest AI advances.
+#### ** WHAT'S YOUR ROLE? **
 
-### Cost-Effective
+<div style="display: flex">
+    <div class="featureColumn">
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Developer</h3>
+                <div>Use any of the existing models to start creating cognitive applications.</div>
+                <a class="link" href="/"> GET STARTED</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Analyst</h3>
+                <div>Use aiWARE to train your models and benchmark their performance.</div>
+                <a class="link" href="/"> GET STARTED</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox">
+            <div class="featureText">
+                <h3>Product Manager</h3>
+                <div>Use aiWARE to run proceses at scale and behine firewalls.</div>
+                <a class="link" href="/"> GET STARTED</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+    </div>
+    <div class="featureColumn">
+        <div class="featureBox"> 
+            <div class= "featureText">
+                <h3>Data Scientist</h3>
+                <div>Use aiWARE to create custom model based on your own data points.</div>
+                <a class="link" href="/"> GET STARTED</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox">  
+            <div class= "featureText">
+                <h3>Solutions Architect</h3>
+                <div>Use your model in production apps and start resolving real technical challenges.</div>
+                <a class="link" href="/"> GET STARTED</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox">  
+            <div class= "featureText">
+                <h3>Operations</h3>
+                <div>Use aiWARE to automate business processes and maximize your speed and output.</div>
+                <a class="link" href="/"> GET STARTED</a>
+            </div>
+            <div class= "featureImage">
+                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+            </div>
+        </div>
+    </div>
+</div>
 
-Veritone's offerings are designed to be affordable to customers of all sizes. (And, you can [get started](quickstart/) for free.) To learn more about Veritone aiWARE pricing, visit [this link](https://www.aiware.com/pricing/).
+<!-- tabs:end -->
+
+## Do more with aiWARE
+<br>
+<div style="display: flex">
+    <div class="do-more-aiware-featureColumn">
+        <div class="featureBox"> 
+            <div class="do-more-aiwareFeatureText">
+                <h3>Veritone Automate Studio</h3>
+                <div>Automate workflows and processes using a drag and drop platform.</div>
+                <a class="link" href="/"> EXPLORE</a>
+            </div>
+        </div>
+    </div>
+    <div class="do-more-aiware-featureColumn">
+        <div class="featureBox"> 
+            <div class="do-more-aiwareFeatureText">
+                <h3>Veritone Benchmark</h3>
+                <div>Compare the performance of different cognitive engines against your own use case.</div>
+                <a class="link" href="/"> EXPLORE</a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="joinUsColumn">
+    <div class="joinUsBox"> 
+        <div class= "joinUsImage">
+            <img src="https://s29980.pcdn.co/wp-content/uploads/2017/01/Slack-icon.png" alt="https://s29980.pcdn.co/wp-content/uploads/2017/01/Slack-icon.png">
+        </div>
+        <div class="do-more-aiwareFeatureText">
+            <h3>Join Veritone's Slack Channel</h3>
+            <div>For technical and business-related questions, please reach out to us on Slack. We're here to help!</div>
+            <a class="link" href="/"> JOIN CHANNEL</a>
+        </div>
+    </div>
+</div>
+
+## Whats New
+
+<div class= "newsSectionColumn">
+    <div class="newsDateColumn">
+        <div class="date-text">
+            May 12th, 2017
+        </div>
+    </div>
+    <div class="newsColumn">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+</div>
+<br>
+<div class= "newsSectionColumn">
+    <div class="newsDateColumn">
+        <div class="date-text">
+            May 14th, 1948
+        </div>
+    </div>
+    <div class="newsColumn">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+</div>
+<br>
+<div class= "newsSectionColumn">
+    <div class="newsDateColumn">
+        <div class="date-text">
+            July 4th, 1776
+        </div>
+    </div>
+    <div class="newsColumn">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+</div>
+<hr>

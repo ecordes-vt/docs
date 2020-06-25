@@ -35,7 +35,7 @@
     div.featureColumn {
         position:relative;
         left:25px;
-        width: 380px;
+        width: 400px;
     }
     
     div.featureText {
@@ -49,9 +49,9 @@
     }
 
     div.do-more-aiware-featureColumn {
-        width: 380px;
         position:relative;
-        left:25px
+        left:25px;
+        width: 400px;
     }
     
     div.do-more-aiwareFeatureText {
@@ -108,7 +108,7 @@
         width: 170px;
         height: 30px;
         position: relative;
-        left: -25px
+        left: -20px
     }
 
     .date-text {
@@ -143,7 +143,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
 
 ## Explore aiWARE Cognitive Capabilities
 
-
+<br>
 
 <div style="display: flex">
     <div class="featureColumn">
@@ -158,6 +158,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             </div>
         </div>
         </br>
+        </br>
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Content Classification</h3>
@@ -168,6 +169,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
             </div>
         </div>
+        </br>
         </br>
         <div class="featureBox">
             <div class="featureText">
@@ -192,6 +194,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             </div>
         </div>
         </br>
+        </br>
         <div class="featureBox">  
             <div class= "featureText">
                 <h3>Correlation</h3>
@@ -202,6 +205,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
             </div>
         </div>
+        </br>
         </br>
         <div class="featureBox">  
             <div class= "featureText">

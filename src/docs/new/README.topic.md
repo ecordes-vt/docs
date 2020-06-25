@@ -5,6 +5,8 @@
     div.topVideo {
         width: 650px; 
         height: 300px;
+        left: 25px;
+        position: relative;
         display: flex;
     }
 
@@ -48,7 +50,7 @@
 
     div.videoTutorialColumn {
         width: 250px;
-        padding-right: 10px;
+        padding-right: 50px;
     }
 
     div.featureImage {
@@ -118,7 +120,7 @@
         width: 150px;
         height: 30px;
         position: relative;
-        left: -20px;
+        left: -45px;
     }
 
     .view-tutorial-btn {
