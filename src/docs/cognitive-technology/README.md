@@ -133,7 +133,7 @@
 
 </div>
 
-## What is Veritone's Cognitive Technology?
+## What is Veritone's Cognitive Technology? {docsify-ignore}
 The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice.
 
 This approach combined with our proprietary orchestration technology, Conductor, makes it possible to quickly and accurately analyze massive amounts of diverse information — audio, video, image, text, and more — from multiple sources and formats to produce actionable intelligence in a faster, more scalable, and more cost-effective way than humans can.
@@ -141,7 +141,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
 
 <hr>
 
-## Explore aiWARE Cognitive Capabilities
+## Explore aiWARE Cognitive Capabilities {docsify-ignore}
 
 <br>
 
@@ -228,7 +228,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
 <br>
 <hr>
 
-## Do more with aiWARE
+## Do more with aiWARE {docsify-ignore}
 <br>
 <div style="display: flex">
     <div class="do-more-aiware-featureColumn">
@@ -252,7 +252,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
 </div>
 
 
-## Whats New
+## Whats New {docsify-ignore}
 
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">

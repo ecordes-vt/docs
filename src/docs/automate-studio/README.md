@@ -119,7 +119,7 @@
 
 </div>
 
-## What is Veritone's Automate Studio?
+## What is Veritone's Automate Studio? {docsify-ignore}
 With Veritone Automate Studio, less-technical users can create their own AI Solutions that incorporate Veritone's cognitive engines and real time services directly into custom business applications.
 
 Automate Studio lets you quickly develop enterprise-grade AI solutions that tap into veritone's 300+ Cognitive engines across more than a dozen classes of AI cognition.
@@ -127,7 +127,7 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
 
 <hr>
 
-## Explore Automate Studio Templates
+## Explore Automate Studio Templates {docsify-ignore}
 
 
 
@@ -187,7 +187,7 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
     <button type="button" class="view-more-templates" onclick="alert('Here are some templates!')">VIEW MORE TEMPLATES</button>
 </div>
 
-## Whats New
+## Whats New {docsify-ignore}
 
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">

@@ -1,6 +1,5 @@
 <!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
-
-# Veritone aiWARE
+# Veritone aiWARE 
 
 <style>
     div.featureBox {
@@ -129,7 +128,7 @@
 
 </div>
 
-## What is Veritone aiWARE?
+## What is Veritone aiWARE? {docsify-ignore}
 With Veritone’s aiWARE operating system for AI, leverage tools to develop AI-enabled apps and automated workflows. Use one or combine multiple to architect a custom solution for virtually any use case. The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. 
 
 This approach combined with our proprietary orchestration technology, Conductor, makes it possible to quickly and accurately analyze massive amounts of diverse information — audio, video, image, text, and more — from multiple sources and formats to produce actionable intelligence in a faster, more scalable, and more cost-effective way than humans can.
@@ -137,7 +136,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
 
 <hr>
 
-## Start building with Veritone aiWARE
+## Start building with Veritone aiWARE {docsify-ignore}
 
 <!-- tabs:start -->
 
@@ -297,7 +296,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
 
 <!-- tabs:end -->
 
-## Do more with aiWARE
+## Do more with aiWARE {docsify-ignore}
 <br>
 <div style="display: flex">
     <div class="do-more-aiware-featureColumn">
@@ -333,7 +332,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
     </div>
 </div>
 
-## Whats New
+## Whats New {docsify-ignore}
 
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
