@@ -76,7 +76,7 @@ Since the Hello World engine does not need to interact with any external web end
 
 > A Name that conforms to Veritone's naming conventions will be generated for your engine automatically. Engine names are required to follow a pattern of &lt;Capability&gt;-&lt;Organization&gt;-&lt;Mode&gt;-&lt;Descriptor&gt;-&lt;Edge Cluster Version&gt;.
 
-![Add Name and Description](NewEngine-Customize.png)
+![Add Name and Description](NewEngine-Naming.png)
 
 12\. Click the **REVIEW** button (lower right) to bring up an **Engine Summary** dialog in which you can check the accuracy of the selections you've made in the wizard thus far.
 
