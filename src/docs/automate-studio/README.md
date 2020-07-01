@@ -109,7 +109,7 @@
 </style>
 
 <div style="display:flex;">
-<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/388620185?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 <div style="float:right; width: 200px; padding-top: 125px">
     <button type="button" class="learn-automate-studio-btn" onclick="alert('I <3 AUTOMATE!')">LEARN HOW TO USE AUTOMATE STUDIO</button>
