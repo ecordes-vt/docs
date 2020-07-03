@@ -1,4 +1,5 @@
 <!-- markdownlint-disable no-inline-html -->
+
 <style>
 section.cover .cover-main {
     text-align: center;
@@ -187,7 +188,7 @@ section.cover .cover-main {
         </ul>
       </nav>
       <a href="https://veritone.com"><img class="logo-image" src="docs/_media/veritone-logo.svg" /></a>
-      <h4>© 2019 Veritone, Inc. All rights reserved.</h4>
+      <h4>© 2020 Veritone Inc. All rights reserved.</h4>
     </div>
   </section>
 </div>
