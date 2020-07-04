@@ -54,10 +54,8 @@ aside.small {
 }
 </style>
 
-To show how easy it is to build AI-aware apps on Veritone's platform,
-we'll create a simple single-page browser app that can perform object detection on a video of your choice.
-Object detection can be useful for making video clips searchable
-(e.g. "Search for all scenes containing motor vehicles"), or as a preliminary step in positively identifying faces, weapons, logos, license plates, etc.
+To show how easy it is to build AI-aware apps on Veritone's platform, we'll create a simple single-page browser app that can perform object detection on a video of your choice.
+Object detection can be useful for making video clips searchable (e.g. "Search for all scenes containing motor vehicles"), or as a preliminary step in positively identifying faces, weapons, logos, license plates, etc.
 
 <div style="transform:scaleX(.91);">
 <img alt="helpful mini-robot" width="18%" style="float:left;" src="docs/developer/applications/app-tutorial/_media/botty.png">
@@ -121,7 +119,7 @@ If you fork the project to your own repository, you should be able to point [Net
 ### Get a Veritone Login
 
 To use Veritone's aiWARE platform, you'll need a (free) login.
-Go to [developer.veritone.com](https://developer.veritone.com) to set up your username and password.
+Go to the Veritone [Developer Signup](https://veritone.com/onboarding/#/signUp?type=developer) to create your Veritone account.
 
 ### What's Next?
 
