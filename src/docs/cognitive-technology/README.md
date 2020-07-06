@@ -105,10 +105,10 @@
         display: block;
         color: #2F80ED;
         border: 1px solid #2F80ED;
-        width: 170px;
+        width: 185px;
         height: 30px;
         position: relative;
-        left: -20px
+        left: -30px
     }
 
     .date-text {
