@@ -123,12 +123,12 @@
 
 # Application Developer Quick Start
 
-
+<!--
 <div class="topVideo">
     <iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>
 <script src="https://player.vimeo.com/api/player.js"></script>
-
+-->
 ## Build an AI-Powered App on aiWARE
 
 Harnessing the power of Artificial Intelligence in a custom app is easier than you think. Choose from hundreds of cognitive engines (covering more than 25 cognitive capabilities) to build a best-of-breed AI solution to solve challenging business problems. Leverage aiWARE's built in asset management functionality to build access-controlled, rich-media web apps in record time.
@@ -139,7 +139,7 @@ Harnessing the power of Artificial Intelligence in a custom app is easier than y
 
 Find out how to build an application that integrates with aiWARE. Visit the Quickstart [here](https://docs.veritone.com/#/developer/applications/quick-start).
 
-
+You can also view the full step-by-step tutorial [here](https://docs.veritone.com/#/developer/applications/app-tutorial/).
 
 ## Visit the Veritone Developer Portal
 
@@ -156,7 +156,7 @@ Veritone uses GraphQL and JSON to make operating on data fast, powerful, and eas
   </div>
 
 <hr>
-
+<!--
 ## Video Tutorial Series: How to Build a Cognitive Engine
 <div class="tutorialColumn">
     <div class= "videoTutorialColumn">
@@ -181,7 +181,7 @@ Veritone uses GraphQL and JSON to make operating on data fast, powerful, and eas
 <div class="buttonColumn">
     <a href="/" id="view-all-series-btn">VIEW ALL SERIES (TODO)</a>
 </div>
-
+-->
 
 ## Do More With aiWARE
 <br>

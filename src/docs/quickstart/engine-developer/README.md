@@ -127,7 +127,7 @@
 
 
 <div class="topVideo">
-    <iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <iframe src="https://player.vimeo.com/video/375527305?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>
 <script src="https://player.vimeo.com/api/player.js"></script>
 
@@ -151,19 +151,19 @@ Here's the quickest way to get started building your cognitive engine:
 ## Video Tutorial Series: How to Build a Cognitive Engine
 <div class="tutorialColumn">
     <div class= "videoTutorialColumn">
-        <div><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        <div><iframe src="https://player.vimeo.com/video/375527305?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
         <div class="tutorialText">
             Building a Cognitive Engine. Step 0
         </div>
     </div>
     <div class= "videoTutorialColumn">
-        <div><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        <div><iframe src="https://player.vimeo.com/video/375527586?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
         <div class="tutorialText">
             Building a Cognitive Engine. Step 1
         </div>
     </div>
     <div class= "videoTutorialColumn">
-        <div><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        <div><iframe src="https://player.vimeo.com/video/375527701?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
         <div class="tutorialText">
             Building a Cognitive Engine. Step 2
         </div>

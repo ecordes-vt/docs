@@ -123,12 +123,12 @@
 
 # Machine Learning Explorer Quick Start
 
-
+<!--
 <div class="topVideo">
     <iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>
 <script src="https://player.vimeo.com/api/player.js"></script>
-
+-->
 
 ## Build Intelligence into your App
 
@@ -152,7 +152,7 @@ Find out how easy it is to train an engine to recognize familiar objects. Try th
 Access to Machine Learning couldn't be any easier. Read about our JSON-based data model and Box APIs [here](/developer/machine-box/api-guidelines).
 
 <hr>
-
+<!--
 ## Video Tutorial Series: How to Build a Cognitive Engine
 <div class="tutorialColumn">
     <div class= "videoTutorialColumn">
@@ -177,7 +177,7 @@ Access to Machine Learning couldn't be any easier. Read about our JSON-based dat
 <div class="buttonColumn">
     <a href="/" id="view-all-series-btn">VIEW ALL SERIES (TODO)</a>
 </div>
-
+-->
 
 ## Do More With aiWARE
 <br>

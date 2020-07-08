@@ -123,12 +123,12 @@
 
 # Machine Learning Integrator Quick Start
 
-
+<!--
 <div class="topVideo">
     <iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>
 <script src="https://player.vimeo.com/api/player.js"></script>
-
+-->
 
 ## AI for Integrators
 
@@ -155,7 +155,7 @@ Bring Artificial Intelligence to an app in your own infrastructure using Veriton
 </div>
 
 <hr>
-
+<!--
 ## Video Tutorial Series: How to Build a Cognitive Engine
 <div class="tutorialColumn">
     <div class= "videoTutorialColumn">
@@ -180,7 +180,7 @@ Bring Artificial Intelligence to an app in your own infrastructure using Veriton
 <div class="buttonColumn">
     <a href="/" id="view-all-series-btn">VIEW ALL SERIES (TODO)</a>
 </div>
-
+-->
 
 ## Do More With aiWARE
 <br>
