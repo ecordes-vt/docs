@@ -106,14 +106,17 @@
         width: 550px
     }
 
-    .viewAllSeries {
+    #view-all-series-btn {
         display: block;
         color: #2F80ED;
         border: 1px solid #2F80ED;
-        width: 200px;
+        width: 250px;
         height: 30px;
-        left: -20px;
+        text-align: center;
+        padding: 5px;
+        left: -50px;
         position: relative;
+        text-decoration: none;
     }
 
 </style>
@@ -127,19 +130,26 @@
 <script src="https://player.vimeo.com/api/player.js"></script>
 
 
-## Getting Started With Engine Development?
-On the aiWARE platform each cognitive artificial intelligence capability is packaged into a container called a cognitive engine. You can write your engine in any language and deploy it as a Docker container. Let us worry about the rest.
+## Build Intelligence into your App
 
-Here's the quickest way to get started building your cognitive engine:
+You don't need a Ph.D. in rocket science to add Machine Learning to an app within your infrastructure. All you need is Veritone's Machine Box technology. You get:
 
-1. Pick your cognitive class and capability. If you don't see a matching capability, don't worry. Reach out to Support to discuss how best to implement your custom engine.
+- Isolation: Everything runs inside the container - your data stays with you.
+- Scalability: Deploys everywhere: as many instances as you need.
+- Predictable pricing: Free for you, simple subscription fees for enterprise.
+- Easy APIs: Dead simple usage suitable for developers of any level with interactive console built right into the box.
 
-2. Create your free account with Veritone Developer, aiWARE's development environment (you will need this in step 3).
+## Feature Detection Made Easy
 
-3. Use our Engine Toolkit SDK to package, deploy, and test your engine.
+Detect faces and objects, analyze text, classify data, tag images, spot NSFW imagery, or train our tech on any kind of identifiable entity, using power Machine Box modules ("Boxes") that you deploy on-premise, or in a virtual private cloud, running under your control. [Read more](/developer/machine-box)
 
-4. Once you've packaged and submitted your cognitive engine to Veritone, you're ready to monetize your engine! Review the Path to Monetization guide.
+## Take The Tutorial
 
+Find out how easy it is to train an engine to recognize familiar objects. Try the tutorial [here](/developer/machine-box/boxes/tagbox/recognizing-images).
+
+## Read About The API
+
+Access to Machine Learning couldn't be any easier. Read about our JSON-based data model and Box APIs [here](/developer/machine-box/api-guidelines).
 
 <hr>
 
@@ -165,7 +175,7 @@ Here's the quickest way to get started building your cognitive engine:
     </div>
 </div>
 <div class="buttonColumn">
-    <button type="button" class="viewAllSeries" onclick="alert('Here are some videos!')">VIEW ALL SERIES</button>
+    <a href="/" id="view-all-series-btn">VIEW ALL SERIES (TODO)</a>
 </div>
 
 
@@ -177,7 +187,7 @@ Here's the quickest way to get started building your cognitive engine:
             <div class="do-more-aiwareFeatureText">
                 <h3>Veritone Automate Studio</h3>
                 <div>Automate workflows and processes using a drag and drop platform.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/automate-studio/"> EXPLORE</a>
             </div>
         </div>
     </div>
@@ -186,7 +196,7 @@ Here's the quickest way to get started building your cognitive engine:
             <div class="do-more-aiwareFeatureText">
                 <h3>Veritone Benchmark</h3>
                 <div>Compare the performance of different cognitive engines against your own use case.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/benchmark/"> EXPLORE</a>
             </div>
         </div>
     </div>
@@ -201,7 +211,7 @@ Here's the quickest way to get started building your cognitive engine:
         <div class="do-more-aiwareFeatureText">
             <h3>Join Veritone's Slack Channel</h3>
             <div>For technical and business-related questions, please reach out to us on Slack. We're here to help!</div>
-            <a class="link" href="/"> JOIN CHANNEL</a>
+            <a class="link" href="https://chat.veritone.com/"> JOIN CHANNEL</a>
         </div>
     </div>
 </div>

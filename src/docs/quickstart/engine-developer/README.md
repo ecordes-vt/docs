@@ -106,15 +106,20 @@
         width: 550px
     }
 
-    .viewAllSeries {
+    #view-all-series-btn {
         display: block;
         color: #2F80ED;
         border: 1px solid #2F80ED;
-        width: 200px;
+        width: 250px;
         height: 30px;
-        left: -20px;
+        text-align: center;
+        padding: 5px;
+        left: -50px;
         position: relative;
+        text-decoration: none;
     }
+
+
 
 </style>
 
@@ -165,7 +170,7 @@ Here's the quickest way to get started building your cognitive engine:
     </div>
 </div>
 <div class="buttonColumn">
-    <button type="button" class="viewAllSeries" onclick="alert('Here are some videos!')">VIEW ALL SERIES</button>
+    <a href="/" id="view-all-series-btn">VIEW ALL SERIES (TODO)</a>
 </div>
 
 
@@ -177,7 +182,7 @@ Here's the quickest way to get started building your cognitive engine:
             <div class="do-more-aiwareFeatureText">
                 <h3>Veritone Automate Studio</h3>
                 <div>Automate workflows and processes using a drag and drop platform.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/automate-studio/"> EXPLORE</a>
             </div>
         </div>
     </div>
@@ -186,7 +191,7 @@ Here's the quickest way to get started building your cognitive engine:
             <div class="do-more-aiwareFeatureText">
                 <h3>Veritone Benchmark</h3>
                 <div>Compare the performance of different cognitive engines against your own use case.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/benchmark/"> EXPLORE</a>
             </div>
         </div>
     </div>
@@ -201,7 +206,7 @@ Here's the quickest way to get started building your cognitive engine:
         <div class="do-more-aiwareFeatureText">
             <h3>Join Veritone's Slack Channel</h3>
             <div>For technical and business-related questions, please reach out to us on Slack. We're here to help!</div>
-            <a class="link" href="/"> JOIN CHANNEL</a>
+            <a class="link" href="https://chat.veritone.com/"> JOIN CHANNEL</a>
         </div>
     </div>
 </div>

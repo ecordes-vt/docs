@@ -4,20 +4,28 @@
 
 <style>
 
-    .learn-aiware-btn {
+    #learn-aiware-btn {
         display: block;
         background-color: #2F80ED;
         color: #FFF;
         width: 300px;
         height: 30px;
+        text-align: center;
+        text-decoration: none;
+        padding: 5px;
+        position: relative;
     }
 
-    .explore-api-basics-btn {
+    #explore-api-basics-btn {
         display: block;
         color: #2F80ED;
         border: 1px solid #2F80ED;
         width: 300px;
         height: 30px;
+        text-align: center;
+        padding: 5px;
+        position: relative;
+        text-decoration: none;
     }
 
     div.featureBox {
@@ -101,14 +109,18 @@
         left: 350px;
     }
 
-    .view-more-capabilities-btn {
+    #view-more-capabilities-btn {
         display: block;
         color: #2F80ED;
         border: 1px solid #2F80ED;
-        width: 185px;
+        width: 245px;
         height: 30px;
         position: relative;
-        left: -30px
+        left: -60px;
+        text-align: center;
+        padding: 5px;
+        position: relative;
+        text-decoration: none;
     }
 
     .date-text {
@@ -126,9 +138,9 @@
 <div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 <div style="float:right; width: 200px; padding-top: 125px">
-    <button type="button" class="learn-aiware-btn" onclick="alert('I <3 ENGINES!')">LEARN TO DEVELOP COGNITIVE ENGINES</button>
+    <a href="/#/developer/engines/tutorial/" id="learn-aiware-btn">LEARN TO DEVELOP COGNITIVE ENGINES</a>
     <br>
-    <button type="button" class="explore-api-basics-btn" onclick="alert('I <3 APIS!')">EXPLORE API BASICS</button>
+    <a href="/#/apis" id="explore-api-basics-btn">EXPLORE API BASICS</a>
 </div>
 
 </div>
@@ -151,7 +163,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="featureText">
                 <h3>Anomaly Detection</h3>
                 <div>Use any of the existing models to start creating cognitive applications.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/developer/engines/cognitive/text/anomaly-detection/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -163,7 +175,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="featureText">
                 <h3>Content Classification</h3>
                 <div>Use aiWARE to train your models and benchmark their performance.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/developer/engines/cognitive/text/content-classification/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -175,7 +187,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="featureText">
                 <h3>Entity Extraction</h3>
                 <div>Use aiWARE to run proceses at scale and behine firewalls.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/developer/engines/cognitive/text/entity-extraction/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -187,7 +199,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class= "featureText">
                 <h3>Audio Fingerprinting</h3>
                 <div>Use aiWARE to create custom model based on your own data points.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/developer/engines/cognitive/audio/audio-fingerprinting/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -199,7 +211,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class= "featureText">
                 <h3>Correlation</h3>
                 <div>Use your model in production apps and start resolving real technical challenges.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/developer/engines/cognitive/data/correlation/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -211,7 +223,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class= "featureText">
                 <h3>Face Detection</h3>
                 <div>Use aiWARE to automate business processes and maximize your speed and output.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/developer/engines/cognitive/biometrics/face-detection/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -222,7 +234,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
 <br>
 <br>
 <div class="buttonColumn">
-    <button type="button" class= "view-more-capabilities-btn" onclick="alert('Here are some videos!')">VIEW MORE CAPABILITIES</button>
+    <a href="/#/apis" id="view-more-capabilities-btn">VIEW MORE CAPABILITIES (TODO)</a>
 </div>
 <br>
 <br>
@@ -236,7 +248,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="do-more-aiwareFeatureText">
                 <h3>Veritone Automate Studio</h3>
                 <div>Automate workflows and processes using a drag and drop platform.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/automate-studio/"> EXPLORE</a>
             </div>
         </div>
     </div>
@@ -245,7 +257,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="do-more-aiwareFeatureText">
                 <h3>Veritone Benchmark</h3>
                 <div>Compare the performance of different cognitive engines against your own use case.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/benchmark/"> EXPLORE</a>
             </div>
         </div>
     </div>

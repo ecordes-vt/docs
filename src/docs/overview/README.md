@@ -88,21 +88,7 @@
         width: 550px
     }
 
-    .learn-aiware-btn {
-        display: block;
-        background-color: #2F80ED;
-        color: #FFF;
-        width: 300px;
-        height: 30px;
-    }
 
-    .explore-api-basics-btn {
-        display: block;
-        color: #2F80ED;
-        border: 1px solid #2F80ED;
-        width: 300px;
-        height: 30px;
-    }
 
     .date-text {
         background-color: #d9d9d7;
@@ -113,6 +99,29 @@
         text-align: center
     }
 
+    #learn-aiware-btn {
+        display: block;
+        background-color: #2F80ED;
+        text-decoration: none;
+        color: white;
+        width: 300px;
+        height: 30px;
+        text-align: center;
+        padding: 5px;
+        position: relative;
+    }
+
+    #explore-api-basics-btn {
+        display: block;
+        color: #2F80ED;
+        border: 1px solid #2F80ED;
+        width: 300px;
+        height: 30px;
+        text-align: center;
+        padding: 5px;
+        position: relative;
+        text-decoration: none;
+    }
 
 
 </style>
@@ -121,9 +130,9 @@
 <div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 <div style="float:right; width: 200px; padding-top: 125px">
-    <button type="button" class="learn-aiware-btn" onclick="alert('I <3 AIWARE!')">LEARN AIWARE IN 15 MINUTES</button>
+    <a href="/#/developer/applications/quick-start/" id="learn-aiware-btn">LEARN AIWARE IN 15 MINUTES</a>
     <br>
-    <button type="button" class="explore-api-basics-btn" onclick="alert('I <3 APIS!')">EXPLORE API BASICS</button>
+    <a href="/#/apis" id="explore-api-basics-btn">EXPLORE API BASICS</a>
 </div>
 
 </div>
@@ -148,7 +157,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="featureText">
                 <h3>Use existing model</h3>
                 <div>Use any of the existing models to start creating cognitive applications.</div>
-                <a class="link" href="/"> GET STARTED</a>
+                <a class="link" href="/#/developer/engines/tutorial/"> GET STARTED</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -160,7 +169,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="featureText">
                 <h3>Train a model</h3>
                 <div>Use aiWARE to train your models and benchmark their performance.</div>
-                <a class="link" href="/"> GET STARTED</a>
+                <a class="link" href="/#/developer/engines/tutorial/engine-training-tutorial"> GET STARTED</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -171,8 +180,8 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="featureBox">
             <div class="featureText">
                 <h3>Run processes at scale</h3>
-                <div>Use aiWARE to run proceses at scale and behine firewalls.</div>
-                <a class="link" href="/"> GET STARTED</a>
+                <div>Use aiWARE to run proceses at scale and behind firewalls.</div>
+                <a class="link" href="/"> GET STARTED (TODO)</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -184,7 +193,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class= "featureText">
                 <h3>Build a custom model</h3>
                 <div>Use aiWARE to create custom model based on your own data points.</div>
-                <a class="link" href="/"> GET STARTED</a>
+                <a class="link" href="/"> GET STARTED (TODO) </a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -196,7 +205,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class= "featureText">
                 <h3>Integrate a model into my app</h3>
                 <div>Use your model in production apps and start resolving real technical challenges.</div>
-                <a class="link" href="/"> GET STARTED</a>
+                <a class="link" href="/#/developer/applications/app-tutorial/"> GET STARTED</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -208,7 +217,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class= "featureText">
                 <h3>Automate a process</h3>
                 <div>Use aiWARE to automate business processes and maximize your speed and output.</div>
-                <a class="link" href="/"> GET STARTED</a>
+                <a class="link" href="/#/developer/applications/integration/"> GET STARTED</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -217,7 +226,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
     </div>
 </div>
 
-#### ** WHAT'S YOUR ROLE? **
+#### ** WHAT'S YOUR ROLE? (Needs Text - TODO)**
 
 <div style="display: flex">
     <div class="featureColumn">
@@ -225,7 +234,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="featureText">
                 <h3>Developer</h3>
                 <div>Use any of the existing models to start creating cognitive applications.</div>
-                <a class="link" href="/"> GET STARTED</a>
+                <a class="link" href="/"> GET STARTED (TODO)</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -237,7 +246,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="featureText">
                 <h3>Analyst</h3>
                 <div>Use aiWARE to train your models and benchmark their performance.</div>
-                <a class="link" href="/"> GET STARTED</a>
+                <a class="link" href="/"> GET STARTED (TODO)</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -249,7 +258,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="featureText">
                 <h3>Product Manager</h3>
                 <div>Use aiWARE to run proceses at scale and behine firewalls.</div>
-                <a class="link" href="/"> GET STARTED</a>
+                <a class="link" href="/"> GET STARTED (TODO)</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -261,7 +270,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class= "featureText">
                 <h3>Data Scientist</h3>
                 <div>Use aiWARE to create custom model based on your own data points.</div>
-                <a class="link" href="/"> GET STARTED</a>
+                <a class="link" href="/"> GET STARTED (TODO)</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -273,7 +282,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class= "featureText">
                 <h3>Solutions Architect</h3>
                 <div>Use your model in production apps and start resolving real technical challenges.</div>
-                <a class="link" href="/"> GET STARTED</a>
+                <a class="link" href="/"> GET STARTED (TODO)</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -285,7 +294,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class= "featureText">
                 <h3>Operations</h3>
                 <div>Use aiWARE to automate business processes and maximize your speed and output.</div>
-                <a class="link" href="/"> GET STARTED</a>
+                <a class="link" href="/"> GET STARTED (TODO)</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -304,7 +313,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="do-more-aiwareFeatureText">
                 <h3>Veritone Automate Studio</h3>
                 <div>Automate workflows and processes using a drag and drop platform.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/automate-studio/"> EXPLORE</a>
             </div>
         </div>
     </div>
@@ -313,7 +322,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="do-more-aiwareFeatureText">
                 <h3>Veritone Benchmark</h3>
                 <div>Compare the performance of different cognitive engines against your own use case.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/benchmark/"> EXPLORE</a>
             </div>
         </div>
     </div>
@@ -327,12 +336,12 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="do-more-aiwareFeatureText">
             <h3>Join Veritone's Slack Channel</h3>
             <div>For technical and business-related questions, please reach out to us on Slack. We're here to help!</div>
-            <a class="link" href="/"> JOIN CHANNEL</a>
+            <a class="link" href="https://chat.veritone.com/"> JOIN CHANNEL</a>
         </div>
     </div>
 </div>
 
-## Whats New {docsify-ignore}
+## Whats New (NEEDS TEXT - TODO) {docsify-ignore}
 
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">

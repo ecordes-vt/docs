@@ -106,14 +106,17 @@
         width: 550px
     }
 
-    .viewAllSeries {
+    #view-all-series-btn {
         display: block;
         color: #2F80ED;
         border: 1px solid #2F80ED;
-        width: 200px;
+        width: 250px;
         height: 30px;
-        left: -20px;
+        text-align: center;
+        padding: 5px;
+        left: -50px;
         position: relative;
+        text-decoration: none;
     }
 
 </style>
@@ -127,19 +130,29 @@
 <script src="https://player.vimeo.com/api/player.js"></script>
 
 
-## Getting Started With Engine Development?
-On the aiWARE platform each cognitive artificial intelligence capability is packaged into a container called a cognitive engine. You can write your engine in any language and deploy it as a Docker container. Let us worry about the rest.
+## AI for Integrators
 
-Here's the quickest way to get started building your cognitive engine:
+Building custom solutions for customers with complex data analysis requirements? Veritone can help, with pluggable cognitive engines, flexible deployment options (cloud and hybrid), and a powerful, easy-to-use GraphQL-based API. Even if you have no prior experience building AI-powered apps, Veritone's standards-based "Operating System for AI" approach gets you to the finish line quickly, with a best-of-breed solution that meets your customer's exact needs.
 
-1. Pick your cognitive class and capability. If you don't see a matching capability, don't worry. Reach out to Support to discuss how best to implement your custom engine.
+## Let's Partner
 
-2. Create your free account with Veritone Developer, aiWARE's development environment (you will need this in step 3).
+When the goal is to transform your clients' existing infrastructure to an AI-enabled solution as quickly as possible, you can count on Veritone to provide the right tools, programs, and support to help you do it. Not a part of the Veritone Partner Program yet? Reach out to our Channel Team to learn how we can help you achieve your goals.
 
-3. Use our Engine Toolkit SDK to package, deploy, and test your engine.
+## Try Our GraphiQL Sandbox
 
-4. Once you've packaged and submitted your cognitive engine to Veritone, you're ready to monetize your engine! Review the Path to Monetization guide.
+Run live quieries against real datasets. Federate cognitive engines into complex workflows. Aggregate, search, and analyze temporal data like a pro. You'll be amazed how fast you can go from zero to hero when you combine the ease of declarative programming with the power of AI.
 
+[Try it now](https://api.veritone.com/v3/graphiql)
+
+## Tutorials
+
+Get up to speed quickly with tutorials on GraphQL API Basics, Error Handling, Uploading and Processing Files, Authentication, Posting Engine Results, and more. See all tutorials [here](/apis/tutorials/).
+
+## Need Machine Learning in a Standalone App?
+
+Bring Artificial Intelligence to an app in your own infrastructure using Veritone's Machine Box Technology. Detect faces and objects, analyze text, classify data, tag images, spot NSFW imagery, or train our tech on any kind of identifiable entity, using power Machine Box modules ("Boxes") that you deploy on-premise, or in a virtual private cloud, running under your control. [Read more](/developer/machine-box)
+
+</div>
 
 <hr>
 
@@ -165,7 +178,7 @@ Here's the quickest way to get started building your cognitive engine:
     </div>
 </div>
 <div class="buttonColumn">
-    <button type="button" class="viewAllSeries" onclick="alert('Here are some videos!')">VIEW ALL SERIES</button>
+    <a href="/" id="view-all-series-btn">VIEW ALL SERIES (TODO)</a>
 </div>
 
 
@@ -177,7 +190,7 @@ Here's the quickest way to get started building your cognitive engine:
             <div class="do-more-aiwareFeatureText">
                 <h3>Veritone Automate Studio</h3>
                 <div>Automate workflows and processes using a drag and drop platform.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/automate-studio/"> EXPLORE</a>
             </div>
         </div>
     </div>
@@ -186,7 +199,7 @@ Here's the quickest way to get started building your cognitive engine:
             <div class="do-more-aiwareFeatureText">
                 <h3>Veritone Benchmark</h3>
                 <div>Compare the performance of different cognitive engines against your own use case.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/#/benchmark/"> EXPLORE</a>
             </div>
         </div>
     </div>
@@ -201,7 +214,7 @@ Here's the quickest way to get started building your cognitive engine:
         <div class="do-more-aiwareFeatureText">
             <h3>Join Veritone's Slack Channel</h3>
             <div>For technical and business-related questions, please reach out to us on Slack. We're here to help!</div>
-            <a class="link" href="/"> JOIN CHANNEL</a>
+            <a class="link" href="https://chat.veritone.com/"> JOIN CHANNEL</a>
         </div>
     </div>
 </div>
