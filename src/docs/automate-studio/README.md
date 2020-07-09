@@ -126,7 +126,7 @@
 <div style="float:right; width: 200px; padding-top: 125px">
     <a href="#/automate-studio/getting-started/README" id="learn-automate-studio-btn">LEARN HOW TO USE AUTOMATE STUDIO</a>
     <br>
-    <a href="/#/" id="explore-templates-btn">EXPLORE THE TEMPLATES</a>
+    <a href="/#/" id="explore-templates-btn">EXPLORE THE TEMPLATES (TODO)</a>
 </div>
 
 </div>
