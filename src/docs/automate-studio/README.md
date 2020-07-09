@@ -71,14 +71,18 @@
         left: 365px;
     }
 
-    .view-more-templates {
+    #view-more-templates-btn {
         display: block;
         color: #2F80ED;
         border: 1px solid #2F80ED;
-        width: 200px;
+        width: 250px;
         height: 30px;
-        left: -50px;
         position: relative;
+        left: -75px;
+        text-align: center;
+        padding: 5px;
+        position: relative;
+        text-decoration: none;
     }
 
     #learn-automate-studio-btn {
@@ -145,7 +149,7 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
             <div class="featureText">
                 <h3>Face Detection</h3>
                 <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/"> EXPLORE (TODO) </a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -157,7 +161,7 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
             <div class="featureText">
                 <h3>Brand Recognition</h3>
                 <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/"> EXPLORE (TODO) </a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -169,7 +173,7 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
             <div class= "featureText">
                 <h3>Content Moderation</h3>
                 <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/"> EXPLORE (TODO)</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -181,7 +185,7 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
             <div class= "featureText">
                 <h3>Sentiment Extractor</h3>
                 <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
-                <a class="link" href="/"> EXPLORE</a>
+                <a class="link" href="/"> EXPLORE (TODO)</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -192,7 +196,7 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
 <br>
 <br>
 <div class="buttonColumn">
-    <button type="button" class="view-more-templates" onclick="alert('Here are some templates!')">VIEW MORE TEMPLATES</button>
+    <a href="/" id="view-more-templates-btn">VIEW MORE CAPABILITIES (TODO)</a>
 </div>
 
 ## Whats New {docsify-ignore}
