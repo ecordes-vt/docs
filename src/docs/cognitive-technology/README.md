@@ -233,9 +233,10 @@ This approach combined with our proprietary orchestration technology, Conductor,
 </div>
 <br>
 <br>
-<div class="buttonColumn">
+<!--<div class="buttonColumn">
     <a href="/#/apis" id="view-more-capabilities-btn">VIEW MORE CAPABILITIES (TODO)</a>
 </div>
+-->
 <br>
 <br>
 <hr>

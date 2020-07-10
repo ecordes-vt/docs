@@ -126,7 +126,7 @@
 <div style="float:right; width: 200px; padding-top: 125px">
     <a href="#/automate-studio/getting-started/README" id="learn-automate-studio-btn">LEARN HOW TO USE AUTOMATE STUDIO</a>
     <br>
-    <a href="/#/" id="explore-templates-btn">EXPLORE THE TEMPLATES (TODO)</a>
+    <a href="https://developer.veritone.com/automate-studio/flows/templates" id="explore-templates-btn">EXPLORE THE TEMPLATES</a>
 </div>
 
 </div>
@@ -148,8 +148,8 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Face Detection</h3>
-                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
-                <a class="link" href="/"> EXPLORE (TODO) </a>
+                <div>Detect the presence of and identify faces in photos and video.</div>
+                <a class="link" href="https://developer.veritone.com/automate-studio/flows/templates"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -160,8 +160,8 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Brand Recognition</h3>
-                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
-                <a class="link" href="/"> EXPLORE (TODO) </a>
+                <div>Identify and extract brands from text, photos, videos, or audio.</div>
+                <a class="link" href="https://developer.veritone.com/automate-studio/flows/templates"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -172,8 +172,8 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
         <div class="featureBox"> 
             <div class= "featureText">
                 <h3>Content Moderation</h3>
-                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
-                <a class="link" href="/"> EXPLORE (TODO)</a>
+                <div>Identify media containing a sensitive material such as profanity, weapons, nudity or violence.</div>
+                <a class="link" href="https://developer.veritone.com/automate-studio/flows/templates"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -184,8 +184,8 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
         <div class="featureBox">  
             <div class= "featureText">
                 <h3>Sentiment Extractor</h3>
-                <div>Lorem Ipsum has been the industry's standard dummy text even since 1500s.</div>
-                <a class="link" href="/"> EXPLORE (TODO)</a>
+                <div>Use AI to gague and tag the sentiment of different forms of media. </div>
+                <a class="link" href="https://developer.veritone.com/automate-studio/flows/templates"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -196,7 +196,7 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
 <br>
 <br>
 <div class="buttonColumn">
-    <a href="/" id="view-more-templates-btn">VIEW MORE CAPABILITIES (TODO)</a>
+    <a href="https://developer.veritone.com/automate-studio/flows/templates" id="view-more-templates-btn">VIEW MORE TEMPLATES</a>
 </div>
 
 ## Whats New {docsify-ignore}
