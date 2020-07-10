@@ -270,34 +270,45 @@ This approach combined with our proprietary orchestration technology, Conductor,
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
         <div class="date-text">
-            May 12th, 2017
+            3/24/2020
         </div>
     </div>
     <div class="newsColumn">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        - New documentation tells how you can benchmark your engines with the Benchmark app (beta).
+        <br>
+        - New documentation on how to update cognitive engines for the latest version of aiWARE Edge.
+        <br>
+        - New Automate Studio FAQ.
     </div>
 </div>
 <br>
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
         <div class="date-text">
-            May 14th, 1948
+            2/10/2020
         </div>
     </div>
     <div class="newsColumn">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        - You can now search across all the Cognitive and Ingestion engines your Veritone organization has access to
+        <br>
+        - The brand new and enhanced engines table now lets you filter and sort your engine results
+        <br>
+        - All of your engines, both ingestion (aka Adapters) and cognitive types are displayed in one centralized table for you to view, filter, and query
     </div>
 </div>
 <br>
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
         <div class="date-text">
-            July 4th, 1776
+            12/20/2019
         </div>
     </div>
     <div class="newsColumn">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        - New Cognitive Capability: Building an Anomaly Detection Engine
+        <br>
+        - New Biometric Capabilities: Face Verification and Speaker Verification
+        <br>
+        - Developer Bootcamp videos are now embedded in tutorials
     </div>
 </div>
 <hr>
-
