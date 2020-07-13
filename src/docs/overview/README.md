@@ -159,7 +159,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
             <div class="featureText">
                 <h3>Use existing model</h3>
                 <div>Use any of the existing models to start creating cognitive applications.</div>
-                <a class="link" href="/#/developer/engines/tutorial/"> GET STARTED</a>
+                <a class="link" href="/#/quickstart/jobs/?id=working-with-jobs"> GET STARTED</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -344,7 +344,21 @@ This approach combined with our proprietary orchestration technology, Conductor,
 </div>
 
 ## Whats New {docsify-ignore}
-
+<div class= "newsSectionColumn">
+    <div class="newsDateColumn">
+        <div class="date-text">
+            06/22/2020
+        </div>
+    </div>
+    <div class="newsColumn">
+        - Expanded documentation for Automate Studio.
+        <br>
+        - New "Working with Jobs" quickstart.
+        <br>
+        - How to view job and task logs.
+    </div>
+</div>
+<br>
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
         <div class="date-text">
@@ -372,21 +386,6 @@ This approach combined with our proprietary orchestration technology, Conductor,
         - The brand new and enhanced engines table now lets you filter and sort your engine results
         <br>
         - All of your engines, both ingestion and cognitive types are displayed in one centralized table for you to view, filter, and query
-    </div>
-</div>
-<br>
-<div class= "newsSectionColumn">
-    <div class="newsDateColumn">
-        <div class="date-text">
-            12/20/2019
-        </div>
-    </div>
-    <div class="newsColumn">
-        - New Cognitive Capability: Building an Anomaly Detection Engine
-        <br>
-        - New Biometric Capabilities: Face Verification and Speaker Verification
-        <br>
-        - Developer Bootcamp videos are now embedded in tutorials
     </div>
 </div>
 <hr>
