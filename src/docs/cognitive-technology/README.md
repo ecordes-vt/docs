@@ -32,7 +32,7 @@
         -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
         -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
         box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
-        width: 350px;
+        width: 425px;
         height: 100px;
         padding: 7px;
         font-size: 80%;
@@ -43,7 +43,7 @@
     div.featureColumn {
         position:relative;
         left:25px;
-        width: 400px;
+        width: 500px;
     }
     
     div.featureText {
@@ -53,13 +53,15 @@
     }
 
     div.featureImage {
-        width: 25%
+        width: 25%;
+        position: relative;
+        bottom: 8px;
     }
 
     div.do-more-aiware-featureColumn {
         position:relative;
         left:25px;
-        width: 400px;
+        width: 500px;
     }
     
     div.do-more-aiwareFeatureText {
@@ -87,18 +89,18 @@
     }
 
     div.newsSectionColumn{
-        width: 760px;
+        width: 975px;
         position:relative;
         left:10px;
         display: flex
     }
     
     div.newsDateColumn {
-        width: 150px
+        width: 175px
     }
 
     div.newsColumn {
-        width: 550px
+        width: 800px
     }
 
     div.buttonColumn {
@@ -135,7 +137,7 @@
 </style>
 
 <div style="display:flex;">
-<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/375686298?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 <div style="float:right; width: 200px; padding-top: 125px">
     <a href="/#/developer/engines/tutorial/" id="learn-aiware-btn">LEARN TO DEVELOP COGNITIVE ENGINES</a>
@@ -162,7 +164,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Anomaly Detection</h3>
-                <div>Use any of the existing models to start creating cognitive applications.</div>
+                <div>Identify data points, events, and observations that deviate from a dataset's normal behavior.</div>
                 <a class="link" href="/#/developer/engines/cognitive/text/anomaly-detection/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
@@ -174,7 +176,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Content Classification</h3>
-                <div>Use aiWARE to train your models and benchmark their performance.</div>
+                <div>Use aiWARE to classify text into particular categories based on what words the text contains.</div>
                 <a class="link" href="/#/developer/engines/cognitive/text/content-classification/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
@@ -186,7 +188,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="featureBox">
             <div class="featureText">
                 <h3>Entity Extraction</h3>
-                <div>Use aiWARE to run proceses at scale and behine firewalls.</div>
+                <div>Use Natural Language Processing (NLP) engines to label words, phrases or even concepts in text.</div>
                 <a class="link" href="/#/developer/engines/cognitive/text/entity-extraction/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
@@ -198,7 +200,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="featureBox"> 
             <div class= "featureText">
                 <h3>Audio Fingerprinting</h3>
-                <div>Use aiWARE to create custom model based on your own data points.</div>
+                <div> Identify pre-recorded audio snippets in audio files based on a particular signature or "fingerprint."</div>
                 <a class="link" href="/#/developer/engines/cognitive/audio/audio-fingerprinting/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
@@ -210,7 +212,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="featureBox">  
             <div class= "featureText">
                 <h3>Correlation</h3>
-                <div>Use your model in production apps and start resolving real technical challenges.</div>
+                <div>Associate data items based on some common factor, such as temporal co-occurrence.</div>
                 <a class="link" href="/#/developer/engines/cognitive/data/correlation/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
@@ -222,7 +224,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="featureBox">  
             <div class= "featureText">
                 <h3>Face Detection</h3>
-                <div>Use aiWARE to automate business processes and maximize your speed and output.</div>
+                <div>Detect human faces in media assets, and locate them (within the visual frame) in terms of a bounding polygon.</div>
                 <a class="link" href="/#/developer/engines/cognitive/biometrics/face-detection/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
@@ -293,7 +295,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <br>
         - The brand new and enhanced engines table now lets you filter and sort your engine results
         <br>
-        - All of your engines, both ingestion (aka Adapters) and cognitive types are displayed in one centralized table for you to view, filter, and query
+        - All of your engines, both ingestion and cognitive types are displayed in one centralized table for you to view, filter, and query
     </div>
 </div>
 <br>

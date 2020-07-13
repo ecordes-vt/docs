@@ -6,7 +6,7 @@
         -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
         -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
         box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
-        width: 350px;
+        width: 425px;
         height: 100px;
         padding: 7px;
         font-size: 80%;
@@ -17,7 +17,7 @@
     div.featureColumn {
         position:relative;
         left:25px;
-        width: 400px;
+        width: 500px;
     }
     
     div.featureText {
@@ -25,13 +25,15 @@
     }
 
     div.featureImage {
-        width: 25%
+        width: 25%;
+        position: relative;
+        bottom: 8px;
     }
 
     div.do-more-aiware-featureColumn {
         position:relative;
         left:50px;
-        width: 400px;
+        width: 500px;
     }
     
     div.do-more-aiwareFeatureText {
@@ -59,7 +61,7 @@
         font-size: 80%;
         display: flex;
         position: relative; 
-        left: 425px;
+        left: 515px;
         transform: translateX(-50%);
     }
     
@@ -74,7 +76,7 @@
     }
 
     div.newsSectionColumn{
-        width: 760px;
+        width: 975px;
         position:relative;
         left:10px;
         display: flex
@@ -85,7 +87,7 @@
     }
 
     div.newsColumn {
-        width: 550px
+        width: 800px
     }
 
 
@@ -127,7 +129,7 @@
 </style>
 
 <div style="display:flex;">
-<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/375527305?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 <div style="float:right; width: 200px; padding-top: 125px">
     <a href="/#/developer/applications/quick-start/" id="learn-aiware-btn">LEARN AIWARE IN 15 MINUTES</a>
@@ -180,7 +182,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="featureBox">
             <div class="featureText">
                 <h3>Run processes at scale</h3>
-                <div>Use aiWARE to run proceses at scale and behind firewalls.</div>
+                <div>Use aiWARE to run proceses at scale in local networks, on and offline, and behind firewalls.</div>
                 <a class="link" href="/#/overview/aiware-features"> GET STARTED</a>
             </div>
             <div class= "featureImage">
@@ -233,7 +235,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Developer</h3>
-                <div>Learn how to create an engine to process data.</div>
+                <div>Learn how to create your own custom engine to analyze and process data.</div>
                 <a class="link" href="/#/quickstart/engine-developer/"> GET STARTED</a>
             </div>
             <div class= "featureImage">
@@ -245,7 +247,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Analyst</h3>
-                <div>Learn how to use advanced automation AI techniques.</div>
+                <div>Learn how to use advanced automation AI techniques to streamline your process and optimize time.</div>
                 <a class="link" href="/#/quickstart/ml-explorer/"> GET STARTED</a>
             </div>
             <div class= "featureImage">
@@ -269,7 +271,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="featureBox"> 
             <div class= "featureText">
                 <h3>Data Scientist</h3>
-                <div>Learn how to run your model at scale in production.</div>
+                <div>Learn how to implement your model quickly and run it at scale in production. </div>
                 <a class="link" href="/#/developer/engines/"> GET STARTED</a>
             </div>
             <div class= "featureImage">
@@ -369,7 +371,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <br>
         - The brand new and enhanced engines table now lets you filter and sort your engine results
         <br>
-        - All of your engines, both ingestion (aka Adapters) and cognitive types are displayed in one centralized table for you to view, filter, and query
+        - All of your engines, both ingestion and cognitive types are displayed in one centralized table for you to view, filter, and query
     </div>
 </div>
 <br>

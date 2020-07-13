@@ -7,7 +7,7 @@
         -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
         -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
         box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
-        width: 350px;
+        width: 425px;
         height: 100px;
         padding: 7px;
         font-size: 80%;
@@ -18,7 +18,7 @@
     div.featureColumn {
         position:relative;
         left:25px;
-        width: 400px;
+        width: 500px;
     }
     
     div.featureText {
@@ -28,7 +28,9 @@
     }
 
     div.featureImage {
-        width: 25%
+        width: 25%;
+        position: relative;
+        bottom: 8px;
     }
 
     div.do-more-aiware-featureColumn {
@@ -49,18 +51,18 @@
     }
 
     div.newsSectionColumn{
-        width: 760px;
+        width: 975px;
         position:relative;
         left:10px;
         display: flex
     }
     
     div.newsDateColumn {
-        width: 150px
+        width: 175px
     }
 
     div.newsColumn {
-        width: 550px
+        width: 800px
     }
 
     div.buttonColumn {
@@ -78,7 +80,7 @@
         width: 250px;
         height: 30px;
         position: relative;
-        left: -75px;
+        left: 15px;
         text-align: center;
         padding: 5px;
         position: relative;
@@ -148,7 +150,7 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Face Detection</h3>
-                <div>Detect the presence of and identify faces in photos and video.</div>
+                <div>Detect the presence of, tag, and identify faces in photos and video.</div>
                 <a class="link" href="https://developer.veritone.com/automate-studio/flows/templates"> EXPLORE</a>
             </div>
             <div class= "featureImage">
@@ -227,7 +229,7 @@ Automate Studio lets you quickly develop enterprise-grade AI solutions that tap 
         <br>
         - The brand new and enhanced engines table now lets you filter and sort your engine results
         <br>
-        - All of your engines, both ingestion (aka Adapters) and cognitive types are displayed in one centralized table for you to view, filter, and query
+        - All of your engines, both ingestion and cognitive types are displayed in one centralized table for you to view, filter, and query
     </div>
 </div>
 <br>
