@@ -159,6 +159,7 @@
     - [Text Recognition (OCR)](developer/engines/cognitive/vision/text-recognition/)
 - [Automate Studio](automate-studio/)
   - [Getting Started](automate-studio/getting-started/README)
+  - [Flow Bounties](automate-studio/flow-bounties/README)
   - [Tutorials](automate-studio/flow-examples/README)
   - [FAQ](automate-studio/faq)
 - [Machine Box](/developer/machine-box/)     
