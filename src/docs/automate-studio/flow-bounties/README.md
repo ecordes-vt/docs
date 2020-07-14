@@ -129,7 +129,7 @@
 This is sample text and will all be replaces with something that doesn't sound terrible. Automate flows allow less technical users to build cool AI workflows with Veritone Engines. In an effort to expand our library of pre-made flow templates, we are starting the Automate Flow Bounty Program, where developers can build the flows we need in exchange for money. This is sample text and will all be replaces with something that doesn't sound terrible.  
 
 ## How do I Claim a Bounty? {docsify-ignore}
-More sample text. Build the flow, have it verify, get paid!
+More sample text. Build the flow, have it verified, get paid!
 <hr>
 
 ## Currently Open Automate Flow Bounties {docsify-ignore}
@@ -183,7 +183,7 @@ More sample text. Build the flow, have it verify, get paid!
         </br>
         <div class="featureBox"> 
             <div class="featureText">
-                <h3>Trigger & Scrape Description</h3>
+                <h3>Trigger & Scrape</h3>
                 <div>When a new mention is created, an event subscription triggers this specific flow engine to run. The Flow engine evaluates the event payload determining if the mention was created on a "Cognitive Search profile evaluating for a string value" and then sends an alert to a designated input.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
@@ -219,7 +219,7 @@ More sample text. Build the flow, have it verify, get paid!
         </br>
         <div class="featureBox"> 
             <div class="featureText">
-                <h3>Customer Happiness Bot Description</h3>
+                <h3>Customer Happiness Bot</h3>
                 <div>A Flow engine that connects to HelpScout, retrieves the specified logs (and accepts a "query":{} object that stores params to query the user's HelpScout org with, and processes the logs with Sentiment analysis.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
@@ -228,7 +228,7 @@ More sample text. Build the flow, have it verify, get paid!
         </br>
         <div class="featureBox"> 
             <div class="featureText">
-                <h3>Email Sentiment Description</h3>
+                <h3>Email Sentiment Extracter</h3>
                 <div>A Flow engine that accepts incoming csv & text files webhooked to an HTTP Adapter endpoint sent from an email provider of your choice (eg Mandrill, Sendgrid) and process with a sentiment analysis engine and (1) write the results to a TDO, (2) write the results back to a callbackUrl field if provided by the sender.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
@@ -237,7 +237,7 @@ More sample text. Build the flow, have it verify, get paid!
         </br>
         <div class="featureBox"> 
             <div class="featureText">
-                <h3>Twitter Temp Bot Description</h3>
+                <h3>Twitter Temp Bot</h3>
                 <div>Scrape tweets from either a user (or given users) or a topic/hashtag and run sentiment analysis.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
