@@ -96,18 +96,6 @@
         position: relative;
     }
 
-    #explore-templates-btn {
-        display: block;
-        color: #2F80ED;
-        border: 1px solid #2F80ED;
-        width: 300px;
-        height: 30px;
-        text-align: center;
-        padding: 5px;
-        position: relative;
-        text-decoration: none;
-    }
-
     .date-text {
         background-color: #d9d9d7;
         width: 110px;
@@ -169,7 +157,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
                 <h3>Scrape Classification</h3>
                 <div>As a CMS/GraphQL user, I can create a job that invokes an Automation engine to scrape a website and process the content for either topic extraction or content classification (or both!)</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/scrape-classification"> DETAILS</a>
         </div>
         </br>
         </br>
@@ -178,7 +166,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
                 <h3>Twitter Classification</h3>
                 <div>This flow engine scrapes the tweets of a provided Twitter user and processes each tweet to create topics associated with each tweet.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/twitter-classification"> DETAILS</a>
         </div>
         </br>
         </br>
@@ -187,7 +175,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
                 <h3>Face Detector and Redactor</h3>
                 <div>This flow engine process Face Recognition against a specified library and then runs a redaction process against any entities detected that were provided in the engine's custom fields.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-detector-redactor"> DETAILS</a>
         </div>
         </br>
         </br>
@@ -196,7 +184,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
                 <h3>YouTube Scraper</h3>
                 <div>This flow accepts a payload including a YouTubeVideoId value that it then uses to ingest the video, transcribes it, and then runs topic extraction on that transcript. The topic transcription results are written to an SDO which is then correlated to that TDO that was created.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/youtube-scraper"> DETAILS</a>
         </div>
         </br>
         </br>
@@ -205,7 +193,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
                 <h3>Trigger & Scrape</h3>
                 <div>When a new mention is created, an event subscription triggers this specific flow engine to run. The Flow engine evaluates the event payload determining if the mention was created on a "Cognitive Search profile evaluating for a string value" and then sends an alert to a designated input.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/trigger-and-scrape"> DETAILS</a>
         </div>
     </div>
     <div class="featureColumn">
@@ -214,7 +202,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
                 <h3>Zoom Analyst</h3>
                 <div>Analyze a live zoom call : live transcript with speaker separation. Text analytics. Fast search, playback and clipping of snippets of a call for sharing.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/zoom-analyst"> DETAILS</a>
         </div>
         </br>
         </br>
@@ -223,7 +211,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
                 <h3>Face Alerter</h3>
                 <div>This flow engine processes Face Recognition against image or video file chunks and if the chunk outputs match the entity names provided in the engine custom field at runtime, a text message is sent to the phone number provided in a custom field for that engine at setup time</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-alerter"> DETAILS</a>
         </div>
         </br>
         </br>
@@ -232,7 +220,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
                 <h3>Audio Content Classification and Entity Extraction</h3>
                 <div>A flow engine that transcribes audio, then runs content classification and entity extraction on the transcribed text.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/audio-content-classification"> DETAILS</a>
         </div>
         </br>
         </br>
@@ -241,7 +229,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
                 <h3>Customer Happiness Bot</h3>
                 <div>A Flow engine that connects to HelpScout, retrieves the specified logs (and accepts a "query":{} object that stores params to query the user's HelpScout org with, and processes the logs with Sentiment analysis.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/customer-happiness-bot"> DETAILS</a>
         </div>
         </br>
         </br>
@@ -250,7 +238,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
                 <h3>Email Sentiment Extracter</h3>
                 <div>A Flow engine that accepts incoming csv & text files webhooked to an HTTP Adapter endpoint sent from an email provider of your choice (eg Mandrill, Sendgrid) and process with a sentiment analysis engine and (1) write the results to a TDO, (2) write the results back to a callbackUrl field if provided by the sender.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/email-sentiment-extracter"> DETAILS</a>
         </div>
         </br>
         </br>
@@ -259,14 +247,10 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
                 <h3>Twitter Temp Bot</h3>
                 <div>Scrape tweets from either a user (or given users) or a topic/hashtag and run sentiment analysis.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/README"> DETAILS</a>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/twitter-temp-bot"> DETAILS</a>
         </div>
     </div>
 </div>
-<br>
-<br>
-<div class="buttonColumn">
-    <a href="https://github.com/veritone/automate-flow-templates" id="view-more-templates-btn">VIEW ALL BOUNTIES ON GITHUB</a>
-</div>
+
 
 
