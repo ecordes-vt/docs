@@ -123,6 +123,19 @@
         left: -367px;
     }
 
+    #propose-flow-bounty-btn {
+        display: block;
+        color: #2F80ED;
+        border: 1px solid #2F80ED;
+        width: 210px;
+        height: 30px;
+        text-align: center;
+        padding: 3px;
+        position: relative;
+        text-decoration: none;
+        left: 40%;
+    }
+
 </style>
 
 ## What are Automate Flow Bounties? {docsify-ignore}
@@ -130,6 +143,12 @@ This is sample text and will all be replaces with something that doesn't sound t
 
 ## How do I Claim a Bounty? {docsify-ignore}
 More sample text. Build the flow, have it verified, get paid!
+
+## How do I Propose a Bounty? {docsify-ignore}
+Even more sample text. Propose a flow, build the flow, have it verified, get paid!
+
+<a href="https://forms.gle/C6G5oQJiDaqdyWGR7" id="propose-flow-bounty-btn">PROPOSE A FLOW BOUNTY</a>
+
 <hr>
 
 ## Currently Open Automate Flow Bounties {docsify-ignore}
