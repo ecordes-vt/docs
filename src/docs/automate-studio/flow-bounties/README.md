@@ -133,7 +133,7 @@ More sample text. Build the flow, have it verified, get paid!
 <hr>
 
 ## Currently Open Automate Flow Bounties {docsify-ignore}
-
+<br>
 <div style="display: flex">
     <div class="featureColumn">
         <div class="featureBox"> 
