@@ -160,6 +160,7 @@
 - [Automate Studio](automate-studio/)
   - [Getting Started](automate-studio/getting-started/README)
   - [Flow Bounties](automate-studio/flow-bounties/README)
+    - [Compliance Remixer](automate-studio/flow-bounties/flow-bounty-details/compliance-remixer)
   - [Tutorials](automate-studio/flow-examples/README)
   - [FAQ](automate-studio/faq)
 - [Machine Box](/developer/machine-box/)     
