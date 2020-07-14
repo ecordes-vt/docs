@@ -44,9 +44,6 @@
         top: -40px;
     }
 
-    a.link {
-    }
-
     div.newsSectionColumn{
         width: 975px;
         position:relative;
@@ -121,32 +118,41 @@
         padding: 3px;
         position: relative;
         text-decoration: none;
-        left: 40%;
+        left: 385px;
+    }
+
+    .description-text {
+        font-size: 110%
     }
 
 </style>
 
 ## What are Automate Flow Bounties? {docsify-ignore}
-This is sample text and will all be replaces with something that doesn't sound terrible. Automate flows allow less technical users to build cool AI workflows with Veritone Engines. In an effort to expand our library of pre-made flow templates, we are starting the Automate Flow Bounty Program, where developers can build the flows we need in exchange for money. This is sample text and will all be replaces with something that doesn't sound terrible.  
+Below you will find a wishlist of Automate flows that we, at Veritone, hope to have 3rd party developers help us build. In order to incentivize building these flows, we have placed bounties on them. For each flow a developer creates, the specified bounty will be paid out. 
 
 ## How do I Claim a Bounty? {docsify-ignore}
-More sample text. Build the flow, have it verified, get paid!
+Claiming a bounty is quite simple!
+1. View the details for the flow you are interested in building.
+2. Fill out the [form](https://forms.gle/tkVjfrtyBDrXyoji7) to claim the flow.
+3. Build the flow according to the specifications
+4. When complete, submit this form to get the flow approved.
+5. Get Paid!
 
-## How do I Propose a Bounty? {docsify-ignore}
-Even more sample text. Propose a flow, build the flow, have it verified, get paid!
+## How do I Propose a Wishlist Flow? {docsify-ignore}
+If you want to propose a new flow that is neither in our library or wish list, fill out this [form](https://forms.gle/C6G5oQJiDaqdyWGR7). A Veritone team member will review it and either approve it or get back to you with feedback on your proposal. Once it is approved, you will see it added to the wishlist below!
 
-<a href="https://forms.gle/C6G5oQJiDaqdyWGR7" id="propose-flow-bounty-btn">PROPOSE A FLOW BOUNTY</a>
+
 
 <hr>
 
-## Currently Open Automate Flow Bounties {docsify-ignore}
+## Automate Flow Wishlist {docsify-ignore}
 <br>
 <div style="display: flex">
     <div class="featureColumn">
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Compliance Remixer</h3>
-                <div>As a user in the Compliance & Legal team at a Media & Entertainment company, I need to be able to quickly scan each clip within a larger production video to quickly contextualize where the ad appears in the video</div>
+                <div class="description-text">As a user in the Compliance & Legal team at a Media & Entertainment company, I need to be able to quickly scan each clip within a larger production video to quickly contextualize where the ad appears in the video.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/compliance-remixer"> DETAILS</a>
         </div>
@@ -155,7 +161,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Scrape Classification</h3>
-                <div>As a CMS/GraphQL user, I can create a job that invokes an Automation engine to scrape a website and process the content for either topic extraction or content classification (or both!)</div>
+                <div class="description-text">As a CMS/GraphQL user, I can create a job that invokes an Automation engine to scrape a website and process the content for either topic extraction or content classification (or both!)</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/scrape-classification"> DETAILS</a>
         </div>
@@ -164,7 +170,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Twitter Classification</h3>
-                <div>This flow engine scrapes the tweets of a provided Twitter user and processes each tweet to create topics associated with each tweet.</div>
+                <div class="description-text">This flow engine scrapes the tweets of a provided Twitter user and processes each tweet to create topics associated with each tweet.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/twitter-classification"> DETAILS</a>
         </div>
@@ -173,7 +179,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Face Detector and Redactor</h3>
-                <div>This flow engine process Face Recognition against a specified library and then runs a redaction process against any entities detected that were provided in the engine's custom fields.</div>
+                <div class="description-text">This flow engine process Face Recognition against a specified library and then runs a redaction process against any entities detected that were provided in the engine's custom fields.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-detector-redactor"> DETAILS</a>
         </div>
@@ -182,7 +188,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>YouTube Scraper</h3>
-                <div>This flow accepts a payload including a YouTubeVideoId value that it then uses to ingest the video, transcribes it, and then runs topic extraction on that transcript. The topic transcription results are written to an SDO which is then correlated to that TDO that was created.</div>
+                <div class="description-text">This flow accepts a payload including a YouTubeVideoId value that it then uses to ingest the video, transcribes it, and then runs topic extraction on that transcript. The topic transcription results are written to an SDO which is then correlated to that TDO that was created.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/youtube-scraper"> DETAILS</a>
         </div>
@@ -191,7 +197,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Trigger & Scrape</h3>
-                <div>When a new mention is created, an event subscription triggers this specific flow engine to run. The Flow engine evaluates the event payload determining if the mention was created on a "Cognitive Search profile evaluating for a string value" and then sends an alert to a designated input.</div>
+                <div class="description-text">When a new mention is created, an event subscription triggers this specific flow engine to run. The Flow engine evaluates the event payload determining if the mention was created on a "Cognitive Search profile evaluating for a string value" and then sends an alert to a designated input.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/trigger-and-scrape"> DETAILS</a>
         </div>
@@ -200,7 +206,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
         <div class="featureBox"> 
             <div class= "featureText">
                 <h3>Zoom Analyst</h3>
-                <div>Analyze a live zoom call : live transcript with speaker separation. Text analytics. Fast search, playback and clipping of snippets of a call for sharing.</div>
+                <div class="description-text">Analyze a live zoom call : live transcript with speaker separation. Text analytics. Fast search, playback and clipping of snippets of a call for sharing.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/zoom-analyst"> DETAILS</a>
         </div>
@@ -209,7 +215,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
         <div class="featureBox">  
             <div class= "featureText">
                 <h3>Face Alerter</h3>
-                <div>This flow engine processes Face Recognition against image or video file chunks and if the chunk outputs match the entity names provided in the engine custom field at runtime, a text message is sent to the phone number provided in a custom field for that engine at setup time</div>
+                <div class="description-text">This flow engine processes Face Recognition against image or video file chunks and if the chunk outputs match the entity names provided in the engine custom field at runtime, a text message is sent to the phone number provided in a custom field for that engine at setup time.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-alerter"> DETAILS</a>
         </div>
@@ -218,7 +224,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Audio Content Classification and Entity Extraction</h3>
-                <div>A flow engine that transcribes audio, then runs content classification and entity extraction on the transcribed text.</div>
+                <div class="description-text">A flow engine that transcribes audio, then runs content classification and entity extraction on the transcribed text.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/audio-content-classification"> DETAILS</a>
         </div>
@@ -227,7 +233,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Customer Happiness Bot</h3>
-                <div>A Flow engine that connects to HelpScout, retrieves the specified logs (and accepts a "query":{} object that stores params to query the user's HelpScout org with, and processes the logs with Sentiment analysis.</div>
+                <div class="description-text">A Flow engine that connects to HelpScout, retrieves the specified logs (and accepts a "query":{} object that stores params to query the user's HelpScout org with, and processes the logs with Sentiment analysis.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/customer-happiness-bot"> DETAILS</a>
         </div>
@@ -236,7 +242,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Email Sentiment Extracter</h3>
-                <div>A Flow engine that accepts incoming csv & text files webhooked to an HTTP Adapter endpoint sent from an email provider of your choice (eg Mandrill, Sendgrid) and process with a sentiment analysis engine and (1) write the results to a TDO, (2) write the results back to a callbackUrl field if provided by the sender.</div>
+                <div class="description-text">A Flow engine that accepts incoming csv & text files webhooked to an HTTP Adapter endpoint sent from an email provider of your choice (eg Mandrill, Sendgrid) and process with a sentiment analysis engine and (1) write the results to a TDO, (2) write the results back to a callbackUrl field if provided by the sender.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/email-sentiment-extracter"> DETAILS</a>
         </div>
@@ -245,7 +251,7 @@ Even more sample text. Propose a flow, build the flow, have it verified, get pai
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Twitter Temp Bot</h3>
-                <div>Scrape tweets from either a user (or given users) or a topic/hashtag and run sentiment analysis.</div>
+                <div class="description-text">Scrape tweets from either a user (or given users) or a topic/hashtag and run sentiment analysis.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/twitter-temp-bot"> DETAILS</a>
         </div>

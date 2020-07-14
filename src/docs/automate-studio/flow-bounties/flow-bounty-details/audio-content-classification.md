@@ -14,11 +14,10 @@
     }
 </style>
 # Audio Content Classification
-[cognitivecategory/ContentClassification/lightgrey]
 [status/Development/Undeveloped/red]
 
 
 ## Overview {docsify-ignore}
 As a user in the Media and Entertainment field, I want to be able to input an audio file, have it transcribed, then run content classification on the transcribed audio.
-<a href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS BOUNTY!</a>
+<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS BOUNTY!</a>
 <hr>

@@ -14,7 +14,7 @@
     }
 </style>
 # Twitter Classification
-[cognitivecategory/ContentClassification/lightgrey]
+
 [status/Development/Undeveloped/red]
 
 
@@ -27,5 +27,5 @@ This flow engine scrapes the tweets of a provided Twitter user and processes eac
 3. At the same time, each tweet's content is processed by a topic extraction engine (eg, ZettaCloud)
 4. Each result is written back to the SDO, and the SDOs are correlated to the TDO created at start time
 
-<a href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS BOUNTY!</a>
+<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS BOUNTY!</a>
 <hr>
