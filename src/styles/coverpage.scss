@@ -81,7 +81,8 @@ section.cover {
   .background {
     width: 100%;
     height: 640px;
-    background-image: linear-gradient(#002746, #347bb3);
+    
+    background:white;
     position: absolute;
     z-index: -1;
     overflow: hidden;
