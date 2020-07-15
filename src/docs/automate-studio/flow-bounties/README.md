@@ -1,7 +1,7 @@
 <!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
 
 # Automate Studio Flow Bounties
-
+Below you will find a wishlist of Automate flows that we, at Veritone, hope to have 3rd party developers help us build. In order to incentivize building these flows, we have placed bounties on them. For each flow a developer creates, the specified bounty will be paid out. 
 <style>
     div.featureBox {
         -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
@@ -135,9 +135,6 @@
 
 </style>
 
-## What are Automate Flow Bounties? {docsify-ignore}
-Below you will find a wishlist of Automate flows that we, at Veritone, hope to have 3rd party developers help us build. In order to incentivize building these flows, we have placed bounties on them. For each flow a developer creates, the specified bounty will be paid out. 
-
 ## How do I Claim a Bounty? {docsify-ignore}
 Claiming a bounty is quite simple!
 1. View the details for the flow you are interested in building.
@@ -146,7 +143,7 @@ Claiming a bounty is quite simple!
 4. When complete, submit this form to get the flow approved.
 5. Get Paid!
 
-## How do I Propose a Wishlist Flow? {docsify-ignore}
+## How do I Propose a New Wishlist Flow? {docsify-ignore}
 If you want to propose a new flow that is neither in our library or wish list, fill out this [form](https://forms.gle/C6G5oQJiDaqdyWGR7). A Veritone team member will review it and either approve it or get back to you with feedback on your proposal. Once it is approved, you will see it added to the wishlist below!
 
 
