@@ -168,6 +168,7 @@
     - [Scrape Classification](automate-studio/flow-bounties/flow-bounty-details/scrape-classification)
     - [Trigger and Scrape](automate-studio/flow-bounties/flow-bounty-details/trigger-and-scrape)
     - [Twitter Classification](automate-studio/flow-bounties/flow-bounty-details/twitter-classification)
+    - [Twitter Temp Bot](automate-studio/flow-bounties/flow-bounty-details/twitter-temp-bot)
     - [Youtube Scraper](automate-studio/flow-bounties/flow-bounty-details/youtube-scraper)
     - [Zoom Analyst](automate-studio/flow-bounties/flow-bounty-details/zoom-analyst)
   - [Tutorials](automate-studio/flow-examples/README)
