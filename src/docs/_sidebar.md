@@ -160,7 +160,6 @@
 - [Automate Studio](automate-studio/)
   - [Getting Started](automate-studio/getting-started/README)
   - [Flow Bounties](automate-studio/flow-bounties/README)
-    - [Audio Content Classification](automate-studio/flow-bounties/flow-bounty-details/audio-content-classification)
     - [Compliance Remixer](automate-studio/flow-bounties/flow-bounty-details/compliance-remixer)
     - [Customer Happiness Bot](automate-studio/flow-bounties/flow-bounty-details/customer-happiness-bot)
     - [Email Sentiment Extracter](automate-studio/flow-bounties/flow-bounty-details/email-sentiment-extracter)

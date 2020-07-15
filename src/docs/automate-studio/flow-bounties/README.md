@@ -205,13 +205,15 @@ If you want to propose a new flow that is neither in our library or wish list, f
         </div>
         </br>
         </br>
-        <div class="featureBox"> 
-            <div class="featureText">
-                <h3>Trigger & Scrape</h3>
-                <div class="description-text">When a new mention is created, an event subscription triggers this specific flow engine to run. The flow engine evaluates the event payload determining if the mention was created on a "Cognitive Search profile evaluating for a string value" and then sends an alert to a designated input.</div>
+        <div style="position:relative; left: 250px">
+            <div class="featureBox"> 
+                <div class="featureText">
+                    <h3>Trigger & Scrape</h3>
+                    <div class="description-text">When a new mention is created, an event subscription triggers this specific flow engine to run. The flow engine evaluates the event payload determining if the mention was created on a "Cognitive Search profile evaluating for a string value" and then sends an alert to a designated input.</div>
+                </div>
+                <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/trigger-and-scrape"> BUILD IT!</a>
+                <div class="bounty-number">$300</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/trigger-and-scrape"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
         </div>
     </div>
     <div class="featureColumn">
@@ -232,16 +234,6 @@ If you want to propose a new flow that is neither in our library or wish list, f
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-alerter"> BUILD IT!</a>
             <div class="bounty-number">$250</div>
-        </div>
-        </br>
-        </br>
-        <div class="featureBox"> 
-            <div class="featureText">
-                <h3>Audio Content Classification and Entity Extraction</h3>
-                <div class="description-text">A flow engine that transcribes audio, then runs content classification and entity extraction on the transcribed text.</div>
-            </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/audio-content-classification"> BUILD IT!</a>
-            <div class="bounty-number"></div>
         </div>
         </br>
         </br>
