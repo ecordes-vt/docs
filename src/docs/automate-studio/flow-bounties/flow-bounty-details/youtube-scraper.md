@@ -19,7 +19,7 @@
 
 
 ## Overview {docsify-ignore}
-This flow accepts a payload including a YouTubeVideoId value that it then uses to ingest the video, transcribes it, and then runs topic extraction on that transcript. The topic transcription results are written to an SDO which is then correlated to that TDO that was created 
+This flow accepts a payload including a YouTubeVideoId value that it then uses to ingest a video. It then transcribes the video, and runs topic extraction on that transcript. The topic transcription results are written to an SDO which is then correlated to that TDO that was created.
 
 <a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
 <hr>
