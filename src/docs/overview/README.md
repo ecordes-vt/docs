@@ -37,7 +37,6 @@
     }
     
     div.do-more-aiwareFeatureText {
-        width: 75%;
         position: relative; 
         top: -40px
     }
@@ -48,6 +47,10 @@
         position: relative;
         font-size:90%;
         bottom: -5px;
+    }
+
+    a.in-text-link {
+        text-decoration: none;
     }
     
     div.joinUsBox {
@@ -140,9 +143,7 @@
 </div>
 
 ## What is Veritone aiWARE? {docsify-ignore}
-With Veritone’s aiWARE operating system for AI, leverage tools to develop AI-enabled apps and automated workflows. Use one or combine multiple to architect a custom solution for virtually any use case. The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. 
-
-This approach combined with our proprietary orchestration technology, Conductor, makes it possible to quickly and accurately analyze massive amounts of diverse information — audio, video, image, text, and more — from multiple sources and formats to produce actionable intelligence in a faster, more scalable, and more cost-effective way than humans can.
+Veritone aiWARE is a production-proven AI platform that lets you harness the power of AI anywhere, any time. Cognitively enable new or existing apps rapidly, using a unified API for more than 300 engines available on the aiWARE platform. Deploy enterprise-grade solutions at scale, using our infrastructure or your own. Process massive amounts of data — audio, video, image, text, and more — to extract actionable intelligence. Boost the productivity of your business and IT teams by intelligently automating manual, repetitive, and data-driven tasks — no in-depth coding skills or AI expertise required.
 
 
 <hr>
@@ -314,7 +315,7 @@ This approach combined with our proprietary orchestration technology, Conductor,
         <div class="featureBox"> 
             <div class="do-more-aiwareFeatureText">
                 <h3>Veritone Automate Studio</h3>
-                <div>Automate workflows and processes using a drag and drop platform.</div>
+                <div>Automate workflows and processes using a drag and drop platform. Learn how to make money with our Automate flow bounties program by clicking <a class="in-text-link" href="/#/automate-studio/flow-bounties/README"> here</a>!</div>
                 <a class="link" href="/#/automate-studio/"> EXPLORE</a>
             </div>
         </div>

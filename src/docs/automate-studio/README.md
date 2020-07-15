@@ -134,10 +134,7 @@
 </div>
 
 ## What is Veritone's Automate Studio? {docsify-ignore}
-With Veritone Automate Studio, less-technical users can create their own AI Solutions that incorporate Veritone's cognitive engines and real time services directly into custom business applications.
-
-Automate Studio lets you quickly develop enterprise-grade AI solutions that tap into veritone's 300+ Cognitive engines across more than a dozen classes of AI cognition.
-
+Veritone Automate Studio is a low-code workflow designer that empowers technical and business teams to tap into a full-stack AI architecture to design and deploy AI-powered business processes at scale in days, not months. Leverage an intuitive drag-and-drop UI to easily create advanced business logic on a digital canvas, without the need for in-depth coding skills or AI expertise. Automate Studio enables intelligent process automation (IPA) and workflow enrichment across both new and existing systems and applications.
 
 <hr>
 

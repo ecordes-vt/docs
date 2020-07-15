@@ -42,5 +42,5 @@ Automate Flows under the covers:
  1. When a user connects a calendar - Call Job #1
  2. When a user disconnects a calendar - Flow Not Shown
 
- <a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS BOUNTY!</a>
+ <a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
 <hr>

@@ -30,5 +30,5 @@ Acceptance criteria are as follows:
 
 Hint: we can reference and use this node.js engine which achieves a similar outcome - task-analytics-pdf-generator
 
-<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS BOUNTY!</a>
+<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
 <hr>

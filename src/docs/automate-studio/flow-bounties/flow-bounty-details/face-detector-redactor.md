@@ -21,5 +21,5 @@
 ## Overview {docsify-ignore}
 This flow engine process Face Recognition against a specified library and then runs a redaction process against any entities detected that were provided in the engine's custom fields
 
-<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS BOUNTY!</a>
+<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
 <hr>
