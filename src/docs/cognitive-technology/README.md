@@ -16,6 +16,10 @@
         position: relative;
     }
 
+    a.in-text-link {
+        text-decoration: none;
+    }
+
     #explore-api-basics-btn {
         display: block;
         color: #2F80ED;
@@ -273,11 +277,11 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
         </div>
     </div>
     <div class="newsColumn">
-        - Expanded documentation for Automate Studio.
+        - Expanded documentation for <a class="in-text-link" href="/#/automate-studio/flow-bounties/README"> Automate Studio.</a>
         <br>
-        - New "Working with Jobs" quickstart.
+        - New <a class="in-text-link" href="/#/quickstart/jobs/?id=working-with-jobs"> "Working with Jobs"</a> quickstart.
         <br>
-        - How to view job and task logs.
+        - New <a class="in-text-link" href="/#/overview/aiWARE-in-depth/edge/logs"> "How to view job and task logs"</a> guide.
     </div>
 </div>
 <br>
@@ -288,11 +292,11 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
         </div>
     </div>
     <div class="newsColumn">
-        - New documentation tells how you can benchmark your engines with the Benchmark app (beta).
+        - New documentation tells how you can <a class="in-text-link" href="/#/benchmark/"> benchmark</a> your engines with the Benchmark app (beta).
         <br>
-        - New documentation on how to update cognitive engines for the latest version of aiWARE Edge.
+        - New documentation on how to update <a class="in-text-link" href="/#/developer/engines/"> cognitive engines</a> for the latest version of aiWARE Edge.
         <br>
-        - New Automate Studio FAQ.
+        - New Automate Studio <a class="in-text-link" href="/#/automate-studio/faq"> FAQ</a>.
     </div>
 </div>
 <br>
