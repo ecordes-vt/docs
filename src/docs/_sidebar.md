@@ -68,6 +68,7 @@
       - [Adapter Manifest](developer/adapters/manifest.md)
     - [Working with **Structured Data**](developer/data/)
       - [Quickstart](developer/data/quick-start/)
+    - [Working with **Jobs**](quickstart/jobs/?id=working-with-jobs)
     - [Working with **Libraries**](developer/libraries/)
       - [Library-enabled Engines](developer/libraries/engines.md)
       - [Training Engines](developer/libraries/training.md)
