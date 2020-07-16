@@ -10,7 +10,7 @@ Scenario('graphql code shows link', I => {
   I.click(TRY_GRAPHIQL_TEXT);
   I.wait(1);
   I.switchToNextTab();
-  I.seeInCurrentUrl('graphiql');
+  I.seeInCurrentUrl('graphql'); /* This was graphiql before */
 
   // Proves code got injected into the GraphiQL query editor
   // This fails when doing local development using the docsify command because it serves from source,

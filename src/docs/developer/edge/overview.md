@@ -1,18 +1,20 @@
-## V3F Framework
+<!-- markdownlint-disable -->
+
+# V3F Framework
 
 The figure below shows at a high level the V3 Framework (V3F), which is where Engine Toolkit makes requests to Controller for work. The requests are made on behalf of the engines that the Engine Toolkit represents, including native engines such as Webstream Adaptor (WSA), Stream Ingestor (SI), and Output Writer.
 
-![](V3F-engine-framework.png)
+![Engine Framework](V3F-engine-framework.png)
 
 The Controller queries the database for tasks that are assigned to the engines, and assigns work requests, batches of work items, back to Engine Toolkit.
 
 For each work item in the work request, Engine Toolkit:
 
-1.  Retrieves the input data from the filesystem (FS) for the tasks.
+1. Retrieves the input data from the filesystem (FS) for the tasks.
 
-2.  Invokes the core engine's `/process` webhook.
+2. Invokes the core engine's `/process` webhook.
 
-3.  Stores the result back to the filesystem for the next task.
+3. Stores the result back to the filesystem for the next task.
 
 Engine Toolkit also has a heartbeat loop to report back to Controller the work item progress: number of processed chunks, errors, etc.
 

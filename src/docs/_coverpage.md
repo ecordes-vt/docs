@@ -1,4 +1,5 @@
 <!-- markdownlint-disable no-inline-html -->
+
 <!--<meta http-equiv="Refresh" content="0; url='https://docs.veritone.com/#/overview/'" /> -->
 <meta http-equiv="refresh" content="0; url=./#/overview/" />
 
@@ -17,10 +18,5 @@ section.cover .cover-main {
     </div>
   </div>
   <div class="background">
-    
   </div>
-  
-
-
 </div>
-
