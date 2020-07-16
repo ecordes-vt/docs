@@ -210,7 +210,7 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
         </div>
     </div>
     <div class="newsColumn">
-        - Expanded documentation for <a class="in-text-link" href="/#/automate-studio/flow-bounties/README"> Automate Studio.</a>
+        - Expanded documentation for <a class="in-text-link" href="/#/automate-studio/"> Automate Studio.</a>
         <br>
         - New <a class="in-text-link" href="/#/quickstart/jobs/?id=working-with-jobs"> "Working with Jobs"</a> quickstart.
         <br>
