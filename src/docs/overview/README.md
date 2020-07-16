@@ -152,7 +152,7 @@ Veritone aiWARE is a production-proven AI platform that lets you harness the pow
 
 <!-- tabs:start -->
 
-#### ** WHAT ARE YOU TRYING TO ACHIEVE **
+#### ** WHAT ARE YOU TRYING TO ACHIEVE? **
 
 <div style="display: flex">
     <div class="featureColumn">
