@@ -1,11 +1,3 @@
 {
-  "line-length": false,
-  "no-inline-html": {
-    "allowed_elements": ["table", "tr", "th", "td", "sup","div","iframe","script","br"]
-  },
-  "no-bare-urls": false,
-  "no-duplicate-heading": false,
-  "no-trailing-punctuation": {
-    "punctuation": ".,;:"
-  }
+
 }
