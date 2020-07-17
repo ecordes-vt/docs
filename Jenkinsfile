@@ -75,7 +75,7 @@ pipeline {
 
             steps {
                 pullEnvironmentConfigOnBuild(GIT_REPO_NAME, ENVIRONMENT)
-                nodeBuild()
+                sh "yarn run build"
                 createBuildManifest("./build-${ENVIRONMENT}")
             }
         }
@@ -127,7 +127,7 @@ pipeline {
 
                     steps {
                         pullEnvironmentConfigOnBuild(GIT_REPO_NAME, ENVIRONMENT)
-                        nodeBuild()
+                        sh "yarn run build"
                         createBuildManifest("./build-${ENVIRONMENT}")
                     }
                 }
@@ -185,7 +185,7 @@ pipeline {
                     }
                     steps {
                         pullEnvironmentConfigOnBuild(GIT_REPO_NAME, ENVIRONMENT)
-                        nodeBuild()
+                        sh "yarn run build"
                         createBuildManifest("./build-${ENVIRONMENT}")
                     }
                 }
@@ -200,7 +200,7 @@ pipeline {
 
                     steps {
                         pullEnvironmentConfigOnBuild(GIT_REPO_NAME, ENVIRONMENT)
-                        nodeBuild()
+                        sh "yarn run build"
                         createBuildManifest("./build-${ENVIRONMENT}")
                     }
                 }
