@@ -1,9 +1,9 @@
-<!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
+<!-- markdownlint-disable no-inline-html no-trailing-spaces blanks-around-headings-->
 
 <style>
 
     div.topVideo {
-        width: 820px; 
+        width: 820px;
         height: 300px;
         display: flex;
     }

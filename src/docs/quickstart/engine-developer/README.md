@@ -1,4 +1,4 @@
-<!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
+<!-- markdownlint-disable no-inline-html no-trailing-spaces blanks-around-headings-->
 
 <style>
 
@@ -119,17 +119,14 @@
         text-decoration: none;
     }
 
-
 </style>
 
 # Engine Developer Quick Start
-
 
 <div class="topVideo">
     <iframe src="https://player.vimeo.com/video/375527305?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>
 <script src="https://player.vimeo.com/api/player.js"></script>
-
 
 ## Getting Started With Engine Development?
 On the aiWARE platform each cognitive artificial intelligence capability is packaged into a container called a cognitive engine. You can write your engine in any language and deploy it as a Docker container. Let us worry about the rest.
@@ -143,8 +140,7 @@ Here's the quickest way to get started building your cognitive engine:
 3. Use our [Engine Toolkit SDK](/developer/engines/toolkit/?id=using-the-engine-toolkit-beta) to package, deploy, and test your engine.
 
 4. Once you've packaged and submitted your cognitive engine to Veritone, you're ready to monetize your engine! Review the [Path to Monetization](/developer/engines/getting-started/path-to-monetization/) guide.
-
-
+ 
 <hr>
 
 ## Video Tutorial Series: How to Build a Cognitive Engine
@@ -171,7 +167,6 @@ Here's the quickest way to get started building your cognitive engine:
 <div class="buttonColumn">
     <a href="/" id="view-all-series-btn">VIEW ALL SERIES (TODO)</a>
 </div>
-
 
 ## Do More With aiWARE
 <br>

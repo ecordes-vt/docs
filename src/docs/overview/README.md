@@ -1,4 +1,4 @@
-<!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
+<!-- markdownlint-disable no-inline-html no-trailing-spaces blanks-around-headings heading-increment/header-increment-->
 # Veritone aiWARE 
 
 <style>
