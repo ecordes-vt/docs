@@ -8,6 +8,13 @@ import {
 } from "./sidebarHelper";
 
 const docsifyConfig = {
+  tabs: {
+    persist    : true,      // default
+    sync       : true,      // default
+    theme      : 'material', // default
+    tabComments: true,      // default
+    tabHeadings: true       // default
+  },
   basePath: "/docs",
   search: "auto", // default
   maxLevel: 1,
@@ -17,7 +24,7 @@ const docsifyConfig = {
   loadSidebar: true,
   auto2top: true,
   coverpage: true,
-  onlyCover: true,
+  
   // notFoundPage: {
   //   '\/(.*)(?<!\/)$': '1$/'
   // }
@@ -147,7 +154,7 @@ const docsifyConfig = {
      * Replaces instances of `[badge/API/Yes/green]` with a badge from shields.io
      * with a label of "API Support", a value of "Yes", and a color of green.
      **/
-    function veritoneBadgePlugin(hook) {
+    function veritoneBadgePluginSupport(hook) {
       hook.beforeEach(function onBeforePageParsed(content) {
         var BADGE_REGEX = /\[badge\/(\w+)\/(\w+)\/(\w+)]/g;
         // TODO: Wrap with link to explanations of what API, Search, and UI Support mean
@@ -157,6 +164,30 @@ const docsifyConfig = {
         );
       });
     },
+
+    function veritoneBadgePluginStatus(hook) {
+      hook.beforeEach(function onBeforePageParsed(content) {
+        var BADGE_REGEX = /\[status\/(\w+)\/(\w+)\/(\w+)]/g;
+        // TODO: Wrap with link to explanations of what API, Search, and UI Support mean
+        return content.replace(
+          BADGE_REGEX,
+          "![$1 Status: $2](https://img.shields.io/badge/$1%20Status-$2-$3.svg)"
+        );
+      });
+    },
+
+    function veritoneBadgePluginCognitiveCategory(hook) {
+      hook.beforeEach(function onBeforePageParsed(content) {
+        var BADGE_REGEX = /\[cognitivecategory\/(\w+)\/(\w+)]/g;
+        // TODO: Wrap with link to explanations of what API, Search, and UI Support mean
+        return content.replace(
+          BADGE_REGEX,
+          "![$1 cognitivecategory: $2](https://img.shields.io/badge/Cognitive%20Category-$1-$2)"
+        );
+      });
+    },
+
+    
 
     /**
      * "Support" Classed Headers

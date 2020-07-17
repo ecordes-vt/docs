@@ -42,7 +42,7 @@ For a full list of engine classes and capabilities currently supported by aiWARE
 </div>
 
 
-## How Engines Work
+## How Engines Work {docsify-ignore}
 
 Engines are packaged and deployed as [Docker](https://www.docker.com/) builds, so that when an engine is instantiated at runtime, it runs in its own "container" (essentially, its own Linux instance).
 
@@ -118,7 +118,7 @@ The above code fetches the incoming chunk as an in-memory string, then hands the
 
 We'll have more to say about this code in just a minute, since it forms the basis of our "Hello World" engine (see below).
 
-## Fields Available to Engines
+## Fields Available to Engines {docsify-ignore}
 
 Every incoming chunk of data arrives as part of a `multipart/form-data` POST to your engine's `/process` webhook.
 
@@ -141,7 +141,7 @@ The following fields are posted to your `/process` webhook:
 
 More information on these items can be found in the Engine Developer's Toolkit (see next section).
 
-## The Veritone Engine Developer's Toolkit
+## The Veritone Engine Developer's Toolkit {docsify-ignore}
 
 If you're interested in building a cognitive engine, your first step should be to download Veritone's [Engine Developer Toolkit](https://github.com/veritone/engine-toolkit/releases).
 
@@ -166,7 +166,7 @@ The `engine` binary, in turn, will act as a driver-like intermediary between you
 
 Note that the Engine Toolkit currently supports segment (chunk) engines only. If you need to write a stream-based cognitive engine, [contact us](mailto:ecosystem@veritone.com).
  
-## 'Hello World' Engine: High-Level Overview
+## 'Hello World' Engine: High-Level Overview {docsify-ignore}
 
 At a high level, the steps you need to carry out in order to create and onboard an engine include:
 
@@ -185,7 +185,7 @@ In the steps that follow, we'll build a simple text-processing engine that extra
 
 The purpose of this tutorial is to show you (using actual code and build artifacts) how to structure an engine; package it using Docker; test the engine locally; deploy it onto the Veritone platform, and test the deployed engine, live, in aiWARE.
 
-## Before You Begin
+## Before You Begin {docsify-ignore}
 
 Here's a short checklist of prerequisites:
 
@@ -397,7 +397,7 @@ Although, strictly speaking, a `package.json` file isn't mandatory, we've provid
 
 Your `/var` folder should be empty. It will be populated automatically during the Docker build step.
 
-## What's Next?
+## What's Next? {docsify-ignore}
 
 Ready to begin? Learn how to:
 
