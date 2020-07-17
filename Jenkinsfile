@@ -75,7 +75,10 @@ pipeline {
 
             steps {
                 pullEnvironmentConfigOnBuild(GIT_REPO_NAME, ENVIRONMENT)
-                sh "yarn run build"
+                sh """
+                        yarn install
+                        yarn run build
+                        """
                 createBuildManifest("./build-${ENVIRONMENT}")
             }
         }
@@ -127,7 +130,10 @@ pipeline {
 
                     steps {
                         pullEnvironmentConfigOnBuild(GIT_REPO_NAME, ENVIRONMENT)
-                        sh "yarn run build"
+                        sh """
+                        yarn install
+                        yarn run build
+                        """
                         createBuildManifest("./build-${ENVIRONMENT}")
                     }
                 }
@@ -185,7 +191,10 @@ pipeline {
                     }
                     steps {
                         pullEnvironmentConfigOnBuild(GIT_REPO_NAME, ENVIRONMENT)
-                        sh "yarn run build"
+                        sh """
+                        yarn install
+                        yarn run build
+                        """
                         createBuildManifest("./build-${ENVIRONMENT}")
                     }
                 }
@@ -200,7 +209,10 @@ pipeline {
 
                     steps {
                         pullEnvironmentConfigOnBuild(GIT_REPO_NAME, ENVIRONMENT)
-                        sh "yarn run build"
+                        sh """
+                        yarn install
+                        yarn run build
+                        """
                         createBuildManifest("./build-${ENVIRONMENT}")
                     }
                 }
