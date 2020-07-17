@@ -1,4 +1,5 @@
-<!-- markdownlint-disable no-inline-html no-trailing-spaces blanks-around-headings heading-increment/header-increment-->
+<!-- markdownlint-disable no-inline-html no-trailing-spaces blanks-around-headings heading-increment no-multiple-blanks-->
+
 # Veritone aiWARE 
 
 <style>

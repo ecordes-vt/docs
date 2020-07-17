@@ -13,7 +13,6 @@
     "test": "HTTP_PORT=$(($$%5000+3000)) codeceptjs run --reporter mocha-multi",
     "test:only": "E2E_SKIP_BOOTSTRAP=true yarn test"
   },
-
   "devDependencies": {
     "allure-commandline": "^2.9.0",
     "clean-webpack-plugin": "1.0.1",
