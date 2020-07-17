@@ -75,7 +75,10 @@ pipeline {
 
             steps {
                 pullEnvironmentConfigOnBuild(GIT_REPO_NAME, ENVIRONMENT)
-                sh """
+                    sh """
+                        #!/bin/bash
+                        git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+                        export PATH=\$PATH:`npm bin`
                         yarn install
                         yarn run build
                         """
@@ -131,9 +134,12 @@ pipeline {
                     steps {
                         pullEnvironmentConfigOnBuild(GIT_REPO_NAME, ENVIRONMENT)
                         sh """
-                        yarn install
-                        yarn run build
-                        """
+                            #!/bin/bash
+                            git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+                            export PATH=\$PATH:`npm bin`
+                            yarn install
+                            yarn run build
+                            """
                         createBuildManifest("./build-${ENVIRONMENT}")
                     }
                 }
@@ -192,9 +198,12 @@ pipeline {
                     steps {
                         pullEnvironmentConfigOnBuild(GIT_REPO_NAME, ENVIRONMENT)
                         sh """
-                        yarn install
-                        yarn run build
-                        """
+                            #!/bin/bash
+                            git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+                            export PATH=\$PATH:`npm bin`
+                            yarn install
+                            yarn run build
+                            """
                         createBuildManifest("./build-${ENVIRONMENT}")
                     }
                 }
@@ -210,9 +219,12 @@ pipeline {
                     steps {
                         pullEnvironmentConfigOnBuild(GIT_REPO_NAME, ENVIRONMENT)
                         sh """
-                        yarn install
-                        yarn run build
-                        """
+                            #!/bin/bash
+                            git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+                            export PATH=\$PATH:`npm bin`
+                            yarn install
+                            yarn run build
+                            """
                         createBuildManifest("./build-${ENVIRONMENT}")
                     }
                 }
