@@ -85,7 +85,8 @@ pipeline {
                                 #!/bin/bash
                                 git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
                                 export PATH=\$PATH:`npm bin`
-                                yarn install
+				yarn install
+                                yarn build
                      """
                         }
                 }
@@ -149,6 +150,7 @@ pipeline {
                                 git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
                                 export PATH=\$PATH:`npm bin`
                                 yarn install
+				yarn build
                      """
                         }
                 }
@@ -218,6 +220,7 @@ pipeline {
                                 git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
                                 export PATH=\$PATH:`npm bin`
                                 yarn install
+				yarn build
                      """
                         }
                 }
@@ -244,6 +247,7 @@ pipeline {
                                 git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
                                 export PATH=\$PATH:`npm bin`
                                 yarn install
+				yarn build
                      """
                         }
                 }
