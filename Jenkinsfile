@@ -43,16 +43,18 @@ pipeline {
                 }
 
                 nodeInstall(APPLICATION_VERSION, null)
+		script {
 
-                // yarn install prior to parallel builds
-                withCredentials([string(credentialsId: 'GITHUB_TOKEN', variable: 'GITHUB_TOKEN')]) {
-                    sh """
-                        #!/bin/bash
-                        git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
-                        export PATH=\$PATH:`npm bin`
-                        yarn install
-                    """
-                }
+	                // yarn install prior to parallel builds
+        	        withCredentials([string(credentialsId: 'GITHUB_TOKEN', variable: 'GITHUB_TOKEN')]) {
+                	    sh """
+	                        #!/bin/bash
+        	                git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+                	        export PATH=\$PATH:`npm bin`
+                        	yarn install
+               	     """
+                	}
+		}
             }
         }
         stage("Build \'DEV\'") {
