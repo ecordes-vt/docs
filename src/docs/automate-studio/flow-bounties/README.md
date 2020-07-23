@@ -156,11 +156,51 @@ If you want to propose a new flow that is neither in our library or wish list, f
 <div style="display: flex">
     <div class="featureColumn">
         <div class="featureBox"> 
-            <div class="featureText">
-                <h3>Compliance Remixer</h3>
-                <div class="description-text">As a user in the Compliance & Legal team at a Media & Entertainment company, I need to be able to quickly scan each clip within a larger production video to quickly contextualize where the ad appears in the video.</div>
+            <div class= "featureText">
+                <h3>Call Center Automated Responses for Key Conversation Topics</h3>
+                <div class="description-text">Provide call center operators responses to questions asked by the customer in real-time, without the operator having to search themselves.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/compliance-remixer"> BUILD IT!</a>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/automated-responses-for-key-conversation-topics"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class= "featureText">
+                <h3>Call Center Sentiment Analysis</h3>
+                <div class="description-text">Help agents determine when to escalate issues and who should handle them based on the sentiment of the conversation.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/sentiment-analysis"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Call Center Content Analytics</h3>
+                <div class="description-text">Use Topic Extraction engines to tag calls with key topics for realtime escalation & future analytics of common trends.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/content-analytics"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Call Center Customer Recognition by Voice & Face</h3>
+                <div class="description-text">The flow will use voice recognition and face recognition engine to recognize the customer from an existing library. If the customer is not in the library, the flow can call another flow to add the caller to the library automatically.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/customer-recognition-by-voice-&-face"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Call Center Automated Creation of Support Tickets</h3>
+                <div class="description-text">Use AI to automatically create support tickets based on conversation details and context.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/automated-creation-of-support-tickets"> BUILD IT!</a>
             <div class="bounty-number">$300</div>
         </div>
         </br>
@@ -205,18 +245,66 @@ If you want to propose a new flow that is neither in our library or wish list, f
         </div>
         </br>
         </br>
-        <div style="position:relative; left: 250px">
-            <div class="featureBox"> 
-                <div class= "featureText">
-                    <h3>Zoom Analyst</h3>
-                    <div class="description-text">Analyze a live zoom call: live transcript with speaker separation. Text analytics. Fast search, playback and clipping of snippets of a call for sharing.</div>
-                </div>
-                <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/zoom-analyst"> BUILD IT!</a>
-                <div class="bounty-number">$300</div>
+        <div class="featureBox"> 
+            <div class= "featureText">
+                <h3>Zoom Analyst</h3>
+                <div class="description-text">Analyze a live zoom call: live transcript with speaker separation. Text analytics. Fast search, playback and clipping of snippets of a call for sharing.</div>
             </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/zoom-analyst"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
         </div>
     </div>
     <div class="featureColumn">
+        <div class="featureBox"> 
+            <div class= "featureText">
+                <h3>Call Center Connection to Social Media</h3>
+                <div class="description-text">Proactively identify issues that come up in social media platforms to drive faster resolution.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/connection-to-social-media"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class= "featureText">
+                <h3>Call Center Conversation Translation</h3>
+                <div class="description-text">Transcribe and translate conversations in near real-time to enable follow-up or intervention by agents who don’t speak the language.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/conversation-translation"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Call Center Estimation of Customers’ Intent</h3>
+                <div class="description-text">Identify caller intent to improve business metrics such as churn or customer satisfaction.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/estimation-of-customers’-intent"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Call Center Automatic Addition of New Customers’ Voice & Face to a Library</h3>
+                <div class="description-text">Using the video or audio recordings from a call between an agent and a customer. If the customer name is known, the flow will use it to create the library record, otherwise, will use “Unkown-#”.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/automatic-addition-of-new-customers’-voice-&-face-to-a-library"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Compliance Remixer</h3>
+                <div class="description-text">As a user in the Compliance & Legal team at a Media & Entertainment company, I need to be able to quickly scan each clip within a larger production video to quickly contextualize where the ad appears in the video.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/compliance-remixer"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Customer Happiness Bot</h3>
