@@ -117,6 +117,7 @@
       - [Adapters (Ingestion)](developer/engines/adapters/)
       - [Job Processing](overview/aiWARE-in-depth/job-processing)
       - [Job Examples](overview/aiWARE-in-depth/job-examples)
+      - [Single-Engine Jobs](overview/aiWARE-in-depth/single-engine-jobs)
       - [File System](overview/aiWARE-in-depth/file-system)
       - [Stream Ingestor 2](overview/aiWARE-in-depth/stream-ingestor)
     - [Veritone Applications](apps/)
