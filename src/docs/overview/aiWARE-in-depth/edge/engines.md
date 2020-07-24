@@ -584,8 +584,8 @@ finishes processing the chunk. In this situation:
     start to finish.
 
 ## Library Support
+
 ### Training libraries
-------------------
 
 An engine can be started in a job with `mode=library-train` in the
 task payload. Follows is a sample of mutation to create such job:
