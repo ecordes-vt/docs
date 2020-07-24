@@ -188,7 +188,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Call Center Customer Recognition by Voice & Face</h3>
-                <div class="description-text">The flow will use voice recognition and face recognition engine to recognize the customer from an existing library. If the customer is not in the library, the flow can call another flow to add the caller to the library automatically.</div>
+                <div class="description-text">The flow will use voice recognition and face recognition engine to recognize the customer from an existing library.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/customer-recognition-by-voice-&-face"> BUILD IT!</a>
             <div class="bounty-number">$300</div>
@@ -208,7 +208,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Email Sentiment Extracter</h3>
-                <div class="description-text">A Flow engine that accepts incoming csv & text files webhooked to an HTTP Adapter endpoint sent from an email provider of your choice and processes with a sentiment analysis engine.</div>
+                <div class="description-text">A Flow engine will process csv & text files webhooked to an HTTP Adapter endpoint sent from an email provider by a sentiment analysis engine.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/email-sentiment-extracter"> BUILD IT!</a>
             <div class="bounty-number">$200</div>
@@ -218,7 +218,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Face Detector and Redactor</h3>
-                <div class="description-text">This flow engine processes face recognition against a specified library and then runs a redaction process against any entities detected that were provided in the engine's custom fields.</div>
+                <div class="description-text">This flow engine processes face recognition against a specified library and then runs a redaction process against any entities detected.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-detector-redactor"> BUILD IT!</a>
             <div class="bounty-number">$200</div>
@@ -228,7 +228,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Trigger & Scrape</h3>
-                <div class="description-text">When a new mention is created, an event subscription triggers this specific flow engine to run. The flow engine evaluates the event payload determining if the mention was created on a "Cognitive Search profile evaluating for a string value" and then sends an alert to a designated input.</div>
+                <div class="description-text">When a new mention is created, an event subscription triggers this specific flow to determine if the mention was created and then sends an alert to a designated input.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/trigger-and-scrape"> BUILD IT!</a>
             <div class="bounty-number">$300</div>
@@ -284,11 +284,11 @@ If you want to propose a new flow that is neither in our library or wish list, f
             <div class="bounty-number">$300</div>
         </div>
         </br>
-        </br>
+        </br>           
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Call Center Automatic Addition of New Customers’ Voice & Face to a Library</h3>
-                <div class="description-text">Using the video or audio recordings from a call between an agent and a customer. If the customer name is known, the flow will use it to create the library record, otherwise, will use “Unkown-#”.</div>
+                <div class="description-text">Using the video recordings from a call, the flow will create a new entity with identifiers - voice & face - of the customer, and add it to the library.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/automatic-addition-of-new-customers’-voice-&-face-to-a-library"> BUILD IT!</a>
             <div class="bounty-number">$300</div>
@@ -298,7 +298,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Compliance Remixer</h3>
-                <div class="description-text">As a user in the Compliance & Legal team at a Media & Entertainment company, I need to be able to quickly scan each clip within a larger production video to quickly contextualize where the ad appears in the video.</div>
+                <div class="description-text">The flow will be used to quickly scan each clip within a larger production video to quickly contextualize where the ad appears in the video.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/compliance-remixer"> BUILD IT!</a>
             <div class="bounty-number">$300</div>
@@ -308,7 +308,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Customer Happiness Bot</h3>
-                <div class="description-text">A Flow engine that connects to HelpScout, retrieves the specified logs (and accepts a "query":{} object that stores params to query the user's HelpScout org with, and processes the logs with Sentiment analysis.</div>
+                <div class="description-text">A Flow engine will retrieve the specified logs from HelpScout and processes the logs with Sentiment analysis from.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/customer-happiness-bot"> BUILD IT!</a>
             <div class="bounty-number">$300</div>
@@ -318,7 +318,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
         <div class="featureBox">  
             <div class= "featureText">
                 <h3>Face Alerter</h3>
-                <div class="description-text">This flow engine processes Face Recognition against image or video file chunks and if the chunk outputs match the entity names provided in the engine custom field at runtime, a text message is sent to the phone number provided in a custom field for that engine at setup time.</div>
+                <div class="description-text">This flow engine processes Face Recognition against an image or video file and if the outputs match the provided  entity names, a text message is sent to the phone number.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-alerter"> BUILD IT!</a>
             <div class="bounty-number">$250</div>
@@ -328,7 +328,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Scrape Classification</h3>
-                <div class="description-text">As a CMS/GraphQL user, I can create a job that invokes an Automation engine to scrape a website and process the content for either topic extraction or content classification (or both!)</div>
+                <div class="description-text">This flow engine scrapes a website and processes the content for either topic extraction or content classification (or both!).                        </div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/scrape-classification"> BUILD IT!</a>
             <div class="bounty-number">$300</div>
@@ -348,7 +348,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>YouTube Scraper</h3>
-                <div class="description-text">This flow accepts a payload including a YouTubeVideoId value that it then uses to ingest the video, transcribes it, and then runs topic extraction on that transcript. The topic transcription results are written to an SDO which is then correlated to that TDO that was created.</div>
+                <div class="description-text">This flow engine ingests the video in Youtube, transcribes it, and then runs topic extraction on that transcript. </div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/youtube-scraper"> BUILD IT!</a>
             <div class="bounty-number">$250</div>

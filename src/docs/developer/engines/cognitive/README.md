@@ -20,7 +20,7 @@ Facial Features | Derives metrics based on a person's face landmarks | Face land
 Speech | Applies artificial intelligence to human language to locate, capture, identify, and categorize spoken word. | Audio data | Transcription, language detection
 Text | Applies artificial intelligence to text inputs. | Text data | Language translation, text-to-speech, content categorization
 Transformation | Transforms input to produce an enhanced or modified data set.  | All kinds of data | Visual redaction, transcoding
-Verification | Determines the confidence of a person's face or voice matching that of a claimed identity.  | Picture or audio data | Face verification, speaker verification
+Verification | Determines the confidence of a person's face or voice matching that of a CLAIM THIS FLOW! identity.  | Picture or audio data | Face verification, speaker verification
 Vision | Processes images to identify, segment, and extract details. | Pictures and videos | Object recognition, visual moderation (tagging)
 
 ## Capabilities
