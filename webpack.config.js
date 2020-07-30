@@ -3,7 +3,7 @@ const fs = require('fs');
 const _ = require('lodash');
 
 const { DefinePlugin, ProvidePlugin } = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -44,8 +44,19 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin([buildDirectory]),
-    new CopyWebpackPlugin([
+    /**
+     * All files inside webpack's output.path directory will be removed once, but the
+     * directory itself will not be. If using webpack 4+'s default configuration,
+     * everything under <PROJECT_DIR>/dist/ will be removed.
+     * Use cleanOnceBeforeBuildPatterns to override this behavior.
+     *
+     * During rebuilds, all webpack assets that are not used anymore
+     * will be removed automatically.
+     *
+     * See `Options and Defaults` for information
+     */
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({patterns: [
       {
         from: path.resolve(__dirname, 'src', 'docs'),
         to: path.resolve(__dirname, buildDirectory, 'docs')
@@ -64,7 +75,7 @@ module.exports = {
         ),
         to: path.resolve(__dirname, buildDirectory, 'schemas', 'vtn-standard')
       }
-    ]),
+    ]}),
 
     new HtmlWebpackPlugin({
       template: 'src/index.html',
