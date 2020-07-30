@@ -138,11 +138,11 @@ Building custom solutions for customers with complex data analysis requirements?
 
 When the goal is to transform your clients' existing infrastructure to an AI-enabled solution as quickly as possible, you can count on Veritone to provide the right tools, programs, and support to help you do it. Not a part of the Veritone Partner Program yet? Reach out to our Channel Team to learn how we can help you achieve your goals.
 
-## Try Our GraphiQL Sandbox
+## Try Our GraphQL Sandbox
 
 Run live quieries against real datasets. Federate cognitive engines into complex workflows. Aggregate, search, and analyze temporal data like a pro. You'll be amazed how fast you can go from zero to hero when you combine the ease of declarative programming with the power of AI.
 
-[Try it now](https://api.veritone.com/v3/graphiql)
+[Try it now](https://api.veritone.com/v3/graphql)
 
 ## Tutorials
 

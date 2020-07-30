@@ -84,7 +84,7 @@ The task log is accessible in the tasks info section of the task table in [Verit
 ### Testing Locally
 
 The best way to test locally is to generate a real task from the API.
-You can do this with GraphQL queries in the [GraphiQL sandbox](https://api.veritone.com/v3/graphiql). Or you can visit the Tasks tab on the engine's page of [Veritone Developer](https://developer.veritone.com) to create a task for your engine to run.
+You can do this with GraphQL queries in the [GraphQL Sandbox](https://api.veritone.com/v3/graphiql). Or you can visit the Tasks tab on the engine's page of [Veritone Developer](https://developer.veritone.com) to create a task for your engine to run.
 You can run the task locally by passing the payload into your engine as an environment variable.
 
 Alternatively, if you are using the [Veritone Engine Developer's Toolkit](/developer/engines/toolkit/) to build your engine there is a local testing harness available as part of toolkit SDK.

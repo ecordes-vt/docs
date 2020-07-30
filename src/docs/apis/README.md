@@ -47,11 +47,11 @@ For more information, see [Building Engines](/developer/engines/).
 
 All API requests must be authenticated using an API Token. To authenticate your calls, provide the token in the *Authentication* header of the request with a value *Bearer \<token\>*. Requests made without this header or with an invalid token will return an error code. For information about generating an API Token, see [Authentication](/apis/authentication).
 
-### GraphiQL Playground
+### GraphQL Sandbox
 
-To make it easier to explore, write, and test the API, we set up [GraphiQL](https://api.veritone.com/v3/graphiql) &mdash; an interactive playground that gives you a code editor with autocomplete, validation, and syntax error highlighting features. Use the GraphiQL interface to construct and execute queries, experiment with different schema modifications, and browse documentation. In addition, GraphiQL bakes authorization right into the schema and automatically passes the *Authentication* header with a valid token when you’re logged into the Veritone system.
+To make it easier to explore, write, and test the API, we set up a [GraphQL Sandbox](https://api.veritone.com/v3/graphql) &mdash; an interactive playground that gives you a code editor with autocomplete, validation, and syntax error highlighting features. Use the Sandbox interface to construct and execute queries, experiment with different schema modifications, and browse documentation. In addition, GraphiQL bakes authorization right into the schema and automatically passes the *Authentication* header with a valid token when you’re logged into the Veritone system.
 
-Veritone’s GraphiQL interface is the recommended method for ad-hoc API requests, but calls can be made using any HTTP client. All requests must be sent via HTTP POST to the https://api.veritone.com/v3/graphql endpoint with the *query* parameter and *application/json* encoded bodies. If you’re using a raw HTTP client, the query body contents must be sent in a string with all quotes escaped (see [GraphQL Basics](/apis/tutorials/graphql-basics) for more information).
+Veritone’s Sandbox interface is the recommended client for ad-hoc API requests, but calls can be made using any HTTP client. All requests must be sent via HTTP POST to the https://api.veritone.com/v3/graphql endpoint with the *query* parameter and *application/json* encoded bodies. If you’re using a raw HTTP client, the query body contents must be sent in a string with all quotes escaped (see [GraphQL Basics](/apis/tutorials/graphql-basics) for more information).
 
 ### API Documentation
 

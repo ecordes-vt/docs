@@ -37,7 +37,7 @@ aside.small {
 
 Now that you've onboarded an engine (and set its status to DEPLOYED), you can test the engine in a live Job, in aiWARE.
 
-One of the easiest ways to do this is, of course, to use the GraphiQL web IDE.
+One of the easiest ways to do this is, of course, to use the GraphQL Sandbox web IDE.
 
 ## Check the Engine's Availability
 
@@ -45,9 +45,9 @@ Before running a Job, check to see that the engine exists and is visible via the
 
 1\. Log in to [Veritone](https://developer.veritone.com).
 
-2\. Navigate to the [GraphiQL IDE](https://api.veritone.com/v3/graphiql).
+2\. Navigate to the [GraphQL Sandbox IDE](https://api.veritone.com/v3/graphql).
 
-3\. In GraphiQL, create &mdash; and then execute &mdash; a query like the following, using _your_ engine's ID:
+3\. In the GraphQL Sandbox, create &mdash; and then execute &mdash; a query like the following, using _your_ engine's ID:
 
 ```graphql
 query myEngine{
@@ -218,7 +218,7 @@ We hope you've enjoyed this tutorial. Be sure to check out some of these other g
 
 - Learn how to [customize engine output](developer/engines/tutorial/customizing-engine-output)
 - See our API documentation: <https://docs.veritone.com/#/apis/>
-- API examples that you can run in GraphiQL: <https://docs.veritone.com/#/apis/examples>
+- API examples that you can run in the live Sandbox: <https://docs.veritone.com/#/apis/examples>
 - Veritone's Data Model: <https://docs.veritone.com/#/apis/data-model>
 - See our schema: <https://api.veritone.com/v3/graphqldocs>
 - Our VTN Standard helps ensure engine interoperability: <https://docs.veritone.com/#/developer/engines/engine-output>

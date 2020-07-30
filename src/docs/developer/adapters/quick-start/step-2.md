@@ -92,7 +92,7 @@ mutation {
 }
 ```
 
-**GraphiQL Sample Request: Set Task Status to Running**
+**GraphQL Sample Request: Set Task Status to Running**
 
 ```graphql
 mutation {
@@ -152,8 +152,6 @@ After creating the TDO, an asset must be created on the TDO using the ingested f
 * type should be set to "media"
 * contentType is the MIME type and should be set
 * details should be set to the metadata value provided in the payload
-
-For both createTDO and createAsset, refer to the documentation from GraphiQL for the full list of fields supported.
 
 On a successful completion of the "ingest" mode, the task output should, at the minimum, include the ID of the TDO created, specified as the field, "recordingId". Additional data fields from TDO can also be included under a "recording" object. Additional data fields from TDO can also be included under a "recording" object. For instance:
 

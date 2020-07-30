@@ -1,5 +1,7 @@
 # Job Quickstart Guide
 
+**NOTE: This Quickstart applies only to V2F (older aiWARE version) and is no longer current.** For the latest Quickstart, see [Working with Jobs](quickstart/jobs/).
+
 ## Getting Started
 
 The aiWARE Job API allows you to easily integrate cognitive functionality
@@ -45,16 +47,16 @@ Applications using GovCloud, on-prem, or other deployments access the API via an
 ### Making Sample Requests
 
 To make it easier to explore, write, and test the API, we set up [GraphiQL](https://api.veritone.com/v3/graphiql) &mdash; an interactive playground that gives you a code editor with autocomplete, validation, and syntax error highlighting features.
-Use the [GraphiQL interface](https://api.veritone.com/v3/graphiql) to construct and execute queries, experiment with different schema modifications, and browse documentation.
-In addition, GraphiQL bakes authorization right into the schema and automatically passes the `Authentication` header with a valid token when you’re logged into the aiWARE system.
+Use the [Sandbox interface](https://api.veritone.com/v3/graphql) to construct and execute queries, experiment with different schema modifications, and browse documentation.
+In addition, the Sandbox takes care of authentication by automatically passing the `Authentication` header with a valid token when you’re logged into the aiWARE system.
 
-aiWARE’s [GraphiQL interface](https://api.veritone.com/v3/graphiql) is the recommended method for ad hoc API requests, but calls can be made using any HTTP client.
+aiWARE’s [Sandbox interface](https://api.veritone.com/v3/graphql) is the recommended method for ad hoc API requests, but calls can be made using any HTTP client.
 All requests must be HTTP POST to the base URL designated for your geographic region with the `query` parameter and `application/json` encoded bodies.
 In addition, requests must be authenticated using an API Token.
 Pass the token in your request using the *Authorization* header with a value `Bearer token`.
 If you’re using a raw HTTP client, the query body contents must be sent in a string with all quotes escaped.
 
-The sample requests provided in this documentation are structured for use in our [GraphiQL interface](https://api.veritone.com/v3/graphiql), but we’ve also included the basic cURL structure for your reference below.
+The sample requests provided in this documentation are structured for use in our [GraphQL Sandbox](https://api.veritone.com/v3/graphiql), but we’ve also included the basic cURL structure for your reference below.
 Please note that the examples shown throughout this guide do not use client information and are not language specific.
 For fields that require account-specific data (such as a containerId), replace the value with your own.
 In addition, the sample requests shown are not all-inclusive — they highlight the minimum requirements and relevant information.

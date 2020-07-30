@@ -54,7 +54,7 @@ In this section, we are going to create an Engine job that will allow us to send
 
 Once we have created this engine job, we can then run our flow engine by sending custom payloads to the endpoint generated when we created the engine job. Let's do it!
 
-First, run this mutation in the [Veritone GraphiQL tool](https://api.veritone.com/v3/graphiql)
+First, run this mutation in the [Sandbox](https://api.veritone.com/v3/graphiql)
 
 ```graphql
 mutation createYourFlowEngineJob {

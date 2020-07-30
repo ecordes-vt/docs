@@ -20,7 +20,7 @@ This engine uses Veritone's [Facebox](developer/machine-box/boxes/facebox-overvi
 
 > If you want to run Facebox locally, or bundle a licensed version of it into your own standalone (non-aiWARE) app, you can easily do so. To learn more about using Facebox offline, see our tutorial called [Teaching  Facebox](developer/machine-box/boxes/teaching-facebox).
 
-The tutorial that follows assumes you will be using the _online_ (aiWARE-deployed) version of this engine. All interactions with aiWARE will be done through the online GraphiQL IDE. Accordingly, the only prerequisite for this tutorial is a Veritone login.
+The tutorial that follows assumes you will be using the _online_ (aiWARE-deployed) version of this engine. All interactions with aiWARE will be done through the online GraphQL Sandbox IDE. Accordingly, the only prerequisite for this tutorial is a Veritone login.
 
 ?> Be sure to obtain your (free) Veritone system [login](https://www.veritone.com/onboarding/#/signUp) now, if you have not already done so.
 
@@ -44,7 +44,7 @@ We'll now demonstrate this process by showing how to create the artifacts needed
 
 ## Tutorial Walkthroughs
 
-The following training steps can be done using either the Veritone Library application or with GraphiQL APIs. Videos showing both methods are available below:
+The following training steps can be done using either the Veritone Library application or with Sandbox APIs. Videos showing both methods are available below:
 
 <div style="width: 35%"><iframe src="https://player.vimeo.com/video/375686298?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:50%;height:50%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
@@ -52,7 +52,7 @@ The following training steps can be done using either the Veritone Library appli
 
 ## Step 1: Create an empty Library
 
-Before starting, be sure you are logged into Veritone. Then, go to [the GraaphiQL sandbox](https://api.veritone.com/v3/graphiql) and run the following mutation:
+Before starting, be sure you are logged into Veritone. Then, go to [the GraphQL Sandbox](https://api.veritone.com/v3/graphiql) and run the following mutation:
 
 ```graphql
 mutation CreateLibrary {
@@ -64,7 +64,7 @@ mutation CreateLibrary {
 
 This mutation creates an empty Library object named "Rock Stars" in your Organization.
 
-> If you encounter authentication errors when you run this mutation, be sure your login has not expired and that you are not logged into a dev or stage environment. Please log in to [https://www.veritone.com](https://www.veritone.com) and use the IDE at [https://api.veritone.com/v3/graphiql](https://api.veritone.com/v3/graphiql).
+> If you encounter authentication errors when you run this mutation, be sure your login has not expired and that you are not logged into a dev or stage environment. Please log in to [https://www.veritone.com](https://www.veritone.com) and use the IDE at [https://api.veritone.com/v3/graphql](https://api.veritone.com/v3/graphiql).
 
 ## Step 2: Create an empty Entity
 
@@ -106,7 +106,7 @@ mutation createEntityIdentifier {
 }
 ```
 
-> It's important to set the `storeReference` flag to `true`. This allows us to specify the image by _reference_, rather than by value. If we were to use the flag's default value of `false`, the mutation would fail unless it is POSTed in conjunction with an actual File upload – something you can't currently do in the GraphiQL sandbox. You would need to use curl, Postman, or custom code to do a simultaneous POST mutation/upload.
+> It's important to set the `storeReference` flag to `true`. This allows us to specify the image by _reference_, rather than by value. If we were to use the flag's default value of `false`, the mutation would fail unless it is POSTed in conjunction with an actual File upload – something you can't currently do in the GraphQL Sandbox. You would need to use curl, Postman, or custom code to do a simultaneous POST mutation/upload.
 
 When training an engine, it's usually a good idea to have more than one exemplar in your Entity coillection.
 You might want to take a moment to add at least a couple more images of Yoko to your "Yoko" entity. (All you have to do is run the above mutation multiple times, substituting a new `uri` value each time.)
@@ -123,7 +123,7 @@ As it turns out, aiWARE is set up so that when you _publish_ a Library, all appl
 
 > If you want to have greater control over the  training process, see our discussion of [Training Library-Enabled Engines](developer/libraries/training?id=training-library-enabled-engines).
 
-To publish your Library, and kick off training of all applicable engines, run the following mutation in GraphiQL (substituting your own `libraryId`):
+To publish your Library, and kick off training of all applicable engines, run the following mutation (substituting your own `libraryId`):
 
 ```graphql
 mutation publishLibrary {
@@ -246,7 +246,7 @@ Notice how there's a training record for each engine? These are all the engines 
 
 ## Step 6: Test a trained engine
 
-This step must be done with the GraphiQL APIs. The tutorial walkthrough is available below:
+This step should be done with the GraphQL Sandbox IDE. The tutorial walkthrough is available below:
 <div style="width: 35%"><iframe src="https://player.vimeo.com/video/375686558?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:50%;height:50%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 Now we're at a point where we can choose a trained engine (from the list shown in the last step), and run a job using it.
@@ -375,7 +375,7 @@ The data in the hit includes an `entityId` that clearly identifies this face as 
 
 Want to know more about Libraries and training? You may want to take a look at:
 
-* [Library-Related API Examples](apis/examples?id=library) &mdash; Queries and mutations you can run interactively in GraphiQL
+* [Library-Related API Examples](apis/examples?id=library) &mdash; Queries and mutations you can run interactively in the Sandbox
 * [Library GraphQL Schema](https://api.veritone.com/v3/graphqldocs/library.doc.html) &mdash; Our schema documentation
 * [Training Library-Enabled Engines](developer/libraries/training?id=training-library-enabled-engines) &mdash; How to schedule training jobs manually.
 * [Running Library-Enabled Engines](developer/libraries/running) &mdash; More information on library-enabled engines

@@ -212,10 +212,10 @@ const docsifyConfig = {
           try {
             createLinkFromExample(
               examples[i],
-              "Try it in GraphiQL"
-            ).insertAfter(examples[i]);
+              "Try it in Sandbox"
+            ).insertAfter(examples[i]);  /* was "Try It in GraphiQL" */
           } catch (e) {
-            console.error(`Error adding GraphiQL link: ${e}`);
+            console.error(`Error adding Sandbox link: ${e}`);
           }
         }
       });
@@ -223,7 +223,7 @@ const docsifyConfig = {
       function createLinkFromExample(exampleNode, text) {
         var url = `${
           window.config.apiRoot
-        }/v3/graphiql/?query=${encodeURIComponent(exampleNode.innerText)}`;
+        }/v3/graphql/?query=${encodeURIComponent(exampleNode.innerText)}`; /* was graphiql */
         return $(`
               <p class="graphql-link">
                 <a href="${url}" target="_blank">

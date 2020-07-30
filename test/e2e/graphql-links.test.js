@@ -1,4 +1,4 @@
-const TRY_GRAPHIQL_TEXT = 'Try it in GraphiQL';
+const TRY_GRAPHIQL_TEXT = 'Try it in Sandbox';
 
 Feature(`"${TRY_GRAPHIQL_TEXT}" links`);
 

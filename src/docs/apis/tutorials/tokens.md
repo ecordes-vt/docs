@@ -377,7 +377,7 @@ query {
 }
 ```
 
-Since GraphiQL is an interactive, browser-based application that requires
+Since our Sandbox is an interactive, browser-based application that requires
 the user be logged into the platform, it implicitly will only use the user-scoped
 session token. It isn't ideal for testing with or troubleshooting the other
 token types. For this purpose (only) we use a raw HTTP client such as `curl`.

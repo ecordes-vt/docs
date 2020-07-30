@@ -74,7 +74,7 @@ Our stack includes:
 * Cloud tech (AWS, ECS, Azure)
 * [Webhooks](https://www.google.com/search?q=webhook)
 * [GraphQL](https://www.google.com/search?q=graphql)
-    * Sandbox IDE: [GraphiQL](https://api.veritone.com/v3/graphiql)
+    * [Sandbox IDE](https://api.veritone.com/v3/graphiql)
 * GraphQL Schema Definition Language (SDL) applies to GraphQL schemas
     * Includes notions of Interface, Union, @Directives
 * JSON-Schema applies to JSON
@@ -112,7 +112,7 @@ Working With GraphQL {docsify-ignore}
         - [Schema stitching](https://www.apollographql.com/docs/graphql-tools/schema-stitching/) 
         - [Interfaces](https://www.apollographql.com/docs/apollo-server/schema/unions-interfaces/)
             * What are the limitations of GraphQL Interfaces? (Hint: No true inheritance.)
-* Free IDE: [GraphiQL](https://api.veritone.com/v3/graphiql) (the "sandbox")
+* Free IDE: [Sandbox](https://api.veritone.com/v3/graphql)
 
 Working With Unstructured Data {docsify-ignore}
 ------------------------------

@@ -26,8 +26,8 @@ Tools like `curl` or `wget` are often used to demonstrate how to use REST APIs. 
 In a GraphQL API, every request is the same. Thus, we'll
 use `curl` to demonstrate the basic structure of a request.
 
-However, once this basic structure is understand, `curl` is
-a poor tool for exploring GraphQL APIs. Use GraphiQL instead.
+However, once this basic structure is understood, `curl` is
+an awkward tool for exploring GraphQL APIs. Use the Sandbox instead.
 
 ```bash
 console$ curl https://api.veritone.com/v3/graphql \

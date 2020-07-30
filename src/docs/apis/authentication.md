@@ -10,8 +10,8 @@ Veritone uses token-based authentication for accessing the system and resources.
 
 ## Creating an API Token {docsify-ignore}
 
-Veritone’s GraphiQL interface is recommended for exploring, writing and testing the API, but calls can also be made using any HTTP client.
-When you’re logged into the Veritone platform, GraphiQL logic automatically passes a valid token in the `Authorization` header of every request.
+Veritone’s GraphQL Sandbox interface is recommended for exploring, writing and testing the API, but calls can also be made using any HTTP client.
+When you’re logged into the Veritone platform, Sandbox logic automatically passes a valid token in the `Authorization` header of every request.
 When making requests using a different client, include a valid API Token in the `Authorization` header with the value `Bearer <token>`.
 Requests made without this header or with an invalid token will return an error code.
 

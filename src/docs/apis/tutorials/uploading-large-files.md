@@ -97,7 +97,7 @@ Files that are larger than the 100MB limit can be split into smaller, more manag
 
 > If you encounter an error during a local file upload, see the [Handling Errors](#handling-errors) section for possible error codes that can be returned along with suggested actions you can take to resolve them.
 
-To upload a local file, make a request to the `createTdoWithAsset` mutation. When structuring your request, be sure to set the `Content-Type` header to `multipart/form-data` and use the `form-data` keys `query`, `file`, and `filename` in the body. Currently, GraphiQL does not support multipart/form requests, so a different HTTP client must be used for making sample calls.
+To upload a local file, make a request to the `createTdoWithAsset` mutation. When structuring your request, be sure to set the `Content-Type` header to `multipart/form-data` and use the `form-data` keys `query`, `file`, and `filename` in the body. Currently, the Sandbox does not support multipart/form requests, so a different HTTP client must be used for making sample calls.
 
 If you’re uploading a large file that’s segmented into smaller parts, upload the first chunk of the file in the `createTdoWithAsset` request and then use the `TDO ID` returned in the response to upload the remaining chunks to the same container in the `createAsset` mutation.
 

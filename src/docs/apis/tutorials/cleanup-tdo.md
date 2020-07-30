@@ -10,7 +10,7 @@ First, log into the Veritone platform if you haven't already.
 
 You'll need to know the ID of the TDO, or recording, to operate on. You can get this from CMS – when you click on the media detail in CMS, the ID is the final part of the URL that appears in the browser's address bar.
 
-Then you can open the interactive GraphQL user interface, called GraphiQL, at https://api.veritone.com/v3/graphiql.
+Then you can open the interactive GraphQL user interface at https://api.veritone.com/v3/graphiql.
 
 On the left panel you can type your GraphQL query. A GraphQL query is like a small computer program that uses a simplified language to interact with Veritone's services. The UI has built-in help and auto-completion (CTRL-space) to assist.
 

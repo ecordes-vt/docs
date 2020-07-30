@@ -12,14 +12,14 @@ Veritone uses GraphQL to provide a clean, unified interface to its data and oper
 
 * Users can control exactly what information they get back with each operation
 * The schema is self-documenting and reduces errors and time wasted from bad input
-* The GraphiQL user interface allows a user to easily explore the schema and all the information available to them
+* The Sandbox user interface allows a user to easily explore the schema and all the information available to them
 
 ## GraphQL API Quick Start {docsify-ignore}
 
 To get started right away:
 
 * Sign in to the Veritone platform at https://developer.veritone.com
-* Go to the GraphiQL user interface at https://api.veritone.com/v3/graphiql. You will automatically be authenticated through to the API and have access to live data for your organization.
+* Go to the Sandbox user interface at https://api.veritone.com/v3/graphql. You will automatically be authenticated through to the API and have access to live data for your organization.
 
 * Try a simple query such as me and use `ctrl`+`space` (or `command`+`space` for Mac) hints to see the fields available.
 * See static schema documentation at https://api.veritone.com/v3/graphqldocs/
@@ -33,7 +33,7 @@ This document contains a high-level overview and some information specific to Ve
 
 A GraphQL _schema_ defines _types_ and _fields_ on those types. That's it. A schema defines a set of queries as entry points to the data model. In a typical schema you will see something like this:
 
-```graphql
+```graphql schema
 schema {
   query: Query
 }
@@ -60,7 +60,7 @@ Here we are specifying the top-level field on the schema (`query`),and asking fo
 It's up to the server how to resolve each requested field and interpret the parameters. All data might reside in a single back-end database schema. On the other hand, the server might populate some fields by reaching out to other sources such as REST services or even external services.
 Take this example:
 
-```graphql
+```graphql schema
 type MyObjectType {
   name: String  data: ObjectData
 }
@@ -69,12 +69,12 @@ type ObjectData {
 }
 ```
 
-`name` and the list of `MyObjectType` might live in one backend database, while the server populates data for each object by calling out to an external REST service.
+Note that `name` and the list of `MyObjectType` might live in one backend database, while the server populates data for each object by calling out to an external REST service.
 To modify data, you use a _mutation_.  A mutation is formatted like a query and can return information like a query, but modifies data in some way (create, update, or delete).
 Mutations take, as parameters, special types called inputs. An input contains those fields necessary to create or modify an instance of the related type.
 Continuing our example, we might have
 
-```graphql
+```graphql schema
 type MyObjectType {
   # A name for the object, provided by the user. Required.
   name: String!
@@ -117,7 +117,7 @@ It would return something like:
 
 ## Veritone's schema {docsify-ignore}
 
-Now let's take a look at the Veritone schema. You can refer to the following links. You can access the GraphiQL user interface at https://api.veritone.com/v3/graphiql.
+Now let's take a look at the Veritone schema. You can refer to the following links. You can access the Sandbox user interface at https://api.veritone.com/v3/graphiql.
 
 If you're new to our schema, try using the me query to explore the data you have access to.
 
@@ -133,13 +133,13 @@ query {
 
 Queries that support paging all use a consistent set of parameters and return fields based on the interface `Page`. You specify an optional offset and limit as parameters, and receive back an object with fields `offset`, `limit`, `count` (number of objects actually returned), and `records` containing the list of results.
 
-Veritone's platform is full-featured and growing constantly, so the schema is necessarily complex. For most users, the best way to explore it is interactively using GraphiQL. You can also consult the static documentation at https://api.veritone.com/v3/graphqldocs/ or review the high-level entity relationship diagram below.
+Veritone's platform is full-featured and growing constantly, so the schema is necessarily complex. For most users, the best way to explore it is interactively using the online Sandbox. You can also consult the static documentation at https://api.veritone.com/v3/graphqldocs/ or review the high-level entity relationship diagram below.
 
 You can find raw GraphQL schema files [here](/apis/schema/listing) .
 
 ## GraphQL hints and tips {docsify-ignore}
 
-Use GraphiQL to explore the schema, make ad hoc queries to find data, and test and debug queries and mutations for your applications.
+Use the online Sandbox to explore the schema, make ad hoc queries to find data, and test and debug queries and mutations for your applications.
 
 You can request as many fields as you want on a given type -- including the top-level query. Thus, you can, effectively, make multiple queries in a single request.
 
