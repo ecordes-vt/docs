@@ -110,6 +110,14 @@ Below you will find a wishlist of Automate flows that we, at Veritone, hope to h
         text-decoration: none;
     }
 
+    a.link-claimed {
+        position: relative;
+        bottom: -120px;
+        left: -312px;
+        white-space: nowrap;
+        text-decoration: none;
+    }
+
     .bounty-number{
         position: relative;
         bottom: -120px;
@@ -160,8 +168,8 @@ If you want to propose a new flow that is neither in our library or wish list, f
                 <h3>Call Center Automated Responses for Key Conversation Topics</h3>
                 <div class="description-text">Provide call center operators responses to questions asked by the customer in real-time, without the operator having to search themselves.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/automated-responses-for-key-conversation-topics"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/automated-responses-for-key-conversation-topics"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -260,8 +268,8 @@ If you want to propose a new flow that is neither in our library or wish list, f
                 <h3>Call Center Connection to Social Media</h3>
                 <div class="description-text">Proactively identify issues that come up in social media platforms to drive faster resolution.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/connection-to-social-media"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/connection-to-social-media"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -290,8 +298,8 @@ If you want to propose a new flow that is neither in our library or wish list, f
                 <h3>Call Center Automatic Addition of New Customers’ Voice & Face to a Library</h3>
                 <div class="description-text">Using the video recordings from a call, the flow will create a new entity with identifiers - voice & face - of the customer, and add it to the library.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/automatic-addition-of-new-customers’-voice-&-face-to-a-library"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/automatic-addition-of-new-customers’-voice-&-face-to-a-library"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
