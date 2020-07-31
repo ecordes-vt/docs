@@ -198,8 +198,8 @@ If you want to propose a new flow that is neither in our library or wish list, f
                 <h3>Call Center Customer Recognition by Voice & Face</h3>
                 <div class="description-text">The flow will use voice recognition and face recognition engine to recognize the customer from an existing library.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/customer-recognition-by-voice-&-face"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/customer-recognition-by-voice-&-face"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
