@@ -722,6 +722,96 @@ mutation createFBJobFromFrame{
          </ul>
 </div>
 
+## Translation Engine Example
+
+Translation engines are chunk engines. Therefore, output from the Webstream Adapter (WSA) needs to be chunked by SI2 (StreamIngestor 2).
+This example shows how to do it. The source text is English; it will be translated to French.
+
+<div class="collapse-accordion">
+        <ul>
+            <li>
+                <input type="checkbox" id="list-item-5">
+                <label for="list-item-5"><span class="expandText">Show code for Running Translation on Text</span><span class="collpaseText">Hide code for Running Content Classification on Text</span></label>
+                <ul>
+                    <li>
+                    <p>Input: A text file at a publilc URL.</p><br/>
+                    <code>
+mutation createTranslationJob{
+  createJob(input: {
+    # target: { startDateTime:1574311000, stopDateTime: 1574315000 }
+    targetId: 1121185051    # comment this line if using without a TDO
+    clusterId :"rt-1cdc1d6d-a500-467a-bc46-d3c5bf3d6901"
+    tasks: [
+       {
+        # webstream adapter 
+        engineId: "9e611ad7-2d3b-48f6-a51b-0a1ba40fe255"
+        # payload: { url: "media URL" } 
+        ioFolders: [
+          { referenceId: "wsaOutputFolder", mode: stream, type: output }
+        ],
+        executionPreferences: { priority: -20 }
+      }
+      {
+        # Chunk engine  
+        engineId: "8bdb0e3b-ff28-4f6e-a3ba-887bd06e6440"  
+        payload:{ ffmpegTemplate: "rawchunk" }
+        ioFolders: [
+          { referenceId: "chunkInputFolder", mode: stream, type: input },
+          { referenceId: "chunkOutputFolder", mode: chunk, type: output }
+        ],
+        executionPreferences: { parentCompleteBeforeStarting: true, priority: -20 }
+      }
+      {
+        # The translation engine 
+        engineId: "1fc4d3d4-54ab-42d1-882c-cfc9df42f386"
+        payload: { # uncomment the line below if using Amazon Translate V3
+          # sourceLanguageCode: "en",
+          target: "fr"
+        }
+        ioFolders: [
+          { referenceId: "engineInputFolder", mode: chunk, type: input },
+          { referenceId: "engineOutputFolder", mode: chunk, type: output }
+        ],
+        executionPreferences: {	parentCompleteBeforeStarting: true, priority: -20 }
+      }
+      {
+        # output writer
+        engineId: "8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3"  
+        ioFolders: [
+          { referenceId: "owInputFolder", mode: chunk, type: input }
+        ],
+        executionPreferences: {	parentCompleteBeforeStarting: true, priority: -20 }
+      }
+    ]
+    routes: [
+      {  ## WSA --> chunk
+        parentIoFolderReferenceId: "wsaOutputFolder"
+        childIoFolderReferenceId: "chunkInputFolder"
+        options: {}
+      }
+      {  ## chunk --> Engine
+        parentIoFolderReferenceId: "chunkOutputFolder"
+        childIoFolderReferenceId: "engineInputFolder"
+        options: {}
+      }
+      {  ## Engine --> output writer
+        parentIoFolderReferenceId: "engineOutputFolder"
+        childIoFolderReferenceId: "owInputFolder"
+        options: {}
+      } 
+    ]
+  }) {
+    targetId
+    id
+  }
+}
+                    </code>
+                     </li>                  
+                </ul>
+             </li>           
+         </ul>
+</div>
+
 ## Running Content Classification on Text
 
 Text files are processed by chunk engines. The DAG looks like:
