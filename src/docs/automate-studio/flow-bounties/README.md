@@ -278,8 +278,8 @@ If you want to propose a new flow that is neither in our library or wish list, f
                 <h3>Call Center Conversation Translation</h3>
                 <div class="description-text">Transcribe and translate conversations in near real-time to enable follow-up or intervention by agents who don’t speak the language.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/conversation-translation"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/conversation-translation"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -328,8 +328,8 @@ If you want to propose a new flow that is neither in our library or wish list, f
                 <h3>Face Alerter</h3>
                 <div class="description-text">This flow engine processes Face Recognition against an image or video file and if the outputs match the provided  entity names, a text message is sent to the phone number.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-alerter"> BUILD IT!</a>
-            <div class="bounty-number">$250</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-alerter"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
