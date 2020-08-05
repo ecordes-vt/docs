@@ -177,6 +177,7 @@
     - [Zoom Analyst](automate-studio/flow-bounties/flow-bounty-details/zoom-analyst)
   - [Tutorials](automate-studio/flow-examples/README)
   - [Training Course](automate-studio/training-courses/training-overview)
+    - [Automate Studio Value Proposition](automate-studio/training-courses/value-proposition)
   - [FAQ](automate-studio/faq)
 - [Machine Box](/developer/machine-box/)     
   - [Getting Started](/developer/machine-box/setup/)
