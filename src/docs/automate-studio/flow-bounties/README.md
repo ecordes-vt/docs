@@ -309,7 +309,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
                 <div class="description-text">The flow will be used to quickly scan each clip within a larger production video to quickly contextualize where the ad appears in the video.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/compliance-remixer"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -338,8 +338,8 @@ If you want to propose a new flow that is neither in our library or wish list, f
                 <h3>Scrape Classification</h3>
                 <div class="description-text">This flow engine scrapes a website and processes the content for either topic extraction or content classification (or both!).                        </div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/scrape-classification"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/scrape-classification"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
