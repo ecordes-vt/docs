@@ -23,5 +23,5 @@ Transcribe and translate conversations in near real-time to enable follow-up or 
 Input a live stream of a call, run through a transcription engine, then through a language detection engine (alternatively, take the language as a config input), and finally through a translation engine (output language is a config parameter). Put results back in the Call Center system.
 </br>
 </br>
-<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
+<a target="_blank" href="#" id="claim-this-flow-btn">CLAIMED</a>
 <hr>
