@@ -29,6 +29,6 @@ Currently, Veritone & aiWARE solve this problem in Discovery and CMS by placing 
 ## Proposed Solution {docsify-ignore}
 A flow that is invoked when a TDO CME option is selected on a dropdown that: gathers all the timestamps of the cognitive outputs found on that video (across all classifications processed on that TDO), buffers 7 seconds before and after that found cognitive output clips. Each buffered marker assembles the clips together, stores the clips as a new asset against the TDO, and emails the clip as an attachment to the requesting user.
 
-<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
+<a target="_blank" href="#" id="claim-this-flow-btn">CLAIMED</a>
 
 <hr>
