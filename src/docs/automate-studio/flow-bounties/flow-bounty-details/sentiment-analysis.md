@@ -23,5 +23,5 @@ Help agents determine when to escalate issues and who should handle them based o
 Run calls in real-time via transcription and sentiment analysis engines. Tickets that are classified negatively with high confidence will be escalated to a manager via SMS or <Call Center system>. All sentiment results will be saved and indexed for future analytics.
 </br>
 </br>
-<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
+<a target="_blank" href="#" id="claim-this-flow-btn">CLAIMED</a>
 <hr>

@@ -178,8 +178,8 @@ If you want to propose a new flow that is neither in our library or wish list, f
                 <h3>Call Center Sentiment Analysis</h3>
                 <div class="description-text">Help agents determine when to escalate issues and who should handle them based on the sentiment of the conversation.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/sentiment-analysis"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/sentiment-analysis"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -308,7 +308,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
                 <h3>Compliance Remixer</h3>
                 <div class="description-text">The flow will be used to quickly scan each clip within a larger production video to quickly contextualize where the ad appears in the video.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/compliance-remixer"> BUILD IT!</a>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/compliance-remixer"> BUILD IT!</a>
             <div class="bounty-number">Claimed</div>
         </div>
         </br>
@@ -348,8 +348,8 @@ If you want to propose a new flow that is neither in our library or wish list, f
                 <h3>Twitter Classification</h3>
                 <div class="description-text">This flow engine scrapes the tweets of a provided Twitter user and processes each tweet to create topics associated with each tweet.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/twitter-classification"> BUILD IT!</a>
-            <div class="bounty-number">$200</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/twitter-classification"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
