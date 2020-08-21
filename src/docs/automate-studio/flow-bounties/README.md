@@ -498,12 +498,4 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
 <br>
 *See the Veritone aiWARE Ambassador Program Terms and Conditions for further details.  By participating in the program, you agree to these program terms. 
 
-*Program terms and conditions
-1. “Active user” is a user who has a Veritone account and creates or consumes an engine, flow or application within 1 year from flow approval date.
-2. Veritone reserves the right to reject submitted flows if they do not meet provided specifications.
-3. Payment terms for approved flows are Net 30 days from approval.
-4. Referral payments made for up to 1 year from flow approval date, and are capped at $2,000 per flow owner per year
-5. Automate Studio early adopter program benefits include:
-    * Free use of Automate Studio, all aiWARE developer tools, and all aiWARE engines for a single AWS cloud user (limit $1,000 of value, including $100 credit, services and support)
-    * Free access to the aiWARE support team and community support
-6. Sellers require a partner agreement executed by Veritone
+
