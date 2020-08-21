@@ -164,6 +164,16 @@ If you want to propose a new flow that is neither in our library or wish list, f
 <div style="display: flex">
     <div class="featureColumn">
         <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Blog/Article to Podcast Automation</h3>
+                <div class="description-text">Dynamically transcribe blogs and articles, and auto-create audio podcasts; Make available in multiple languages; Automatically add gifs and images to the video per topics discussed.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/blog-article-podcast-automation"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
             <div class= "featureText">
                 <h3>Call Center Automated Responses for Key Conversation Topics</h3>
                 <div class="description-text">Provide call center operators responses to questions asked by the customer in real-time, without the operator having to search themselves.</div>
@@ -215,6 +225,16 @@ If you want to propose a new flow that is neither in our library or wish list, f
         </br>
         <div class="featureBox"> 
             <div class="featureText">
+                <h3>Earnings Reports Aggregation, Review and Search</h3>
+                <div class="description-text">An Automate workflow that captures all quarterly earnings reports (audio, video and text) of NASDAQ companies, sorting and indexing them for easy discovery, analysis and comparison on Illuminate.</div>
+            </div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/earnings-reports-aggregation-review-search"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
                 <h3>Email Sentiment Extracter</h3>
                 <div class="description-text">A Flow engine will process csv & text files webhooked to an HTTP Adapter endpoint sent from an email provider by a sentiment analysis engine.</div>
             </div>
@@ -230,6 +250,46 @@ If you want to propose a new flow that is neither in our library or wish list, f
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-detector-redactor"> BUILD IT!</a>
             <div class="bounty-number">$200</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Public Benefits Translations</h3>
+                <div class="description-text">Translation and access to public communications and public services (medical care, unemployment claims, etc.) - video, audio, text communications</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/public-benefits-translations"> BUILD IT!</a>
+            <div class="bounty-number">$200</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Podcast to a Blog/Article Automation</h3>
+                <div class="description-text">Transcribe podcasts and auto-create blog posts in WordPress for SEO; Make available in multiple languages.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/podcast-to-blog-article-automation"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Marketing Use Case</h3>
+                <div class="description-text">Sentiment analysis of social streams, emails, & text messages, and escalation of negative posts to customer service rep to respond.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/marketing-use-case"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Speech Use Case</h3>
+                <div class="description-text">Keyword and sentiment analysis of public figure speeches, and correlation to policy actions</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/speech-use-case"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
         </div>
         </br>
         </br>
@@ -323,6 +383,16 @@ If you want to propose a new flow that is neither in our library or wish list, f
         </div>
         </br>
         </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Customer Service Automation</h3>
+                <div class="description-text">Customer voicemail transcription, summaries, entities, sentiment and email summaries, entities, sentiment presented to case handler - speeds case resolution</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/customer-service-automation"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
         <div class="featureBox">  
             <div class= "featureText">
                 <h3>Face Alerter</h3>
@@ -330,9 +400,49 @@ If you want to propose a new flow that is neither in our library or wish list, f
             </div>
             <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-alerter"> BUILD IT!</a>
             <div class="bounty-number">Claimed</div>
+        </div>        
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Public Camera Automated Monitoring</h3>
+                <div class="description-text">Monitor public camera feeds for abnormal activity (e.g. fires, weather, people, cars). Fire detection of interest by prospect.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/public-camera-automated-monitoring"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
         </div>
         </br>
         </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Injection of Content Intelligence into RPA/BPA</h3>
+                <div class="description-text">Auto claims process - locate/read license plate and damage from images or video, auto-attach image clips to claim case.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/injection-content-intelligence-rpa-bpa"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Media Content Review and Search </h3>
+                <div class="description-text">Search media files to quickly and easily locate faces, sound clips and keywords (multi-variant search, as we do in Illuminate). This will require connectors for MAMs/DAMs.</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/media-content-review-search"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>
+        <div class="featureBox"> 
+            <div class="featureText">
+                <h3>Press release Review Automation</h3>
+                <div class="description-text">Press release text analytics to provide summaries, keywords to allow quick scan/search</div>
+            </div>
+            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/press-release-review-automation"> BUILD IT!</a>
+            <div class="bounty-number">$300</div>
+        </div>
+        </br>
+        </br>      
         <div class="featureBox"> 
             <div class="featureText">
                 <h3>Scrape Classification</h3>
