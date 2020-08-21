@@ -1,6 +1,6 @@
 <!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
 
-# Automate Studio Flow Bounties
+# Automate Studio Ambassador Program
 Below you will find a wishlist of Automate flows that we, at Veritone, hope to have 3rd party developers help us build. In order to incentivize building these flows, we have placed bounties on them. For each flow a developer creates, the specified bounty will be paid out. 
 <style>
     div.featureBox {
@@ -144,18 +144,32 @@ Below you will find a wishlist of Automate flows that we, at Veritone, hope to h
 
 </style>
 
-## How do I Claim a Bounty? {docsify-ignore}
-Claiming a bounty is quite simple!
-1. View the details for the flow you are interested in building.
-2. Fill out the [form](https://forms.gle/tkVjfrtyBDrXyoji7) to claim the flow.
-3. Build the flow according to the specifications
-4. When complete, submit this form to get the flow approved.
-5. Get Paid!
+## Become a Veritone Ambassador and get paid! {docsify-ignore}
+There are three ways to become a Veritone Ambassador. Building flows, driving adoption of your flows, and becoming a Veritone integrator or reseller partner.
+* **Build**
+    * Get paid when you create an Automate Studio flow from the Veritone [wish list](#automate-flow-wishlist), and that flow is approved by Veritone.* Rates vary per flow.<br>
+	[Login to Automate Studio or create an account](https://www.veritone.com/onboarding/#/signUp?type=automate)
 
-## How do I Propose a New Wishlist Flow? {docsify-ignore}
-If you want to propose a new flow that is neither in our library or wish list, fill out this [form](https://forms.gle/C6G5oQJiDaqdyWGR7). A Veritone team member will review it and either approve it or get back to you with feedback on your proposal. Once it is approved, you will see it added to the wishlist below!
+* **Refer**
+    * Get paid $25 each time a new user signs up as a Veritone developer via your flow, and become an active user*<br>
+    [Login to Automate Studio or create an account](https://www.veritone.com/onboarding/#/signUp?type=automate)
+
+* **Sell**
+    * Become a Veritone partner (technology innovator, solution provider, reseller, or distributor) to generate revenue from integrating and/or reselling user licenses, flows, and/or processing (partner agreement required*)<br>
+        [Visit the Veritone Partner Page](https://www.veritone.com/partners)
 
 
+## How to build flows and make money? {docsify-ignore}
+Developers and Business Analysts, contribute to the Automate Studio flow library and claim a bounty. Here’s how:
+
+1. Review the [wish list](#automate-flow-wishlist) of Automate Studio flows
+2. Choose which flow to develop, or suggest a new flow for Veritone to review and add to the list
+3. Build the flow you’ve selected, according to the flow specifications
+4. Submit your completed flow for Veritone review and approval
+
+If approved, Veritone will pay you the specified bounty amount for that flow. Then, spread the word by marketing your flows to others. Each time those you refer sign up through your flow and become active users, you get paid.*
+
+[Get Started!](#automate-flow-wishlist)
 
 <hr>
 
@@ -265,7 +279,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
         </br>
         <div class="featureBox"> 
             <div class="featureText">
-                <h3>Podcast to a Blog/Article Automation</h3>
+                <h3>Podcast to a Blog and Article Automation</h3>
                 <div class="description-text">Transcribe podcasts and auto-create blog posts in WordPress for SEO; Make available in multiple languages.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/podcast-to-blog-article-automation"> BUILD IT!</a>
@@ -415,7 +429,7 @@ If you want to propose a new flow that is neither in our library or wish list, f
         </br>
         <div class="featureBox"> 
             <div class="featureText">
-                <h3>Injection of Content Intelligence into RPA/BPA</h3>
+                <h3>Injection of Content Intelligence into RPA and BPA</h3>
                 <div class="description-text">Auto claims process - locate/read license plate and damage from images or video, auto-attach image clips to claim case.</div>
             </div>
             <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/injection-content-intelligence-rpa-bpa"> BUILD IT!</a>
@@ -474,5 +488,22 @@ If you want to propose a new flow that is neither in our library or wish list, f
     </div>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<br>
+*See the Veritone aiWARE Ambassador Program Terms and Conditions for further details.  By participating in the program, you agree to these program terms. 
 
-
+*Program terms and conditions
+1. “Active user” is a user who has a Veritone account and creates or consumes an engine, flow or application within 1 year from flow approval date.
+2. Veritone reserves the right to reject submitted flows if they do not meet provided specifications.
+3. Payment terms for approved flows are Net 30 days from approval.
+4. Referral payments made for up to 1 year from flow approval date, and are capped at $2,000 per flow owner per year
+5. Automate Studio early adopter program benefits include:
+    * Free use of Automate Studio, all aiWARE developer tools, and all aiWARE engines for a single AWS cloud user (limit $1,000 of value, including $100 credit, services and support)
+    * Free access to the aiWARE support team and community support
+6. Sellers require a partner agreement executed by Veritone
