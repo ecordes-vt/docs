@@ -7,7 +7,7 @@ The payload file itself contains all of the information the engine needs in orde
 In order to test an engine of this type, you will need to simulate an incoming payload to verify your engine can process it successfully.
 You can get a valid payload to test locally with by following the steps below.
 
-## Testing Locally {docsify-ignore}
+## Testing Locally <!-- {docsify-ignore} -->
 
 1\. Click on the "Create Task" button shown on the tasks page of your engine.
 
@@ -67,7 +67,7 @@ Once you have created the initial test payload, you may optionally prefer to cre
   -d '{"query":"mutation{createJob(input:{targetId:\"<the recordingId>\" tasks:[{engineId:\"<your engineId>\" testTask:true}]}){id}}"}'
 ```
 
-## Testing in aiWARE {docsify-ignore}
+## Testing in aiWARE <!-- {docsify-ignore} -->
 
 Before submitting your build, we also recommend testing it on our platform.
 To do this you should follow the same steps listed for testing your engine locally, except that you should now choose the build version that correlates to your uploaded build when asked to select a build on the select options page.

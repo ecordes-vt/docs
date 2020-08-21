@@ -4,7 +4,7 @@ Veritone's full suite of APIs enables you to easily add cognitive functionality 
 
 ![Integration](../overview/architecture-overview/stack-integration.svg)
 
-## The Best of Both Worlds {docsify-ignore}
+## The Best of Both Worlds <!-- {docsify-ignore} -->
 
 Veritone's aiWARE platform exposes a comprehensive set of [GraphQL APIs](apis/reference/mutation/), as well as a route-based [HTTP API](apis/edge/index.html) for customers who prefer a more RESTful approach.
 You can mix and match API styles to suit your need.
@@ -22,7 +22,7 @@ Its JSON-based structure not only lets you call multiple nested resources in a s
 For even greater flexibility, you can (optionally) use Veritone's [aiWARE Edge HTTP API](apis/edge/index.html) to achieve your integration goals using standard HTTP verbs like PUT, POST, and GET.
 The HTTP API is especially useful for customers who wish to manage their own on-premise instance(s) of Veritone aiWARE Edge, or who may have complex deployment requirements involving hybrid on-prem/virtual-private-cloud architectures.
 
-## Base URL {docsify-ignore}
+## Base URL <!-- {docsify-ignore} -->
 
 Veritone API uses a single endpoint for ad-hoc requests and to integrate API into third-party applications. All requests must be HTTP POST to [https://api.veritone.com/v3/graphql](https://api.veritone.com/v3/graphql) with *application/json* encoded bodies.
 

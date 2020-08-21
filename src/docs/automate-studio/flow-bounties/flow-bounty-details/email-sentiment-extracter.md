@@ -17,7 +17,7 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 A flow engine that accepts csv & text files webhooked to an HTTP Adapter endpoint sent from an email provider of your choice (eg Mandrill, Sendgrid) and processes them with a sentiment analysis engine then: 
 1. writes the results to a TDO
 2. writes the results back to a callbackUrl field if provided by the sender.

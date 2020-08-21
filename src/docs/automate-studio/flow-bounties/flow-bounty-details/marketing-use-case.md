@@ -17,7 +17,7 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Sentiment analysis of social streams, emails, & text messages, and escalation of negative posts to customer service rep to respond.
 </br>
 </br>

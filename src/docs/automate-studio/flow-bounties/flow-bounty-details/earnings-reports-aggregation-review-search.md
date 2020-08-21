@@ -17,7 +17,7 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 An Automate workflow that captures all quarterly earnings reports (audio, video and text) of NASDAQ companies, sorting and indexing them for easy discovery, analysis and comparison on Illuminate.
 </br>
 </br>

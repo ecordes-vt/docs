@@ -17,9 +17,9 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Transcribe and translate conversations in near real-time to enable follow-up or intervention by agents who don’t speak the language. 
-## Details {docsify-ignore}
+## Details <!-- {docsify-ignore} -->
 Input a live stream of a call, run through a transcription engine, then through a language detection engine (alternatively, take the language as a config input), and finally through a translation engine (output language is a config parameter). Put results back in the Call Center system.
 </br>
 </br>

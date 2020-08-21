@@ -17,7 +17,7 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Customer voicemail transcription/summaries/entities/sentiment and email summaries/entities/sentiment presented to case handler - speeds case resolution
 </br>
 </br>

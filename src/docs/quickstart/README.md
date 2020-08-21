@@ -4,7 +4,7 @@
 th { text-align:left; }
 </style>
 
-# Contents {docsify-ignore}
+# Contents <!-- {docsify-ignore} -->
 
 * [Quickstarts](#quickstarts) 
 * [Tutorials](#tutorials)
@@ -16,7 +16,7 @@ th { text-align:left; }
 * [Understanding Schemas](#understanding-schemas)
 * [Working with Apps](#working-with-apps)
 
-# Quickstarts {docsify-ignore}
+# Quickstarts <!-- {docsify-ignore} -->
 
 It's easy to get started with Veritone aiWARE. Create your free [Veritone Developer account](https://www.veritone.com/devsignup/), then dig in!
 
@@ -39,7 +39,7 @@ Build AI into standalone apps. | See our [ML Explorer](quickstart/ml-explorer/) 
 Build AI-powered web apps that integrate with Veritone's CMS. | See our [App Developer](quickstart/app-developer/) quickstart.
 Create custom cognitive engines. | See our [Engine Developer](quickstart/engine-developer/) quickstart.
 
-# Tutorials {docsify-ignore}
+# Tutorials <!-- {docsify-ignore} -->
 
 We have plenty of sample code and walkthroughs to get you started.
 
@@ -64,7 +64,7 @@ We have plenty of sample code and walkthroughs to get you started.
 * [Job Quickstart Guide](apis/job-quickstart/) &mdash; It's easy to run an AI job. Here's how!
 * [Search Quickstart Guide](apis/search-quickstart/) &mdash; Learn how to use the Veritone Search API on processed results.
 
-The Veritone Technology Stack {docsify-ignore}
+The Veritone Technology Stack <!-- {docsify-ignore} -->
 -----------------------
 
 Our stack includes:
@@ -102,7 +102,7 @@ Our stack includes:
     * PRO: Excellent process isolation, scalability, security, and programming-language independence
     * CON: Deeply tied to Linux; somewhat arcane command-line interface; we do not support Docker for Windows
 
-Working With GraphQL {docsify-ignore}
+Working With GraphQL <!-- {docsify-ignore} -->
 --------------------
 
 * What even is it? *ISON-based query language*
@@ -114,7 +114,7 @@ Working With GraphQL {docsify-ignore}
             * What are the limitations of GraphQL Interfaces? (Hint: No true inheritance.)
 * Free IDE: [Sandbox](https://api.veritone.com/v3/graphql)
 
-Working With Unstructured Data {docsify-ignore}
+Working With Unstructured Data <!-- {docsify-ignore} -->
 ------------------------------
 
 * Onboard JSON schemas
@@ -127,7 +127,7 @@ Working With Unstructured Data {docsify-ignore}
     * Using [CMS](https://cms.veritone.com/#/)
     * Using the API
 
-Cognitive capabilities {docsify-ignore}
+Cognitive capabilities <!-- {docsify-ignore} -->
 ----------------------
 
 The official list can always be found at <https://docs.veritone.com/#/developer/engines/cognitive/?id=capabilities>.
@@ -160,7 +160,7 @@ The capabilities we support are shown below. These exist within a handful of "cl
 
 Each of these capabilities is further defined in a VTN Standard subschema.
 
-The VTN Standard {docsify-ignore}
+The VTN Standard <!-- {docsify-ignore} -->
 ----------------
 
 The VTN Standard is a schema that defines data-output contracts for all the Veritone-supported cognitive capabilities. Read more about it at <https://docs.veritone.com/#/developer/engines/standards/engine-output/>. 
@@ -170,7 +170,7 @@ The VTN Standard is a schema that defines data-output contracts for all the Veri
     * Apples-to-apples benchmarking
     * Tools for *validating* engine output
 
-Understanding Schemas {docsify-ignore}
+Understanding Schemas <!-- {docsify-ignore} -->
 ---------------------
 
 Schemas are an important concept not just in the database world but in the world of JSON data generally.
@@ -183,7 +183,7 @@ Schemas are an important concept not just in the database world but in the world
     * An SDO usually lives as part of a Temporal Data Object.
 * Custom Schemas -- Can come into play in various places, such as for custom input data, custom extensions of VTN Standard (output data), etc.
 
-Working with Apps {docsify-ignore}
+Working with Apps <!-- {docsify-ignore} -->
 -----------------
 
 * Authentication

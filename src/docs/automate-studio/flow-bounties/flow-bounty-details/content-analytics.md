@@ -17,9 +17,9 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Use Topic Extraction engines to tag calls with key topics for realtime escalation & future analytics of common trends.
-## Details {docsify-ignore}
+## Details <!-- {docsify-ignore} -->
 Need to input a mapping table that which topic will escalate to who. Based on the mapping table and detected topic, the output of the flow will be the name of the higher manager.
 </br>
 </br>

@@ -151,13 +151,13 @@
 
 </div>
 
-## What is Veritone's Cognitive Technology? {docsify-ignore}
+## What is Veritone's Cognitive Technology? <!-- {docsify-ignore} -->
 The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. Choose from hundreds of available engines across various categories of cognition. Use either our unified API or UI to process your data — audio, video, image, text, and more — at scale, and from multiple sources and formats.
 
 
 <hr>
 
-## Explore aiWARE Cognitive Capabilities {docsify-ignore}
+## Explore aiWARE Cognitive Capabilities <!-- {docsify-ignore} -->
 
 <br>
 
@@ -245,7 +245,7 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
 <br>
 <hr>
 
-## Do more with aiWARE {docsify-ignore}
+## Do more with aiWARE <!-- {docsify-ignore} -->
 <br>
 <div style="display: flex">
     <div class="do-more-aiware-featureColumn">
@@ -269,7 +269,7 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
 </div>
 
 
-## Whats New {docsify-ignore}
+## Whats New <!-- {docsify-ignore} -->
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
         <div class="date-text">

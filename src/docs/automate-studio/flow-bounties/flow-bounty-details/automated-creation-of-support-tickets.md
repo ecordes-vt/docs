@@ -17,9 +17,9 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- <!-- {docsify-ignore} --> -->
 Use AI to automatically create support tickets based on conversation details and context.
-## Details {docsify-ignore}
+## Details <!-- <!-- {docsify-ignore} --> -->
 
 </br>
 </br>

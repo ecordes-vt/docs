@@ -137,12 +137,12 @@
 
 </div>
 
-## What is Veritone's Automate Studio? {docsify-ignore}
+## What is Veritone's Automate Studio? <!-- {docsify-ignore} -->
 Veritone Automate Studio is a low-code workflow designer that empowers technical and business teams to tap into a full-stack AI architecture to design and deploy AI-powered business processes at scale in days, not months. Leverage an intuitive drag-and-drop UI to easily create advanced business logic on a digital canvas, without the need for in-depth coding skills or AI expertise. Automate Studio enables intelligent process automation (IPA) and workflow enrichment across both new and existing systems and applications.
 
 <hr>
 
-## Explore Automate Studio Templates {docsify-ignore}
+## Explore Automate Studio Templates <!-- {docsify-ignore} -->
 
 
 
@@ -202,7 +202,7 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
     <a href="https://developer.veritone.com/automate-studio/flows/templates" id="view-more-templates-btn">VIEW MORE TEMPLATES</a>
 </div>
 
-## Whats New {docsify-ignore}
+## Whats New <!-- {docsify-ignore} -->
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
         <div class="date-text">

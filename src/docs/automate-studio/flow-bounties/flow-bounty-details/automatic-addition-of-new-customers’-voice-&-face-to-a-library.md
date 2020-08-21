@@ -17,9 +17,9 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Using the video or audio recordings from a call between an agent and a customer, the flow will create an entity with identifiers - voice & face - of the customer, and add to the library. If the customer name is known, the flow will use it to create the library record, otherwise, will use “Unkown-#”.
-## Details {docsify-ignore}
+## Details <!-- {docsify-ignore} -->
 
 </br>
 </br>

@@ -17,7 +17,7 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Auto claims process - locate/read license plate and damage from images or video, auto-attach image clips to claim case.
 </br>
 </br>

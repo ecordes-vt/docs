@@ -17,7 +17,7 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Keyword and sentiment analysis of public figure speeches, and correlation to policy actions.
 </br>
 </br>

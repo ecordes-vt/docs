@@ -17,10 +17,10 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- <!-- {docsify-ignore} --> -->
 Provide call center operators responses to questions asked by the customer in real-time, without the operator having to search themselves.
 
-## Details {docsify-ignore}
+## Details <!-- {docsify-ignore} -->
 The proposed flow takes an audio file as input, converts its speech to text, and detects questions. This is extremely useful for a text analyzer to determine if a given sentence generated from an audio file is a question or not. The question will be passed to Google search API and get the top 5 results for the topic.
 </br>
 Output: The questions detected and top 5 Google Search results for each.

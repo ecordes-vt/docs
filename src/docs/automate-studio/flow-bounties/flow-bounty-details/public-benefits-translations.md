@@ -17,7 +17,7 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Translation and access to public communications and public services (medical care, unemployment claims, etc.) - video, audio, text communications.
 </br>
 </br>

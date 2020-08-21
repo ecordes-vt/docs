@@ -1,12 +1,12 @@
 # Using GraphQL
 
-## What is GraphQL? {docsify-ignore}
+## What is GraphQL? <!-- {docsify-ignore} -->
 
 GraphQL (http://graphql.org/) is a query language. It allows users to format queries that specify exactly what information they want to send or receive, using a formal schema defined by the GraphQL provider.
 
 GraphQL initiated with Facebook and is now used by a number of major API providers, including Github. A rich and rapidly expanding ecosystem of GraphQL tooling, much of it open source, helps both GraphQL providers and clients to quickly build data-centric applications and services.
 
-## Why is Veritone using GraphQL for its APIs? {docsify-ignore}
+## Why is Veritone using GraphQL for its APIs? <!-- {docsify-ignore} -->
 
 Veritone uses GraphQL to provide a clean, unified interface to its data and operations. GraphQL has many benefits over a traditional REST API.
 
@@ -14,7 +14,7 @@ Veritone uses GraphQL to provide a clean, unified interface to its data and oper
 * The schema is self-documenting and reduces errors and time wasted from bad input
 * The Sandbox user interface allows a user to easily explore the schema and all the information available to them
 
-## GraphQL API Quick Start {docsify-ignore}
+## GraphQL API Quick Start <!-- {docsify-ignore} -->
 
 To get started right away:
 
@@ -26,7 +26,7 @@ To get started right away:
 * Hit the API directly at https://api.veritone.com/v3/graphql. You'll need to provide a valid authentication token as described at [here](/apis/authentication).
 * See [Basics](/apis/tutorials/graphql-basics) and [Examples](/apis/tutorials/)
 
-## How do I use GraphQL? {docsify-ignore}
+## How do I use GraphQL? <!-- {docsify-ignore} -->
 
 For detailed information about GraphQL, see the main GraphQL site (http://graphql.org).
 This document contains a high-level overview and some information specific to Veritone's implementation.
@@ -115,7 +115,7 @@ It would return something like:
 }
 ```
 
-## Veritone's schema {docsify-ignore}
+## Veritone's schema <!-- {docsify-ignore} -->
 
 Now let's take a look at the Veritone schema. You can refer to the following links. You can access the Sandbox user interface at https://api.veritone.com/v3/graphiql.
 
@@ -137,7 +137,7 @@ Veritone's platform is full-featured and growing constantly, so the schema is ne
 
 You can find raw GraphQL schema files [here](/apis/schema/listing) .
 
-## GraphQL hints and tips {docsify-ignore}
+## GraphQL hints and tips <!-- {docsify-ignore} -->
 
 Use the online Sandbox to explore the schema, make ad hoc queries to find data, and test and debug queries and mutations for your applications.
 

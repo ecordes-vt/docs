@@ -17,7 +17,7 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Monitor public camera feeds for abnormal activity (e.g. fires, weather, people, cars). Fire detection of interest by prospect.
 </br>
 </br>

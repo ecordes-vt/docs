@@ -2,7 +2,7 @@
 
 # Tutorials <!-- Don't remove -->
 
-## Featured {docsify-ignore}
+## Featured <!-- {docsify-ignore} -->
 
 <div style="transform:scaleX(.99);">
 <img alt="cognition" width="18%" style="float:left;margin:11px;" src="docs/developer/engines/tutorial/ML.png">
@@ -32,7 +32,7 @@ transform-origin: top left; "><div class="topruled"><br/></div>
 </div>
 <br/>
 
-## Tutorials: The Full List {docsify-ignore}
+## Tutorials: The Full List <!-- {docsify-ignore} -->
 
 - [GraphQL API Basics](apis/tutorials/graphql-basics.md) &mdash; Start here if you're new to GraphQL.
 - [API Examples](apis/examples.md) &mdash;  GraphQL-based API tips and tricks, as runnable queries.

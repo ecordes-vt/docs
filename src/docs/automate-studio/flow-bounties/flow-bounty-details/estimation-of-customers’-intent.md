@@ -17,9 +17,9 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Identify caller intent to improve business metrics such as churn or customer satisfaction.
-## Details {docsify-ignore}
+## Details <!-- {docsify-ignore} -->
 
 </br>
 </br>

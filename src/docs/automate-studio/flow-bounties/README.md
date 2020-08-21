@@ -144,7 +144,7 @@ Below you will find a wishlist of Automate flows that we, at Veritone, hope to h
 
 </style>
 
-## Become a Veritone Ambassador and get paid! {docsify-ignore}
+## Become a Veritone Ambassador and get paid! <!-- {docsify-ignore} -->
 There are three ways to become a Veritone Ambassador. Building flows, driving adoption of your flows, and becoming a Veritone integrator or reseller partner.
 * **Build**
     * Get paid when you create an Automate Studio flow from the Veritone [wish list](#automate-flow-wishlist), and that flow is approved by Veritone.* Rates vary per flow.<br>
@@ -159,7 +159,7 @@ There are three ways to become a Veritone Ambassador. Building flows, driving ad
         [Visit the Veritone Partner Page](https://www.veritone.com/partners)
 
 
-## How to build flows and make money? {docsify-ignore}
+## How to build flows and make money? <!-- {docsify-ignore} -->
 Developers and Business Analysts, contribute to the Automate Studio flow library and claim a bounty. Here’s how:
 
 1. Review the [wish list](#automate-flow-wishlist) of Automate Studio flows
@@ -173,7 +173,7 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
 
 <hr>
 
-## Automate Flow Wishlist {docsify-ignore}
+## Automate Flow Wishlist <!-- {docsify-ignore} -->
 <br>
 <div style="display: flex">
     <div class="featureColumn">

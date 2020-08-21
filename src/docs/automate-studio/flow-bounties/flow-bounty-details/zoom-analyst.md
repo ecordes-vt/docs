@@ -18,10 +18,10 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Analyze a live zoom call: live transcript with speaker separation. Text analytics. Fast search, playback and clipping of snippets of a call for sharing.
 
-## Details {docsify-ignore}
+## Details <!-- {docsify-ignore} -->
 User Flow:
 <br>
 User can connect the app to as many Google calendars as they want

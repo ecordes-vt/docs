@@ -17,9 +17,9 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Help agents determine when to escalate issues and who should handle them based on the sentiment of the conversation.
-## Details {docsify-ignore}
+## Details <!-- {docsify-ignore} -->
 Run calls in real-time via transcription and sentiment analysis engines. Tickets that are classified negatively with high confidence will be escalated to a manager via SMS or <Call Center system>. All sentiment results will be saved and indexed for future analytics.
 </br>
 </br>

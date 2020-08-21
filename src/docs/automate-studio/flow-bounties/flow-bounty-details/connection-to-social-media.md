@@ -17,9 +17,9 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Proactively identify issues that come up in social media platforms to drive faster resolution.
-## Details {docsify-ignore}
+## Details <!-- {docsify-ignore} -->
 1. Input: social media live stream (e.g. Twitter account).
 2. Run the text through a Sentiment Analysis engine.
 3. Run text through a Topic Extraction engine to find the top 3 topics of the post and comments.

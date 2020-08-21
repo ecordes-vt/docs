@@ -17,7 +17,7 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Search media files to quickly and easily locate faces, sound clips and keywords (multi-variant search, as we do in Illuminate). This will require connectors for MAMs/DAMs.
 </br>
 </br>

@@ -17,7 +17,7 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 Transcribe podcasts and auto-create blog posts in WordPress for SEO; Make available in multiple languages.
 </br>
 </br>

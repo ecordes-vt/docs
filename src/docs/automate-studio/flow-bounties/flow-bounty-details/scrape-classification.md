@@ -18,10 +18,10 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview {docsify-ignore}
+## Overview <!-- {docsify-ignore} -->
 As a CMS/GraphQL user, I can create a job that invokes an Automation engine to scrape a website and process the content for either topic extraction or content classification (or both!) 
 
-## Details {docsify-ignore}
+## Details <!-- {docsify-ignore} -->
 Acceptance criteria are as follows:
 
 1. As a user, I can provide a site url to scrape.
