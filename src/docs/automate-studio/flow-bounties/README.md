@@ -495,6 +495,6 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
 <br>
 <br>
 <br>
-*See the Veritone [aiWARE Ambassador Program Terms and Conditions](https://s3.amazonaws.com/static.veritone.com/terms/aiWAREAmbassadorProgramTerms.pdf) for further details.  By participating in the program, you agree to these program terms. 
+*See the Veritone <a href="https://s3.amazonaws.com/static.veritone.com/terms/aiWAREAmbassadorProgramTerms.pdf">aiWARE Ambassador Program Terms and Conditions</a> for further details.  By participating in the program, you agree to these program terms. 
 
 
