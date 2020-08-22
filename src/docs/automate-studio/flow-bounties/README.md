@@ -158,8 +158,6 @@ There are three ways to become a Veritone Ambassador. Building flows, driving ad
     * Become a Veritone partner (technology innovator, solution provider, reseller, or distributor) to generate revenue from integrating and/or reselling user licenses, flows, and/or processing (partner agreement required*)<br>
         [Visit the Veritone Partner Page](https://www.veritone.com/partners)
 
-For the latest aiWARE Ambassador Terms, you can [click here](https://s3.amazonaws.com/static.veritone.com/terms/aiWAREAmbassadorProgramTerms.pdf)
-
 ## How to build flows and make money? <!-- {docsify-ignore} -->
 Developers and Business Analysts, contribute to the Automate Studio flow library and claim a bounty. Here’s how:
 
@@ -497,6 +495,6 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
 <br>
 <br>
 <br>
-*See the Veritone aiWARE Ambassador Program Terms and Conditions for further details.  By participating in the program, you agree to these program terms. 
+*See the Veritone [aiWARE Ambassador Program Terms and Conditions](https://s3.amazonaws.com/static.veritone.com/terms/aiWAREAmbassadorProgramTerms.pdf) for further details.  By participating in the program, you agree to these program terms. 
 
 
