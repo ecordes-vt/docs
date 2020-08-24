@@ -17,7 +17,7 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview <!-- <!-- {docsify-ignore} --> -->
+## Overview <!-- {docsify-ignore} -->
 Provide call center operators responses to questions asked by the customer in real-time, without the operator having to search themselves.
 
 ## Details <!-- {docsify-ignore} -->

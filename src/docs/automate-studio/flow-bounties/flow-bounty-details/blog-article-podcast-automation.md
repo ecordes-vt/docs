@@ -17,7 +17,7 @@
 [status/Development/Undeveloped/red]
 
 
-## Overview <!-- <!-- {docsify-ignore} --> -->
+## Overview <!-- {docsify-ignore} -->
 Dynamically transcribe blogs and articles, and auto-create audio podcasts; Make available in multiple languages; Automatically add gifs and images to the video per topics discussed.
 </br>
 </br>
