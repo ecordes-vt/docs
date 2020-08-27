@@ -251,7 +251,7 @@ This is useful in the following scenarios:
 
 #### Request
 
-The POST request to the `resultWebhook` should have the following data:
+The POST request to the `resultWebhook` should have the following data as a JSON payload:
 * `chunkContext` - (string) Optional. This is the value of the `chunkContext` as passed into the request of the `/process` .  It should be present if the engine is chunk engine
 * `startOffsetMs` - (int64)  Optional - offset of the start of the chunk from the beginning of the input stream for which this result was produced | |
 * `endOffsetMs` - (int64)  Optional - offset of the end of the chunk from the beginning of the input stream for which this result was produced
