@@ -2,6 +2,8 @@
 
 # Job Processing
 
+**Note**: For a step-by-step "how to" explanation of working with jobs, see the Quickstart at [Working with Jobs](quickstart/jobs/?id=working-with-jobs).
+
 ## Overview
 
 Fundamental to the value of Veritone aiWARE Edge is the ability to ingest and process data with a set of Engines and in an order defined by the user. A single end-to-end processing of a workflow defined by a user is called a Job. Every Job is made out of 1-N Tasks; each Task is implemented by 1-N instances of a specific type of Engine. This document describes how a Job is processed by Edge 3.0.
@@ -28,7 +30,40 @@ In order to process a Job DAG, each Task requires 0-N inputs, either from previo
 
 Stream -> chunk, chunk -> stream, and stream -> stream processing has to be serial, i.e. done by a single engine instance. Chunk -> chunk processing can be serial or parallel, i.e. done by multiple instances of the same Engine. Adapters by definition ingest chunks or streams from external sources, therefore they may run as root nodes or as child nodes, while engines may never run as root nodes of a DAG (except for batch engines).
 
+### Execution Preferences
+
+[Execution Preferences](https://api.veritone.com/v3/graphqldocs/executionpreferences.doc.html) can be set at the Task level in the `createJob` mutation.
+
+You can set any or all of the following properties (which are optional):
+
+`maxRetries` &mdash; _Integer._ The maximum number of retries for this task. (Default: 1.)
+
+`maxEngines` &mdash; _Integer._ The maximum number of engine instances that should be devoted to the task.
+
+`parallelProcessing` &mdash; _Boolean._ Defines if the task can be processed in parallel. Default value is `false`.
+
+`dueDateTime` &mdash; _DateTime_. The due date, if any, for this task. (Strictly informational. Does not affect task processing.)
+
+`parentCompleteBeforeStarting` &mdash; _Boolean_. Defines if the parent task must be completed before starting. (Default is `false`.) 
+
+`priority` &mdash; _Integer._ This number can be any integer in the range -2^31 to 2^31, with lowest values having the highest priority. (Default: 0.) Some recommended usage guidelines are shown in the table below.
+
+#### Task Priority Guidelines
+
+| Type | Priority | Notes |
+| ---- | -------- | ----- |
+| Ingestion (TVR, WSA) | -100 |    |
+| Application Jobs | -20 | Anything touching end users should be before normal ingestion |
+| Tier1/Hi Ingestion | -10 |  High priority ingestion |
+| Tier2/Normal Ingestion | 0 | Normal |
+| Tier3/Low Ingestion | 10 | Bulk low-priority ingestion |
+| Archive/Bulk Processing | 50 |  |
+    
 ## Task Processing Flow
+
+Jobs are composed of [tasks](https://api.veritone.com/v3/graphqldocs/task.doc.html). A task, in turn, is associated with an _engine._
+
+_Engine Toolkit_ is the go-between that sits between Controller and the various running engine instances. Engine Toolkit (ET) is the process that actually talks directly to engines and manages their inputs and outputs. The low-level details of how ET interacts with engines are outlined below.
 
 1. Engine Toolkit — Scan the Input Folder for up to X items with .IN or .P (skip .ERROR and .DONE). X is passed in by Controller.  
     1. If a file has a .P modifier — meaning it is being _processed_ by another instance 
@@ -89,7 +124,6 @@ Stream -> chunk, chunk -> stream, and stream -> stream processing has to be seri
 5. Engine Toolkit —  
     1. If there are additional items still on the list — Go to step 2. 
     2. If no more items on the list — Go to step 1.
-
 
 ## Engine Errors
 
