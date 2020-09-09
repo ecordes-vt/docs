@@ -23,5 +23,5 @@ Identify caller intent to improve business metrics such as churn or customer sat
 
 </br>
 </br>
-<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
+<a target="_blank" href="#" id="claim-this-flow-btn">CLAIMED</a>
 <hr>

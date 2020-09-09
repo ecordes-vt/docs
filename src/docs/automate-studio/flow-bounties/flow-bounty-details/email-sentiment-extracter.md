@@ -23,5 +23,5 @@ A flow engine that accepts csv & text files webhooked to an HTTP Adapter endpoin
 2. writes the results back to a callbackUrl field if provided by the sender.
 </br>
 </br>
-<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
+<a target="_blank" href="#" id="claim-this-flow-btn">CLAIMED</a>
 <hr>

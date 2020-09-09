@@ -251,18 +251,18 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Email Sentiment Extracter</h3>
                 <div class="description-text">A Flow engine will process csv & text files webhooked to an HTTP Adapter endpoint sent from an email provider by a sentiment analysis engine.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/email-sentiment-extracter"> BUILD IT!</a>
-            <div class="bounty-number">$200</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/email-sentiment-extracter"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
         <div class="featureBox"> 
             <div class="featureText">
-                <h3>Face Detector and Redactor</h3>
+                <h3>Face Detector Redactor</h3>
                 <div class="description-text">This flow engine processes face recognition against a specified library and then runs a redaction process against any entities detected.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-detector-redactor"> BUILD IT!</a>
-            <div class="bounty-number">$200</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/face-detector-redactor"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -361,8 +361,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Call Center Estimation of Customers’ Intent</h3>
                 <div class="description-text">Identify caller intent to improve business metrics such as churn or customer satisfaction.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/estimation-of-customers’-intent"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/estimation-of-customers’-intent"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>           
@@ -401,8 +401,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Customer Service Automation</h3>
                 <div class="description-text">Customer voicemail transcription, summaries, entities, sentiment and email summaries, entities, sentiment presented to case handler - speeds case resolution</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/customer-service-automation"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/customer-service-automation"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
