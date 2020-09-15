@@ -93,6 +93,8 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 
 #### Required Prerequisites
 
+#### Single Node
+
 | **#** | **Action** | **Commands** |
 | --- | --- | --- |
 | 0) | Elevate permissions to root | `sudo bash` |
@@ -104,6 +106,30 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 | 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093`
  |
 
+#### Admin Node 
+| **#** | **Action** | **Commands** |
+| --- | --- | --- |
+| 0) | Elevate permissions to root | `sudo bash` |
+| 1) | Install docker.io, nfs-common, awscli, &amp; uuid packages | `apt-get update -y` <br/>`apt-get upgrade -y`<br/>`apt-get install -y docker.io nfs-common awscli uuid prometheus-node-exporter nfs-kernel-server` |
+| 2) | Create aiWARE directory  | `mkdir -p /opt/aiware` |
+| OPTIONAL | Mount disc | `# Replace sdXX with a data disk.` <br/>`# If all on the root disk, skip the below`<br/>`mkfs.ext4 /dev/sdXX`<br/>`mount /dev/sdXX /opt/aiware` |
+| 3) | Create local directories | `mkdir -p /opt/aiware/postgres /opt/aiware/nfs /opt/aiware/registry` |
+| 4) | Map /cache | `ln -s /opt/aiware/nfs /cache` |
+| 5) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter`<br/>`docker run --volume=/:/rootfs:ro`<br/>`--volume=/var/run:/var/run:ro`<br/>`--volume=/sys:/sys:ro`<br/>`--volume=/var/lib/docker/:/var/lib/docker:ro`<br/>`--volume=/dev/disk/:/dev/disk:ro`<br/>`--publish=30095:8080 --detach=true --name=cadvisor`<br/>`gcr.io/google-containers/cadvisor:latest` |
+| 6) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093`
+ |
+
+#### Engine Node
+ | **#** | **Action** | **Commands** |
+| --- | --- | --- |
+| 0) | Elevate permissions to root | `sudo bash` |
+| 1) | Install docker.io, nfs-common, awscli, &amp; uuid packages | `apt-get update -y` <br/>`apt-get upgrade -y`<br/>`apt-get install -y docker.io nfs-common awscli uuid prometheus-node-exporter` |
+| 2) | Create aiWARE directory  | `mkdir -p /opt/aiware` |
+| OPTIONAL | Mount disc | `# Replace sdXX with a data disk.` <br/>`# If all on the root disk, skip the below`<br/>`mkfs.ext4 /dev/sdXX`<br/>`mount /dev/sdXX /opt/aiware` |
+| 3) | Create local directories | `mkdir -p /opt/aiware/postgres /opt/aiware/nfs /opt/aiware/registry` |
+| 4) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter`<br/>`docker run --volume=/:/rootfs:ro`<br/>`--volume=/var/run:/var/run:ro`<br/>`--volume=/sys:/sys:ro`<br/>`--volume=/var/lib/docker/:/var/lib/docker:ro`<br/>`--volume=/dev/disk/:/dev/disk:ro`<br/>`--publish=30095:8080 --detach=true --name=cadvisor`<br/>`gcr.io/google-containers/cadvisor:latest` |
+| 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093`
+ |
 ## Installation
 
 ### Run Mode: Single Node
@@ -326,7 +352,7 @@ export AIWARE_CONTROLLER=http://<ip of node>:9000/edge/v1
 
 Once you have completed configuring your Edge with aiWARE, the steps below outline how to connect to your Relativity Instance.
 
-### Step 1: Log in to Relativity 9 or 10 (Veritone aiWARE for Relativity  <- login info here)
+### Step 1: Log in to Relativity 9, 10 or One
 
 ### Step 2: Select Workspace
 
@@ -719,17 +745,19 @@ docker run --detach -p 10000:9000 \
 
 ### Step 5: Once connected, create bucket that will be repository for CSV reports
 
-### Step 6: Open up a second terminal, but don’t SSH in yet. Next we will create the license. With your aiware-license-keys folder on your local machine, you’ll need to update the license-template-example.json. Fields you will need to update: 
+### Step 6: Open up a second command line
 
-1. <allowedEngineIds>
+Next we will create the license. With your aiware-license-keys folder on your local machine, you’ll need to update the license-template-example.json. Fields you will need to update: 
 
-2. <clusterID> - can be anything, but can also put rt-1cdc1d6d-a500-467a-bc46-d3c5bf3d6901
+1. allowedEngineIds
 
-3. <reportStatisticsBucket> = bucket name for S3 for min.io
+2. clusterID - can be anything, but can also put rt-1cdc1d6d-a500-467a-bc46-d3c5bf3d6901
 
-4. <requireReporting> = true
+3. reportStatisticsBucket = bucket name for S3 for min.io
 
-5. <customerId> - can create an org in core for tracking purposes
+4. requireReporting = true
+
+5. customerId - can create an org in core for tracking purposes
 
 ```json
 {
@@ -761,7 +789,7 @@ docker run --detach -p 10000:9000 \
 ```
 ### Step 7:  Copy aiware-license-keys to Server 
 
-`scp -r /Users/username/aiware-license-keys ubuntu@172.31.4.238:/home/ubuntu`
+`scp -r /Users/username/aiware-license-keys ubuntu@<IP OF HOST>:/home/ubuntu`
 
 ### Step 8: Execute command 
 
