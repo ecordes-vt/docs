@@ -81,8 +81,9 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 
     ```pre
     Host coreless 
-    Hostname xxx.yourdns.amazon.com 
-    IdentityFile /Users/Path/to/keypair.pem User ubuntu
+	    Hostname xxx.yourdns.amazon.com 
+	    IdentityFile /Users/Path/to/keypair.pem 
+	    User ubuntu
     ```
 
 4.  Once SSH has been configured, enter `ssh coreless` or Connect via AWS "Connect."
@@ -92,6 +93,8 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 5.  Type "Yes" to connect to IP.
 
 #### Required Prerequisites
+
+#### Single Node
 
 | **#** | **Action** | **Commands** |
 | --- | --- | --- |
@@ -103,6 +106,30 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 | 4) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter`<br/>`docker run --volume=/:/rootfs:ro`<br/>`--volume=/var/run:/var/run:ro`<br/>`--volume=/sys:/sys:ro`<br/>`--volume=/var/lib/docker/:/var/lib/docker:ro`<br/>`--volume=/dev/disk/:/dev/disk:ro`<br/>`--publish=30095:8080 --detach=true --name=cadvisor`<br/>`gcr.io/google-containers/cadvisor:latest` |
 | 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093`
  |
+
+#### Admin Node 
+| **#** | **Action** | **Commands** |
+| --- | --- | --- |
+| 0) | Elevate permissions to root | `sudo bash` |
+| 1) | Install docker.io, nfs-common, nfs-kernel-server, awscli, &amp; uuid packages | `apt-get update -y` <br/>`apt-get upgrade -y`<br/>`apt-get install -y docker.io nfs-common awscli uuid prometheus-node-exporter nfs-kernel-server` |
+| 2) | Create aiWARE directory  | `mkdir -p /opt/aiware` |
+| OPTIONAL | Mount disc | `# Replace sdXX with a data disk.` <br/>`# If all on the root disk, skip the below`<br/>`mkfs.ext4 /dev/sdXX`<br/>`mount /dev/sdXX /opt/aiware` |
+| 3) | Create local directories | `mkdir -p /opt/aiware/postgres /opt/aiware/nfs /opt/aiware/registry` |
+| 4) | Map /cache | `ln -s /opt/aiware/nfs /cache` |
+| 5) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter`<br/>`docker run --volume=/:/rootfs:ro`<br/>`--volume=/var/run:/var/run:ro`<br/>`--volume=/sys:/sys:ro`<br/>`--volume=/var/lib/docker/:/var/lib/docker:ro`<br/>`--volume=/dev/disk/:/dev/disk:ro`<br/>`--publish=30095:8080 --detach=true --name=cadvisor`<br/>`gcr.io/google-containers/cadvisor:latest` |
+| 6) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093`
+ |
+
+#### Engine Node
+ | **#** | **Action** | **Commands** |
+| --- | --- | --- |
+| 0) | Elevate permissions to root | `sudo bash` |
+| 1) | Install docker.io, nfs-common, awscli, &amp; uuid packages | `apt-get update -y` <br/>`apt-get upgrade -y`<br/>`apt-get install -y docker.io nfs-common awscli uuid prometheus-node-exporter` |
+| 2) | Create aiWARE directory  | `mkdir -p /opt/aiware` |
+| OPTIONAL | Mount disc | `# Replace sdXX with a data disk.` <br/>`# If all on the root disk, skip the below`<br/>`mkfs.ext4 /dev/sdXX`<br/>`mount /dev/sdXX /opt/aiware` |
+| 3) | Create local directories | `mkdir -p /opt/aiware/postgres /opt/aiware/nfs /opt/aiware/registry` |
+| 4) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter` |
+| 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `5432, 8000, 8001, 9000, 9001, 9090, 9093` |
 
 ## Installation
 
@@ -129,14 +156,11 @@ export AIWARE_CONTROLLER={$HOSTNAME}:9000/edge/v1
 export AIWARE_INIT_TOKEN=`uuidgen`
 echo aiWARE Edge token is $AIWARE_INIT_TOKEN
 
-#### OPTIONAL ####
-export AIWARE_LICENSE=<LICENSE_TOKEN> # IF: you have one
-
-export AIWARE_DB_ROOT=/opt/aiware/postgres
-export AIWARE_REGISTRY_ROOT=/opt/aiware/registry
+#### LICENSE ####
+export AIWARE_LICENSE=<LICENSE_TOKEN>
 ```
 
-?> To debug engines, you may want to use `export AIWARE_AUTOREMOVE_ENGINES=false`. This will cause engine instances to persist after shutdown. **WARNING**: This will cause disk space to be used up very quickly on the partition that houses `/var/lib/docker` (most likely the root partition), so _it should only be used in a debug scenario, and then only for a short period._
+?> To debug engines, you may want to use `export AIWARE_AUTOREMOVE_ENGINES=false`. This will cause engine instances to persist after shutdown. **WARNING**: This will cause disk space to be used up on the partition that houses `/var/lib/docker` (most likely the root partition), so _it should only be used in a debug scenario, and then only for a short period._
 
 #### Step 3: Run the Installation Command
 
@@ -191,19 +215,15 @@ This will ensure that all following steps are executed as root.
 #### Step 2: Setup Environment Variables and Directories
 
 ```pre
-xport AIWARE_MODE=controller,db,registry,nfs,prometheus
+export AIWARE_MODE=controller,db,registry,nfs,prometheus
 export AIWARE_HOST_EXPIRE=false
-export AIWARE_REGION=us-east-2 # IF: running in AWS
+export AIWARE_REGION=us-east-2 # IF: running in AWS, replace with correct region
 
-export AIWARE_DB_PORT=5432 # if PG is running locally
-export AIWARE_DB_ROOT=/opt/aiware/postgres
-export AIWARE_REGISTRY_ROOT=/opt/aiware/registry
-
-# generate a random UUID for edge token
+# generate a random UUID for edge token; this is important for access to the system through the API
 export AIWARE_INIT_TOKEN=`uuidgen`
 echo aiWARE Edge token is $AIWARE_INIT_TOKEN
 
-#### OPTIONAL ####
+#### LICENSE ####
 export AIWARE_LICENSE=<LICENSE_TOKEN> # IF: you have one
 ```
 
@@ -234,7 +254,7 @@ This will ensure that all following steps are executed as root.
 
 ```pre
 export AIWARE_MODE=engine
-export AIWARE_REGION=us-east-2
+export AIWARE_REGION=us-east-2 # If in AWS, replace with correct region
 export AIWARE_HOST_EXPIRE=false
 
 # This is the IP of the admin box, as noted above
@@ -321,6 +341,36 @@ export AIWARE_CONTROLLER=http://<ip of node>:9000/edge/v1
 ### Step 5: Locate and Take Note of API Token
 
 `export` will allow you to see environment variables scoped to the current session
+
+## Adding Edge to Relativity | Single Node or Admin Node
+
+Once you have completed configuring your Edge with aiWARE, the steps below outline how to connect to your Relativity Instance.
+
+### Step 1: Log in to Relativity 9, 10 or One
+
+### Step 2: Select Workspace
+
+### Step 3: Change Processing Environment to Edge in Veritone Admin under Veritone AI Hub in Relativity
+
+### Step 4: Add Public DNS to API Endpoint - this can be found in AWS within your instance or other External Server
+
+For example: http://ec2-54-153-95-43.us-west-1.compute.amazonaws.com:9000
+
+### Step 5: Add API Key from EDGE
+
+Go to the Edge in command line
+
+`export`
+
+```pre
+root@ip-172-31-12-79:~# export
+declare -x AIWARE_CACHE="/opt/aiware/cache"
+declare -x AIWARE_CONTROLLER="http://172.31.12.79:9000/edge/v1"
+declare -x AIWARE_DB_PORT="5432"
+declare -x AIWARE_DB_ROOT="/opt/aiware/postgres"
+declare -x AIWARE_HOST_EXPIRE="false"
+declare -x AIWARE_INIT_TOKEN="08bb6a59-58c7-4d46-b0dc-3fa8bf794fb5" # Replace with correct INIT_TOKEN
+```
 
 ## Installing an Engine Locally
 
@@ -622,3 +672,223 @@ curl --request GET \
  ```
 
 ?> If prompted for a password, just hit Enter. There is no password.
+
+## Create a Job With Relativity
+
+You can use the Relativity UI to push through jobs. You'll be able to track the files progress in both the UI and your command terminal. This example uses the Pangeanic Spanish to English translation engine you installed above.
+
+### Step 1: Select a file in Relativity 
+
+### Step 2: Choose the dropdown where it says “Edit” and select “Translate”
+
+### Step 3: Choose Language you’d wish to Translate 
+
+### Step 4: Confirm in the Translation Logs that the job is “In Progress” and has a Veritone Recording ID (will be the internal Job ID in Edge)
+
+### Step 5: Confirm there's a Veritone Recording ID
+
+Go to command line and onput `watch docker ps -a`. If the job is running properly, you’ll see a container that has the Engine ID + Build ID. To track your progress in Edge, copy the container id, hit `control + c` to exit out of `watch docker ps -a`. Insert `docker logs -tf “container id”`. Once the container is done, you’ll be back at the root. 
+
+### Step 6: Confirm Output Writer container is running  
+
+`watch docker ps -a`  in your command line interface 
+
+### Step 7: Output Writer completes
+
+Run `docker logs -tf aiware-controller 2>&1 | grep -i "internal job id"` in command line 
+
+### Step 8: If job completed in Edge, the final call with be a Get to grab the vtn-standard json
+
+### Step 9: You’ll be able to confirm the job completed in Relativity by going to the Translation Logs
+
+## Licensing
+
+### Overview
+
+aiWARE Edge needs a license key that allows us to control what engine(s), how long the environment is available, and other concerns.
+
+The licenses will be JWT tokens that can be validated by a service that knows the secret.
+
+### Setup - Min.io
+
+
+### Step 1: Create min.io access key and secret key with command below:
+
+```pre
+docker run --detach -p 10000:9000 \
+  -e "MINIO_ACCESS_KEY=exampleEXAMPLE" \
+  -e "MINIO_SECRET_KEY=exampleexampleexampleEXAMPLEKEY" \
+  minio/minio server /opt/aiware/minio
+  ```
+
+### Step 2: Add port to AWS Instance (or Server) - Inbound only
+
+### Step 3: Ensure that min.io is one of the containers on your Edge with command below:
+
+`docker ps -a`
+
+### Step 4: Create connection (via platform like Cyberduck) using ip address, access key, and secret key. Here’s what you’ll need: 
+
+1. Public IP Address
+
+2. Port 10000
+
+3. MINIO_ACCESS_KEY
+
+4. MINIO_SECRET_KEY
+
+### Step 5: Once connected, create bucket that will be repository for CSV reports
+
+### Step 6: Open up a second command line
+
+Next we will create the license. With your aiware-license-keys folder on your local machine, you’ll need to update the license-template-example.json. Fields you will need to update: 
+
+1. allowedEngineIds
+
+2. clusterID - can be anything, but can also put rt-1cdc1d6d-a500-467a-bc46-d3c5bf3d6901
+
+3. reportStatisticsBucket = bucket name for S3 for min.io
+
+4. requireReporting = true
+
+5. customerId - can create an org in core for tracking purposes
+
+```json
+{
+    "allowedEngineIds": [
+        "95c910f6-4a26-4b66-96cb-488befa86466",
+        "c0e55cde-340b-44d7-bb42-2e0d65e98255"
+    ],
+    "excludedEngineIds": [
+        "dd1f9266-21a6-4675-90f1-a4c3ed843e64"
+    ],
+    "enginesOwnedByCoreOrgIds": [
+        "413a8cb5-c1f4-4548-89cc-a2fcdf1426dd",
+        "5093d8c4-e057-4fee-9596-7216ac5bfd1a"
+    ],
+    "requireCore": false,
+    "coreURI": "",
+    "clusterID": "rt-239483920",
+    "coreOrganizationId": "",
+    "reportStatisticsBucket": "gfernandez-test",
+    "allowedReportingFailures": 3,
+    "requireReporting": true,
+    "maxHosts": 11,
+    "customerId": "12345",
+    "allowedModes": [
+        "Engine",
+        "DB"
+    ]
+}
+```
+### Step 7:  Copy aiware-license-keys to Server 
+
+`scp -r /Users/username/aiware-license-keys ubuntu@<IP OF HOST>:/home/ubuntu`
+
+### Step 8: Execute command 
+
+`aiware-agent license generate <path-to-private-key> <claims-file-json> <valid-period-in-days>`
+
+Example below: 
+
+`aiware-agent license generate /home/ubuntu/aiware-license-keys/app1.rsa /home/ubuntu/aiware-license-keys/license-template-example.json 2`
+
+### Step 9: Copy license that’s produced 
+
+### Step 10: Export AIWARE_LICENSE + AIWARE_MINIO_ENABLED=true, along with the other exports in the Configuration Guide 
+
+`export AIWARE_MINIO_ENABLED=true`
+
+`export AIWARE_LICENSE=<LICENSE_TOKEN>`
+
+## Troubleshooting
+
+#### Troubleshooting Jobs on Edge
+
+These troubleshooting steps help to isolate the root cause of processing issues between Relativity and aiWARE Edge.
+
+#### Step 1: Create a file on Edge named get-tasks.sql with the following contents
+
+```sql
+SELECT internal_job_id, internal_task_id, started_date_time, completed_date_time
+FROM edge.task
+WHERE task_status = 'complete'
+ AND engine_id = '8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3'
+ORDER BY completed_date_time DESC
+LIMIT 20
+```
+#### Step 2: Execute the following command to run the query
+
+`cat get-tasks.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -`
+
+#### Step 3: Analyze the output. Make note of the <internal_job_id>  of any one of the completed tasks
+
+#### Step 4: Search for the <internal_job_id> in the Veritone Recording ID field on the Translation Logs page.
+
+Please validate that file is still in progress and not completed.  If it is completed, please pick a different job id from Step 3.
+
+#### Step 5: Submit API request to validate outputs API
+
+```curl
+curl -sfl  --url http://localhost:9000/edge/v1/proc/<internal_job_id>/outputs \
+--header 'authorization: Bearer <token here>'
+```
+
+Replace <token here> with the token from your Edge. Replace <internal_job_id> the job id from Step 4. Execute the command from the Edge server directly.
+
+Note: that you should also test from the agent server where the job analyzer agent is installed. To execute the above in Powershell, run: 
+
+This should return a JSON object with an output array and a name key that includes the name of a json file. 
+
+If there is not an output, there is an issue with the /cache filesystem on the controller. If there is an output, proceed to Step 6.
+
+
+#### Step 6: Submit API to validate output API
+
+```curl
+curl -sfl  --url 
+http://localhost:9000/edge/v1/proc/<internal_job_id>/output/<output> \
+ --header 'authorization: Bearer <token here>'
+ ```
+
+Replace <token here> with the token from your Edge. Replace <internal_job_id> the job id from Step 4. Replace <output> with the name of the json file (including the file extension) from Step 5.  Execute the command from the Edge server directly.
+
+This should return the translated/transcribed result, indicating that the problem is not on the Edge.
+
+#### View Engine Builds
+
+Scenario - The engine + build you’re expecting to appear in Docker after you push a job through don’t appear. One reason could be multiple build IDs associated to an engine
+
+#### Step 1: Create a file on Edge named engine-builds.sql with the following contents 
+
+```sql
+SELECT mf_engine_name, engine_id, build_id, build_state
+FROM edge.build
+WHERE build_state = 'deployed'
+```
+### Step 2: Execute the following command to run the query
+
+`cat engine-builds.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -`
+
+#### Step 3:  Analyze the output. Make note of the multiple build_id associated to one engine_id
+
+### Check Job Status on Edge (File System or Relativity + Coreless)
+
+Grep controller logs to view calls being made (can confirm Relativity’s connection to Edge or if job POST 
+
+`docker logs -tf aiware-controller 2>&1 | grep -i "relativity"`
+`docker logs -tf aiware-controller 2>&1 | grep -i "Internal Job ID"`
+
+Grep syslog, ignoring prometheus (Good way to confirm if jobs have started, can view the engines being pulled down) 
+
+`tail -f /var/log/syslog |grep -iv prometheus`
+
+Get engine docker logs (Good for tracking progress of Transcription + Translation engine)
+
+`docker logs -tf <container id>`
+
+Confirming all containers placed on Edge 
+
+`docker images`
+
+
