@@ -103,7 +103,7 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 | OPTIONAL | Mount disc | `# Replace sdXX with a data disk.` <br/>`# If all on the root disk, skip the below`<br/>`mkfs.ext4 /dev/sdXX`<br/>`mount /dev/sdXX /opt/aiware` |
 | 3) | Create local directories | `mkdir -p /opt/aiware/postgres /opt/aiware/nfs /opt/aiware/registry /cache/1`<br/>`touch /cache/1/1.json` |
 | 4) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter`<br/>`docker run --volume=/:/rootfs:ro`<br/>`--volume=/var/run:/var/run:ro`<br/>`--volume=/sys:/sys:ro`<br/>`--volume=/var/lib/docker/:/var/lib/docker:ro`<br/>`--volume=/dev/disk/:/dev/disk:ro`<br/>`--publish=30095:8080 --detach=true --name=cadvisor`<br/>`gcr.io/google-containers/cadvisor:latest` |
-| 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093`
+| 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093, 10000`
  |
 
 #### Admin Node 
@@ -116,7 +116,7 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 | 3) | Create local directories | `mkdir -p /opt/aiware/postgres /opt/aiware/nfs /opt/aiware/registry` |
 | 4) | Map /cache | `ln -s /opt/aiware/nfs /cache` |
 | 5) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter`<br/>`docker run --volume=/:/rootfs:ro`<br/>`--volume=/var/run:/var/run:ro`<br/>`--volume=/sys:/sys:ro`<br/>`--volume=/var/lib/docker/:/var/lib/docker:ro`<br/>`--volume=/dev/disk/:/dev/disk:ro`<br/>`--publish=30095:8080 --detach=true --name=cadvisor`<br/>`gcr.io/google-containers/cadvisor:latest` |
-| 6) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093`
+| 6) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093, 10000`
  |
 
 #### Engine Node
@@ -128,7 +128,7 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 | OPTIONAL | Mount disc | `# Replace sdXX with a data disk.` <br/>`# If all on the root disk, skip the below`<br/>`mkfs.ext4 /dev/sdXX`<br/>`mount /dev/sdXX /opt/aiware` |
 | 3) | Create local directories | `mkdir -p /opt/aiware/postgres /opt/aiware/nfs /opt/aiware/registry` |
 | 4) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter`<br/>`docker run --volume=/:/rootfs:ro`<br/>`--volume=/var/run:/var/run:ro`<br/>`--volume=/sys:/sys:ro`<br/>`--volume=/var/lib/docker/:/var/lib/docker:ro`<br/>`--volume=/dev/disk/:/dev/disk:ro`<br/>`--publish=30095:8080 --detach=true --name=cadvisor`<br/>`gcr.io/google-containers/cadvisor:latest` |
-| 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093`
+| 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093, 10000`
  |
 ## Installation
 
@@ -157,6 +157,8 @@ echo aiWARE Edge token is $AIWARE_INIT_TOKEN
 
 #### OPTIONAL ####
 export AIWARE_LICENSE=<LICENSE_TOKEN> # IF: you have one
+export AIWARE_LICENSING_ENABLED=yes
+export AIWARE_MINIO_ENABLED=true
 
 export AIWARE_DB_ROOT=/opt/aiware/postgres
 export AIWARE_REGISTRY_ROOT=/opt/aiware/registry
@@ -231,6 +233,8 @@ echo aiWARE Edge token is $AIWARE_INIT_TOKEN
 
 #### OPTIONAL ####
 export AIWARE_LICENSE=<LICENSE_TOKEN> # IF: you have one
+export AIWARE_LICENSING_ENABLED=yes
+export AIWARE_MINIO_ENABLED=true
 ```
 
 #### Step 3: Run Installation Command
