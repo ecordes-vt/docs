@@ -697,7 +697,7 @@ You can use the Relativity UI to push through jobs. You'll be able to track the 
 
 ### Step 5: Confirm there's a Veritone Recording ID
 
-Go to command line and onput `watch docker ps -a`. If the job is running properly, you’ll see a container that has the Engine ID + Build ID. To track your progress in Edge, copy the container id, hit `control + c` to exit out of `watch docker ps -a`. Insert `docker logs -tf “container id”`. Once the container is done, you’ll be back at the root. 
+Go to command line and input `watch docker ps -a`. If the job is running properly, you’ll see a container that has the Engine ID + Build ID. To track your progress in Edge, copy the container id, hit `control + c` to exit out of `watch docker ps -a`. Insert `docker logs -tf “container id”`. Once the container is done, you’ll be back at the root. 
 
 ### Step 6: Confirm Output Writer container is running  
 
@@ -805,7 +805,7 @@ Example below:
 
 ### Step 9: Copy license that’s produced 
 
-### Step 10: Export AIWARE_LICENSE + AIWARE_MINIO_ENABLED=true, along with the other exports in the Configuration Guide 
+### Step 10: Export below along with the other exports in the Configuration Guide 
 
 `export AIWARE_MINIO_ENABLED=true`
 
