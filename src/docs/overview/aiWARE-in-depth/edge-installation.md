@@ -384,6 +384,8 @@ declare -x AIWARE_INIT_TOKEN="08bb6a59-58c7-4d46-b0dc-3fa8bf794fb5"
 
 ## Installing an Engine Locally
 
+### Translation
+
 This example uses a translation engine (Pangeanic Spanish-to-English), but the procedure is the same for other cognitive engines.
 
 <style>
@@ -564,7 +566,149 @@ cat engines-preload.sql | docker container exec -i aiware-postgres /usr/bin/psql
 docker pull registry.central.aiware.com/{ENGINEID}:{BUILDID}
 ```
 
+### Transcription
+
+This example uses an English Transcription engine,  but the procedure is the same for other cognitive engines.
+
+<style>
+.markdown-section pre>code.lang-sql {
+  color:white;
+  background-color:black;
+  font-size: .75rem;
+  line-height: 120%;
+}
+</style>
+
+### Step 1: Create a File Named 'add-transcription.sql' with the Following Contents
+
+```sql
+INSERT INTO edge.engine_category (engine_category_id,engine_category_name,engine_category_type,created_date_time,modified_date_time,cpu_shares) VALUES 
+('67cd4dd0-2f75-445d-a6f0-2f297d6cd182','Transcription','Cognition',1584577152,1584577152,1024)
+ON CONFLICT (engine_category_id) DO NOTHING;
+INSERT INTO edge.engine (internal_organization_id,engine_id,engine_name,engine_state,engine_type,engine_output_type,engine_category_id,dependency,core_job_data,fields,validation,application_id,jwt_rights,parallel_processing,parent_complete_before_processing,edge_version,dontrun_complete,priority_adjustment,child_priority_adjustment_on_complete,replacement_engine_id,created_date_time,modified_date_time,cpu_shares,idle_timeout,num_chunks_per_work_item,update_status_interval,max_processing_seconds_per_work_item,max_wait_seconds_for_chunk) VALUES 
+((SELECT internal_organization_id
+FROM edge.organization limit 1)
+,'c0e55cde-340b-44d7-bb42-2e0d65e98255','English Transcription','active','chunk','chunk','67cd4dd0-2f75-445d-a6f0-2f297d6cd182','{}','{}','{}','{}','{}','{}',false,false,0,false,0,0,NULL,0,0,1024,0,1,10,900,0)
+ON CONFLICT (engine_id) DO NOTHING;
+INSERT INTO edge.build (build_id,engine_id,"version",build_state,docker_image,mf_engine_name,mf_engine_mode,mf_cluster_size,mf_custom_profile,mf_gpu_supported,mf_require_ec2,soft_vcpu_limit,soft_gpu_limit,soft_mem_bytes_limit,disk_free_bytes,license_expiration_timestamp,build_default_ttl,created_date_time,modified_date_time,runtime) VALUES 
+('73601398-8833-4369-8e90-14475894df14','c0e55cde-340b-44d7-bb42-2e0d65e98255',11,'deployed','026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:c0e55cde-340b-44d7-bb42-2e0d65e98255-73601398-8833-4369-8e90-14475894df14','English Transcription','chunk','custom','speechmatics','none',false,1024,0,1073741824,1073741824,0,21600,1584577152,1584577152,'{"edge": {}}')
+ON CONFLICT (build_id) DO NOTHING;
+  ```
+  
+### Step 2: Create a File Named 'add-wsa.sql' with the Following Contents
+
+  
+  ```sql
+  INSERT INTO "edge"."engine"("internal_organization_id","engine_id","engine_name","engine_state","engine_type","engine_output_type","engine_category_id","dependency","core_job_data","fields","validation","application_id","jwt_rights","parallel_processing","parent_complete_before_processing","edge_version","dontrun_complete","priority_adjustment","child_priority_adjustment_on_complete","replacement_engine_id","created_date_time","modified_date_time","cpu_shares","idle_timeout","num_chunks_per_work_item","update_status_interval","max_processing_seconds_per_work_item","max_wait_seconds_for_chunk")
+VALUES
+((SELECT internal_organization_id
+FROM edge.organization limit 1)
+,E'9e611ad7-2d3b-48f6-a51b-0a1ba40fe255',E'Webstream Adapter V3F',E'active',E'stream',E'chunk',E'4b150c85-82d0-4a18-b7fb-63e4a58dfcce',E'{}',E'{}',E'{}',E'{}',E'{}',E'{}',FALSE,FALSE,0,FALSE,-100,0,NULL,0,1583211280,4096,0,1,10,900,0);
+INSERT INTO "edge"."build"("build_id","engine_id","version","build_state","docker_image","mf_engine_name","mf_engine_mode","mf_cluster_size","mf_custom_profile","mf_gpu_supported","mf_require_ec2","soft_vcpu_limit","soft_gpu_limit","soft_mem_bytes_limit","disk_free_bytes","license_expiration_timestamp","build_default_ttl","created_date_time","modified_date_time","runtime")
+VALUES
+(E'fcd98c2e-8547-4fe9-86ab-b94f6e35468e',E'9e611ad7-2d3b-48f6-a51b-0a1ba40fe255',17,E'deployed',E'026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:9e611ad7-2d3b-48f6-a51b-0a1ba40fe255-fcd98c2e-8547-4fe9-86ab-b94f6e35468e',E'Webstream Adapter V3F',E'stream',E'custom',E'webstream-adapter',E'none',FALSE,500,0,1073741824,1073741824,0,21600,1583202045,1583210842,E'{"edge": {}}');
+  ```
+
+  ### Step 3: Create a File Named 'add-wsa-ec.sql' with the Following Contents
+  
+  ```sql
+  INSERT INTO "edge"."engine_category"("engine_category_id","engine_category_name","engine_category_type","created_date_time","modified_date_time","cpu_shares")
+VALUES
+(E'4b150c85-82d0-4a18-b7fb-63e4a58dfcce',E'Pull',E'Ingestion',1583200492,1583200492,1024);
+    );
+  ```
+
+### Step 4: Create a File Named 'add-ow.sql' with the Following Contents
+
+This SQL script will add Output Writer to the system. (Output Writer is a necessary component for most aiWARE jobs.) If already added to your Edge, you do not need to do this step.
+  
+  ```sql
+  INSERT INTO "edge"."build"(
+      "build_id",
+      "engine_id",
+      "version",
+      "build_state",
+      "docker_image",
+      "mf_engine_name",
+      "mf_engine_mode",
+      "mf_cluster_size",
+      "mf_custom_profile",
+      "mf_gpu_supported",
+      "mf_require_ec2",
+      "soft_vcpu_limit",
+      "soft_gpu_limit",
+      "soft_mem_bytes_limit",
+      "disk_free_bytes",
+      "license_expiration_timestamp",
+      "build_default_ttl",
+      "created_date_time",
+      "modified_date_time",
+      "runtime"
+    )
+  VALUES (
+      '89599c9c-209f-4d8a-af02-0ab9e104f689',
+      '8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3',
+      16,
+      'deployed',
+      '026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3-89599c9c-209f-4d8a-af02-0ab9e104f689',
+      '',
+      'chunk',
+      'small',
+      '',
+      'none',
+      FALSE,
+      1024,
+      0,
+      1073741824,
+      1073741824,
+      0,
+      21600,
+      1583276111,
+      1583276111,
+      '{"edge": {}}'
+    );
+  ```
+
+  ### Step 5: Create a File Named 'add-si2-ec.sql' with the Following Contents
+
+This SQL script will add Output Writer to the system. (Output Writer is a necessary component for most aiWARE jobs.)
+  
+  ```sql
+  INSERT INTO "edge"."build"("build_id","engine_id","version","build_state","docker_image","mf_engine_name","mf_engine_mode","mf_cluster_size","mf_custom_profile","mf_gpu_supported","mf_require_ec2","soft_vcpu_limit","soft_gpu_limit","soft_mem_bytes_limit","disk_free_bytes","license_expiration_timestamp","build_default_ttl","created_date_time","modified_date_time","runtime")
+VALUES
+(E'179bb1df-844a-4988-a030-03e2a84b219e',E'8bdb0e3b-ff28-4f6e-a3ba-887bd06e6440',16,E'deployed',E'026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:8bdb0e3b-ff28-4f6e-a3ba-887bd06e6440-179bb1df-844a-4988-a030-03e2a84b219e',E'',E'chunk',E'small',E'',E'none',FALSE,1024,0,1073741824,1073741824,0,21600,1583276111,1583276111,E'{"edge": {}}');
+  ```
+
+### Step 6: Turn Preload On
+    
+You need to do this each time you upload a new engine to your Edge installation.
+
+Run this SQL:
+
+```sql
+update edge.engine SET preload = true;
+```
+
+### Step 7: Run 'cat' in Terminal to Insert the Relevant Records into the Edge Database
+
+```bash
+cat add-transcription.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
+cat add-wsa-ec.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
+cat add-wsa.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
+cat add-ow.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
+cat add-si2-ec.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
+cat engines-preload.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
+```
+
+### Step 8: Run 'docker pull' to Update Engines
+
+```bash
+docker pull registry.central.aiware.com/{ENGINEID}:{BUILDID}
+```
+
 ## Create a Job Locally
+
+### Translation
 
 You can use `curl` or Postman (or the equivalent) to run jobs locally with the REST API. This example uses the Pangeanic Spanish to English translation engine you installed above.
 
@@ -633,6 +777,183 @@ curl --request POST \
      ]
    }
  ]
+}'
+```
+
+### Step 2: Validate the Cognition Engine Task
+
+A few minutes after the above curl request is submitted, confirm that the engine task exists in the database.
+
+```bash
+docker container exec -it aiware-postgres /usr/bin/psql -U postgres -c 'SELECT task_status FROM edge.task'
+```
+
+### Step 3: Poll for job Status
+
+Periodically issue this curl command (substituting your job's ID):
+
+```curl
+curl --request GET \
+ --url http://localhost:9000/edge/v1/proc/job/<job id here>/outputs \
+ --header 'authorization: Bearer <token here>'
+ ```
+
+When the job has completed, the file name of the output file will appear in the API response. This means that the file is ready to download. For example:
+
+```json
+{
+ "outputs": {
+   "internalJobID": "e1484460-7cb5-4cab-87ea-436c4768904f",
+   "outputs": [
+     {
+       "created": 1581102672,
+       "name": "vtn-standard-489cbc5b-b6b0-43d5-8b12-e790865986b5.json",
+       "size": 4344
+     }
+   ]
+ }
+}
+```
+
+### Step 4: Download Job Results
+
+Run this command, substituting your API token in the header (and your `internalJobID` and output file name in the URL):
+
+```curl
+curl --request GET \
+ --url http://localhost:9000/edge/v1/proc/job/e1484460-7cb5-4cab-87ea-436c4768904f/output/vtn-standard-489cbc5b-b6b0-43d5-8b12-e790865986b5.json \
+ --header 'authorization: Bearer <token here>'
+ ```
+
+?> If prompted for a password, just hit Enter. There is no password.
+
+### Transcription
+
+You can use `curl` or Postman (or the equivalent) to run jobs locally with the REST API. This example uses the English Transcription engine you installed above.
+
+### Step 1: Run the Job
+
+If you're using curl, this will create an engine job on the Edge instance. (Once you post the Curl command, wait a minute before pressing enter. This will give you the internal ID (save for later.) Don't forget to insert your API token in the header.
+
+```curl
+curl --request POST \
+ --url http://localhost:9000/edge/v1/proc/job/create \
+ --header 'authorization: Bearer <token here>' \
+ --header 'content-type: application/json' \
+ --data '{
+	"jobs": [
+		{
+			"dueDateTime": "2020-09-02T19:15:58.863438Z",
+			"internalOrganizationID": "",
+			"jobStatus": "queued",
+			"taskRoutes": [
+				{
+					"firstWriteDateTime": "0001-01-01T00:00:00Z",
+					"lastWriteDateTime": "0001-01-01T00:00:00Z",
+					"taskChildId": "ADAPTER_CORR_TASK_ID"
+				},
+				{
+					"firstWriteDateTime": "0001-01-01T00:00:00Z",
+					"lastWriteDateTime": "0001-01-01T00:00:00Z",
+					"taskChildId": "CHUNK_CORR_TASK_ID",
+					"taskChildInputId": "CHUNK_INPUT",
+					"taskParentId": "ADAPTER_CORR_TASK_ID",
+					"taskParentOutputId": "ADAPTER_OUTPUT"
+				},
+				{
+					"firstWriteDateTime": "0001-01-01T00:00:00Z",
+					"lastWriteDateTime": "0001-01-01T00:00:00Z",
+					"taskChildId": "SM_CORR_TASK_ID",
+					"taskChildInputId": "SM_INPUT",
+					"taskParentId": "CHUNK_CORR_TASK_ID",
+					"taskParentOutputId": "CHUNK_OUTPUT"
+				},
+				{
+					"firstWriteDateTime": "0001-01-01T00:00:00Z",
+					"lastWriteDateTime": "0001-01-01T00:00:00Z",
+					"taskChildId": "OW_CORR_TASK_ID",
+					"taskChildInputId": "OW_INPUT",
+					"taskParentId": "SM_CORR_TASK_ID",
+					"taskParentOutputId": "SM_OUTPUT"
+				}
+			],
+			"tasks": [
+				{
+					"correlationTaskId": "ADAPTER_CORR_TASK_ID",
+					"dueDateTime": "0001-01-01T00:00:00Z",
+					"engineId": "9e611ad7-2d3b-48f6-a51b-0a1ba40fe255",
+					"ioFolders": [
+						{
+							"correlationID": "ADAPTER_OUTPUT",
+							"mode": "stream",
+							"type": "output"
+						}
+					],
+					"maxEngines": 1,
+					"taskPayloadJSON": "{\"url\":http://gfernandez-test.s3.amazonaws.com/edge%20test/englishtranscriptiontest.mp3\""}",
+					"taskStatus": "pending"
+				},
+				{
+					"correlationTaskId": "CHUNK_CORR_TASK_ID",
+					"dueDateTime": "0001-01-01T00:00:00Z",
+					"engineId": "8bdb0e3b-ff28-4f6e-a3ba-887bd06e6440",
+					"ioFolders": [
+						{
+							"correlationID": "CHUNK_INPUT",
+							"mode": "stream",
+							"type": "input"
+						},
+						{
+							"correlationID": "CHUNK_OUTPUT",
+							"mode": "chunk",
+							"type": "output"
+						}
+					],
+					"maxEngines": 1,
+					"parentMustBeCompleteBeforeStarting": true,
+					"taskPayloadJSON": "{\"customFFMPEGProperties\":{\"chunkSizeInSeconds\":\"10\"},\"ffmpegTemplate\":\"audio\"}",
+					"taskStatus": "pending"
+				},
+				{
+					"correlationTaskId": "SM_CORR_TASK_ID",
+					"dueDateTime": "0001-01-01T00:00:00Z",
+					"engineId": "c0e55cde-340b-44d7-bb42-2e0d65e98255",
+					"ioFolders": [
+						{
+							"correlationID": "SM_INPUT",
+							"mode": "chunk",
+							"type": "input"
+						},
+						{
+							"correlationID": "SM_OUTPUT",
+							"mode": "chunk",
+							"type": "output"
+						}
+					],
+					"maxEngines": 1,
+					"maxRetries": 10,
+					"numChunksPerWorkItem": 5,
+					"parentMustBeCompleteBeforeStarting": true,
+					"taskStatus": "pending"
+				},
+				{
+					"correlationTaskId": "OW_CORR_TASK_ID",
+					"dueDateTime": "0001-01-01T00:00:00Z",
+					"engineId": "8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3",
+					"ioFolders": [
+						{
+							"correlationID": "OW_INPUT",
+							"mode": "chunk",
+							"type": "input"
+						}
+					],
+					"maxEngines": 1,
+					"maxRetries": 10,
+					"taskStatus": "pending"
+				}
+			]
+		}
+	]
 }'
 ```
 
