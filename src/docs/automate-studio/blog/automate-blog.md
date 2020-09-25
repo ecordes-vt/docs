@@ -1,6 +1,6 @@
 # Automate Studio Blog
 
-*Welcome! This is the aiWARE team's section for sharing our thoughts on Automate Studio and how we think it fits with aiWARE and making AI more accessible to non-engineers and non-Data Scientists *
+*Welcome! This is the aiWARE team's section for sharing our thoughts on Automate Studio and how we think it fits with aiWARE and making AI more accessible to non-engineers and non-Data Scientists*
 
 ## Blog 2: AI recognized your face. Now what?
 
@@ -20,6 +20,8 @@ With that definition in mind, what use-case could this technology solve? Well, a
 There’s certainly an argument that this use-case could be solved with “a few lines of code” (how often have we heard that!) but what if we are not software engineers ourselves? And all the software engineers are busy? And even if we were engineers, are we going to build the scaffolding, monitoring, and framework to safely and repeatedly run the AI models on demand from any number of customers?
 
 A quick scan of the screenshot below shows that Automate Studio addresses these questions with its drag and drop interface, with each of those “nodes” executing logic defined by the user designing the flow in Automate Studio’s editor.
+
+![face-alerter-flow](/_automateBlog2-img1.png)
 
 As we examine this flow, we can break the flow up into separate sections for ingesting the data, analyzing the data, formatting a text message, using a third party SMS service (Twilio in this case) to send the SMS to the designated recipient and then shutting the flow down. Each of these steps are visually represented and executed as logic that can then be scalably run for both you, and any other users that you want to share your flows with.
 
