@@ -197,6 +197,7 @@
     - [Youtube scraper](automate-studio/flow-bounties/flow-bounty-details/youtube-scraper)
     - [Zoom analyst](automate-studio/flow-bounties/flow-bounty-details/zoom-analyst)
   - [Tutorials](automate-studio/flow-examples/README)
+    - [Automate Blog](automate-studio/blog/automate-blog)
   - [FAQ](automate-studio/faq)
 - [Machine Box](/developer/machine-box/)     
   - [Getting Started](/developer/machine-box/setup/)
