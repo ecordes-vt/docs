@@ -4,7 +4,9 @@
 
 ## Blog 3: Your AI flow, for the World
 
-The concept of a business process is as old as human labor itself, even with Egyptian manuals meticulously describing the process for various goods production. With the growth of software development in the 1980s and the subsequent boom and bust cycles of the commercial internet in the 1990s, new languages developed for how people could navigate-- and manipulate-- new a new kind of internet native content. 
+*Blog Date: 2020-09-16*
+
+The concept of a business process is as old as human labor itself, even with Egyptian manuals meticulously describing the process for various goods production. With the growth of software development in the 1980s and the subsequent boom and bust cycles of the commercial internet in the 1990s, new languages developed for how people could navigate-- and manipulate-- new a new kind of internet native content.
 
 In the Fourth Industrial revolution, AI is now heralded as a leading technological factor, but this potential risks falling short without meaningful tools for a broader group of people to manage, orchestrate, and share their AI models to meaningfully capitalize on the foundational layers set in the previous decades. With the cambrian explosion of AI models, we believe Veritone’s Automate Studio can make these various categories of AI cognition understandable and practical for use by non-engineers to solve their business and personal challenges.
 
@@ -18,9 +20,9 @@ With that background, we can see how Automate Studio builds in both these concep
 
 Further, Automate Studio is built on aiWARE which handles the versioning and lifecycle management of both the AI models as well as the workflows themselves which means as an Automate Studio user, you can focus on solving problems with the variety of AI tools now at your fingertips. And potentially even more intriguing, each of these flows can be shared and run with any number of organizations and users even if they were not the original creators. Any Veritone user that has the engine shared with their organization can define a custom API endpoint using Veritone’s public APIs and expose that engine to run. This means users can now effectively use Veritone APIs to create their own custom logic powered by Automate Studio and Veritone’s suite of AI cognitive engines and expose that custom logic to the world.
 
-What do you want to build with AI models now that so many of them are available and usable in one place? If you have an idea, consider signing up for Automate Studio and see what you can do with 20+ categories of AI cognition.
+What do you want to build with AI models now that so many of them are available and usable in one place? If you have an idea, consider [signing up for Automate Studio](https://veritone.com/onboarding/#/signUp?type=automate&Lead_Source_Detail=Automate%20Blog3%20%20AI%20API) and see what you can do with 20+ categories of AI cognition.
 
-Feel free to reach out to us with any questions, and we also have bounties out for any of these unclaimed flow ideas that you might be interested in taking on!
+Feel free to reach out to us with any questions, and we also have bounties out for any of these [unclaimed flow ideas](https://docs.veritone.com/#/automate-studio/flow-bounties/README) that you might be interested in taking on!
 
 ## Blog 2: AI recognized your face. Now what?
 
@@ -45,7 +47,7 @@ A quick scan of the screenshot below shows that Automate Studio addresses these 
 
 As we examine this flow, we can break the flow up into separate sections for ingesting the data, analyzing the data, formatting a text message, using a third party SMS service (Twilio in this case) to send the SMS to the designated recipient and then shutting the flow down. Each of these steps are visually represented and executed as logic that can then be scalably run for both you, and any other users that you want to share your flows with.
 
-What do you want to build with AI models now that so many of them are available and usable in one place? If you have an idea, consider [signing up for Automate Studio](https://veritone.com/onboarding/#/signUp?type=automate&Lead_Source_Detail=Automate%20Blog%20Face%20Recognition%20Flow) and see what you can do with 20+ categories of AI cognition.
+What do you want to build with AI models now that so many of them are available and usable in one place? If you have an idea, consider [signing up for Automate Studio](https://veritone.com/onboarding/#/signUp?type=automate&Lead_Source_Detail=Automate%20Blog2%20Face%20Recognition%20Flow) and see what you can do with 20+ categories of AI cognition.
 
 Feel free to reach out to us with any questions, and we also have bounties out for any of these [unclaimed flow ideas](https://docs.veritone.com/#/automate-studio/flow-bounties/README) that you might be interested in taking on!
 
@@ -73,4 +75,4 @@ Once the flow logic has created our container for this new piece of media, we th
 
 The flow waits for both processes to finish, then merges the “cognitive output” results together.
 
-This flow is just one example of how Automate Studio pushes humans to become supervisors at the edge of previously manual workflow loops, and if you are reading this and would like to join us in this mission as a partner, [consider signing up for Automate Studio](https://veritone.com/onboarding/#/signUp?type=automate&Lead_Source_Detail=Automate%20Blog%20Speaker%20Separated%20Transcription) and checking out our Early Adopters Program where we [offer bounties](https://docs.veritone.com/#/automate-studio/flow-bounties/README) for helping create AI/ML powered flows like the one we just discussed.
+This flow is just one example of how Automate Studio pushes humans to become supervisors at the edge of previously manual workflow loops, and if you are reading this and would like to join us in this mission as a partner, [consider signing up for Automate Studio](https://veritone.com/onboarding/#/signUp?type=automate&Lead_Source_Detail=Automate%20Blog1%20Speaker%20Separated%20Transcription) and checking out our Early Adopters Program where we [offer bounties](https://docs.veritone.com/#/automate-studio/flow-bounties/README) for helping create AI/ML powered flows like the one we just discussed.
