@@ -18,6 +18,8 @@ We can assume that all the tickets of interest are already consolidated in a cen
 
 Using Automate Studio, we can visualize the flow and with some additional logic, customize both our integration as well as the flow of data and which Cognitive AI engines to use. In this case, our goal is to download all of the active helpdesk tickets and process the body text with sentiment analysis and write the results back to Help Scout as a tag. The flow will look something like this:
 
+![helpdesk-sentiment-flow](/_automateBlog4-img1.png)
+
 Once our flow is deployed to run as an engine on aiWARE’s horizontally scaling framework, we can invoke the engine to run with this GraphQL API call:
 
 ```graphql
@@ -52,8 +54,8 @@ mutation createYourFlowEngineJobWithIgniter {
         }
         {
           # This is the task that is an instance of the flow engine you created in Automate Studio!
-          # Hello Igniter test Flow
-          engineId: "4b06ac66-c04b-4f00-ba9c-b07e2f73aa24"
+          # Your intended flow engine
+          engineId: "<your flow engine id>"
           ioFolders: [
             {
               referenceId: "MY_INPUT"
@@ -129,7 +131,7 @@ mutation createScheduleJob {
          },
         {
           #Flow Engine
-          engineId: "352556c7-de07-4d55-b33f-74b1cf237f25"
+          engineId: "<Your intended flow engine>"
         }
           ]
         }
