@@ -128,6 +128,9 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 | 2) | Create aiWARE directory  | `mkdir -p /opt/aiware` |
 | OPTIONAL | Mount disc | `# Replace sdXX with a data disk.` <br/>`# If all on the root disk, skip the below`<br/>`mkfs.ext4 /dev/sdXX`<br/>`mount /dev/sdXX /opt/aiware` |
 | 3) | Create local directories | `mkdir -p /opt/aiware/postgres /opt/aiware/nfs /opt/aiware/registry` |
+| 4) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter`<br/>`docker run --volume=/:/rootfs:ro`<br/>`--volume=/var/run:/var/run:ro`<br/>`--volume=/sys:/sys:ro`<br/>`--volume=/var/lib/docker/:/var/lib/docker:ro`<br/>`--volume=/dev/disk/:/dev/disk:ro`<br/>`--publish=30095:8080 --detach=true --name=cadvisor`<br/>`gcr.io/google-containers/cadvisor:latest` |
+| 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093, 10000`
+ |
 
 ## Installation
 
@@ -148,11 +151,19 @@ export AIWARE_DB_PORT=5432 # IF: PG is running locally
 export AIWARE_REGION=us-east-2 # IF: running in AWS
 
 # use IP address to set URL
-export AIWARE_CONTROLLER={$HOSTNAME}:9000/edge/v1
+export AIWARE_CONTROLLER=http://IP_OF_ADMIN_NODE:9000/edge/v1
 
 # generate a random UUID for edge token
 export AIWARE_INIT_TOKEN=`uuidgen`
 echo aiWARE Edge token is $AIWARE_INIT_TOKEN
+
+# Optional:
+export AIWARE_LICENSE=<LICENSE_TOKEN> # IF: you have one
+export AIWARE_LICENSING_ENABLED=yes
+export AIWARE_MINIO_ENABLED=true
+
+export AIWARE_DB_ROOT=/opt/aiware/postgres
+export AIWARE_REGISTRY_ROOT=/opt/aiware/registry
 ```
 
 ?> To debug engines, you may want to use `export AIWARE_AUTOREMOVE_ENGINES=false`. This will cause engine instances to persist after shutdown. **WARNING**: This will cause disk space to be used up on the partition that houses `/var/lib/docker` (most likely the root partition), so _it should only be used in a debug scenario, and then only for a short period._
@@ -598,12 +609,16 @@ VALUES
 
   ### Step 3: Create a File Named 'add-wsa-ec.sql' with the Following Contents
   
-  ```sql
+```sql
+INSERT INTO "edge"."engine_category"("engine_category_id","engine_category_name","engine_category_type","created_date_time","modified_date_time","cpu_shares")
+VALUES
+(E'4b150c85-82d0-4a18-b7fb-63e4a58dfcce',E'Pull',E'Ingestion',1583200492,1583200492,1024);
+=======
   INSERT INTO "edge"."engine_category"("engine_category_id","engine_category_name","engine_category_type","created_date_time","modified_date_time","cpu_shares")
 VALUES
 (E'4b150c85-82d0-4a18-b7fb-63e4a58dfcce',E'Pull',E'Ingestion',1583200492,1583200492,1024);
     );
-  ```
+```
 
 ### Step 4: Create a File Named 'add-ow.sql' with the Following Contents
 
@@ -692,6 +707,39 @@ cat engines-preload.sql | docker container exec -i aiware-postgres /usr/bin/psql
 ```bash
 docker pull registry.central.aiware.com/{ENGINEID}:{BUILDID}
 ```
+
+## Update Engine Build
+
+Note: this step only needs to be completed if you need to update the currently installed engine with a newer version.
+
+### Step 1: Create new SQL Script
+
+Create a file with the following contents and save it as `update-engine-build.sql`. You will need to update two fields in the SQL script 
+
+1. `engine_id`
+
+2. `build_id`
+
+```sql
+UPDATE edge.build set build_state = 'paused' where engine_id = '4b838284-460e-4f12-ab77-76e86930ccbc';
+INSERT INTO edge.build
+    (build_id,engine_id,"version",build_state,docker_image,mf_engine_name,mf_engine_mode,mf_cluster_size,mf_custom_profile,mf_gpu_supported,mf_require_ec2,soft_vcpu_limit,soft_gpu_limit,soft_mem_bytes_limit,disk_free_bytes,license_expiration_timestamp,build_default_ttl,created_date_time,modified_date_time,runtime)
+VALUES
+    ('6f5f3d3a-7864-4073-a546-4b2361bec975', '4b838284-460e-4f12-ab77-76e86930ccbc', 25, 'deployed', '026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:4b838284-460e-4f12-ab77-76e86930ccbc-6f5f3d3a-7864-4073-a546-4b2361bec975', 'Italian-English V3F', 'batch', 'large', '', 'none', false, 1024, 0, 1073741824, 1073741824, 0, 21600, 1582660175, 1582660175, '{"edge": {}}')
+ON CONFLICT
+(build_id) DO
+UPDATE SET build_state = 'deployed';
+```
+### Step 2: Run the Following Command
+
+```bash
+cat update-engine-build.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
+cat engines-preload.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
+```
+### Step 3: Confirm New Image is on Edge
+
+Run `tail -f /var/log/syslog` and wait for the new image to be pulled. You can confirm the new build has been pulled with `docker images` 
+
 
 ## Create a Job Locally
 
