@@ -81,8 +81,9 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 
     ```pre
     Host coreless 
-    Hostname xxx.yourdns.amazon.com 
-    IdentityFile /Users/Path/to/keypair.pem User ubuntu
+	    Hostname xxx.yourdns.amazon.com 
+	    IdentityFile /Users/Path/to/keypair.pem 
+	    User ubuntu
     ```
 
 4.  Once SSH has been configured, enter `ssh coreless` or Connect via AWS "Connect."
@@ -110,7 +111,7 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 | **#** | **Action** | **Commands** |
 | --- | --- | --- |
 | 0) | Elevate permissions to root | `sudo bash` |
-| 1) | Install docker.io, nfs-common, awscli, &amp; uuid packages | `apt-get update -y` <br/>`apt-get upgrade -y`<br/>`apt-get install -y docker.io nfs-common awscli uuid prometheus-node-exporter nfs-kernel-server` |
+| 1) | Install docker.io, nfs-common, nfs-kernel-server, awscli, &amp; uuid packages | `apt-get update -y` <br/>`apt-get upgrade -y`<br/>`apt-get install -y docker.io nfs-common awscli uuid prometheus-node-exporter nfs-kernel-server` |
 | 2) | Create aiWARE directory  | `mkdir -p /opt/aiware` |
 | OPTIONAL | Mount disc | `# Replace sdXX with a data disk.` <br/>`# If all on the root disk, skip the below`<br/>`mkfs.ext4 /dev/sdXX`<br/>`mount /dev/sdXX /opt/aiware` |
 | 3) | Create local directories | `mkdir -p /opt/aiware/postgres /opt/aiware/nfs /opt/aiware/registry` |
@@ -130,6 +131,7 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 | 4) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter`<br/>`docker run --volume=/:/rootfs:ro`<br/>`--volume=/var/run:/var/run:ro`<br/>`--volume=/sys:/sys:ro`<br/>`--volume=/var/lib/docker/:/var/lib/docker:ro`<br/>`--volume=/dev/disk/:/dev/disk:ro`<br/>`--publish=30095:8080 --detach=true --name=cadvisor`<br/>`gcr.io/google-containers/cadvisor:latest` |
 | 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093, 10000`
  |
+
 ## Installation
 
 ### Run Mode: Single Node
@@ -155,7 +157,7 @@ export AIWARE_CONTROLLER=http://IP_OF_ADMIN_NODE:9000/edge/v1
 export AIWARE_INIT_TOKEN=`uuidgen`
 echo aiWARE Edge token is $AIWARE_INIT_TOKEN
 
-#### OPTIONAL ####
+# Optional:
 export AIWARE_LICENSE=<LICENSE_TOKEN> # IF: you have one
 export AIWARE_LICENSING_ENABLED=yes
 export AIWARE_MINIO_ENABLED=true
@@ -164,7 +166,7 @@ export AIWARE_DB_ROOT=/opt/aiware/postgres
 export AIWARE_REGISTRY_ROOT=/opt/aiware/registry
 ```
 
-?> To debug engines, you may want to use `export AIWARE_AUTOREMOVE_ENGINES=false`. This will cause engine instances to persist after shutdown. **WARNING**: This will cause disk space to be used up very quickly on the partition that houses `/var/lib/docker` (most likely the root partition), so _it should only be used in a debug scenario, and then only for a short period._
+?> To debug engines, you may want to use `export AIWARE_AUTOREMOVE_ENGINES=false`. This will cause engine instances to persist after shutdown. **WARNING**: This will cause disk space to be used up on the partition that houses `/var/lib/docker` (most likely the root partition), so _it should only be used in a debug scenario, and then only for a short period._
 
 #### Step 3: Run the Installation Command
 
@@ -221,17 +223,13 @@ This will ensure that all following steps are executed as root.
 ```pre
 export AIWARE_MODE=controller,db,registry,nfs,prometheus
 export AIWARE_HOST_EXPIRE=false
-export AIWARE_REGION=us-east-2 # IF: running in AWS
+export AIWARE_REGION=us-east-2 # IF: running in AWS, replace with correct region
 
-export AIWARE_DB_PORT=5432 # if PG is running locally
-export AIWARE_DB_ROOT=/opt/aiware/postgres
-export AIWARE_REGISTRY_ROOT=/opt/aiware/registry
-
-# generate a random UUID for edge token
+# generate a random UUID for edge token; this is important for access to the system through the API
 export AIWARE_INIT_TOKEN=`uuidgen`
 echo aiWARE Edge token is $AIWARE_INIT_TOKEN
 
-#### OPTIONAL ####
+#### LICENSE ####
 export AIWARE_LICENSE=<LICENSE_TOKEN> # IF: you have one
 export AIWARE_LICENSING_ENABLED=yes
 export AIWARE_MINIO_ENABLED=true
@@ -264,7 +262,7 @@ This will ensure that all following steps are executed as root.
 
 ```pre
 export AIWARE_MODE=engine
-export AIWARE_REGION=us-east-2
+export AIWARE_REGION=us-east-2 # If in AWS, replace with correct region
 export AIWARE_HOST_EXPIRE=false
 
 # This is the IP of the admin box, as noted above
@@ -379,7 +377,7 @@ declare -x AIWARE_CONTROLLER="http://172.31.12.79:9000/edge/v1"
 declare -x AIWARE_DB_PORT="5432"
 declare -x AIWARE_DB_ROOT="/opt/aiware/postgres"
 declare -x AIWARE_HOST_EXPIRE="false"
-declare -x AIWARE_INIT_TOKEN="08bb6a59-58c7-4d46-b0dc-3fa8bf794fb5"
+declare -x AIWARE_INIT_TOKEN="08bb6a59-58c7-4d46-b0dc-3fa8bf794fb5" # Replace with correct INIT_TOKEN
 ```
 
 ## Installing an Engine Locally
@@ -611,11 +609,16 @@ VALUES
 
   ### Step 3: Create a File Named 'add-wsa-ec.sql' with the Following Contents
   
-  ```sql
+```sql
 INSERT INTO "edge"."engine_category"("engine_category_id","engine_category_name","engine_category_type","created_date_time","modified_date_time","cpu_shares")
 VALUES
 (E'4b150c85-82d0-4a18-b7fb-63e4a58dfcce',E'Pull',E'Ingestion',1583200492,1583200492,1024);
-  ```
+=======
+  INSERT INTO "edge"."engine_category"("engine_category_id","engine_category_name","engine_category_type","created_date_time","modified_date_time","cpu_shares")
+VALUES
+(E'4b150c85-82d0-4a18-b7fb-63e4a58dfcce',E'Pull',E'Ingestion',1583200492,1583200492,1024);
+    );
+```
 
 ### Step 4: Create a File Named 'add-ow.sql' with the Following Contents
 
@@ -1073,7 +1076,6 @@ aiWARE Edge needs a license key that allows us to control what engine(s), how lo
 The licenses will be JWT tokens that can be validated by a service that knows the secret.
 
 ### Setup - Min.io
-
 
 ### Step 1: Create min.io access key and secret key with command below:
 

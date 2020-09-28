@@ -143,7 +143,7 @@ More information on these items can be found in the Engine Developer's Toolkit (
 
 ## The Veritone Engine Developer's Toolkit <!-- {docsify-ignore} -->
 
-If you're interested in building a cognitive engine, your first step should be to download Veritone's [Engine Developer Toolkit](https://github.com/veritone/engine-toolkit/releases).
+If you're interested in building a cognitive engine, you will need Veritone's [Engine Developer Toolkit](https://hub.docker.com/r/veritone/aiware-engine-toolkit). While you can certainly download it via a Docker pull, we recommend you simply build it into your project using the FROM command in your Dockerfile, as shown in Step 2 of the tutorial.
 
 <div style="transform:scaleX(.91);">
 <img alt="helpful mini-robot" width="18%" style="float:left;" src="docs/developer/applications/app-tutorial/_media/botty.png">
@@ -199,9 +199,7 @@ Here's a short checklist of prerequisites:
 
 &#x2714; 5\. **Obtain your (free) Veritone system [login](https://www.veritone.com/onboarding/#/signUp),** if you have not already done so.
 
-&#x2714; 6\. **Download the (free) [Veritone Engine Developer's Toolkit](https://github.com/veritone/engine-toolkit/releases/latest)**. 
-
-&#x2714; 7\. **Install Docker** on your (Mac, Linux, or virtualized Linux) development machine, if you have not already done so.
+&#x2714; 6\. **Install Docker** on your (Mac, Linux, or virtualized Linux) development machine, if you have not already done so.
 
 Okay. Ready to get started? Let's go . . .
 
