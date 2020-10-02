@@ -382,6 +382,8 @@ declare -x AIWARE_HOST_EXPIRE="false"
 declare -x AIWARE_INIT_TOKEN="08bb6a59-58c7-4d46-b0dc-3fa8bf794fb5"
 ```
 
+### Step 6: Replace localhost on KeplerServiceURI + VeritoneServiceURI with the same Web Server Endpoint
+
 ## Installing an Engine Locally
 
 ### Translation
@@ -1241,6 +1243,10 @@ Grep controller logs to view calls being made (can confirm Relativity’s connec
 
 `docker logs -tf aiware-controller 2>&1 | grep -i "relativity"`
 `docker logs -tf aiware-controller 2>&1 | grep -i "Internal Job ID"`
+
+Query DB for tasks with job_id
+
+`docker container exec -i aiware-postgres /usr/bin/psql -U postgres -c "SELECT internal_task_id, engine_id, task_output, failure_type, failure_reason FROM edge.task WHERE internal_job_id = 'Internal Job ID';"`
 
 Grep syslog, ignoring prometheus (Good way to confirm if jobs have started, can view the engines being pulled down) 
 
