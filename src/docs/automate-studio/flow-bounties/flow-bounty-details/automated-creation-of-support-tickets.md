@@ -23,5 +23,5 @@ Use AI to automatically create support tickets based on conversation details and
 
 </br>
 </br>
-<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
+<a target="_blank" href="#">CLAIMED</a>
 <hr>
