@@ -21,5 +21,5 @@
 Transcribe podcasts and auto-create blog posts in WordPress for SEO; Make available in multiple languages.
 </br>
 </br>
-<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
+<a target="_blank" href="#" id="claim-this-flow-btn">CLAIMED</a>
 <hr>
