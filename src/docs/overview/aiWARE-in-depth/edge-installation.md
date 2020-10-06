@@ -562,12 +562,6 @@ cat add-ow-ec.sql | docker container exec -i aiware-postgres /usr/bin/psql -U po
 cat engines-preload.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
 ```
 
-### Step 5: Run 'docker pull' to Update Engines
-
-```bash
-docker pull registry.central.aiware.com/{ENGINEID}:{BUILDID}
-```
-
 ### Transcription
 
 This example uses an English Transcription engine,  but the procedure is the same for other cognitive engines.
@@ -699,12 +693,6 @@ cat add-wsa.sql | docker container exec -i aiware-postgres /usr/bin/psql -U post
 cat add-ow.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
 cat add-si2-ec.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
 cat engines-preload.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
-```
-
-### Step 8: Run 'docker pull' to Update Engines
-
-```bash
-docker pull registry.central.aiware.com/{ENGINEID}:{BUILDID}
 ```
 
 ## Update Engine Build
