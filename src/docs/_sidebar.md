@@ -196,7 +196,7 @@
     - [Twitter temp bot](automate-studio/flow-bounties/flow-bounty-details/twitter-temp-bot)
     - [Youtube scraper](automate-studio/flow-bounties/flow-bounty-details/youtube-scraper)
     - [Zoom analyst](automate-studio/flow-bounties/flow-bounty-details/zoom-analyst)
-  - [Tutorials](automate-studio/blog/automate-tutorial-1-flow-transcription-separation)
+  - [Tutorials](automate-studio/blog/automate-blog-home)
     - [Separating a Transcription by Speaker in Automate Studio](automate-studio/blog/automate-tutorial-1-flow-transcription-separation)
     - [Building Alerting with Face Recognition](automate-studio/blog/automate-tutorial-2-face-recognition-flow)
     - [Creating aiWARE Endpoints with Automate](automate-studio/blog/automate-tutorial-3-aiware-api-flow)
