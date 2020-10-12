@@ -200,7 +200,7 @@ Here's the quickest way to get started building your cognitive engine:
         <div class="do-more-aiwareFeatureText">
             <h3>Join Veritone's Slack Channel</h3>
             <div>For technical and business-related questions, please reach out to us on Slack. We're here to help!</div>
-            <a class="link" href="https://chat.veritone.com/"> JOIN CHANNEL</a>
+            <a class="link" href="https://veritonedev.slack.com"> JOIN CHANNEL</a>
         </div>
     </div>
 </div>

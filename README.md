@@ -203,4 +203,4 @@ limitations under the License.
 
 [docsify]: https://docsify.js.org/#/?id=docsify
 [markdown-cheat]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-[veri-slack]: https://chat.veritone.com
+[veri-slack]: https://veritonedev.slack.com

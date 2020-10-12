@@ -6,7 +6,7 @@ When your adapter is registered, your manifest file is built, and your code is s
 
 In this section, we'll walk you through the steps to upload a build, including creating a Docker image and pushing it to Veritone's Docker registry. We'll also provide details about the compliance testing that your build will undergo and let you how you can download and review the results. Finally we&rsquo;ll dive into the different adapter states and provide descriptions and optional actions that can be performed for each.
 
-Remember that our developer support team is here to answer questions and provide assistance on our dedicated Veritone Developer [Slack channel](https://chat.veritone.com).
+Remember that our developer support team is here to answer questions and provide assistance on our dedicated Veritone Developer [Slack channel](https://veritonedev.slack.com).
 
 1. Upload a New Build
   - Create a Docker File
