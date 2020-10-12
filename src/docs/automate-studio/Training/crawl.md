@@ -222,4 +222,3 @@ Congratulations! You created and edited your first flow!
 ## For More Information
 
 For more information about Node-RED (the open-source technology behind Automate Studio), be sure to see [the Node-RED documentation](https://nodered.org/docs/).
-
