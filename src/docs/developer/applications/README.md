@@ -56,4 +56,4 @@ Integrated Veritone apps use standard OAuth 2.0 protocol to authenticate, provid
 
 ### Where can I get help?
 
-If you need assistance at any point in the process, reach out to our support team on [Slack](https://chat.veritone.com/) for help.
+If you need assistance at any point in the process, reach out to our support team on [Slack](https://veritonedev.slack.com) for help.
