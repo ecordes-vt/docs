@@ -1,5 +1,7 @@
 # Automate Studio Training: The Basics
 
+![Basics](basics.png)
+
 Welcome to Automate Studio training! 
 
 Veritone Automate Studio puts the power of AI in your hands to automate business processes quickly and easily, so you can get to solving business problems faster, with the power of AI. 
