@@ -102,7 +102,7 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 | 2) | Create aiWARE directory  | `mkdir -p /opt/aiware` |
 | OPTIONAL | Mount disc | `# Replace sdXX with a data disk.` <br/>`# If all on the root disk, skip the below`<br/>`mkfs.ext4 /dev/sdXX`<br/>`mount /dev/sdXX /opt/aiware` |
 | 3) | Create local directories | `mkdir -p /opt/aiware/postgres /opt/aiware/nfs /opt/aiware/registry /cache/1`<br/>`touch /cache/1/1.json` |
-| 4) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter`<br/>`docker run --volume=/:/rootfs:ro`<br/>`--volume=/var/run:/var/run:ro`<br/>`--volume=/sys:/sys:ro`<br/>`--volume=/var/lib/docker/:/var/lib/docker:ro`<br/>`--volume=/dev/disk/:/dev/disk:ro`<br/>`--publish=30095:8080 --detach=true --name=cadvisor`<br/>`gcr.io/google-containers/cadvisor:latest` |
+| 4) | Install Logging Components (recommended) | `docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:ro --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --volume=/dev/disk/:/dev/disk:ro --publish=30095:8080 --detach=true --name=cadvisor gcr.io/google-containers/cadvisor:latest` |
 | 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093, 10000`
  |
 
@@ -115,11 +115,11 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 | OPTIONAL | Mount disc | `# Replace sdXX with a data disk.` <br/>`# If all on the root disk, skip the below`<br/>`mkfs.ext4 /dev/sdXX`<br/>`mount /dev/sdXX /opt/aiware` |
 | 3) | Create local directories | `mkdir -p /opt/aiware/postgres /opt/aiware/nfs /opt/aiware/registry` |
 | 4) | Map /cache | `ln -s /opt/aiware/nfs /cache` |
-| 5) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter`<br/>`docker run --volume=/:/rootfs:ro`<br/>`--volume=/var/run:/var/run:ro`<br/>`--volume=/sys:/sys:ro`<br/>`--volume=/var/lib/docker/:/var/lib/docker:ro`<br/>`--volume=/dev/disk/:/dev/disk:ro`<br/>`--publish=30095:8080 --detach=true --name=cadvisor`<br/>`gcr.io/google-containers/cadvisor:latest` |
+| 4) | Install Logging Components (recommended) | `docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:ro --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --volume=/dev/disk/:/dev/disk:ro --publish=30095:8080 --detach=true --name=cadvisor gcr.io/google-containers/cadvisor:latest` |
 | 6) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093, 10000`
  |
 
-#### Engine Node
+#### Processing Node
  | **#** | **Action** | **Commands** |
 | --- | --- | --- |
 | 0) | Elevate permissions to root | `sudo bash` |
@@ -127,7 +127,7 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 | 2) | Create aiWARE directory  | `mkdir -p /opt/aiware` |
 | OPTIONAL | Mount disc | `# Replace sdXX with a data disk.` <br/>`# If all on the root disk, skip the below`<br/>`mkfs.ext4 /dev/sdXX`<br/>`mount /dev/sdXX /opt/aiware` |
 | 3) | Create local directories | `mkdir -p /opt/aiware/postgres /opt/aiware/nfs /opt/aiware/registry` |
-| 4) | Install Logging Components (optional) | `apt-get install -y prometheus-node-exporter`<br/>`docker run --volume=/:/rootfs:ro`<br/>`--volume=/var/run:/var/run:ro`<br/>`--volume=/sys:/sys:ro`<br/>`--volume=/var/lib/docker/:/var/lib/docker:ro`<br/>`--volume=/dev/disk/:/dev/disk:ro`<br/>`--publish=30095:8080 --detach=true --name=cadvisor`<br/>`gcr.io/google-containers/cadvisor:latest` |
+| 4) | Install Logging Components (recommended) | `docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:ro --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --volume=/dev/disk/:/dev/disk:ro --publish=30095:8080 --detach=true --name=cadvisor gcr.io/google-containers/cadvisor:latest` |
 | 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093, 10000`
  |
 ## Installation
@@ -146,22 +146,17 @@ This will ensure that all following steps are executed as root.
 export AIWARE_MODE=db,controller,engine,prometheus
 export AIWARE_HOST_EXPIRE=false
 export AIWARE_DB_PORT=5432 # IF: PG is running locally
-export AIWARE_REGION=us-east-2 # IF: running in AWS
+export AIWARE_LICENSE=<LICENSE_TOKEN> # Provided by Veritone
+export AIWARE_LICENSING_ENABLED=yes
+export AIWARE_INIT_TOKEN=<API_TOKEN> # Provided by Veritone
+echo aiWARE Edge token is $AIWARE_INIT_TOKEN
 
 # use IP address to set URL
 export AIWARE_CONTROLLER=http://IP_OF_ADMIN_NODE:9000/edge/v1
 
-# generate a random UUID for edge token
-export AIWARE_INIT_TOKEN=`uuidgen`
-echo aiWARE Edge token is $AIWARE_INIT_TOKEN
-
 #### OPTIONAL ####
-export AIWARE_LICENSE=<LICENSE_TOKEN> # IF: you have one
-export AIWARE_LICENSING_ENABLED=yes
-export AIWARE_MINIO_ENABLED=true
-
-export AIWARE_DB_ROOT=/opt/aiware/postgres
-export AIWARE_REGISTRY_ROOT=/opt/aiware/registry
+export AIWARE_MINIO_ENABLED=true # IF: Logging to a local directory
+export AIWARE_REGION=us-east-2 # IF: Logging to an AWS S3 Bucket
 ```
 
 ?> To debug engines, you may want to use `export AIWARE_AUTOREMOVE_ENGINES=false`. This will cause engine instances to persist after shutdown. **WARNING**: This will cause disk space to be used up very quickly on the partition that houses `/var/lib/docker` (most likely the root partition), so _it should only be used in a debug scenario, and then only for a short period._
@@ -174,7 +169,7 @@ This will run a shell script that installs the `aiware-agent` as a service. You 
 
 #### Step 4: Validate the Installation
 
-1. Run: `docker ps -a`. This should show the `aiware-prom-alertmgr`, `aiware-prometheus`, `aiware-pushgateway`, and `aiware-postgres`.
+1. Run: `docker ps -a`. This should show the `aiware-prom-alertmgr`, `aiware-prometheus`, `aiware-pushgateway`, `aiware-postgres`, `aiware-controller`and `cadvisor`.
 
 1. You can connect to the database at `localhost:5342`, or whichever port you have specified for `AIWARE_DB_PORT`, with **postgres/postgres** as the username/password.
 
@@ -221,20 +216,17 @@ This will ensure that all following steps are executed as root.
 ```pre
 export AIWARE_MODE=controller,db,registry,nfs,prometheus
 export AIWARE_HOST_EXPIRE=false
-export AIWARE_REGION=us-east-2 # IF: running in AWS
-
 export AIWARE_DB_PORT=5432 # if PG is running locally
 export AIWARE_DB_ROOT=/opt/aiware/postgres
 export AIWARE_REGISTRY_ROOT=/opt/aiware/registry
-
-# generate a random UUID for edge token
-export AIWARE_INIT_TOKEN=`uuidgen`
+export AIWARE_LICENSE=<LICENSE_TOKEN> # Provided by Veritone
+export AIWARE_LICENSING_ENABLED=yes
+export AIWARE_INIT_TOKEN=<API_TOKEN> # Provided by Veritone
 echo aiWARE Edge token is $AIWARE_INIT_TOKEN
 
 #### OPTIONAL ####
-export AIWARE_LICENSE=<LICENSE_TOKEN> # IF: you have one
-export AIWARE_LICENSING_ENABLED=yes
-export AIWARE_MINIO_ENABLED=true
+export AIWARE_MINIO_ENABLED=true # IF: Logging to a local directory
+export AIWARE_REGION=us-east-2 # IF: Logging to an AWS S3 Bucket
 ```
 
 #### Step 3: Run Installation Command
@@ -244,7 +236,7 @@ export AIWARE_MINIO_ENABLED=true
 #### Step 4: Validate the Installation
 
 1. Run: `exportfs` to validate `/opt/aiware/nfs` is exported
-2. Run: `docker ps` to validate `aiware-controller, aiware-postgres, aiware-registry` are running
+2. Run: `docker ps` to validate `aiware-controller, aiware-postgres, aiware-prom-alertmgr, aiware-prometheus, aiware-registry` are running
 
 > Note the IP address of the Admin box for use on the Processing Node.
 
@@ -264,16 +256,24 @@ This will ensure that all following steps are executed as root.
 
 ```pre
 export AIWARE_MODE=engine
-export AIWARE_REGION=us-east-2
 export AIWARE_HOST_EXPIRE=false
 
 # This is the IP of the admin box, as noted above
 export AIWARE_CONTROLLER=http://IP_OF_ADMIN_NODE:9000/edge/v1  
+
+#### OPTIONAL ####
+export AIWARE_MINIO_ENABLED=true # IF: Logging to a local directory
+export AIWARE_REGION=us-east-2 # IF: Logging to an AWS S3 Bucket
 ```
 
 #### Step 3: Run Installation Command
 
 `curl -sfL https://get.aiware.com | sh -`
+
+### Step 4: Validate the Installation
+
+2. Run: `docker ps` to validate `aiware-pushgateway` is running
+
 
 ## Environment Variables
 
@@ -346,6 +346,8 @@ export AIWARE_CONTROLLER=http://<ip of node>:9000/edge/v1
 
 ### Step 4: Run Installation Command
 
+1. Run: `docker ps` to validate `aiware-pushgateway` is running
+
 `curl -sfL https://get.aiware.com | sh -`
 
 ### Step 5: Locate and Take Note of API Token
@@ -385,6 +387,8 @@ declare -x AIWARE_INIT_TOKEN="08bb6a59-58c7-4d46-b0dc-3fa8bf794fb5"
 ### Step 6: Replace localhost on KeplerServiceURI + VeritoneServiceURI with the same Web Server Endpoint
 
 ## Installing an Engine Locally
+
+Please follow the steps below to install an engine locally in your aiWARE Edge server.  If you are using the "Two Nodes" run mode, you will need to follow these steps on the Admin Node server only.
 
 ### Translation
 
@@ -558,7 +562,7 @@ update edge.engine SET preload = true;
 
 ```bash
 cat add-spanish.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
-cat add-ow-ec.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
+cat add-ow.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
 cat engines-preload.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
 ```
 
@@ -745,59 +749,52 @@ curl --request POST \
  --header 'content-type: application/json' \
  --data '{
  "jobs": [
-   {
-     "dueDateTime": "2020-03-09T20:49:18.331Z",
-     "tasks": [
-       {
-         "correlationTaskId": "b44cd814-8646-41b9-ba40-86f854f8abe5",
-         "dueDateTime": "2020-03-09T20:49:18.331Z",
-         "engineId": "95c910f6-4a26-4b66-96cb-488befa86466",
-         "ioFolders": [
-           {
-             "correlationID": "11744fac-1f17-4467-8c7d-9ff177117913",
-             "mode": "chunk",
-             "optionsJSON": "{}",
-             "type": "output"
-           }
-         ],
-         "maxEngines": 1,
-         "maxRetries": 10,
-         "payloadJSON": "{\"url\":\"https://vt-maxagg-test.s3.amazonaws.com/media/spanish.txt\"}",
-         "taskPayloadJSON": "{\"url\":\"https://vt-maxagg-test.s3.amazonaws.com/media/spanish.txt\"}",
-         "taskStatus": "pending",
-					"priority": -10
-       },
-       {
-         "correlationTaskId": "8b99ae25-eb0b-4b32-b708-4ab1658cbcbb",
-         "dueDateTime": "2020-02-14T20:49:18.331Z",
-         "engineId": "8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3",
-         "ioFolders": [
-           {
-             "correlationID": "5c88a9da-a800-4b08-98ad-dadcaca5c53f",
-             "mode": "chunk",
-             "optionsJSON": "{}",
-             "type": "input"
-           }
-         ],
-         "maxEngines": 1,
-         "maxRetries": 10,
-         "payloadJSON": "{}",
-         "taskPayloadJSON": "{}",
-         "taskStatus": "pending"
-       }
-     ],
-     "taskRoutes": [
-       {
-         "taskChildId": "b44cd814-8646-41b9-ba40-86f854f8abe5"
-       },
-       {
-         "taskParentId": "b44cd814-8646-41b9-ba40-86f854f8abe5",
-         "taskParentOutputId": "11744fac-1f17-4467-8c7d-9ff177117913",
-         "taskChildId": "8b99ae25-eb0b-4b32-b708-4ab1658cbcbb",
-         "taskChildInputId": "5c88a9da-a800-4b08-98ad-dadcaca5c53f"
-       }
-     ]
-   }
+    {
+        "jobStatus": "queued",
+        "tasks": [
+            {
+                "correlationTaskId": "translation",
+                "engineId": "95c910f6-4a26-4b66-96cb-488befa86466",
+                "taskPayloadJSON": "{\"url\":\"https://vt-maxagg-test.s3.amazonaws.com/media/spanish.txt\"}",
+                "taskStatus": "pending",         
+                "ioFolders": [
+                    {
+                        "correlationID": "translationOutput",
+                        "mode": "chunk",
+                        "type": "output"
+                    }
+                ],
+                "maxEngines": 1,
+                "maxRetries": 10
+            },
+            {
+                "correlationTaskId": "ow",
+                "engineId": "8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3",
+                "taskStatus": "pending",         
+                "ioFolders": [
+                    {
+                        "correlationID": "owInput",
+                        "mode": "chunk",
+                        "type": "input"
+                    }
+                ],
+                "parentMustBeCompleteBeforeStarting": true,
+                "maxEngines": 1,
+                "maxRetries": 10
+            }
+        ],
+        "taskRoutes": [
+            {
+                "taskChildId": "translation"
+            },
+            {
+                "taskParentId": "translation",
+                "taskParentOutputId": "translationOutput",
+                "taskChildId": "ow",
+                "taskChildInputId": "owInput"
+            }
+        ]
+    }
  ]
 }'
 ```
@@ -863,119 +860,104 @@ curl --request POST \
  --header 'authorization: Bearer <token here>' \
  --header 'content-type: application/json' \
  --data '{
-	"jobs": [
-		{
-			"dueDateTime": "2020-09-02T19:15:58.863438Z",
-			"internalOrganizationID": "",
-			"jobStatus": "queued",
-			"taskRoutes": [
-				{
-					"firstWriteDateTime": "0001-01-01T00:00:00Z",
-					"lastWriteDateTime": "0001-01-01T00:00:00Z",
-					"taskChildId": "ADAPTER_CORR_TASK_ID"
-				},
-				{
-					"firstWriteDateTime": "0001-01-01T00:00:00Z",
-					"lastWriteDateTime": "0001-01-01T00:00:00Z",
-					"taskChildId": "CHUNK_CORR_TASK_ID",
-					"taskChildInputId": "CHUNK_INPUT",
-					"taskParentId": "ADAPTER_CORR_TASK_ID",
-					"taskParentOutputId": "ADAPTER_OUTPUT"
-				},
-				{
-					"firstWriteDateTime": "0001-01-01T00:00:00Z",
-					"lastWriteDateTime": "0001-01-01T00:00:00Z",
-					"taskChildId": "SM_CORR_TASK_ID",
-					"taskChildInputId": "SM_INPUT",
-					"taskParentId": "CHUNK_CORR_TASK_ID",
-					"taskParentOutputId": "CHUNK_OUTPUT"
-				},
-				{
-					"firstWriteDateTime": "0001-01-01T00:00:00Z",
-					"lastWriteDateTime": "0001-01-01T00:00:00Z",
-					"taskChildId": "OW_CORR_TASK_ID",
-					"taskChildInputId": "OW_INPUT",
-					"taskParentId": "SM_CORR_TASK_ID",
-					"taskParentOutputId": "SM_OUTPUT"
-				}
-			],
-			"tasks": [
-				{
-					"correlationTaskId": "ADAPTER_CORR_TASK_ID",
-					"dueDateTime": "0001-01-01T00:00:00Z",
-					"engineId": "9e611ad7-2d3b-48f6-a51b-0a1ba40fe255",
-					"ioFolders": [
-						{
-							"correlationID": "ADAPTER_OUTPUT",
-							"mode": "stream",
-							"type": "output"
-						}
-					],
-					"maxEngines": 1,
-					"taskPayloadJSON": "{\"url\":http://gfernandez-test.s3.amazonaws.com/edge%20test/englishtranscriptiontest.mp3\""}",
-					"taskStatus": "pending"
-				},
-				{
-					"correlationTaskId": "CHUNK_CORR_TASK_ID",
-					"dueDateTime": "0001-01-01T00:00:00Z",
-					"engineId": "8bdb0e3b-ff28-4f6e-a3ba-887bd06e6440",
-					"ioFolders": [
-						{
-							"correlationID": "CHUNK_INPUT",
-							"mode": "stream",
-							"type": "input"
-						},
-						{
-							"correlationID": "CHUNK_OUTPUT",
-							"mode": "chunk",
-							"type": "output"
-						}
-					],
-					"maxEngines": 1,
-					"parentMustBeCompleteBeforeStarting": true,
-					"taskPayloadJSON": "{\"customFFMPEGProperties\":{\"chunkSizeInSeconds\":\"10\"},\"ffmpegTemplate\":\"audio\"}",
-					"taskStatus": "pending"
-				},
-				{
-					"correlationTaskId": "SM_CORR_TASK_ID",
-					"dueDateTime": "0001-01-01T00:00:00Z",
-					"engineId": "c0e55cde-340b-44d7-bb42-2e0d65e98255",
-					"ioFolders": [
-						{
-							"correlationID": "SM_INPUT",
-							"mode": "chunk",
-							"type": "input"
-						},
-						{
-							"correlationID": "SM_OUTPUT",
-							"mode": "chunk",
-							"type": "output"
-						}
-					],
-					"maxEngines": 1,
-					"maxRetries": 10,
-					"numChunksPerWorkItem": 5,
-					"parentMustBeCompleteBeforeStarting": true,
-					"taskStatus": "pending"
-				},
-				{
-					"correlationTaskId": "OW_CORR_TASK_ID",
-					"dueDateTime": "0001-01-01T00:00:00Z",
-					"engineId": "8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3",
-					"ioFolders": [
-						{
-							"correlationID": "OW_INPUT",
-							"mode": "chunk",
-							"type": "input"
-						}
-					],
-					"maxEngines": 1,
-					"maxRetries": 10,
-					"taskStatus": "pending"
-				}
-			]
-		}
-	]
+ "jobs": [
+    {
+        "jobStatus": "queued",
+        "tasks": [
+            {
+                "correlationTaskId": "wsa",
+                "engineId": "9e611ad7-2d3b-48f6-a51b-0a1ba40fe255",
+                "taskPayloadJSON": "{\"url\": \"https://s3.amazonaws.com/dev-chunk-cache-tmp/AC.mp4\"}",
+                "taskStatus": "pending",                    
+                "ioFolders": [
+                    {
+                        "correlationID": "wsaOutput",
+                        "mode": "stream",
+                        "type": "output"
+                    }
+                ]
+            },
+            {
+                "correlationTaskId": "chunkAudio",
+                "engineId": "8bdb0e3b-ff28-4f6e-a3ba-887bd06e6440",
+                "taskPayloadJSON": "{\"customFFMPEGProperties\":{\"chunkSizeInSeconds\":\"10\"},\"ffmpegTemplate\":\"audio\"}",
+                "taskStatus": "pending",
+                "ioFolders": [
+                    {
+                        "correlationID": "chunkAudioInput",
+                        "mode": "stream",
+                        "type": "input"
+                    },
+                    {
+                        "correlationID": "chunkAudioOutput",
+                        "mode": "chunk",
+                        "type": "output"
+                    }
+                ],
+                "parentMustBeCompleteBeforeStarting": true
+            },
+            {
+                "correlationTaskId": "transcription",
+                "engineId": "c0e55cde-340b-44d7-bb42-2e0d65e98255",
+                "taskStatus": "pending",                    
+                "ioFolders": [
+                    {
+                        "correlationID": "transcriptionInput",
+                        "mode": "chunk",
+                        "type": "input"
+                    },
+                    {
+                        "correlationID": "transcriptionOutput",
+                        "mode": "chunk",
+                        "type": "output"
+                    }
+                ],
+                "parentMustBeCompleteBeforeStarting": true,
+                "maxEngines": 1,
+                "maxRetries": 10,
+                "numChunksPerWorkItem": 5
+            },
+            {
+                "correlationTaskId": "ow",
+                "engineId": "8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3",
+                "taskStatus": "pending",
+                "ioFolders": [
+                    {
+                        "correlationID": "owInput",
+                        "mode": "chunk",
+                        "type": "input"
+                    }
+                ],
+                "parentMustBeCompleteBeforeStarting": true,
+                "maxEngines": 1,
+                "maxRetries": 10
+            }
+        ],
+        "taskRoutes": [
+            {
+                "taskChildId": "wsa"
+            },
+            {
+                "taskParentId": "wsa",
+                "taskParentOutputId": "wsaOutput",
+                "taskChildId": "chunkAudio",
+                "taskChildInputId": "chunkAudioInput"
+            },
+            {
+                "taskParentId": "chunkAudio",
+                "taskParentOutputId": "chunkAudioOutput",
+                "taskChildId": "transcription",
+                "taskChildInputId": "transcriptionInput"
+            },
+            {
+                "taskParentId": "transcription",
+                "taskParentOutputId": "transcriptionOutput",
+                "taskChildId": "ow",
+                "taskChildInputId": "owInput"
+            }
+        ]            
+    }
+ ]
 }'
 ```
 
