@@ -331,8 +331,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Zoom Analyst</h3>
                 <div class="description-text">Analyze a live zoom call: live transcript with speaker separation. Text analytics. Fast search, playback and clipping of snippets of a call for sharing.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/zoom-analyst"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/zoom-analyst"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
     </div>
     <div class="featureColumn">
@@ -421,8 +421,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Public Camera Automated Monitoring</h3>
                 <div class="description-text">Monitor public camera feeds for abnormal activity (e.g. fires, weather, people, cars). Fire detection of interest by prospect.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/public-camera-automated-monitoring"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/public-camera-automated-monitoring"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -431,8 +431,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Injection of Content Intelligence into RPA and BPA</h3>
                 <div class="description-text">Auto claims process - locate/read license plate and damage from images or video, auto-attach image clips to claim case.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/injection-content-intelligence-rpa-bpa"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/injection-content-intelligence-rpa-bpa"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>

@@ -21,5 +21,5 @@
 Auto claims process - locate/read license plate and damage from images or video, auto-attach image clips to claim case.
 </br>
 </br>
-<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
+<a target="_blank" href="#" id="claim-this-flow-btn">CLAIMED</a>
 <hr>
