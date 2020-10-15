@@ -21,5 +21,5 @@
 Monitor public camera feeds for abnormal activity (e.g. fires, weather, people, cars). Fire detection of interest by prospect.
 </br>
 </br>
-<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
+<a target="_blank" href="#" id="claim-this-flow-btn">CLAIMED</a>
 <hr>
