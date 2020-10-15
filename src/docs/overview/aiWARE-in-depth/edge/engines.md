@@ -316,13 +316,15 @@ POST <http://localhost:1234/result/task1234>
 }
 ```
 
-## Download the Engine Toolkit SDK
+## Obtaining the Veritone Engine Toolkit
 
-To get started, you need to download the Engine Toolkit SDK. It contains the `engine` binrary that will be bundled into the Docker container when you deploy your engine to the Veritone platform.
+The Veritone Engine Toolkit is available at [Docker Hub](https://hub.docker.com/r/veritone/aiware-engine-toolkit). You can pull it with `docker pull veritone/aiware-engine-toolkit`. However, our recommendation is that you simply pull it at engine build time by including the following line in your project's Dockerfile:
 
-> **Did you know?** You only need to download the [latest release](https://github.com/veritone/engine-toolkit/releases/latest), there's no need to clone the repo.
+```pre
+FROM veritone/aiware-engine-toolkit as vt-engine-toolkit
+```
 
-* [Download the Engine Toolkit SDK from our GitHub project](https://github.com/veritone/engine-toolkit/releases/latest)
+This will ensure that you always build using the most current version of the Toolkit. 
 
 ## Testing your webhooks
 
@@ -371,29 +373,30 @@ A `Dockerfile` explains the steps that Docker needs to take in order to build a 
 The following is an example of an engine `Dockerfile`:
 
 ```docker
-FROM veritone/aiware-engine-toolkit as engine-toolkit
-# Include Engine Toolkit
-FROM alpine:latest
+FROM veritone/aiware-engine-toolkit as vt-engine-toolkit
+FROM mhart/alpine-node:14.8
 
-COPY --from=engine-toolkit /opt/aiware/engine /opt/aiware/engine
+COPY . /app
+COPY manifest.json /var/
 
-FROM alpine:latest
+WORKDIR /app
 
-# libc6-compat is required for alpine images
-RUN apk --no-cache add ca-certificates libc6-compat
+EXPOSE 8080
 
-ADD ./your-engine /app/your-engine
+RUN apk update \
+  && apk upgrade \
+  && apk --no-cache add ca-certificates \
+  && apk add --no-cache libc6-compat
+RUN npm install
 
-# Add and configure the engine
-ADD manifest.json /var/manifest.json
+ENV VERITONE_WEBHOOK_READY="http://0.0.0.0:8080/readyz"
+ENV VERITONE_WEBHOOK_PROCESS="http://0.0.0.0:8080/process"
 
-# Environment Variables
-ENV VERITONE_WEBHOOK_READY="http://0.0.0.0:8888/readyz"
-ENV VERITONE_WEBHOOK_PROCESS="http://0.0.0.0:8888/process"
-ENV AIWARE_ENV_WHITE_LIST="AIWARE_CONTROLLER_URL,FOO"
+COPY --from=vt-engine-toolkit /opt/aiware/engine /opt/aiware/engine
 
-# ET must be the first command followed by the command to run the engine
-ENTRYPOINT [ "/opt/aiware/engine", "/app/your-engine" ]
+RUN ["chmod", "+x", "/app/index.js"]
+
+ENTRYPOINT [ "/opt/aiware/engine", "node", "index.js" ]
 ```
 
 The most common commands in a `Dockerfile` are:

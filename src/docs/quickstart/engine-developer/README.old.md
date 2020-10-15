@@ -29,7 +29,7 @@ Here's the quickest way to get started building your cognitive engine:
 
 4. Once you've packaged and submitted your cognitive engine to Veritone, you're ready to monetize your engine! Review the [Path to Monetization](/developer/engines/getting-started/path-to-monetization/) guide.
 
-For technical and business-related questions, please reach out to us on [Slack](https://chat.veritone.com/). We're here to help!
+For technical and business-related questions, please reach out to us on [Slack](https://veritonedev.slack.com). We're here to help!
 
 ## Helpful Resources
 

@@ -64,7 +64,7 @@ For full Veritone API documentation, see:
 
 ### We’re Here to Help!
 
-We’ve tried to pack our API section with detailed information and a variety of [examples](/apis/examples) to assist you in your development. But if you have questions or need assistance, don’t hesitate to reach out to our Developer Support Team by [email](mailto:devsupport@veritone.com) or on [Slack](https://chat.veritone.com/).
+We’ve tried to pack our API section with detailed information and a variety of [examples](/apis/examples) to assist you in your development. But if you have questions or need assistance, don’t hesitate to reach out to our Developer Support Team by [email](mailto:devsupport@veritone.com) or on [Slack](https://veritonedev.slack.com).
 
 ### Continue Reading
 

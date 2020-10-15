@@ -23,5 +23,5 @@ Use Topic Extraction engines to tag calls with key topics for realtime escalatio
 Need to input a mapping table that which topic will escalate to who. Based on the mapping table and detected topic, the output of the flow will be the name of the higher manager.
 </br>
 </br>
-<a target="_blank" href="https://forms.gle/tkVjfrtyBDrXyoji7" id="claim-this-flow-btn">CLAIM THIS FLOW!</a>
+<a target="_blank" href="#"claim-this-flow-btn">CLAIMED</a>
 <hr>

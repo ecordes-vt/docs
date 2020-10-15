@@ -84,62 +84,66 @@ The syntax for Dockerfiles is actually pretty self-explanatory. If you read a Do
 Here's the Dockerfile for our Hello World project:
 
 ```dockerfile 
-FROM mhart/alpine-node:8
+FROM veritone/aiware-engine-toolkit as vt-engine-toolkit
+FROM mhart/alpine-node:14.8
+
 COPY . /app
 COPY manifest.json /var/
 
-COPY ./dist/engine /app/engine
-
 WORKDIR /app
-RUN npm install -i
+
+EXPOSE 8080
 
 RUN apk update \
-        && apk upgrade \
-        && apk --no-cache add ca-certificates
+  && apk upgrade \
+  && apk --no-cache add ca-certificates \
+  && apk add --no-cache libc6-compat
+RUN npm install
 
 ENV VERITONE_WEBHOOK_READY="http://0.0.0.0:8080/readyz"
 ENV VERITONE_WEBHOOK_PROCESS="http://0.0.0.0:8080/process"
 
-RUN chmod +x /app/engine
+COPY --from=vt-engine-toolkit /opt/aiware/engine /opt/aiware/engine
 
-ENTRYPOINT [ "/app/engine", "node", "index.js" ]
+RUN ["chmod", "+x", "/app/index.js"]
+
+ENTRYPOINT [ "/opt/aiware/engine", "node", "index.js" ]
 ```
 
 ### Line by Line:
 
-Your Dockerfile should contain exactly one FROM command, at the very top. The purpose of this command is to specify the _base image_ from which your custom Docker image will be built.
+Your Dockerfile should contain two FROM commands, at the very top. The purpose of this command is to specify the _base image(s)_ from which your custom Docker image will be built.
 
-?> In the Docker world, every Docker image must be built off a parent (base) image.
+?> In the Docker world, every Docker image must be built off at least one parent (base) image.
 
-Our Dockerfile says to base our image off `mhart/alpine-node:8`, which is a minimal Node.js image, on [Alpine Linux](https://alpinelinux.org/), available via [https://hub.docker.com/r/mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node).
+Our Dockerfile says to base our image off `veritone/aiware-engine-toolkit` (which is the Engine Toolkit SDK image) plus `mhart/alpine-node:8`, which is a minimal Node.js image built on [Alpine Linux](https://alpinelinux.org/), available via [https://hub.docker.com/r/mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node).
 
  `COPY . /app` means to copy (recursively) everything in the current context &mdash; that is, the current directory &mdash; to a folder called `/app`.
 
  `COPY manifest.json /var/` means to copy our manifest file to the `/var/` folder.
  
- `RUN npm install -i` means to run the Node package manager, npm, using the `install` command. By default, `npm install` will install all modules listed as dependencies in `package.json`, if such a file exists.
+ `WORKDIR /app` says that `/app` is our working directory.
  
- `COPY ./dist/engine /app/engine` means what you think it does: Copy our `engine` file from `/dist` to `/app/engine`.
- 
- `WORKDIR /app` means to make `/app` our working directory.
+ `EXPOSE 8080` means we want to make port 8080 active, for interaction with our engine.
  
  `RUN apk update \
-      && apk upgrade \
-      && apk --no-cache add ca-certificates` &mdash; This updates Alpine Linux to include the latest CA-certs so that TLS works properly.
+     && apk upgrade \
+     && apk --no-cache add ca-certificates \
+     && apk add --no-cache libc6-compat` &mdash; This updates Alpine Linux (apk) to include the latest CA-certs so that TLS works properly.
+     It also adds the `libc` libraries that Engine Toolkit relies on (`libc6-compat`).
+ 
+ `RUN npm install` means to run the Node package manager, npm, using the `install` command. By default, `npm install` will install all modules listed as dependencies in `package.json`, if such a file exists.
+ 
+ `ENV VERITONE_WEBHOOK_READY="http://0.0.0.0:8080/readyz"
+  ENV VERITONE_WEBHOOK_PROCESS="http://0.0.0.0:8080/process"` creates the environment variables that allow Engine Toolkit to know the webhooks it can use to contact our engine.
   
- > If you fail to update your image's certificates, your engine may report X.509-related ("untrusted site") errors at runtime when you attempt to access signed URIs.
-          
-`ENV VERITONE_WEBHOOK_READY="http://0.0.0.0:8080/readyz"` &mdash; Sets the environment variable that tells the `engine` driver which route to contact with the readiness probe.
+ `COPY --from=vt-engine-toolkit /opt/aiware/engine /opt/aiware/engine` means what you think it does: Copy our Engine Toolkit files to `/opt/aiware/engine`.
+ 
+ `RUN ["chmod", "+x", "/app/index.js"]` grants our engine "execution" rights, so it can be run.
+ 
+ `WORKDIR /app` means to make `/app` our working directory.
 
-`ENV VERITONE_WEBHOOK_PROCESS="http://0.0.0.0:8080/process"` &mdash; Env variable to identify the "process" route.
-
-`RUN chmod +x /app/engine` &mdash; Make sure the `engine` file is executable.
-
-### Entry Point
-
-The final line of our Dockerfile, `ENTRYPOINT [ "/app/engine", "node", "index.js" ]`, tells Docker where to find the entry point of our container.
-On startup, we want our container to execute the `engine` binary, which is the Toolkit driver.
-The driver will (in turn) pick up extra command-line arguments that tell it how to fire up our engine. (Namely: Run `node` with an argument of `index.js`.)
+ `ENTRYPOINT [ "/opt/aiware/engine", "node", "index.js" ]` sets the entry point of our container as the Engine Toolkit, with `node` and `index.js` as arguments. (Toolkit will, in turn, start up NodeJS using `index.js` as an argument.)
 
 ## Building the Engine
 

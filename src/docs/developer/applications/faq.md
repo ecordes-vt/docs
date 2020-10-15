@@ -16,7 +16,7 @@ It is your responsibility for hosting the Web Application. Veritone only manages
 
 #### How do I get support for Application Development?
 
-[https://chat.veritone.com/](https://chat.veritone.com/)
+[https://veritonedev.slack.com](https://veritonedev.slack.com)
 
 #### Can I limit my OAuth Application scopes to restrict functionality on user groups?
 

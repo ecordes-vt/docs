@@ -6,7 +6,7 @@ The adapter infrastructure provides mechanisms for ingesting structured or unstr
 
 Before you begin development, it’s important to get a sense of how adapters interact with Veritone and understand how all of the pieces and processes work together. Understanding the structure of data, the way Veritone handles data, and how data maps to the Veritone UI may influence your design and development strategy. The topics that follow summarize the key concepts of how adapter technology is used in Veritone. Each of these is covered in more detail in our [Quickstart](https://docs.veritone.com/#/adapters/quick-start/) guide and throughout the remaining sections of the adapter documentation.
 
-Remember that our developer support team is here to answer questions and provide assistance. Reach out to us on our [Slack channel](https://chat.veritone.com/) any time you need help.
+Remember that our developer support team is here to answer questions and provide assistance. Reach out to us on our [Slack channel](https://veritonedev.slack.com) any time you need help.
 
 > In the GraphQL API, adapters are identified as `engines` where `EngineType=Ingestion`
 
@@ -217,4 +217,4 @@ Our [Quickstart](https://docs.veritone.com/#/adapters/quick-start/) is designed 
 
 ### Help and Resources
 
-Our documentation and resources are designed to help get your adapter up and running as quickly as possible, but if you have any questions, please don't hesitate to reach out to our [developer support team](https://chat.veritone.com/) for help.
+Our documentation and resources are designed to help get your adapter up and running as quickly as possible, but if you have any questions, please don't hesitate to reach out to our [developer support team](https://veritonedev.slack.com) for help.

@@ -66,7 +66,7 @@ E-mail: **[devsupport@veritone.com](mailto:devsupport@veritone.com)**
 
 We also have a Slack channel specifically for the Veritone Developer Ecosystem.
 
-Join at [https://chat.veritone.com/](https://chat.veritone.com/)
+Join at [https://veritonedev.slack.com](https://veritonedev.slack.com)
 
 Please be sure to thoroughly read through all documentation prior to initiating a support request.
 

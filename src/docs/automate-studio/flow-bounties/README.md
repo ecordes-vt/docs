@@ -211,8 +211,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Call Center Content Analytics</h3>
                 <div class="description-text">Use Topic Extraction engines to tag calls with key topics for realtime escalation & future analytics of common trends.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/content-analytics"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/content-analytics"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -231,8 +231,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Call Center Automated Creation of Support Tickets</h3>
                 <div class="description-text">Use AI to automatically create support tickets based on conversation details and context.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/automated-creation-of-support-tickets"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/automated-creation-of-support-tickets"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -271,8 +271,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Public Benefits Translations</h3>
                 <div class="description-text">Translation and access to public communications and public services (medical care, unemployment claims, etc.) - video, audio, text communications</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/public-benefits-translations"> BUILD IT!</a>
-            <div class="bounty-number">$200</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/public-benefits-translations"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -281,8 +281,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Podcast to a Blog and Article Automation</h3>
                 <div class="description-text">Transcribe podcasts and auto-create blog posts in WordPress for SEO; Make available in multiple languages.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/podcast-to-blog-article-automation"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/podcast-to-blog-article-automation"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -291,8 +291,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Marketing Use Case</h3>
                 <div class="description-text">Sentiment analysis of social streams, emails, & text messages, and escalation of negative posts to customer service rep to respond.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/marketing-use-case"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/marketing-use-case"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -311,8 +311,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Trigger & Scrape</h3>
                 <div class="description-text">When a new mention is created, an event subscription triggers this specific flow to determine if the mention was created and then sends an alert to a designated input.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/trigger-and-scrape"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/trigger-and-scrape"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -321,8 +321,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Twitter Temp Bot</h3>
                 <div class="description-text">Scrape tweets from either a user (or given users) or a topic/hashtag and run sentiment analysis.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/twitter-temp-bot"> BUILD IT!</a>
-            <div class="bounty-number">$200</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/twitter-temp-bot"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -331,8 +331,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Zoom Analyst</h3>
                 <div class="description-text">Analyze a live zoom call: live transcript with speaker separation. Text analytics. Fast search, playback and clipping of snippets of a call for sharing.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/zoom-analyst"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/zoom-analyst"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
     </div>
     <div class="featureColumn">
@@ -391,8 +391,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Customer Happiness Bot</h3>
                 <div class="description-text">A Flow engine will retrieve the specified logs from HelpScout and processes the logs with Sentiment analysis from.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/customer-happiness-bot"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/customer-happiness-bot"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -421,8 +421,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Public Camera Automated Monitoring</h3>
                 <div class="description-text">Monitor public camera feeds for abnormal activity (e.g. fires, weather, people, cars). Fire detection of interest by prospect.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/public-camera-automated-monitoring"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/public-camera-automated-monitoring"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -431,8 +431,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Injection of Content Intelligence into RPA and BPA</h3>
                 <div class="description-text">Auto claims process - locate/read license plate and damage from images or video, auto-attach image clips to claim case.</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/injection-content-intelligence-rpa-bpa"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/injection-content-intelligence-rpa-bpa"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>
@@ -451,8 +451,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>Press release Review Automation</h3>
                 <div class="description-text">Press release text analytics to provide summaries, keywords to allow quick scan/search</div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/press-release-review-automation"> BUILD IT!</a>
-            <div class="bounty-number">$300</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/press-release-review-automation"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
         </br>
         </br>      
@@ -481,8 +481,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
                 <h3>YouTube Scraper</h3>
                 <div class="description-text">This flow engine ingests the video in Youtube, transcribes it, and then runs topic extraction on that transcript. </div>
             </div>
-            <a class="link" href="/#/automate-studio/flow-bounties/flow-bounty-details/youtube-scraper"> BUILD IT!</a>
-            <div class="bounty-number">$250</div>
+            <a class="link-claimed" href="/#/automate-studio/flow-bounties/flow-bounty-details/youtube-scraper"> BUILD IT!</a>
+            <div class="bounty-number">Claimed</div>
         </div>
     </div>
 </div>
