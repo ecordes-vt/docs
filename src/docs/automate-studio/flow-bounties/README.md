@@ -147,7 +147,7 @@ Below you will find a wishlist of Automate flows that we, at Veritone, hope to h
 ## Become a Veritone Ambassador and get paid! <!-- {docsify-ignore} -->
 There are three ways to become a Veritone Ambassador. Building flows, driving adoption of your flows, and becoming a Veritone integrator or reseller partner.
 * **Build**
-    * Get paid when you create an Automate Studio flow from the Veritone [wish list](#automate-flow-wishlist), and that flow is approved by Veritone.* Rates vary per flow.<br>
+    * Get paid when you create an Automate Studio flow from the Veritone [wish list](https://github.com/veritone/automate-flow-templates/projects/1), and that flow is approved by Veritone.* Rates vary per flow.<br>
 	[Login to Automate Studio or create an account](https://www.veritone.com/onboarding/#/signUp?type=automate)
 
 * **Refer**
@@ -161,7 +161,7 @@ There are three ways to become a Veritone Ambassador. Building flows, driving ad
 ## How to build flows and make money? <!-- {docsify-ignore} -->
 Developers and Business Analysts, contribute to the Automate Studio flow library and claim a bounty. Here’s how:
 
-1. Review the [wish list](#automate-flow-wishlist) of Automate Studio flows
+1. Review the [wish list](https://github.com/veritone/automate-flow-templates/projects/1) of Automate Studio flows
 2. Choose which flow to develop, or suggest a new flow for Veritone to review and add to the list
 3. Build the flow you’ve selected, according to the flow specifications
 4. Submit your completed flow for Veritone review and approval
@@ -172,18 +172,8 @@ If approved, Veritone will pay you the specified bounty amount for that flow. Th
 
 <hr>
 
-## Automate Flow Wishlist 
+<br>
+<br>
+<br>
 
-Check out our list of Automate Studio flow template projects and claim the flow template that is interesting for you to build! You can find the list of flows and claim one at a time with this [link](https://github.com/veritone/automate-flow-templates/tree/master/.github/ISSUE_TEMPLATE). <!-- {docsify-ignore} -->
-
-<br>
-<br>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<br>
 *See the Veritone <a href="https://s3.amazonaws.com/static.veritone.com/terms/aiWAREAmbassadorProgramTerms.pdf">aiWARE Ambassador Program Terms and Conditions</a> for further details.  By participating in the program, you agree to these program terms. 
-
-
