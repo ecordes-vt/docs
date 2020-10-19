@@ -168,7 +168,7 @@ Developers and Business Analysts, contribute to the Automate Studio flow library
 
 If approved, Veritone will pay you the specified bounty amount for that flow. Then, spread the word by marketing your flows to others. Each time those you refer sign up through your flow and become active users, you get paid.*
 
-[Get Started!](#automate-flow-wishlist)
+[Get Started!](https://github.com/veritone/automate-flow-templates/projects/1)
 
 <hr>
 
