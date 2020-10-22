@@ -1102,69 +1102,7 @@ docker run --detach -p 10000:9000 \
 
 4. MINIO_SECRET_KEY
 
-### Step 5: Once connected, create bucket that will be repository for CSV reports
-
-### Step 6: Open up a second command line
-
-Next we will create the license. With your aiware-license-keys folder on your local machine, you’ll need to update the license-template-example.json. Fields you will need to update: 
-
-1. allowedEngineIds
-
-2. clusterID - can be anything, but can also put rt-1cdc1d6d-a500-467a-bc46-d3c5bf3d6901
-
-3. reportStatisticsBucket = bucket name for S3 for min.io
-
-4. requireReporting = true
-
-5. customerId - can create an org in core for tracking purposes
-
-```json
-{
-    "allowedEngineIds": [
-        "95c910f6-4a26-4b66-96cb-488befa86466",
-        "c0e55cde-340b-44d7-bb42-2e0d65e98255"
-    ],
-    "excludedEngineIds": [
-        "dd1f9266-21a6-4675-90f1-a4c3ed843e64"
-    ],
-    "enginesOwnedByCoreOrgIds": [
-        "413a8cb5-c1f4-4548-89cc-a2fcdf1426dd",
-        "5093d8c4-e057-4fee-9596-7216ac5bfd1a"
-    ],
-    "requireCore": false,
-    "coreURI": "",
-    "clusterID": "rt-239483920",
-    "coreOrganizationId": "",
-    "reportStatisticsBucket": "gfernandez-test",
-    "allowedReportingFailures": 3,
-    "requireReporting": true,
-    "maxHosts": 11,
-    "customerId": "12345",
-    "allowedModes": [
-        "Engine",
-        "DB"
-    ]
-}
-```
-### Step 7:  Copy aiware-license-keys to Server 
-
-`scp -r /Users/username/aiware-license-keys ubuntu@<IP OF HOST>:/home/ubuntu`
-
-### Step 8: Execute command 
-
-`aiware-agent license generate <path-to-private-key> <claims-file-json> <valid-period-in-days>`
-
-Example below: 
-
-`aiware-agent license generate /home/ubuntu/aiware-license-keys/app1.rsa /home/ubuntu/aiware-license-keys/license-template-example.json 2`
-
-### Step 9: Copy license that’s produced 
-
-### Step 10: Export below along with the other exports in the Configuration Guide 
-
-`export AIWARE_MINIO_ENABLED=true`
-
-`export AIWARE_LICENSE=<LICENSE_TOKEN>`
+Once connected, it will create a CSV log in the designated bucket.
 
 ## Troubleshooting
 
