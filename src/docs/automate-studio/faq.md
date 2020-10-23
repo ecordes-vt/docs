@@ -16,15 +16,14 @@ At a minimum, basic familiarity with our [GraphQL schema](https://api.veritone.c
 
 ## Can I expect to run my Flow directly in Automate Studio for a long period of time?
 
-Yes. There are two runtimes that your flows can run on: The first is the Automate Studio runtime, which is powered by Node-RED. The second is the Veritone engine framework on which all of Veritone's engines run. Keep in mind that Automate Studio's runtime is not directly connected to Veritone's engine runtime, which is why we have included special nodes to simulate the Veritone engine runtime framework _within_ Automate Studio.
+Yes. There are two runtimes that your flows can run on: 
+
+- The first is the Automate Studio runtime, which is powered by Node-RED. The Automate Studio editor session will shut down after a period of inactivity is detected.
+- The second is the Veritone engine framework on which all of Veritone's engines run. Keep in mind that Automate Studio's runtime is not directly connected to Veritone's engine runtime, which is why we have included special nodes to simulate the Veritone engine runtime framework _within_ Automate Studio.
 
 ## What is an "Automation Engine?"
 
 This phrase serves as a description of a Flow once it has been deployed "as an Engine" to run on Veritone's engine framework.
-
-## What are the Segment and Batch engine modes and which should I choose?
-
-Segment (aka Chunk) and Batch terms refer to [engine modes](/developer/engines/processing-modes/) for Veritone engines and refer to how Veritone's engine framework expect the engines themselves to run. [Segment engines](developer/engines/processing-modes/segment-processing/) expect to run on media files that have been cut up into smaller "segments" (or chunks) which makes processing each piece of the media file faster, since chunks can be processed in parallel; while the Batch engine mode takes in the whole file for processing. You will likely find Batch engines useful for executing business logic that does not require processing segments of a media file.
 
 ## Can I use Automate Studio to create new Cognitive Engines?
 
@@ -34,8 +33,8 @@ Yes! We have adapted Automate Studio's underlying Node-RED open source technolog
 
 At Veritone, we have been using Automate Studio internally to experiment with new cognition classes and engines, rapidly develop new features, and build new AI solutions that we have then taken to market. Sharing this product in Beta with our customers gives us the chance to hear your feedback directly, and release new enhancements faster, while giving you a powerful new tool to customize Veritone's cognitive capabilities even more for your organization.
 
-## I have an idea for a new aiWARE node. Who can I contact?
+## I have an idea or feedback for Automate
 
-We always love hearing suggestions from our developer community and end customers! You can submit your ideas here!
+We always love hearing suggestions from our developer community and end customers! You can share your thoughts by sending your feedback to support@aiware.com!
 
-Alternatively, you can build your own nodes, submit to the Node-RED repo and flag Veritone to review them and incorporate into the official aiWARE palette.
+You can also build your own nodes, submit to the Node-RED repo and flag Veritone to review them and incorporate into the official aiWARE palette.
