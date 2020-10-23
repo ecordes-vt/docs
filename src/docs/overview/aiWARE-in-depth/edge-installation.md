@@ -156,7 +156,6 @@ echo aiWARE Edge token is $AIWARE_INIT_TOKEN
 # use IP address to set URL
 export AIWARE_CONTROLLER=http://IP_OF_ADMIN_NODE:9000/edge/v1
 
-
 #### OPTIONAL ####
 export AIWARE_MINIO_ENABLED=true # IF: Logging to a local directory
 export AIWARE_REGION=us-east-2 # IF: Logging to an AWS S3 Bucket
@@ -283,9 +282,8 @@ This will ensure that all following steps are executed as root.
 ```pre
 export AIWARE_MODE=engine
 export AIWARE_HOST_EXPIRE=false
-
 # This is the IP of the admin box, as noted above
-export AIWARE_CONTROLLER=http://IP_OF_ADMIN_NODE:9000/edge/v1  
+export AIWARE_CONTROLLER=http://IP_OF_ADMIN_NODE:9000/edge/v1 
 
 #### OPTIONAL ####
 export AIWARE_MINIO_ENABLED=true # IF: Logging to a local directory

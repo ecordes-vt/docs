@@ -2,7 +2,7 @@
 
 <!-- Sidebar Logo -->
 
-<a href="/"><div class="logo"><img src="https://static.veritone.com/assets/favicon/favicon.ico" alt="Veritone logo"/><span class="logo-text">Veritone Docs<span></div></a>
+<div class="logo"><span class="logo-text">Documentation<span></div>
 
 - [aiWARE](overview/)
   - [Getting Started](quickstart/)
@@ -204,7 +204,15 @@
     - [Twitter classification](automate-studio/flow-bounties/flow-bounty-details/twitter-classification)
     - [Twitter temp bot](automate-studio/flow-bounties/flow-bounty-details/twitter-temp-bot)
     - [Youtube scraper](automate-studio/flow-bounties/flow-bounty-details/youtube-scraper)
-    - [Zoom analyst](automate-studio/flow-bounties/flow-bounty-details/zoom-analyst)    
+    - [Zoom analyst](automate-studio/flow-bounties/flow-bounty-details/zoom-analyst)
+  - [Training](automate-studio/Training/crawl.md)
+    - [The Basics](automate-studio/Training/crawl)
+    - [Working with Flows](automate-studio/Training/walk/)
+  - [Blog](automate-studio/blog/automate-blog)
+    - [Orchestrating AI with a Flow](automate-studio/blog/orchestrating-ai.md)
+    - [Your AI Flow, for the World](automate-studio/blog/your-ai-flow.md)
+    - [AI Recognized Your Face. Now What?](automate-studio/blog/ai-recognized-your-face.md)
+    - [Sentiment Analysis on Helpdesk Tickets](automate-studio/blog/sentiment-analysis.md
   - [FAQ](automate-studio/faq)
 - [Machine Box](/developer/machine-box/)     
   - [Getting Started](/developer/machine-box/setup/)
