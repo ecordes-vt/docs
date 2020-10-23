@@ -2,6 +2,8 @@
 
 ![Basics](basics.png)
 
+**APPROXIMATE READING TIME: 15 MINUTES**
+
 Welcome to Automate Studio training! 
 
 Veritone Automate Studio puts the power of AI in your hands to automate business processes quickly and easily, so you can get to solving business problems faster, with the power of AI. 
@@ -9,8 +11,6 @@ Veritone Automate Studio puts the power of AI in your hands to automate business
 Using Automate's drag-and-drop UI, you can quickly map out your unique combination of data inputs, AI-powered business logic, and desired outputs, then deploy flows to deliver insights in the application of your choice in hours or days, not weeks or months.
 
 In this unit, we take a look at the fundamentals of using Automate Studio.
-
-**APPROXIMATE READING TIME: 15 MINUTES**
 
 ## What's Covered Here?
 
