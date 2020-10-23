@@ -1,0 +1,15 @@
+# How to Build an API Integration with Automate Studio (and more!)
+
+In this tutorial, we're going to illustrate some common "node patterns" (we tend to also call them "recipes") that you can repeatably use to construct your own flows, enabling you to integrate aiWARE's AI congition with your existing proprietary and third party systems.
+
+## Creating API Integrations
+
+One of the most compelling reasons of why you would use Veritone Automate Studio is to easily integrate datasources from other parts of your organization into aiAWRE for processing, and then send the results back to your desired systems. 
+
+## Polling the Veritone GraphQL API
+
+Even as webhooks as (quite rightly so) gotten more popular, not all third party API services support the webhook pattern and therefore 
+
+## Create a file and send to S3
+
+As Amazon Web Service has proliferated, there is a high probability you will find yourself needing to create and write files _from aiWARE_ to an S3 bucket. The great news for you is that this pattern is so common, we created a generalizable flow recipe for you to easily do just that.
