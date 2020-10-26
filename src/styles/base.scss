@@ -36,36 +36,12 @@ p.graphql-link {
     background-color: $secondary;
   }
 }
-.content {
-  padding-top: 0;
-  left: 200px;
-}
-@media screen and (max-width: 768px) {
-  main {
-    height: 100%;
-  }
-  /* Fix behavior for when sidebar should be open */
-  .sidebar {
-    left: 0;
-  }
-  .content {
-    position: fixed;
-    overflow: auto;
-    width: calc(100% - 200px);
-    height: 100%;
-  }
 
-  // /* Fix behavior for when sidebar should be closed */
-  //.close .sidebar {
-  //   transform: translateX(0);
-  // }
-  //.close .content {
-  //   transform: translateX(0px);
-  // }
-}
-.markdown-section {
-  max-width: 100%;
-  padding: 30px;
+@media (max-width: 535px) {
+  .markdown-section {
+    max-width: 100%;
+    padding: 30px;
+  }
 }
 
 .vtn-action-links {
