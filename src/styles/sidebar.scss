@@ -99,6 +99,7 @@
   * Because the default assumes you only want things highlighted if they don't have any subpages
   **/
   ul li .active > a {
+    border: none;
     color: $secondary;
   }
 
