@@ -1,8 +1,12 @@
 @import './palette';
 
 .search {
+  margin-bottom: 0;
   .search-keyword,
   a:hover {
     color: $secondary;
+  }
+  input {
+    background: #f4f4f4;
   }
 }
