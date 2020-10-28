@@ -7,11 +7,18 @@ import {
   resetExtendedFamilyRecursion
 } from "./sidebarHelper";
 
+const PARAM_KEY = "aiware-header-bar";
+
+function getHashValue(key) {
+  var matches = location.hash.match(new RegExp(key + '=([^&]*)'));
+  return matches ? matches[1] : null;
+}
+
 const docsifyConfig = {
   tabs: {
-    persist    : true,      // default
-    sync       : true,      // default
-    theme      : 'material', // default
+    persist: true,      // default
+    sync: true,      // default
+    theme: 'material', // default
     tabComments: true,      // default
     tabHeadings: true       // default
   },
@@ -24,7 +31,7 @@ const docsifyConfig = {
   loadSidebar: true,
   auto2top: true,
   coverpage: true,
-  
+
   // notFoundPage: {
   //   '\/(.*)(?<!\/)$': '1$/'
   // }
@@ -127,7 +134,7 @@ const docsifyConfig = {
     function veritoneAliasRedirectPlugin(hook, vm) {
       hook.beforeEach(function onBeforePageParsed() {
         var redirects = vm.router.config.alias;
-        iterateObject(redirects, function(routeMatch, newRoute) {
+        iterateObject(redirects, function (routeMatch, newRoute) {
           var routeMatchRegex = new RegExp(routeMatch, "g");
           var testResult = routeMatchRegex.exec(vm.route.path);
           if (testResult) {
@@ -136,9 +143,9 @@ const docsifyConfig = {
             }
             console.log(
               "Alias detected.  Redirecting from " +
-                vm.route.path +
-                " to " +
-                newRoute
+              vm.route.path +
+              " to " +
+              newRoute
             );
             window.location.replace(
               window.location.origin + window.location.pathname + "#" + newRoute
@@ -187,8 +194,6 @@ const docsifyConfig = {
       });
     },
 
-    
-
     /**
      * "Support" Classed Headers
      * Replaces instances of `[header/h2/Header Text/class]` with a header attached with a class
@@ -221,9 +226,8 @@ const docsifyConfig = {
       });
 
       function createLinkFromExample(exampleNode, text) {
-        var url = `${
-          window.config.apiRoot
-        }/v3/graphql/?query=${encodeURIComponent(exampleNode.innerText)}`; /* was graphiql */
+        var url = `${window.config.apiRoot
+          }/v3/graphql/?query=${encodeURIComponent(exampleNode.innerText)}`; /* was graphiql */
         return $(`
               <p class="graphql-link">
                 <a href="${url}" target="_blank">
@@ -239,10 +243,61 @@ const docsifyConfig = {
       if (path) {
         setTimeout(() => (window.location.hash = `#/#${path[1]}`), 0);
       }
-    }
+    },
+
+    function checkCustomParams(hook) {
+      hook.beforeEach(() => {
+        let dom = document.getElementsByTagName("body").item(0);
+        const layout = getHashValue('layout');
+        const sideBar = getHashValue('sideBar');
+
+        if (sideBar === "hidden") {
+          dom.classList.add('hide-sidebar');
+        } else {
+          if (layout === "custom" || layout === "only-side") {
+            localStorage.setItem(PARAM_KEY, layout);
+            dom.classList.add(`${layout}-sidebar`);
+            dom.classList.add('sticky');
+            if (layout === "custom") {
+              dom.classList.add('close');
+            }
+          } else {
+            let localParam = localStorage.getItem(PARAM_KEY)
+            if (localParam === "custom" || localParam === "only-side") {
+              window.location.replace(window.location.href + `?layout=${localParam}`);
+              dom.classList.add(`${localParam}-sidebar`);
+              dom.classList.add('sticky');
+              if (layout === "custom") {
+                dom.classList.add('close');
+              }
+            }
+          }
+        }
+      })
+    },
+    function aiWareSubPanel(hook) {
+      hook.beforeEach(() => {
+        window.onhashchange = (event) => {
+          window.parent.postMessage(event.newURL, "*")
+        };
+      });
+    },
   ]
 };
 
 export default function initializeDocsify() {
-  window.$docsify = docsifyConfig;
+  const layout = getHashValue('layout');
+  if (layout === "only-side") {
+    window.$docsify = {
+      ...docsifyConfig, search: {
+        placeholder: "Search for documentation..."
+      }
+    };
+  } else {
+    window.$docsify = {
+      ...docsifyConfig, search: {
+        placeholder: "Search for docs..."
+      }
+    };
+  }
 }

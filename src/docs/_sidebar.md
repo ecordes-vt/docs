@@ -2,7 +2,7 @@
 
 <!-- Sidebar Logo -->
 
-<a href="/"><div class="logo"><img src="https://static.veritone.com/assets/favicon/favicon.ico" alt="Veritone logo"/><span class="logo-text">Veritone Docs<span></div></a>
+<a href="/"><div class="logo custom-aiware"><img src="https://static.veritone.com/assets/favicon/favicon.ico" alt="Veritone logo"/><span class="logo-text">Veritone Docs<span></div></a>
 
 - [aiWARE](overview/)
   - [Getting Started](quickstart/)

@@ -5,6 +5,75 @@ body {
   font-size: 14px;
 }
 
+body.hide-sidebar {
+  .sidebar,
+  .sidebar-toggle {
+    display: none !important;
+  }
+  .content {
+    padding: 0 !important;
+    left: 0px !important;
+  }
+  .markdown-section {
+    padding: 30px;
+    max-width: 100% !important;
+  }
+}
+
+body.custom-sidebar {
+  // .custom-aiware {
+  //   img {
+  //     display: none !important;
+  //   }
+  // }
+  .custom-aiware {
+    display: none !important;
+  }
+  .sidebar-toggle {
+    display: none !important;
+  }
+  .markdown-section {
+    padding: 30px;
+    max-width: 100% !important;
+  }
+  .content {
+    padding: 0 !important;
+    width: calc(100% - 200px) !important;
+  }
+  .vtn-action-links {
+    display: none !important;
+  }
+  .sidebar {
+    width: 200px;
+  }
+  @media screen and (max-width: 768px) {
+    left: -200px !important;
+    &.close .content {
+      transform: translateX(200px) !important;
+    }
+  }
+}
+
+body.only-side-sidebar {
+  .sidebar-toggle {
+    display: none !important;
+  }
+  .custom-aiware {
+    display: none !important;
+  }
+  .vtn-action-links {
+    display: none !important;
+  }
+  section {
+    display: none !important;
+  }
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      left: 0 !important;
+    }
+  }
+}
+
 /* Style the "Try in Sandbox" link */
 pre[data-lang='graphql'] {
   margin-bottom: 0.25em;
