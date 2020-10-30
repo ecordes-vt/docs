@@ -132,7 +132,7 @@
 <div style="float:right; width: 200px; padding-top: 125px">
     <a href="#/automate-studio/getting-started/README" id="learn-automate-studio-btn">LEARN HOW TO USE AUTOMATE STUDIO</a>
     <br>
-    <a href="https://automate.veritone.com/flow_template_gallery" id="explore-templates-btn">EXPLORE THE TEMPLATES</a>
+    <a href="https://automate.veritone.com/flow_template_gallery" id="explore-templates-btn" target="_blank">EXPLORE THE TEMPLATES</a>
 </div>
 
 </div>
@@ -152,7 +152,7 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
             <div class="featureText">
                 <h3>Estimation of Customer’s Intent</h3>
                 <div>Identify caller intent to improve business metrics such as churn or customer satisfaction.</div>
-                <a class="link" href="https://automate.veritone.com/flow_template_gallery"> EXPLORE</a>
+                <a class="link" target="_blank" href="https://automate.veritone.com/flow_template_gallery"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -164,7 +164,7 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
             <div class="featureText">
                 <h3>Ad Tracker Summarization</h3>
                 <div>Calculate the amount of time an advertiser’s logo spends on the TV screen and email a report.</div>
-                <a class="link" href="https://automate.veritone.com/flow_template_gallery"> EXPLORE</a>
+                <a class="link" target="_blank" href="https://automate.veritone.com/flow_template_gallery" > EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -176,7 +176,7 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
             <div class= "featureText">
                 <h3>Content Moderation</h3>
                 <div>Identify media containing a sensitive material such as profanity, weapons, nudity or violence.</div>
-                <a class="link" href="https://automate.veritone.com/flow_template_gallery"> EXPLORE</a>
+                <a class="link" target="_blank" href="https://automate.veritone.com/flow_template_gallery"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -188,7 +188,7 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
             <div class= "featureText">
                 <h3>Dynamic Language Translation</h3>
                 <div>Translate text or audio files that source/target languages are config parameters. </div>
-                <a class="link" href="https://automate.veritone.com/flow_template_gallery"> EXPLORE</a>
+                <a class="link" target="_blank" href="https://automate.veritone.com/flow_template_gallery" > EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
