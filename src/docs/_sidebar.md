@@ -166,7 +166,7 @@
   - [Training](automate-studio/Training/crawl)
     - [The Basics](automate-studio/Training/crawl)
     - [Working with Flows](automate-studio/Training/walk/README.md)
-  - [Tutorials](automate-studio/tutorials/automate-blog)
+  - [Tutorials](automate-studio/tutorials/automate-tutorials)
     - [Orchestrating AI with a Flow](automate-studio/tutorials/orchestrating-ai.md)
     - [Create aiWARE Custom API Endpoints](automate-studio/tutorials/your-ai-flow.md)
     - [AI Recognized Your Face. Now What?](automate-studio/tutorials/ai-recognized-your-face.md)
