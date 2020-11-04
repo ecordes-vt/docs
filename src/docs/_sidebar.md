@@ -163,7 +163,7 @@
     - [Text Recognition (OCR)](developer/engines/cognitive/vision/text-recognition/)
 - [Automate Studio](automate-studio/)
   - [Getting Started](automate-studio/getting-started/README)
-  - Training
+  - [Training]()
     - [The Basics](automate-studio/Training/crawl)
     - [Working with Flows](automate-studio/Training/walk/README.md)
   - [Tutorials](automate-studio/tutorials/automate-tutorials)
