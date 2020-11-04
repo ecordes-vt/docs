@@ -4,6 +4,7 @@ Welcome! This is the aiWARE team's section for sharing our tutorials intended to
 
 In these tutorials, we start with high-level use-cases and then get deeper into the technical details with the goal of helping you understand how develop an idea into a technical implementation.
 
+<!-- {docsify-ignore} -->
 ## Table of Contents
 
 1. [Orchestrating AI with a Flow](/automate-studio/tutorials/orchestrating-ai.md)
