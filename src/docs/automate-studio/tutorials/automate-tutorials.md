@@ -11,3 +11,4 @@ In these tutorials, we start with high-level use-cases and then get deeper into 
 1. [AI Recognized Your Face. Now What?](/automate-studio/tutorials/ai-recognized-your-face.md)
 1. [Sentiment Analysis on Helpdesk](/automate-studio/tutorials/sentiment-analysis.md)
 1. [Creating new training data with a flow](/automate-studio/tutorials/automate-tutorial-6-flow-face-libraries.md)
+1. [How to Think About Flow Engines](/automate-studio/tutorials/automate-tutorial-7-flow-engines.md)
