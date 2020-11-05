@@ -52,7 +52,7 @@ If you don't do this, Docker will balk the next time you issue the same `run` co
 
 The `-it` options tell Docker to make the session _interactive_ (`-i` &mdash; keep STDIN open), in the time-honored TTY manner (`-t`).
  
-After you've executed the above CLI command, check the console to be sure the commasnd executed without errors. (If your engine code contains bugs, it's possible the container will fail to start.)
+After you've executed the above CLI command, check the console to be sure the commands executed without errors. (If your engine code contains bugs, it's possible the container will fail to start.)
 
 ## Use the Test Console App
 
@@ -60,11 +60,11 @@ If your engine launched normally, you should see a console message something lik
 
 ```pre
 Veritone Engine Toolkit (4768c5a)
-2019/09/27 14:52:31 engine: running
-2019/09/27 14:52:31 WARNING: Test mode (remove VERITONE_TESTMODE before putting into production)
-2019/09/27 14:52:31 skipping kafka setup
-2019/09/27 14:52:31 running subprocess for testing...
-2019/09/27 14:52:31 running test console...
+2020/11/27 14:52:31 engine: running
+2020/11/27 14:52:31 WARNING: Test mode (remove VERITONE_TESTMODE before putting into production)
+2020/11/27 14:52:31 skipping kafka setup
+2020/11/27 14:52:31 running subprocess for testing...
+2020/11/27 14:52:31 running test console...
 
 	The Engine Toolkit Test Console is now running.
 
@@ -83,7 +83,7 @@ Scroll down the page, to "Manifest file." You should see a green **LOOKS GOOD** 
 
 If you continue scrolling down the page, you should see green badges for **Environment variables** as well as **Ready webhook test**. The green badges mean your engine is properly configured. 
 
-> If you see red badges, take note of the error message(s), stop the Test Console app with Control-C, make any needed changes to your engine, rebuild it, and re-launch the engine is test mode.
+!> If you see red badges, take note of the error message(s), stop the Test Console app with Control-C, make any needed changes to your engine, rebuild it, and re-launch the engine is test mode.
 
 ## Test the /process Webhook
 

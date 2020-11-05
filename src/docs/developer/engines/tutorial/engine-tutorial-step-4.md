@@ -107,6 +107,8 @@ uploaded
 
 10\. Check the build's status from time to time. It should eventually change to **APPROVED**, at which point you should click on the blue **DEPLOY** command in the UI, to deploy the engine. This makes your engine available to use in API (GraphQL) commands.
 
+> If the engine appears with a status of **DEPLOYING**, you may have to refresh the page to see it change to **DEPLOYED**.
+
 ![Deployed status](Onboarding-4.png)
 
 ### Pausing Engine Builds
@@ -118,7 +120,7 @@ As you debug your engine and push revised builds to Veritone's repo, you may wan
 * You can push a new build while an older one is still active (deployed). A push doesn't overwrite anything.
 * You can PAUSE a build to deactivate it (without deleting it).
 * Later on, after your engine is in widespread daily use, you should use caution in pausing an active build of a popular engine, since pausing a build could be disruptive to users of your engine.
-* You can _delete_ a build by using the Delete command in the flyout (or "kabob") menu. Build numbering, however, continues from where it left off.
+* You can _delete_ a build by using the Delete command in the flyout (or "kebab") menu. Build numbering, however, continues from where it left off.
 * If you see two new builds show up in the Builds list after doing a single push, it means you are probably pushing a bare (untagged) build without first doing a `docker tag`. Best practice is to always precede a `push` with a `tag`, unless you know for sure what you're doing.
 
 ## Recap and Cheat Sheet

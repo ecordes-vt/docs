@@ -28,11 +28,7 @@ Engines listen on an HTTP address and implement [Webhooks](#webhooks), which are
 
 ### Sample engines
 
-To see the code for a complete working engine, choose from the list below:
-
-* **Go** - [Golang EXIF engine](https://github.com/veritone/engine-toolkit/tree/master/engine/examples/exif)
-* **JavaScript (NodeJS)** * - [hello-world](https://github.com/veritone/engine-toolkit/tree/master/engine/examples/hello-world), a simple vocabulary extraction engine
-* **Python** - [Python Keras/Tensorflow Imagenet image tagging engine](https://github.com/veritone/engine-toolkit/tree/master/engine/examples/python_imagenet)
+To see the code for a complete working engine, go to https://github.com/veritone/V3-Engine-Examples.
 
 > If you would like to contribute an additional example engine, please [open an issue to start a conversation](https://github.com/veritone/engine-toolkit/issues/new?title=sample+project).
 
@@ -398,6 +394,8 @@ RUN ["chmod", "+x", "/app/index.js"]
 
 ENTRYPOINT [ "/opt/aiware/engine", "node", "index.js" ]
 ```
+
+> See [Create Your Dockerfile](developer/engines/tutorial/engine-tutorial-step-2?id=create-your-dockerfile) for an in-depth explanation of how and why this file is coded the way it is.
 
 The most common commands in a `Dockerfile` are:
 

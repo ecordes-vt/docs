@@ -63,17 +63,14 @@ Take a moment to be sure your project files are in the correct places, so that D
 As mentioned in [the first page of this tutorial](developer/engines/tutorial/), the project files should look like:
 
 <pre>/hello-world
-    |&mdash; /dist
-        |&mdash; engine
     |&mdash; Dockerfile
     |&mdash; index.js
     |&mdash; keyword-extraction.js
     |&mdash; manifest.json
     |&mdash; package.json
-    |&mdash; /var
 </pre>
 
-?> One reason this is important is tha your Dockerfile instructions will tell Docker how to copy your `manifest.json` file into the build. Without this manifest, your engine will not deploy correctly later on.
+?> One reason this is important is that your Dockerfile instructions will tell Docker how to copy your `manifest.json` file into the build. Without this manifest, your engine will not deploy correctly later on.
 
 ## Create Your Dockerfile
 
@@ -143,7 +140,7 @@ Our Dockerfile says to base our image off `veritone/aiware-engine-toolkit` (whic
  
  `WORKDIR /app` means to make `/app` our working directory.
 
- `ENTRYPOINT [ "/opt/aiware/engine", "node", "index.js" ]` sets the entry point of our container as the Engine Toolkit, with `node` and `index.js` as arguments. (Toolkit will, in turn, start up NodeJS using `index.js` as an argument.)
+ `ENTRYPOINT [ "/opt/aiware/engine", "node", "index.js" ]` sets the entry point of our container as the Engine Toolkit, with `node` and `index.js` as arguments. (Toolkit will, in turn, start up Node.js using `index.js` as an argument.)
 
 ## Building the Engine
 
@@ -222,7 +219,7 @@ In this case, our build went smoothly. Which means we're ready to test the engin
 
 In this lesson, we learned how to: 
 * Create Docker build instructions in a simple text file called a _Dockerfile_.
-* Base a build off a preexisting parent build or _base image_ using the `FROM` keyword.
+* Base a build off one or more preexisting parent builds or _base image_ using the `FROM` keyword.
 * Use `COPY` to make Docker copy files.
 * Use `RUN` to make Docker execute shell instructions during the build process.
 * Use `RUN` commands to update an image's CA certificates so that container-based SSL works at runtime.

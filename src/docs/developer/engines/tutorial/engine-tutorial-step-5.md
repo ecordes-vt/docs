@@ -37,7 +37,7 @@ aside.small {
 
 Now that you've onboarded an engine (and set its status to DEPLOYED), you can test the engine in a live Job, in aiWARE.
 
-One of the easiest ways to do this is, of course, to use the GraphQL Sandbox web IDE.
+One of the easiest ways to do this is, of course, to use the [GraphQL Playground](https://api.veritone.com/v3/graphq) web IDE.
 
 ## Check the Engine's Availability
 
@@ -52,7 +52,14 @@ Before running a Job, check to see that the engine exists and is visible via the
 ```graphql
 query myEngine{
   engine(id:"386e022f-edd1-46ec-b1cc-84d203a37250"){
+    builds {
+      records {
+        id
+        status
+      }
+    }
     name
+    state
     ownerOrganizationId
     isPublic
     manifest
@@ -64,40 +71,87 @@ query myEngine{
 }
 ```
 
-You should get back a familiar-looking set of fields and values. If not &mdash; if you get an error of some kind &mdash; don't try to run the engine until the error has been addressed. 
+This query will show you the status of each build of your engine. If one of your builds is shown as `"status": "deployed"`, that specific build is the one that will be invoked when you try to run a job using your engine.
 
-> If the error message is `"The requested object was not found"`, chances are your engine is not in a Deployed state. (Go into the engine Builds list for your engine and Deploy the engine, if need be, or Unpause it if it was paused. See [Step 4](developer/engines/tutorial/engine-tutorial-step-4) for a refresher on how to use the Builds UI.) 
+The query should produce a familiar-looking set of fields and values. If not &mdash; if you get an error of some kind &mdash; don't try to run the engine until the error has been addressed. 
+
+> If the error message is `"The requested object was not found"`, chances are your engine is not in a Deployed state. (Go into the engine Builds list for your engine (in the Veritone Developer web UI) and Deploy the engine, if need be, or Unpause it if it was paused. See [Step 4](developer/engines/tutorial/engine-tutorial-step-4) for a refresher on how to use the Builds UI.) 
 
 ## Run a Job and Inspect the Results
 
-To test the engine, run a GraphQL mutation that looks like this:
+To test the engine, run a GraphQL mutation that looks like this (being sure to substitute your engine's ID in the appropriate place):
 
 ```graphql
-mutation createJob{
+mutation createVocabExtractionJob{
   createJob(input: {
-    target:{
-      startDateTime:1548432520,
-      stopDateTime:1548436341,
-      name:"Gettysburg Address"
-    },
-    tasks: [{
-         engineId:"9e611ad7-2d3b-48f6-a51b-0a1ba40feab4",
-         payload:{
-             url: "http://se.cs.depaul.edu/Java/Chapter04/Lincoln.txt"
-         }
-    },{
-      engineId: "386e022f-edd1-46ec-b1cc-84d203a37250"
-    }
+    target: { startDateTime:1574311000, stopDateTime: 1574315000 }
+    # targetId: 1121185051    # comment this line if using without a TDO
+    clusterId :"rt-1cdc1d6d-a500-467a-bc46-d3c5bf3d6901"
+    tasks: [
+       {
+        # webstream adapter (WSA)
+        engineId: "9e611ad7-2d3b-48f6-a51b-0a1ba40fe255"
+        payload: { url: "http://se.cs.depaul.edu/Java/Chapter04/Lincoln.txt" } 
+        ioFolders: [
+          { referenceId: "wsaOutputFolder", mode: stream, type: output }
+        ],
+        executionPreferences: { priority: -20000 }
+      }
+      {
+        # data-chunking engine  
+        engineId: "8bdb0e3b-ff28-4f6e-a3ba-887bd06e6440"  
+        payload:{ ffmpegTemplate: "rawchunk" }
+        ioFolders: [
+          { referenceId: "chunkInputFolder", mode: stream, type: input },
+          { referenceId: "chunkOutputFolder", mode: chunk, type: output }
+        ],
+        executionPreferences: { parentCompleteBeforeStarting: true, priority: -20000 }
+      }
+      {
+        # The hello-world engine -- PUT YOUR ENGINE'S ID HERE:
+        engineId: "05a138cd-cedc-435c-8593-9c47f885391f"
+        ioFolders: [
+          { referenceId: "engineInputFolder", mode: chunk, type: input },
+          { referenceId: "engineOutputFolder", mode: chunk, type: output }
+        ],
+        executionPreferences: {	parentCompleteBeforeStarting: true, priority: -20000 }
+      }
+      {
+        # output writer
+        engineId: "8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3"  
+        ioFolders: [
+          { referenceId: "owInputFolder", mode: chunk, type: input }
+        ],
+        executionPreferences: {	parentCompleteBeforeStarting: true, priority: -20000 }
+      }
+    ]
+    routes: [
+      {  ## WSA --> chunk
+        parentIoFolderReferenceId: "wsaOutputFolder"
+        childIoFolderReferenceId: "chunkInputFolder"
+        options: {}
+      }
+      {  ## chunk --> Engine
+        parentIoFolderReferenceId: "chunkOutputFolder"
+        childIoFolderReferenceId: "engineInputFolder"
+        options: {}
+      }
+      {  ## Engine --> output writer
+        parentIoFolderReferenceId: "engineOutputFolder"
+        childIoFolderReferenceId: "owInputFolder"
+        options: {}
+      } 
     ]
   }) {
-    id
     targetId
+    id
   }
 }
 ```
 
-The job has two tasks. One task is associated with an engine ID of `"9e611ad7-2d3b-48f6-a51b-0a1ba40feab4"` (which is the Webstream adapter, responsible for ingesting the file at `"http://se.cs.depaul.edu/Java/Chapter04/Lincoln.txt"`).
-The second engine ID, `"386e022f-edd1-46ec-b1cc-84d203a37250"`, is our engine's ID. (Be sure to replace this value with your own engine ID.)
+The job has four tasks: an ingestion task involving the Veritone Webstream Adapter, a chunking task (in case the data is large enough to need chunking), our cognition engine, and Output Writer (a Veritone engine that aggregates JSON results).
+
+> To learn more about how and why the `createJob` mutation is structured the way it is, please see [Working with Jobs](quickstart/jobs/?id=working-with-jobs). Also be sure to see the [Job Examples page](overview/aiWARE-in-depth/job-examples).
 
 The mutation should produce a response similar to:
 
@@ -105,14 +159,14 @@ The mutation should produce a response similar to:
 {
   "data": {
     "createJob": {
-      "id": "19104215_i6Vz2XQtCR",
+      "id": "20114505_9aG5dkXpfh",
       "targetId": "710414094"
     }
   }
 }
 ```
 
-The `id` of `"19104215_i6Vz2XQtCR"` is the Job ID. The `targetId` is the ID of the TDO (Temporal Data Object) associated with this job.
+The `id` of `"20114505_9aG5dkXpfh"` is the Job ID. The `targetId` is the ID of the TDO (Temporal Data Object) associated with this job.
 
 #### Poll the Job
 
@@ -120,30 +174,23 @@ To determine the job's status, poll the job with this query (substituting the ap
 
 ```graphql
 query jobStatus {
-  job(id: "19104215_i6Vz2XQtCR") {
+  job(id: "20114505_9aG5dkXpfh") {
     status
-    createdDateTime
     targetId
     tasks {
-      records {
-        status
-        taskOutput
-        createdDateTime
-        modifiedDateTime
-        failureReason
-        id
+      records {   
+        status    
         engine {
           id
-          name
-          category {
-            name
-          }
+          name        
         }
       }
     }
   }
 }
 ```
+
+Over the space of a few seconds or minutes, you should see the job status change from `pending` to `running`, and each task should go from `queued` to `running` to `complete` (or `failed`, if something went wrong).
 
 #### Get the Results
 
@@ -165,7 +212,7 @@ query getEngineOutput {
 }
 ```
 
-For this engine, results will typically look similar to this:
+For our Hello World engine, results will typically look similar to this:
 
 ```json
 {
@@ -210,7 +257,8 @@ For this engine, results will typically look similar to this:
    ]
 }
 ```
-(The keyword-object array in this JSON fragment has been edited for length.)
+
+(NOTE: The keyword-object array in this JSON fragment has been edited for length.)
 
 ## Further Reading
 

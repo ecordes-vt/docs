@@ -133,7 +133,7 @@ The schema ID, in this case, is `1842b38c-ab34-401f-9715-d668f0c6ebd3`. Copy you
 
 The easiest way to insert our custom data into our engine's output is just to append an extra element to the keyword `object` array.
 
-?> For this example, we'll modify the `keyword-extraction.js` file used in the [Build Your Own Engine](developer/engines/tutorial/) tutorial, complete code for which can be found at [the repo for that project](https://github.com/veritone/engine-toolkit/tree/master/engine/examples/hello-world). Please refer to that code.
+?> For this example, we'll modify the `keyword-extraction.js` file used in the [Build Your Own Engine](developer/engines/tutorial/) tutorial, complete code for which can be found at [the repo for that project](https://github.com/veritone/V3-Engine-Examples). Please refer to that code.
 
 In order for our `stats` object to show up properly in our data, it needs to be wrapped in a way that allows aiWARE to recognize it; and it needs to reference the schema ID of the schema we created earlier. Bottom line, we need to insert a Structured Data Object, in our engine's data array, that looks like this:
 
@@ -154,7 +154,7 @@ In order for our `stats` object to show up properly in our data, it needs to be 
 
 Let's create the code that will actually do this.
 
-Inside the [`keyword-extraction.js`](https://github.com/veritone/engine-toolkit/blob/master/engine/examples/hello-world/keyword-extraction.js) file, there is exactly one public method, called `getOutput()`. Immediately before the `return` statement in that method, we're going to put code that appends a proper `stats` object to our data:
+Inside the [`keyword-extraction.js`](https://github.com/veritone/V3-Engine-Examples/hello-world/keyword-extraction.js) file, there is exactly one public method, called `getOutput()`. Immediately before the `return` statement in that method, we're going to put code that appends a proper `stats` object to our data:
 
 ```javascript
 // First we'll put this inner method inline:

@@ -28,7 +28,7 @@ Examples of what a cognition engine does include:
 * Detect and/or identify faces or objects in video
 
 <div style="transform:scaleX(.91);">
-<img alt="helpful mini-robot" width="18%" style="float:left;" src="docs/developer/applications/app-tutorial/_media/botty.png">
+<img alt="helpful mini-robot" width="16%" style="float:left;" src="docs/developer/applications/app-tutorial/_media/botty.png">
 <div 
 style="font-family:Palatino;
 font-size:12.5pt;
@@ -64,8 +64,8 @@ Regardless of engine type, an engine's "contract" with aiWARE is quite simple:
 When your engine receives the `/process` request, it will be able to inspect various fields of the incoming chunk's `multipart/form-data` (see below) to obtain information about the chunk.
 The actual _raw data_ of the chunk will be in a file-upload stream associated with the `chunk` field.
 
-### A Simple Segment Engine in NodeJS
-Here is how a segment (chunk) engine could look if written in [NodeJS](https://nodejs.org):
+### A Simple Segment Engine in Node.js
+Here is how a segment (chunk) engine could look if written in [Node.js](https://nodejs.org):
 
 ```javascript
 const MyCognitionLogic = require("./my-cognition-logic.js"),
@@ -95,7 +95,7 @@ app.post('/process', chunkUpload, async (req, res)=>{
 });
 ```
 
-Just 25 lines of code! And yes, it's deployable.
+Just a couple dozen lines of code! And yes, it's deployable in aiWARE.
 
 ?> Note that this reusable skeleton does no "cognition" per se &mdash; it merely delegates cognitive processing to a custom, user-written external module called `my-cognition-logic.js`.
 
@@ -113,6 +113,7 @@ Different programming languages offer different ways of accessing a file upload.
 <div class="bottomruled"><br/></div>
 </div>
 </div>
+<br/>
 
 The above code fetches the incoming chunk as an in-memory string, then hands the string to the (custom) cognition module.
 
@@ -136,35 +137,29 @@ The following fields are posted to your `/process` webhook:
 * `veritoneApiBaseUrl` - (string) The root URL for Veritone platform API requests.
 * `token` - (string) The token to use when making low level API requests. (Note: This token is specially scoped and cannot be reused in other contexts.)
 * `payload` - (string) JSON string containing any custom task payload.
+* `chunkContext` - (string) **NEW** This gives some context for the result
+* `heartbeatWebhook` (string) **NEW** This is the heartbeat webhook provided by Engine Toolkit. Engines with async processing for the `/process` webhook, such as stream or batch engines, should submit heartbeats (once per second) with progress information.
+* `resultWebhook` (string) **NEW** This is the result webhook provided by Engine Toolkit. For chunk engines, it is optional; your chunk engine can simply return results in the HTTP response. For all others: The engine should submit results of the processing via a POST  to this webhook as soon as possible.
+* `externalCallbackWebhook` (string) | **NEW** Optional. Engines may give this webhook to an external entity performing the real processing.
+* `maxTTL` (int) **NEW** The maximum time that engine toolkit can wait for results from the engine.
 
-> It's entirely possible your engine will not need to use any of the above parameters. Their use is optional.
+> It's entirely possible your engine will not need to use many of the above parameters. Their use is optional.
 
 More information on these items can be found in the Engine Developer's Toolkit (see next section).
 
 ## The Veritone Engine Developer's Toolkit <!-- {docsify-ignore} -->
 
-If you're interested in building a cognitive engine, you will need Veritone's [Engine Developer Toolkit](https://hub.docker.com/r/veritone/aiware-engine-toolkit). While you can certainly download it via a Docker pull, we recommend you simply build it into your project using the FROM command in your Dockerfile, as shown in Step 2 of the tutorial.
+If you're interested in building a cognitive engine, you will need Veritone's [Engine Developer Toolkit](https://hub.docker.com/r/veritone/aiware-engine-toolkit).
 
-<div style="transform:scaleX(.91);">
-<img alt="helpful mini-robot" width="18%" style="float:left;" src="docs/developer/applications/app-tutorial/_media/botty.png">
-<div 
-style="font-family:Palatino;
-font-size:12.5pt;
-padding:1px 0px 0px 130px;
-transform:scaleX(.95); 
-transform-origin: top left; "><div class="topruled"><br/></div>
-Did you know? You only need to download the <a href="https://github.com/veritone/engine-toolkit/releases/latest">latest release</a>; there's no need to clone the Github repo.
-<div class="bottomruled"><br/></div>
-</div>
-</div>
+> Note that while you can certainly download the Toolkit via a Docker pull, we recommend you simply build it into your project using the FROM command in your Dockerfile, as shown in [Step 2](developer/engines/tutorial/engine-tutorial-step-2) of this tutorial.
 
-The Toolkit is packaged as a gzip archive. When you unpack it, notice the Linux binary called `engine` under `/bin`.
-You'll want to bundle this binary into your own engine (as described below) so that it becomes the entry point to your Docker container at runtime.
-The `engine` binary, in turn, will act as a driver-like intermediary between your code and the aiWARE platform.
+The Toolkit is packaged as a Docker image. Its use is covered in [Step 2](developer/engines/tutorial/engine-tutorial-step-2) of this tutorial.
+You'll build your own engine (as described below) as a Docker image, using the Toolkit as the base image. With multiple FROM statements in your Docker file, you can include other base images as well. We'll be covering that in a little while.
 
-> By acting as a go-between, the `engine` binary takes care of low-level aiWARE interactions, so your code can focus more on AI, and less on ceremony.
+The Toolkit binary acts as a driver-like intermediary between your code and the aiWARE platform.
+At runtime, the platform will call the Toolkit (over HTTP), and the Toolkit will call your engine (also over HTTP).
 
-Note that the Engine Toolkit currently supports segment (chunk) engines only. If you need to write a stream-based cognitive engine, [contact us](mailto:ecosystem@veritone.com).
+> By acting as a go-between, the Toolkit binary takes care of low-level aiWARE interactions, so your code can focus more on AI, and less on ceremony.
  
 ## 'Hello World' Engine: High-Level Overview <!-- {docsify-ignore} -->
 
@@ -181,9 +176,9 @@ At a high level, the steps you need to carry out in order to create and onboard 
 
 In the steps that follow, we'll build a simple text-processing engine that extracts vocabulary words from a file. The JSON output produced by the engine follows the structure shown in the example at [Building a Keyword extraction Engine](developer/engines/cognitive/text/keyword-extraction/?id=engine-output).
 
-> While the example that follows uses NodeJS, you should note that it's possible to use _any_ programming language to create a cognitive engine, as long as the runtimes can be packaged into a Docker image. See [https://github.com/veritone/engine-toolkit/tree/master/engine/examples](https://github.com/veritone/engine-toolkit/tree/master/engine/examples) for engine examples written in Python and Go. 
+> While the example that follows uses Node.JS, you should note that it's possible to use _any_ programming language to create a cognitive engine, as long as the runtimes can be packaged into a Docker image.
 
-The purpose of this tutorial is to show you (using actual code and build artifacts) how to structure an engine; package it using Docker; test the engine locally; deploy it onto the Veritone platform, and test the deployed engine, live, in aiWARE.
+The purpose of this tutorial is to show you (using actual code and build artifacts) how to structure an engine; package it using Docker; test the engine locally; deploy it into the Veritone platform; and test the deployed engine, live, in aiWARE.
 
 ## Before You Begin <!-- {docsify-ignore} -->
 
@@ -193,7 +188,7 @@ Here's a short checklist of prerequisites:
 
 &#x2714; 2\. **Determine which MIME type(s) your engine needs to support** in terms of data _input._
 
-&#x2714; 3\. **Understand whether your engine will be _stateless_ (segment; "chunk"), or _stateful_ ("stream")** with regard to the processing of chunks of data. (If your engine can process data chunks in any order, without knowing a chunk's sequence number, it's likely stateless.) _Currently, our Engine Developer's Toolkit supports only stateless engines._
+&#x2714; 3\. **Understand whether your engine will be _stateless_ (segment; "chunk"), or _stateful_ ("stream")** with regard to the processing of chunks of data. (If your engine can process data chunks in any order, without knowing a chunk's sequence number, it's likely stateless.)
 
 &#x2714; 4\. **Know whether your engine will be [network-isolated](developer/engines/deployment-model/?id=network-isolated), or need [external access](developer/engines/deployment-model/?id=external-access).**
 
@@ -239,27 +234,19 @@ aside.small {
 
 <div style="width: 25%"><iframe src="https://player.vimeo.com/video/375527305?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:50%;height:50%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
-You should either clone [the repo for this project](https://github.com/veritone/engine-toolkit/tree/master/engine/examples/hello-world), or create a project locally, in a folder called `/hello-world`, with the following structure:
+You should either clone [the repo for this project](https://github.com/veritone/V3-Engine-Examples), or create a project locally, in a folder called `/hello-world`, with the following structure:
 
 <pre>/hello-world
-    |&mdash; /dist
-        |&mdash; engine
     |&mdash; Dockerfile
     |&mdash; index.js
     |&mdash; keyword-extraction.js
     |&mdash; manifest.json
     |&mdash; package.json
-    |&mdash; /var
 </pre>
 
-!> Important: Do not locate your project at the top level of your root directory, nor at the top level of _any_ large folder! If you do, there's a chance Docker will try to recursively copy your entire directory structure into your Docker image. Heed the warning at the [Docker site](https://docs.docker.com/engine/reference/builder/).
+!> Important: Do not locate your project at the top level of your computer's root directory, nor at the top level of _any_ large folder! If you do, there's a chance Docker will try to recursively copy your entire directory structure into your Docker image. Heed the warning at the [Docker site](https://docs.docker.com/engine/reference/builder/).
 
 Let's talk quickly about the project files.
-
-### /dist/engine
-
-The `engine` binary, under `/dist`, is the [Engine Developer Toolkit](https://github.com/veritone/engine-toolkit/releases/latest) binary discussed earlier.
-Be sure to obtain the latest version of it, and add it to your `/dist` folder.
 
 ### Dockerfile
 
@@ -285,7 +272,7 @@ let server = app.listen( 8080 );
 server.setTimeout( 10 * 60 * 1000 );
 
 // READY WEBHOOK
-app.get('/readyz', (req, res) => {
+app.get('/ready', (req, res) => {
     res.status(200).send('OK');
 });
 
@@ -366,7 +353,7 @@ module.exports = {
 ### manifest.json
 
 Because the `manifest.json` file needs to contain the Veritone-assigned ID of your engine (which you don't have yet!), *don't* simply use the `manifest.json` file that comes in the repository version of this project.
-In [Step 1](developer/engines/tutorial/engine-tutorial-step-1), we'll show you how to use Veritone's online UI to generate a `manifest.json` file (including the proper engine ID) automatically.
+In [Step 1](developer/engines/tutorial/engine-tutorial-step-1), we'll show you how to use Veritone's online UI to generate a `manifest.json` file (including the proper engine ID) automatically. Use _that_ file in your project.
 
 ### package.json
 
@@ -390,10 +377,6 @@ Although, strictly speaking, a `package.json` file isn't mandatory, we've provid
          }
        }
 ```
-
-### /var
-
-Your `/var` folder should be empty. It will be populated automatically during the Docker build step.
 
 ## What's Next? <!-- {docsify-ignore} -->
 

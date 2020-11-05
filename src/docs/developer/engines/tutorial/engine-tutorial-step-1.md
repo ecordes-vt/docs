@@ -35,15 +35,15 @@ aside.small {
 
 <div style="width: 35%"><iframe src="https://player.vimeo.com/video/375527586?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:75%;height:75%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
-Assuming you've already accomplished the prerequisites outlined in [Before You Begin](developer/engines/tutorial/?id=before-you-begin), your first step in creating an engine should be to register it with Veritone.
+Assuming you've already accomplished the prerequisites outlined in [Before You Begin](developer/engines/tutorial/?id=before-you-begin), your first step in creating an engine (yes, even before writing any code!) should be to register the engine with Veritone.
 
-> In this step, you'll obtain a Veritone-assigned Engine ID, and generate your manifest.json file using an online UI.
+> In this step, you'll obtain a Veritone-assigned Engine ID, and generate your `manifest.json` file using a simple online UI.
 
 1\. Go to [https://developer.veritone.com/](https://developer.veritone.com/) and sign in.
 
 2\. Click on the blue **NEW** button (upper left) and select **ENGINE** from the dropdown list. The first page of the New Engine wizard opens. (This is the Functionality page.)
 
-3\. Determine the Engine Class that applies to your engine; click into the associated widget (to expose more choices); and select the capability that applies to your engine.
+3\. Determine the Engine Class that applies to your engine; scroll down if need be; click into the associated widget (to expose more choices); and select the capability that applies to your engine.
 In our case, the Hello World engine is a **Text** engine with **Keyword Extraction** capability.
 
 ![Choose an engine capability](NewEngine-Capability.png)
@@ -64,6 +64,8 @@ In our case, the Hello World engine is a **Text** engine with **Keyword Extracti
 
 8\. Enter an e-mail address where certification test results can be sent. (The [engine certification and approval process](developer/engines/approval/?id=engine-certification-and-approval-process) is automatic.) Optionally specify the public URL of any media file that should be used for testing of your engine. Also, optionally provide information about any Custom Payload Fields your engine will rely on.
 
+> If you see a prompt of "Are you sure you want to continue?", click **CONTINUE ANYWAY**. You can come back later to supply default job mutations. (Your engine will work fine without them.)
+
 9\. Click the **NEXT** button (lower right corner of page) to proceed to the next page of the wizard. (This is the Deployment Model page.)
 
 ![Select deployment model](NewEngine-deployment.png)
@@ -72,9 +74,9 @@ Since the Hello World engine does not need to interact with any external web end
 
 10\. Click **NEXT** to go to the next page of the wizard. (This is the final wizard page, called Customize.)
 
-11\. Check your engine's Name, add an optional Descriptor (10 charactsers, max), add a Description, specify an icon, and provide other information about the engine.
+11\. Check your engine's Name (edit it as need be), add an optional Descriptor (10 charactsers, max), add a Description, specify an optional icon, and provide other information about the engine.
 
-> A Name that conforms to Veritone's naming conventions will be generated for your engine automatically. Engine names are required to follow a pattern of &lt;Capability&gt;-&lt;Organization&gt;-&lt;Mode&gt;-&lt;Descriptor&gt;-&lt;Edge Cluster Version&gt;.
+> A Name that conforms to Veritone's naming conventions will be generated for your engine automatically. We recommend that names follow a pattern of &lt;Capability&gt;-&lt;Organization&gt;-&lt;Mode&gt;-&lt;Descriptor&gt;-&lt;Edge Cluster Version&gt;.
 
 ![Add Name and Description](NewEngine-Naming.png)
 

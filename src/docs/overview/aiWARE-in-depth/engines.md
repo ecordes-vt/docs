@@ -191,18 +191,18 @@ Engine Toolkit invokes the webhook with the following input data in its POST pay
 
 name | data type | notes
 -- | -- | --
-chunk | File | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook) - will not be available for stream engine
-chunkMimeType | string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-startOffsetMS | int | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-endOffsetMS | int | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-width | int | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-height | int | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-libraryId | string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-libraryEngineModelId | string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-cacheURI | string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook) - stream engine should use this to retrieve the input stream
-veritoneApiBaseUrl | string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-token | string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
-payload | JSON string | [See documentation](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook)
+chunk | File | [See documentation](developer/edge/engines?id=process-webhook) - will not be available for stream engine
+chunkMimeType | string | [See documentation](developer/edge/engines?id=process-webhook)
+startOffsetMS | int | [See documentation](developer/edge/engines?id=process-webhook)
+endOffsetMS | int | [See documentation](developer/edge/engines?id=process-webhook)
+width | int | [See documentation](developer/edge/engines?id=process-webhook)
+height | int | [See documentation](developer/edge/engines?id=process-webhook)
+libraryId | string | [See documentation](developer/edge/engines?id=process-webhook)
+libraryEngineModelId | string | [See documentation](developer/edge/engines?id=process-webhook)
+cacheURI | string | [See documentation](developer/edge/engines?id=process-webhook) - stream engine should use this to retrieve the input stream
+veritoneApiBaseUrl | string | [See documentation](developer/edge/engines?id=process-webhook)
+token | string | [See documentation](developer/edge/engines?id=process-webhook)
+payload | JSON string | [See documentation](developer/edge/engines?id=process-webhook)
 chunkContext |  string | NEW This gives some context for the result
 heartbeatWebhook | string | NEW This is the heartbeat webhook provided by Engine Toolkit.  Engines with async processing for the `/process` webhook, such as stream or batch engines, should submit heartbeats with progress information.  This is the equivalent of stream engines emitting into the engine_status Kafka queue for heartbeats
 resultWebhook | String  | NEW This is the result webhook provided by Engine Toolkit. The engine should submit results of the processing as soon as it could.  This is the equivalent of stream engines emitting into the chunk_all Kafka queue when it finished processing some data off the input stream.
@@ -212,7 +212,7 @@ maxTTL | int | NEW the maximum  time that engine toolkit can wait for results f
 
 **Response**
 
-Chunk engines that produce JSON response for vtn-standard will continue to do so as [documented here](https://docs.veritone.com/#/developer/engines/toolkit/?id=process-webhook).
+Chunk engines that produce JSON response for vtn-standard will continue to do so as [documented here](developer/edge/engines?id=process-webhook).
 
 For stream and batch engines with async or stand-alone processing mode, it is required that the following be returned in the JSON response.  Suggested value for `estimatedProcessingTimeInSeconds` is `maxTTL` - or more if maxTTL is insufficient.  For example, if the engine is to call out to external entity for processing and thus may require more than hours to process.
 
