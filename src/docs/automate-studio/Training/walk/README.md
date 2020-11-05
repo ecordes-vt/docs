@@ -63,7 +63,7 @@ You can create new properties of your own on the `msg` object (see the discussio
 
 Generally speaking, you will retrieve data, at the end of a flow, from the `msg.payload` field. However, you're not required to do this! If you've created additional custom fields, you can use those, if the occasion warrants. You can create, and use, as many custom fields on the `msg` object as you want.
 
-##  Working with the Change node &nbsp;&nbsp;<img src="docs/automate-studio/Training/walk/node-change.png" style="height:40px;vertical-align: middle;"/>
+## Working with the Change node &nbsp;&nbsp;<img src="docs/automate-studio/Training/walk/node-change.png" style="height:40px;vertical-align: middle;"/>
 
 The Change node can be used to create a new property on `msg` and/or to set the _value_ of a property, without having to use a Function node. When all you need to do is adjust a property, the Change node is slightly more convenient than a Function node.
 
