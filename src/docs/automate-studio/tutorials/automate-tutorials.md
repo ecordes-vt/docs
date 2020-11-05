@@ -4,10 +4,11 @@ Welcome! This is the aiWARE team's section for sharing our tutorials intended to
 
 In these tutorials, we start with high-level use-cases and then get deeper into the technical details with the goal of helping you understand how develop an idea into a technical implementation.
 
-## Table of Contents
+## Table of Contents <!-- {docsify-ignore} -->
 
 1. [Orchestrating AI with a Flow](/automate-studio/tutorials/orchestrating-ai.md)
 1. [Create aiWARE Custom API Endpoints](/automate-studio/tutorials/your-ai-flow.md)
 1. [AI Recognized Your Face. Now What?](/automate-studio/tutorials/ai-recognized-your-face.md)
 1. [Sentiment Analysis on Helpdesk](/automate-studio/tutorials/sentiment-analysis.md)
 1. [Creating new training data with a flow](/automate-studio/tutorials/automate-tutorial-6-flow-face-libraries.md)
+1. [How to Think About Flow Engines](/automate-studio/tutorials/automate-tutorial-7-flow-engines.md)

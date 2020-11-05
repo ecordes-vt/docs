@@ -63,7 +63,7 @@ You can create new properties of your own on the `msg` object (see the discussio
 
 Generally speaking, you will retrieve data, at the end of a flow, from the `msg.payload` field. However, you're not required to do this! If you've created additional custom fields, you can use those, if the occasion warrants. You can create, and use, as many custom fields on the `msg` object as you want.
 
-##  Working with the Change node &nbsp;&nbsp;<img src="docs/automate-studio/Training/walk/node-change.png" style="height:40px;vertical-align: middle;"/>
+## Working with the Change node &nbsp;&nbsp; <img src="docs/automate-studio/Training/walk/node-change.png" style="height:40px;vertical-align: middle;"/>
 
 The Change node can be used to create a new property on `msg` and/or to set the _value_ of a property, without having to use a Function node. When all you need to do is adjust a property, the Change node is slightly more convenient than a Function node.
 
@@ -76,7 +76,7 @@ In the Properties dialog for a Change node, you can use a dropdown picklist to s
 
 Note that a tiny **+ add** button (in the Properties pane) allows you to chain together as many sequential operations as you wish.
 
-## Working with the Function node &nbsp;&nbsp;<img src="docs/automate-studio/Training/walk/node-function.png" style="height:40px;vertical-align: middle;"/>
+## Working with the Function node &nbsp;&nbsp; <img src="docs/automate-studio/Training/walk/node-function.png" style="height:40px;vertical-align: middle;"/>
 
 The Function node allows you to specify custom logic (in the form of JavaScript) that will execute at runtime. 
 
@@ -104,7 +104,7 @@ if (msg.topic === "translation") {
 
 For more information on the Function node, be sure to consult the [Node-RED documentation](https://nodered.org/docs/user-guide/writing-functions).
 
-## Working with the aiWARE API Node &nbsp;&nbsp;<img src="docs/automate-studio/Training/walk/node-api.png" style="height:40px;vertical-align: middle;"/>
+## Working with the aiWARE API Node &nbsp;&nbsp; <img src="docs/automate-studio/Training/walk/node-api.png" style="height:40px;vertical-align: middle;"/>
 
 Unlike the Change and Function nodes, which are core Node-RED nodes, the **aiWARE api** node is a custom Automate Studio node. It allows you to provide a GraphQL query or mutation that will be submitted to the aiWARE server at runtime.
 
