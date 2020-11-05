@@ -26,10 +26,17 @@ Veritone Docs is a static site built using Markdown files and powered by [Docsif
 
 ### Developing Locally
 
+The first time you run after cloning the repository to your machine, you need to do the following to bootstrap the build:
 ```bash
 nvm install
-nvm use 
 yarn install
+yarn build
+yarn start
+```
+
+Thereafter, you can just run
+```bash
+nvm use 
 yarn start
 ```
 
@@ -41,6 +48,8 @@ and you need to remove them with
 ```bash
 sed -i.bak s/$'\r'// node_modules/docsify-cli/bin/docsify
 ```
+
+And don't forget to re-run `yarn install` any time you pull new code. 
 
 ### Submitting Changes
 
