@@ -137,13 +137,22 @@ The following fields are posted to your `/process` webhook:
 * `veritoneApiBaseUrl` - (string) The root URL for Veritone platform API requests.
 * `token` - (string) The token to use when making low level API requests. (Note: This token is specially scoped and cannot be reused in other contexts.)
 * `payload` - (string) JSON string containing any custom task payload.
-* `chunkContext` - (string) **NEW** This gives some context for the result
 * `heartbeatWebhook` (string) **NEW** This is the heartbeat webhook provided by Engine Toolkit. Engines with async processing for the `/process` webhook, such as stream or batch engines, should submit heartbeats (once per second) with progress information.
 * `resultWebhook` (string) **NEW** This is the result webhook provided by Engine Toolkit. For chunk engines, it is optional; your chunk engine can simply return results in the HTTP response. For all others: The engine should submit results of the processing via a POST  to this webhook as soon as possible.
 * `externalCallbackWebhook` (string) | **NEW** Optional. Engines may give this webhook to an external entity performing the real processing.
 * `maxTTL` (int) **NEW** The maximum time that engine toolkit can wait for results from the engine.
+* `chunkContext` - A context value like `"000000.000000000.000000000_1604611231892635750_6b8bdc9d-bc80-4d8e-a796-87dd8ab2fab6.in"`
+* `chunkTimestamp`- A value in milliseconds, like `"1604611238969"`
+* `chunk-metadata-endoffsetms` - Usually "0"
+* `chunk-metadata-startoffsetms` - Usually "0"
+* `chunk-metadata-groupid`- A value like `"00d13315-0f5a-4ca1-9fdb-54ad564c0cde"`
+* `chunk-metadata-index`: The chunk number, such as `"0"`,
+* `chunk-metadata-main-message`: Looks like `"map[cacheURI:https://edge-prod.aws-prod-rt.veritone.com/edge/v1/chunk/432026fc-cfea-4f5d-85b6-1466a129af7b/e90b9ddd-d7b3-4fe4-8085-7d1efd33d820/ae259b10-94b1-48f5-b1e9-df7582beeec6/ffba7a3e-89fc-4f6f-bdcd-ba9f21d1cfa5/000000.000000000.000000000_1604611231892635750_6b8bdc9d-bc80-4d8e-a796-87dd8ab2fab6.out endOffsetMs:0 mimeType:text/plain startOffsetMs:0 timestampUTC:1.604611238969e+12 type:media_chunk]"`
+* `chunk-metadata-mimetype`: Mimetype of the chunk, such as `"text/plain"`
+* `chunk-metadata-tdoid`: TDO ID, e.g. `"1260741603"`
+* `redisETUrl`: A Redis URL that can be used for caching values across chunks, e.g. `"http://localhost:33193"`
 
-> It's entirely possible your engine will not need to use many of the above parameters. Their use is optional.
+> It's entirely possible your engine will not need to use most (or any!) of the above parameters. Their use is optional.
 
 More information on these items can be found in the Engine Developer's Toolkit (see next section).
 
