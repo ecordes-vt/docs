@@ -591,7 +591,7 @@ FROM edge.organization limit 1)
 ,'c0e55cde-340b-44d7-bb42-2e0d65e98255','English Transcription','active','chunk','chunk','67cd4dd0-2f75-445d-a6f0-2f297d6cd182','{}','{}','{}','{}','{}','{}',false,false,0,false,0,0,NULL,0,0,1024,0,1,10,900,0)
 ON CONFLICT (engine_id) DO NOTHING;
 INSERT INTO edge.build (build_id,engine_id,"version",build_state,docker_image,mf_engine_name,mf_engine_mode,mf_cluster_size,mf_custom_profile,mf_gpu_supported,mf_require_ec2,soft_vcpu_limit,soft_gpu_limit,soft_mem_bytes_limit,disk_free_bytes,license_expiration_timestamp,build_default_ttl,created_date_time,modified_date_time,runtime) VALUES 
-('73601398-8833-4369-8e90-14475894df14','c0e55cde-340b-44d7-bb42-2e0d65e98255',11,'deployed','026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:c0e55cde-340b-44d7-bb42-2e0d65e98255-73601398-8833-4369-8e90-14475894df14','English Transcription','chunk','custom','speechmatics','none',false,1024,0,1073741824,1073741824,0,21600,1584577152,1584577152,'{"edge": {}}')
+('f1b7d811-8803-4331-a40d-a65c97d98946','c0e55cde-340b-44d7-bb42-2e0d65e98255',11,'deployed','026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:c0e55cde-340b-44d7-bb42-2e0d65e98255-f1b7d811-8803-4331-a40d-a65c97d98946','English Transcription','chunk','custom','speechmatics','none',false,1024,0,1073741824,1073741824,0,21600,1584577152,1584577152,'{"edge": {}}')
 ON CONFLICT (build_id) DO NOTHING;
   ```
   
@@ -807,7 +807,7 @@ A few minutes after the above curl request is submitted, confirm that the engine
 docker container exec -it aiware-postgres /usr/bin/psql -U postgres -c 'SELECT task_status FROM edge.task'
 ```
 
-### Step 3: Poll for job Status
+### Step 3: Poll for Job Status
 
 Periodically issue this curl command (substituting your job's ID):
 
@@ -1073,6 +1073,35 @@ docker run --detach -p 10000:9000 \
 4. MINIO_SECRET_KEY
 
 Once connected, it will create a CSV log in the designated bucket.
+
+## Reporting Usage
+
+When running, please run as root on DB server
+
+### Step 1: Install Logging 
+
+```curl
+curl -sfl get.aiware.com/usage.sh > /opt/aiware/usage.sh
+chmod a+x /opt/aiware/usage.sh
+(crontab -l 2>/dev/null; echo "14 */4 * * * /opt/aiware/usage.sh") | crontab -
+```
+
+### Step 2: Run Bash Command in /opt/aiware/
+
+`bash usage.sh`
+
+### Step 3: Create Report
+
+`cd /opt/aiware/reports`
+``tar -czf reports-`date +%Y%M%d%H%M%S`.tgz /opt/aiware/reports``
+
+Then copy the `/opt/aiware/reports/reports-*.tgz` file to a computer and email the file to your account manager.
+
+### Optional
+
+Remove the old reports
+
+`rm /opt/aiware/reports/*.out`
 
 ## Troubleshooting
 
