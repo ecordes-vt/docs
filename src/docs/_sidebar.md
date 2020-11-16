@@ -122,7 +122,6 @@
       - [Stream Ingestor 2](overview/aiWARE-in-depth/stream-ingestor)
     - [Veritone Applications](apps/)
 - [Cognitive Technology](cognitive-technology/)
-
   - Audio
     - [Audio Fingerprinting](developer/engines/cognitive/audio/audio-fingerprinting/)
   - Biometrics

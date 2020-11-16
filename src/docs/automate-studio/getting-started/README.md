@@ -215,7 +215,7 @@ After a few seconds, a toast message will appear in the lower left part of the w
 To test that your flow is running, you can use `curl` or Postman (or your own tool) to POST a test payload (e.g., a JSON object) to the HTTP Endpoint URL you copied above.
 If the Job started successfully, you should get an HTTP 200 response to your POST. (Otherwise, you may get 404, in which case you should try again.)
 
-> Tip: You can use an **e-mail node** at the end of your flow to send yourself a confirmation e-mail when the flow executes. You could also use **websocket** or **http request** nodes for sending output.
+> Tip: You can use an **e-mail node** at the end of your flow to send yourself a confirmation e-mail when the flow executes. You could also use **websocket** or **http-request** nodes for sending output.
 
 </li>                  
 </ul>
@@ -315,17 +315,13 @@ You can then POST data to your engine's webhook, which will be the HHTP Endpoint
 > You can POST data with the cURL program in your computer's Terminal, or you can use a GUI app like Postman or Insomnia.
 
 ```cURL
-Method: POST
-Url: https://controller-v3f.aws-prod-rt.veritone.com/edge/v1/proc/endpoint/{Your Endpoint GUID here!}
-
-Body:
-{ "edgePayload":
+curl -H "Content-type: application/json" -d '{ "edgePayload":
   {
   "tdoId":"<File ID from your org>",
   "sendTo":"<your email>",
   "firstName":"<your firstname>"
   }
-}
+}' 'https://controller-v3f.aws-prod-rt.veritone.com/edge/v1/proc/endpoint/{Your Endpoint GUID here!}'
 ```
 
 </li>                  
