@@ -32,7 +32,6 @@ There's nothing to install. Automate Studio runs as a web app. To use Automate S
 
 1.  An active Automate Studio account. (Sign up [here](https://www.veritone.com/onboarding/#/signUp?type=automate) to create an account and gain immediate access to the application.)
 2.  Access to the internet &mdash; Automate Studio is a Software-as-a-Service (SaaS)  application that runs in Veritone's Commercial or GovCloud environments. 
-3.  Unstructured Data (optional) &mdash; Automate Studio runs on top of the Veritone aiWARE platform, which supports unstructured data such as audio, video, images, text, and more, for cognitive processing. Structured data can be correlated with cognitively processed unstructured data for greater insight.
 
 ## Automate Studio UI Components
 
