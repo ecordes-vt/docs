@@ -4,6 +4,8 @@
 
 This page outlines the procedure to install, configure, and validate an instance of Veritone aiWARE Edge for use in a fully network-isolated, on-premise deployment.
 
+> If you wish to enable GPU support, first see [this page](overview/aiWARE-in-depth/gpu-support.md).
+
 ## Prerequisites
 
 This procedure requires a Linux host (either physical, or VM) running on a supported chipset (ARM64 or AMD64).
@@ -130,7 +132,8 @@ If you are running aiWARE locally, you can skip these steps. This creates a shor
 | 4) | Install Logging Components (recommended) | `docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:ro --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --volume=/dev/disk/:/dev/disk:ro --publish=30095:8080 --detach=true --name=cadvisor gcr.io/google-containers/cadvisor:latest` |
 | 5) | Firewall disable | Either disable the firewall with `ufw disable`, or enable the following ports: `2049, 5432, 8000, 8001, 9000, 9001, 9090, 9093, 10000`
  |
-## Installation
+
+<!-- ## Installation -->
 
 ### Run Mode: Single Node
 
@@ -197,7 +200,7 @@ build_number: 1281
 1. `ai job create --help`, to see how you can run a job.
 2. `ai job get --help`, to see how you can get job info.
 
-## Run Mode: Two-Node Installation
+### Run Mode: Two-Node Installation
 
 ### Admin Node
 

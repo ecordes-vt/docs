@@ -2,7 +2,7 @@
 
 <!-- Sidebar Logo -->
 
-<style><!-- Here, we override vue.css on a few things -->
+<style>
 .sidebar ul li.active>a {
   color:#222;
   font-size: 18px;
@@ -14,6 +14,13 @@
 .sidebar {
     font-size: 12pt;
 }
+
+.app-sub-sidebar li:before {
+    content: "";
+    padding-right: 0px;
+    float: left
+}
+
 </style>
 
 <a href="/"><div class="logo"><img src="https://static.veritone.com/assets/favicon/favicon.ico" alt="Veritone logo"/><span class="logo-text">Veritone Docs<span></div></a>
@@ -158,6 +165,7 @@
     - [Technologies Used](developer/engines/getting-started/technologies/)
     - [Working with Self-Hosted aiWARE](overview/aiWARE-in-depth/)
       - [Installation](overview/aiWARE-in-depth/edge-installation)
+      - [GPU Support](overview/aiWARE-in-depth/gpu-support.md)
       - [Controller](overview/aiWARE-in-depth/controller)
       - [Engines](overview/aiWARE-in-depth/engines)
       - [Adapters (Ingestion)](developer/engines/adapters/)
