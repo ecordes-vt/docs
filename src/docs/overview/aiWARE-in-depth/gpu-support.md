@@ -12,7 +12,6 @@ Nvidia Capabilities:
 * utility: required for using nvidia-smi and NVML.
 * video: required for using the Video Codec SDK.
 * display: required for leveraging X11 display.
-* Tested with Ubuntu 20.04, p2.xlarge
 
 Run the following commands in a terminal:
 
@@ -25,10 +24,6 @@ apt-get update && apt-get upgrade -y
 
 apt-get install -y nvidia-cuda-toolkit nvidia-driver-450 nvidia-container-runtime docker.io
 service docker restart
-
-# Only used for test system to mount NFS share for sharing files:
-mkdir /efs
-mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-5c188024.efs.us-east-2.amazonaws.com:/ /efs
 
 # Validate Nvidia install
 nvcc --version
