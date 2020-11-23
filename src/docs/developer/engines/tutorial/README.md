@@ -241,7 +241,11 @@ aside.small {
 <br/><h2 style="display: inline;">Step 0: Set Up the Project &nbsp;</h2>&nbsp;&nbsp;<aside class="small">
 <b>ESTIMATED TIME:</b> 5 minutes </aside> &nbsp;
 
-<div style="width: 25%"><iframe src="https://player.vimeo.com/video/375527305?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:50%;height:50%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<!-- DISABLE VIDEO
+<div style="width: 25%">
+<iframe src="https://player.vimeo.com/video/375527305?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:50%;height:50%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+-->
 
 You should either clone [the repo for this project](https://github.com/veritone/V3-Engine-Examples), or create a project locally, in a folder called `/hello-world`, with the following structure:
 
