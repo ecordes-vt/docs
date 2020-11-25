@@ -8,9 +8,9 @@ Welcome to the second unit of Automate Studio training. In this unit, we'll go i
 
 * [Flow Creation Strategy](#flow-creation-strategy)
 * [Understanding the `msg` object](#understanding-the-msg-object)
-* [Working with the Change node](#working-with-the-change-node-nbspnbspimg-srcdocsautomate-studiotrainingwalknode-changepng-styleheight40pxvertical-align-middle)
-* [Working with the Function node](#working-with-the-function-node-nbspnbspimg-srcdocsautomate-studiotrainingwalknode-functionpng-styleheight40pxvertical-align-middle)
-* [How to use GraphQL in the API node](#working-with-the-aiware-api-node-nbspnbspimg-srcdocsautomate-studiotrainingwalknode-apipng-styleheight40pxvertical-align-middle)
+* [Working with the Change node](#working-with-the-change-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-changepng-styleheight40pxvertical-align-middle)
+* [Working with the Function node](#working-with-the-function-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-functionpng-styleheight40pxvertical-align-middle)
+* [How to use GraphQL in the API node](#working-with-the-aiware-api-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-apipng-styleheight40pxvertical-align-middle)
 * [Understanding engines, builds, and jobs](#understanding-engines-builds-and-jobs)
 
 While it's not strictly necessary for you to have already worked through the [previous training unit](automate-studio/Training/crawl), we will assume you're familiar with basic terminology around flows, like _nodes_, _wires_, _sidebar_, etc.; and we'll assume you've already created your free Automate Studio account. 
@@ -49,7 +49,7 @@ While the open-source [Node-RED](https://nodered.org/) app on which Automate Stu
 ?> If your flow falls into the first category, the first node in your flow needs to be an **inject** node. (The Properties tab on that node will allow you to set up the flow's invocation interval, the number of desired invocations, and so on.)
 If your flow falls into the second category, the first node in your flow needs to be an **aiware-in** node. (We'll talk about how to use that kind of node in the next unit.)
 
-## Understanding the 'msg' Object
+## Understanding the msg Object
 
 Every flow in Automate Studio relies on a `msg` object to pass information from node to node. You do not need to do anything special to make the `msg` object come into existence. It is created automatically by Automate Studio.
 
