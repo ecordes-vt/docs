@@ -18,8 +18,11 @@ The 4 main concepts you need to know about are:
 2. **Wires:** These are the lines that connect the nodes together.
 3. **Flow:** This is an overall term for the "graph" (or node-and-wire model) that you define by dropping and connecting your nodes on the canvas.
 4. **Message:** The `msg` variable is the highest level variable that is sent from one node to another at flow runtime.
+5. **Flow Engines:** After a Flow is built, it can be built, deployed, and run as an Engine in aiWARE. This is a more advanced topic, we will get to it at a later point!
 
 > **Tip:** Hover your cursor over a node in the node palette, on the left, to learn what a given type of node does.
+
+*TODO: REPLACE IMAGE*
 
 ![node-hover](automate-0-studioNodeHover.png)
 
@@ -41,7 +44,7 @@ The 4 main concepts you need to know about are:
 
 ## Step 1: Create a Flow
 
-Automate Studio provides a super-quick drag-and-drop design experience. Creating a flow is a snap. Here's how.
+Automate Studio provides a quick drag-and-drop design experience. Creating a flow is a snap. Here's how.
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-2">
@@ -49,15 +52,13 @@ Automate Studio provides a super-quick drag-and-drop design experience. Creating
                 <ul>
                     <li>
                     
-If you haven't already done so, create your free account at [https://developer.veritone.com/automate-studio/overview](https://developer.veritone.com).
+If you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started).
 
-1\. In the upper right corner of that page, click the CREATE NEW button. The **Create New Flow Engine** page will open.
+1\. Navigate to [automate.veritone.com](automate.veritone.com). In the upper right corner of that page, click the Create New Flow button. After a few seconds, the **Automate Studio Editor** design-time environment will open.
+
+*TODO: REPLACE IMAGE*
 
 ![CreateNewFlowpage](Automate-1.png)
-
-2\. You can click the SELECT A TEMPLATE button in the upper right, if you want to select a prebuilt, templated flow to edit.
-Otherwise, enter a **Name** and an optional **Description** for your flow, then accept the other defaults and click the CREATE button at the bottom of the page.
-After a few seconds, the Automate Studio design-time environment will open.
 
 </li>                  
 </ul>
@@ -77,7 +78,9 @@ You've got the basics, now let's start building out our flow &mdash; and test it
                     
 In this super-simple example, we'll create a 3-node flow that displays your user information. 
 
-1\. From the node palette on the left, drag an **inject** node (visible under Common) onto the canvas.
+1\. From the node palette on the left, drag an **aiware in** node (visible under aiWARE IO) onto the canvas.
+
+*TODO: FROM THIS POINT ON, I SUGGEST WE WALK THE USER THROUGH BUILDING A FLOW SIMILAR TO THE BASIC DEMO FLOWS. AIWARE-IN -> ENGINE -> EMAIL -> AIWARE OUT.*
 
 2\. Also drag an **api** node (visible under aiWARE), and a **debug** node (from Common) onto the canvas. And click the _bug_ icon in the information pane, on the right, to enable the display of debug messages. Your canvas should look liker this:
 
