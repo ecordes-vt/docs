@@ -8,7 +8,7 @@ Before we create a flow, let's quickly look at the main concepts you need to kno
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-1">
-                <label for="list-item-1"><span class="expandText">Click here to learn about the main concepts</span><span class="collpaseText">Click here to close this section.</span></label>
+                <label for="list-item-1"><span class="expandText">Click here to learn about the main concepts</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
                     <li>
 
@@ -18,20 +18,11 @@ The 4 main concepts you need to know about are:
 2. **Wires:** These are the lines that connect the nodes together.
 3. **Flow:** This is an overall term for the "graph" (or node-and-wire model) that you define by dropping and connecting your nodes on the canvas.
 4. **Message:** The `msg` variable is the highest level variable that is sent from one node to another at flow runtime.
+5. **Flow Engines:** After a flow is created, it can be built, deployed, and run as an _engine_ in aiWARE. (This is a more advanced topic, but we will get to it shortly.)
 
 > **Tip:** Hover your cursor over a node in the node palette, on the left, to learn what a given type of node does.
 
-![node-hover](automate-0-studioNodeHover.png)
-
-### Nodes Are Easy to Work With
-
-&#9642; To put a node in your graph, just drag any node from the node palette to the canvas, and let go of the mouse.
-
-&#9642; Single-click a node on the canvas to select it. When it is selected, hit the Delete or Backspace key on your keyboard to delete it. 
-
-&#9642; Click and drag from the _output_ endpoint on the right side of a node, to the _input_ endpoint on the left side of a second node, to connect two nodes with a wire.
-
-&#9642; Use Ctrl-Z to Undo any action.
+![node-hover](node-hover.png)
 
 </li>                  
 </ul>
@@ -41,24 +32,23 @@ The 4 main concepts you need to know about are:
 
 ## Step 1: Create a Flow
 
-Automate Studio provides a super-quick drag-and-drop design experience. Creating a flow is a snap. Here's how.
+Automate Studio provides an easy drag-and-drop design experience. Creating a flow is a snap. Here's how.
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-2">
-                <label for="list-item-2"><span class="expandText">Click here to learn how to create a flow</span><span class="collpaseText">Click here to close this section.</span></label>
+                <label for="list-item-2"><span class="expandText">Click here to learn how to create a flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
                     <li>
                     
-If you haven't already done so, create your free account at [https://developer.veritone.com/automate-studio/overview](https://developer.veritone.com).
+If you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started).
 
-1\. In the upper right corner of that page, click the CREATE NEW button. The **Create New Flow Engine** page will open.
+Navigate to [automate.veritone.com](https://automate.veritone.com). In the upper right corner of that page, click the Create New Flow button.
 
 ![CreateNewFlowpage](Automate-1.png)
 
-2\. You can click the SELECT A TEMPLATE button in the upper right, if you want to select a prebuilt, templated flow to edit.
-Otherwise, enter a **Name** and an optional **Description** for your flow, then accept the other defaults and click the CREATE button at the bottom of the page.
-After a few seconds, the Automate Studio design-time environment will open.
+After a few seconds, the **Automate Studio Editor** design-time environment will open. When it does, notice that you can single-click the name of your flow (shown in the upper left) to bring up a small dialog that lets you change the name of your to something more meaningful than "Untitled Flow." Try it!
 
+![Editing the flow name](untitled-flow.png)
 </li>                  
 </ul>
 </li>          
@@ -71,54 +61,53 @@ You've got the basics, now let's start building out our flow &mdash; and test it
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-3">
-                <label for="list-item-3"><span class="expandText">Click here to learn how to build and test a flow</span><span class="collpaseText">Click here to close this section.</span></label>
+                <label for="list-item-3"><span class="expandText">Click here to learn how to build and test a flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
                     <li>
                     
-In this super-simple example, we'll create a 3-node flow that displays your user information. 
+### Nodes Are Easy to Work With
 
-1\. From the node palette on the left, drag an **inject** node (visible under Common) onto the canvas.
+&#9642; To put a node in your graph, just drag any node from the node palette to the canvas, and let go of the mouse.
 
-2\. Also drag an **api** node (visible under aiWARE), and a **debug** node (from Common) onto the canvas. And click the _bug_ icon in the information pane, on the right, to enable the display of debug messages. Your canvas should look liker this:
+&#9642; Single-click a node on the canvas to select it. When it is selected, hit the Delete or Backspace key on your keyboard to delete it. 
 
-![3 nodes](NodeDrop2.gif)
+&#9642; Click and drag from the _output_ endpoint on the right side of a node, to the _input_ endpoint on the left side of a second node, to connect two nodes with a wire.
 
-3\. Click and drag from the output of the first node to the input of the second node. When you let go of the mouse button, a wire will appear.
+&#9642; Use Ctrl-Z to Undo any action.
 
-4\. Create a wire from the middle node to the **debug** node.
+### Build a Simple Flow
 
-5\. Double-click on the middle node (the **aiWARE api** node). Notice that a detail pane opens, allowing you to edit the **api** node's contents.
+In this example, we'll create a simple flow that extracts your user information and sends you an email. 
 
-6\. Delete the existing contents and Paste the following:
+1\. From the node palette on the left, drag an **aiware in** node, a **user details** node, and an **aiware email** node onto the canvas.
 
-```graphql
-query {
-  me {
-    name
-    id
-  }
-}
-```
+2\. Connect the nodes by dragging out a new wire from the right edge of each node to the left edge of the next node. Your canvas should look something like this:
 
-> When your flow executes, this simple GraphQL query will retrieve your user info.
+![3 nodes](three-nodes.png)
 
-7\. Click the blue **DONE** button in the upper right part of the edit pane. The pane goes away.
+> Note: Some nodes have two output ports on the right. The top port is for ordinary output, while the bottom port is for error reporting. For now, you needn't worry about the bottom port. As long as the top port is wired, the flow will be functional.
 
-Nice! Now your flow is ready to run.
+3\. Double-click on the **aiware email** node. Change the  "To Email" field's value by setting the picker to `msg.`, then enter `payload.aiware.user.name` after it. Enter text of your choosing in the "Email Subject" and "Message Body" fields. The Properties pane in the node should look something like this:
+
+![email node Properties](email-node.png)
+
+4\. Click the blue **Done** button in the upper right part of the Properties pane. The pane goes away.
+
+> A small blue dot will appear along the top edge of the node whose properties you just edited. This dot will disappear in a second or two, after your changes have been auto-saved.
 
 ### Test the Flow
 
-Click once on the ballot-box square at the left edge of the first node (the node labelled "timestamp"). This runs the flow, from start to finish.
+1\. Click the little _bug_ icon in the information pane, on the right, to enable the display of debug messages.
 
-Look to see that your Debug pane (on the right) is showing details from the query. You should see something like this:
+2\. Click once on the ballot-box square at the left edge of the first node (the node labelled "aiware in"). This runs the flow, from start to finish.
 
-![debug message pane](Automate-debug.png)
+3\. You should see a brief message ("inject.airware-in.success") appear onscreen, and then all three nodes should show an `aiware.success` message underneath. 
 
-#### What Just Happened
+4\. You should see a new e-mail in your inbox (at the address you used when you signed up for your Veritone account). 
 
-Automate Studio ran your flow and executed the `me` GraphQL query by submitting it to Veritone's GraphQL server.
-The JSON results returned by the server got appended to your flow's `msg.payload` variable.
-(Every flow has a global `msg` object that gets passed from node to node.)
+> If any errors occurred, they will be shown in the Debug pane (on the right).
+
+Congratulations! You just ran your first flow.
 
 </li>                  
 </ul>
@@ -126,28 +115,77 @@ The JSON results returned by the server got appended to your flow's `msg.payload
 </ul>
 </div>
 
-## Step 3: Design Your Business Logic
+## Step 3: Add Cognition
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-3a">
-                <label for="list-item-3a"><span class="expandText">Click here to learn how to add logic to your flow</span><span class="collpaseText">Click here to close this section.</span></label>
+                <label for="list-item-3a"><span class="expandText">Click here to learn how to add logic to your flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
                     <li>
                     
-Design your custom business logic to achieve the desired output. Drag and drop various node types as appropriate.
-For example, you can click and drag a **function** node from the Function menu in the palette into the center of your workspace, edit its settings, and connect it to other nodes. (Double-click any node, at any time, to explore and/or edit its settings.)
+It's easy to add cognition to a flow. Let's look at how it's done. We'll use the flow we've been working on. All we're going to do is add one more node, and make some changes to a few Properties.
 
-?> **Tip:** Where is your data? Consider your data sources and how your logic in the flow connects one data silo to another.
+### Add a Cognition Node
 
-### Getting Data Into Your Flow
+1\. Drag a **cognition** node from the Node Palette onto the canvas, positioning it over the wire that connects your first two nodes. When you do this, the wire will change to a dotted line. At that point, you can let your finger off the mouse and your new node will instantly be wired into your flow.
 
-The first node in your flow should be an **aiware-in** node. This will allow your flow to receive data POSTed to the flow's endpoint webhook via HTTP. (See Step 5 for an example of how to run a flow and push data to it.)
+2\. Double-click the cognition node to open up its Properties pane. Make the following changes:
 
-For test purposes, of course, you can use an Inject node to kick off your flow at design time; and this node can be wired into the flow in parallel to an aiware-in node, as shown below.
+&#8226; Make sure the **Job Definition** field says "Engine selector" (the default).
 
-![Dual input nodes](Dual-inputs.png)
+&#8226; Under Choose Engine, set **Cluster** to any available aiWARE Edge instance (such as "PROD-V3," if available).
 
-> **Note:** If you change a node's settings, be sure to click the **Done** button in the Edit pane to save your edits.
+&#8226; Use the Category picker control to set the **Category** to "Transcription."
+
+&#8226; Use the Engine picker to select the **Engine** named "Speechmatics Transcription - English (Global) V3."
+
+&#8226; Find the **WaitForResults** checkbox and check it. (This is important, because you want cognition to be _complete_ before the flow proceeds to the next node.)
+
+&#8226; (Recommended) Set **Job Priority** to "Very High."
+
+&#8226; (Recommended) Change the **Name** field to have a value of "Transcribe Engine Job."
+
+3\. Click the blue **Done** button to close and save your new Properties. Your flow will look something like this:
+
+![Simple Transcription Flow](simple-tx.png)
+
+### Define Input Data
+
+We need to define the media file that will be sent to the cognition node.
+
+> The media file, in this case, can be any audio file, or video file (that contains audio), of type .mp3, .mp4, .m4a, .wav, or .mpeg. The file should have a filetype extension (conforming to one of the above) and should be available at a public URL that can be reached via HTTPS.
+
+1\. Double-click the first node in your flow to edit the **Inject Mock Data** field. First be sure the picker is set to JSON (two curly braces). Then click the three-dots control on the right to open up the JSON editor, and paste the following code into the editor pane:
+
+```json
+{
+    "url": "https://s3.amazonaws.com/static.veritone.com/demo-ingestion/aiware/welcome-to-automate.m4a"
+}
+```
+
+2\. Click the blue **Done** button to close the editor, and click it again to close and save Properties.
+
+### Format Email Body
+
+One last thing! We need to add the cognition results to the email message.
+
+1\. Double-click on your **aiware email** node. Using the picker, set the **Message Body** type to "Expression," then use the three-dots button at the right to open the Expression editor. Copy and paste the following text into the editor (this should be one line, without newlines):
+
+```html
+"Hello,<br>Welcome to Veritone and Automate Studio!<br><br> Here is your transcribed file: https://cms.veritone.com/#/media-details/" & payload.aiware.tdoId & "<br><br> Basic Engine Output: "& payload.aiware.engineResultSimple"
+```
+
+2\. Click the blue **Done** button to close the editor, and click it again to close and save Properties.
+
+### Run It!
+
+Now it's time to test the flow. Click the square tab on the left edge of the first node in the flow (the **aiware in** node) to invoke the flow.
+
+Watch the Debug pane in the Sidebar (on the right of the canvas). Click the "bug" icon if need be, to make debug results visible. You should see a series of messages appear in real time, explaining what's happening as the flow executes. The messages may look something like this:
+
+![Flow messages](flow-messages.png)
+
+You should receive an e-mail containing the text of the transcription, as well as a direct link to the Veritone CMS page that contains the relevant media file (and the accompanying transcription).
 
 </li>                  
 </ul>
@@ -161,7 +199,7 @@ Saving your work is easy. Versioning is easy, too.
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-4">
-                <label for="list-item-4"><span class="expandText">Click here to learn how to Save a flow</span><span class="collpaseText">Click here to close this section.</span></label>
+                <label for="list-item-4"><span class="expandText">Click here to learn how to Save a flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
                     <li>
 
@@ -169,19 +207,15 @@ Your flow will be auto-saved every few seconds. You don't have to do periodic sa
 
 > Note that if a particular node in your flow diagram contains unsaved changes, it will appear with a small blue-filled circle above it. The circle disappears after an auto-save.
 
-When you want to save a _particular version_ of your flow so you can find it and load it again later, use the **Save** button near the Menu icon in the upper left corner of the designer window.
-Clicking **Save** causes the flow to be persisted as a numbered _Build_. A toast notification will appear at the bottom of the screen, saying that the Save was successful; then the designer will refresh.
+When you want to save a _particular version_ of your flow so you can find it and load it again later, use the **Save** button near the Menu icon in the upper left corner of the editor window.
 
-To visit your flows at any time, use the **Menu** at the top left and select **My Flows**. A new window will open, containing a list of flows you have created.
-Click the name of the flow to open that flow in the flow designer. Otherwise, click the gear icon at the far right edge of the row to open a list of Builds (for that flow) in the Flow Details page.
+Clicking **Save** causes the flow to be persisted as a numbered _Build_. A toast notification will appear at the bottom of the screen, saying that the Save was successful; then the editor will refresh.
 
-Notice the links at the right edge of each row in the flow details page. Click the link under **Open in Automate Studio** to open a particular build in the designer canvas. Use the link at the far right to manage the build's state manually (the link may say **Pause, Unpause, Submit,** or **Deploy**).
+### Open a Saved Build
 
-!> A flow cannot be deleted while it is showing as **Deployed**. You must manually **Pause** the flow first (using the link on the far rightof the row). Then a kebab menu will appear on the right side of the detail row, containing a Delete command.
+To visit your flows at any time, use the **Menu** at the top left and select **My Flows**. A new window will open, containing a list of flows you have created. Click the name of a flow to open the **latest** build of that flow in the flow editor. To open a specifc build, click the link under Flow Detail at the far right side of the row. This will open the a list of Builds (for that flow) in the Flow Details page, from which you can open any Build by clicking the link under **Open in Automate Studio**.
 
 ![Flow Details Page](FlowDetails.png)
-
-> **Tip:** If you ever need to re-open your flow in the canvas, you can also find it in the [Engines Overview page](https://developer.veritone.com/engines/overview); single-click any flow to open that flow's Builds page. From the Builds page, you can open any build in the Studio UI.
 
 </li>                  
 </ul>
@@ -191,138 +225,33 @@ Notice the links at the right edge of each row in the flow details page. Click t
 
 ## Step 5: Deploy and Run Your Automation Engine
 
-With the click of a button, you can deploy a flow into aiWARE &mdash; and run it in a Job.
+With the click of a button, you can _deploy_ a flow into the aiWARE platform &mdash; and run it in a Job.
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-5">
-                <label for="list-item-5"><span class="expandText">Click here to learn how to Deploy and Run a flow</span><span class="collpaseText">Click here to close this section.</span></label>
+                <label for="list-item-5"><span class="expandText">Click here to learn how to Deploy and Run a flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
                     <li>
 
-It's easy to deploy a flow into aiWARE, without leaving the Studio UI. Just click the Deploy button in the upper left. A dialog will appear:
+It's easy to deploy a flow into aiWARE, without leaving the Automate Studio UI. Just click the Deploy button in the upper left. A dialog will appear:
 
 ![Deploy and Run](DeployAndRun.png)
 
-Accept the default settings (**Run now**) if you want to deploy your current build and run it in a Job. 
+1\. Accept the default settings (**Run now**) if you want to deploy your current build and run it in a Job. 
 
-Otherwise, click the **Deploy only** radio button, if you simply want to _deploy_ the build, to make it available in aiWARE.
+> The **Run at a set time** option allows you to have the Job up and running at specific times, or even 24/7. The **Deploy only** option is only useful if you simply want to _deploy_ the build to make it available in aiWARE. We will discuss those options in more advanced training sections.
 
-If you've chosen **Run now**, copy the **HTTP Endpoint** URL (using the copy-to-clipboard button), then click the **Submit** button.
-After a few seconds, a toast message will appear in the lower left part of the window, saying "Job has been created." A link is provided in the toast notification so that you can go directly to the Job Details page, if desired.
+2\. Select the **HttpEndpoint** radio button and copy the **HTTP Endpoint** URL (using the copy-to-clipboard button), then click the **Submit** button.
+After a few seconds, a toast message will appear in the lower left part of the window, saying "Engine deployment and job creation is in progress..." followed a few seconds later by "Job has been created." A link is provided in the toast notification so that you can go directly to the Job Details page, if desired.
 
 ![Job Created](JobCreated.png)
 
-To test that your flow is running, you can use `curl` or Postman (or your own tool) to POST a test payload (e.g., a JSON object) to the HTTP Endpoint URL you copied above.
-If the Job started successfully, you should get an HTTP 200 response to your POST. (Otherwise, you may get 404, in which case you should try again.)
+3\. To test that your flow is running, you can use `curl` or Postman (or your own tool) to POST a test payload (e.g., a JSON object) to the HTTP Endpoint URL you copied above.
+If the Job started successfully, you should get an HTTP 200 response to your POST. (Otherwise, you may get 404, in which case you should try again in a few seconds.)
 
-> Tip: You can use an **e-mail node** at the end of your flow to send yourself a confirmation e-mail when the flow executes. You could also use **websocket** or **http-request** nodes for sending output.
+In Postman, your POST might look like this:
 
-</li>                  
-</ul>
-</li>          
-</ul>
-</div>
-
-## Running a Job Programmatically
-
-In this section, we look at how to use GraphQL to create a Job in aiWARE that uses our automation engine. 
-
-<div class="collapse-accordion"><ul><li>
-                <input type="checkbox" id="list-item-6">
-                <label for="list-item-6"><span class="expandText">Click here to learn how to run your flow in aiWARE</span><span class="collpaseText">Click here to close this section.</span></label>
-                <ul>
-                    <li>
-                    
-Create the following mutation in the [Playground](https://api.veritone.com/v3/graphiql), substituting your flow's _engine ID_ (not build ID) where `"<your flow engine id!>"` appears below.
-Also provide a GUID for the `endpoint` field. (You can use the last segment of the HTTP Endpoint URL shown in the Deploy dialog. The GUID should look something like `6d87fe1f-7c3c-4cd8-b680-2ac5e15ce571`.)
-
-```graphql
-mutation createYourFlowEngineJob {
-  createJob(input: {
-    target: {
-       startDateTime:1574311000
-       stopDateTime: 1574315000
-    }
-    ##V3 Prod Cluster
-    clusterId :"rt-1cdc1d6d-a500-467a-bc46-d3c5bf3d6901"
-    ##Tasks with IOFolders
-    tasks: [
-        {
-          # "correlationTaskId": "PA_TASK_ID",
-          # "dueDateTime": "0001-01-01T00:00:00Z",
-          engineId: "bb544ade-461c-11ea-8604-a3b3a83f5182"
-          ioFolders: [
-            {
-              referenceId: "PA_OUTPUT"
-              mode: chunk
-              type: output
-            }
-          ]
-        }
-        {
-          # This is the task that is an instance of the flow engine you created in Automate Studio!
-          engineId: "<your flow engine id!>"
-          ioFolders: [
-            {
-              referenceId: "MY_INPUT"
-              mode: chunk
-              type: input
-            }
-          ]
-        }
-      ]
-    ##Routes : A route connect a parent output folder to a child input folder
-    routes: [
-        {
-          ## HTTP Push Adapter route
-          # The endpoint MUST be a UUID, you can generate one with an online app
-          endpoint: "< YOUR ENDPOINT GUID >"
-          parentIoFolderReferenceId: "PA_OUTPUT"
-          childIoFolderReferenceId: "MY_INPUT"
-          options: {}
-        }
-      ]
-  }) {
-    id
-    targetId
-    clusterId
-    tasks {
-      records{
-        id
-        engineId
-        payload
-        taskPayload
-        status
-        output
-        ioFolders {
-          referenceId
-          type
-          mode
-        }
-      }
-    }
-    routes {
-      parentIoFolderReferenceId
-      childIoFolderReferenceId
-    }
-  }
-}
-```
-
-When you execute this mutation, you will launch a Job that runs your flow.
-You can then POST data to your engine's webhook, which will be the HHTP Endpoint shown in the Deploy and Run dialog (see graphic further above). The webhook will look something like `https://automate-controller-v3f.aws-prod-rt.veritone.com/edge/v1/proc/endpoint/6d87fe1f-7c3c-4cd8-b680-2ac5e15ce571`.
-
-> You can POST data with the cURL program in your computer's Terminal, or you can use a GUI app like Postman or Insomnia.
-
-```cURL
-curl -H "Content-type: application/json" -d '{ "edgePayload":
-  {
-  "tdoId":"<File ID from your org>",
-  "sendTo":"<your email>",
-  "firstName":"<your firstname>"
-  }
-}' 'https://controller-v3f.aws-prod-rt.veritone.com/edge/v1/proc/endpoint/{Your Endpoint GUID here!}'
-```
+![Postman POST](postman.png)
 
 </li>                  
 </ul>
@@ -461,11 +390,11 @@ label {
         border-bottom: 1px solid #fff;
     }
 
-    .collapse-accordion input[type="checkbox"]:checked+label .collpaseText {
+    .collapse-accordion input[type="checkbox"]:checked+label .collapseText {
         display: block;
     }
 
-   .collapse-accordion input[type="radio"]:checked+label .collpaseText {
+   .collapse-accordion input[type="radio"]:checked+label .collapseText {
         display: block;
     }
 
@@ -477,7 +406,7 @@ label {
         display: none;
     }
 
-    .collpaseText {
+    .collapseText {
         display: none;
     }
 
