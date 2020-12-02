@@ -384,7 +384,37 @@ declare -x AIWARE_HOST_EXPIRE="false"
 declare -x AIWARE_INIT_TOKEN="08bb6a59-58c7-4d46-b0dc-3fa8bf794fb5"
 ```
 
-### Step 6: Replace localhost on KeplerServiceURI + VeritoneServiceURI with the same Web Server Endpoint
+### Step 6: Replace localhost on VeritoneServiceURL with the Web Server Endpoint
+
+## Reporting Usage
+
+When running, please run as root on DB server
+
+### Step 1: Install Logging 
+
+```curl
+curl -sfl get.aiware.com/usage.sh > /opt/aiware/usage.sh
+chmod a+x /opt/aiware/usage.sh
+(crontab -l 2>/dev/null; echo "14 */4 * * * /opt/aiware/usage.sh") | crontab -
+```
+
+### Step 2: Run Bash Command in /opt/aiware/
+
+`bash usage.sh`
+
+### Step 3: Create Report
+
+`cd /opt/aiware/reports`
+``tar -czf reports-`date +%Y%M%d%H%M%S`.tgz /opt/aiware/reports``
+
+Then copy the `/opt/aiware/reports/reports-*.tgz` file to a computer and email the file to your account manager.
+
+### Optional
+
+Remove the old reports
+
+`rm /opt/aiware/reports/*.out`
+
 
 ## Installing an Engine Locally
 
@@ -1035,73 +1065,6 @@ Run `docker logs -tf aiware-controller 2>&1 | grep -i "internal job id"` in comm
 ### Step 8: If job completed in Edge, the final call with be a Get to grab the vtn-standard json
 
 ### Step 9: You’ll be able to confirm the job completed in Relativity by going to the Translation Logs
-
-## Licensing
-
-### Overview
-
-aiWARE Edge needs a license key that allows us to control what engine(s), how long the environment is available, and other concerns.
-
-The licenses will be JWT tokens that can be validated by a service that knows the secret.
-
-### Setup - Min.io
-
-
-### Step 1: Create min.io access key and secret key with command below:
-
-```pre
-docker run --detach -p 10000:9000 \
-  -e "MINIO_ACCESS_KEY=exampleEXAMPLE" \
-  -e "MINIO_SECRET_KEY=exampleexampleexampleEXAMPLEKEY" \
-  minio/minio server /opt/aiware/minio
-  ```
-
-### Step 2: Add port to AWS Instance (or Server) - Inbound only
-
-### Step 3: Ensure that min.io is one of the containers on your Edge with command below:
-
-`docker ps -a`
-
-### Step 4: Create connection (via platform like Cyberduck) using ip address, access key, and secret key. Here’s what you’ll need: 
-
-1. Public IP Address
-
-2. Port 10000
-
-3. MINIO_ACCESS_KEY
-
-4. MINIO_SECRET_KEY
-
-Once connected, it will create a CSV log in the designated bucket.
-
-## Reporting Usage
-
-When running, please run as root on DB server
-
-### Step 1: Install Logging 
-
-```curl
-curl -sfl get.aiware.com/usage.sh > /opt/aiware/usage.sh
-chmod a+x /opt/aiware/usage.sh
-(crontab -l 2>/dev/null; echo "14 */4 * * * /opt/aiware/usage.sh") | crontab -
-```
-
-### Step 2: Run Bash Command in /opt/aiware/
-
-`bash usage.sh`
-
-### Step 3: Create Report
-
-`cd /opt/aiware/reports`
-``tar -czf reports-`date +%Y%M%d%H%M%S`.tgz /opt/aiware/reports``
-
-Then copy the `/opt/aiware/reports/reports-*.tgz` file to a computer and email the file to your account manager.
-
-### Optional
-
-Remove the old reports
-
-`rm /opt/aiware/reports/*.out`
 
 ## Troubleshooting
 
