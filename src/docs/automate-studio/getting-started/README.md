@@ -213,7 +213,7 @@ Clicking **Save** causes the flow to be persisted as a numbered _Build_. A toast
 
 ### Open a Saved Build
 
-To visit your flows at any time, use the **Menu** at the top left and select **My Flows**. A new window will open, containing a list of flows you have created. Click the name of a flow to open the **latest** build of that flow in the flow editor. To open a specifc build, click the link under Flow Detail at the far right side of the row. This will open the a list of Builds (for that flow) in the Flow Details page, from which you can open any Build by clicking the link under **Open in Automate Studio**.
+To visit your flows at any time, use the **Menu** at the top left and select **My Flows**. A new window will open, containing a list of flows you have created. Click the name of a flow to open the **latest** build of that flow in the flow editor. To open a specifc build, click the link under Flow Detail at the far right side of the row. This will open the list of Builds (for that flow) in the Flow Details page, from which you can open any Build by clicking the link under **Open in Automate Studio**.
 
 ![Flow Details Page](FlowDetails.png)
 
@@ -253,6 +253,7 @@ In Postman, your POST might look like this:
 
 ![Postman POST](postman.png)
 
+> Regardless of how you initiate the POST, be sure to set the header: `“content-type”: “application/json”`.
 </li>                  
 </ul>
 </li>          
