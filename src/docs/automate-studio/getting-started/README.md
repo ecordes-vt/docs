@@ -190,6 +190,7 @@ Therefore, you should add two **aiware out** nodes to the flow: One to signal Su
 
 ![aiware out](out.png)
 
+3\. (Recommended) You can and should also connect wires from the lowermost (error) port of the **cognition** node, and the lower port of the **user details** node, to the input port of the [failure] node. This way, a failure anywhere in the flow will cause the appropriate **aiware out** node to be invoked.
 ### Run It!
 
 Now it's time to test the flow. Click the square tab on the left edge of the first node in the flow (the **aiware in** node) to invoke the flow.
