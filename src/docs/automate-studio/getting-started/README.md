@@ -12,9 +12,9 @@ Before we create a flow, let's quickly look at the main concepts you need to kno
                 <ul>
                     <li>
 
-The 4 main concepts you need to know about are:
+The main concepts you need to know about are:
 
-1. **Nodes:** These are the shapes in the editor that represent discrete steps in your flow.
+1. **Nodes:** These are the button-like shapes in the editor that represent discrete steps in your flow.
 2. **Wires:** These are the lines that connect the nodes together.
 3. **Flow:** This is an overall term for the "graph" (or node-and-wire model) that you define by dropping and connecting your nodes on the canvas.
 4. **Message:** The `msg` variable is the highest level variable that is sent from one node to another at flow runtime.
@@ -22,7 +22,7 @@ The 4 main concepts you need to know about are:
 
 > **Tip:** Hover your cursor over a node in the node palette, on the left, to learn what a given type of node does.
 
-![node-hover](node-hover.png)
+![node-hover](node-hover-1.png)
 
 </li>                  
 </ul>
@@ -83,13 +83,13 @@ In this example, we'll create a simple flow that extracts your user information 
 
 2\. Connect the nodes by dragging out a new wire from the right edge of each node to the left edge of the next node. Your canvas should look something like this:
 
-![3 nodes](three-nodes.png)
+![3 nodes](three-nodes-1.png)
 
 > Note: Some nodes have two output ports on the right. The top port is for ordinary output, while the bottom port is for error reporting. For now, you needn't worry about the bottom port. As long as the top port is wired, the flow will be functional.
 
 3\. Double-click on the **aiware email** node. Change the  "To Email" field's value by setting the picker to `msg.`, then enter `payload.aiware.user.name` after it. Enter text of your choosing in the "Email Subject" and "Message Body" fields. The Properties pane in the node should look something like this:
 
-![email node Properties](email-node.png)
+![email node Properties](email-node-2.png)
 
 4\. Click the blue **Done** button in the upper right part of the Properties pane. The pane goes away.
 
@@ -117,13 +117,15 @@ Congratulations! You just ran your first flow.
 
 ## Step 3: Add Cognition
 
+It's easy to add cognition to a flow. Let's look at how it's done.
+
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-3a">
-                <label for="list-item-3a"><span class="expandText">Click here to learn how to add logic to your flow</span><span class="collapseText">Click here to close this section.</span></label>
+                <label for="list-item-3a"><span class="expandText">Click here to learn how to add cognition to your flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
                     <li>
                     
-It's easy to add cognition to a flow. Let's look at how it's done. We'll use the flow we've been working on. All we're going to do is add one more node, and make some changes to a few Properties.
+We'll continue to use the flow we've been working on. All we're going to do is add a **cognition** node, and **aiware-out** nodes; and make some changes to a few Properties.
 
 ### Add a Cognition Node
 
@@ -143,11 +145,11 @@ It's easy to add cognition to a flow. Let's look at how it's done. We'll use the
 
 &#8226; (Recommended) Set **Job Priority** to "Very High."
 
-&#8226; (Recommended) Change the **Name** field to have a value of "Transcribe Engine Job."
+&#8226; (Recommended) Change the **Name** field to have a value of "Transcription Job."
 
 3\. Click the blue **Done** button to close and save your new Properties. Your flow will look something like this:
 
-![Simple Transcription Flow](simple-tx.png)
+![Simple Transcription Flow](simple-tx-1.png)
 
 ### Define Input Data
 
@@ -177,6 +179,18 @@ One last thing! We need to add the cognition results to the email message.
 
 2\. Click the blue **Done** button to close the editor, and click it again to close and save Properties.
 
+### Add 'aiware out' Nodes
+
+When your flow runs as a process in the aiWARE platform, it's important that the flow returns a valid HTTP response at the conclusion of a run.
+Therefore, you should add two **aiware out** nodes to the flow: One to signal Success, and one to signal Failure.
+
+1\. Drag out two **aiware out** nodes. Both will be named "aiware out [success]" by default. Edit the Properties of one of the nodes so that its Output Status is "Failure."
+
+2\. Wire the [success] node to the uppermost output port of the **aiware email** node. Wire the [failure] node to the lowermost output port of the **aiware email** node. Your flow might end up looking something like this:
+
+![aiware out](out.png)
+
+3\. (Recommended) You can and should also connect wires from the lowermost (error) port of the **cognition** node, and the lower port of the **user details** node, to the input port of the [failure] node. This way, a failure anywhere in the flow will cause the appropriate **aiware out** node to be invoked.
 ### Run It!
 
 Now it's time to test the flow. Click the square tab on the left edge of the first node in the flow (the **aiware in** node) to invoke the flow.
