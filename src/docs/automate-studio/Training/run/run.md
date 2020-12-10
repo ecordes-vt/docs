@@ -18,18 +18,18 @@ In the two preceding lessons in this series, we've covered:
 * [Exercise: Create a Flow](automate-studio/Training/crawl.md#exercise-create-a-flow)
 
 **Working with Flows:**
-* [Flow Creation Strategy](automate-studio/Training/walk/walk.md#flow-creation-strategy)
-* [Understanding the `msg` object](automate-studio/Training/walk/walk.md#understanding-the-msg-object)
-* [Working with the Change node](automate-studio/Training/walk/walk.md#working-with-the-change-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-changepng-styleheight40pxvertical-align-middle)
-* [Working with the Function node](automate-studio/Training/walk/walk.md#working-with-the-function-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-functionpng-styleheight40pxvertical-align-middle)
-* [How to use GraphQL in the API node](automate-studio/Training/walk/walk.md#working-with-the-aiware-api-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-apipng-styleheight40pxvertical-align-middle)
-* [Understanding engines, builds, and jobs](automate-studio/Training/walk/walk.md#understanding-engines-builds-and-jobs)
+* [Flow Creation Strategy](automate-studio/Training/walk/README#flow-creation-strategy)
+* [Understanding the `msg` object](automate-studio/Training/walk/README#understanding-the-aposmsgapos-object)
+* [Working with the Change node](automate-studio/Training/walk/README#working-with-the-change-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-changepng-styleheight40pxvertical-align-middle)
+* [Working with the Function node](automate-studio/Training/walk/README#working-with-the-function-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-functionpng-styleheight40pxvertical-align-middle)
+* [How to use GraphQL in the API node](automate-studio/Training/walk/README#working-with-the-aposapiapos-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-apipng-styleheight40pxvertical-align-middle)
+* [Understanding engines, builds, and jobs](automate-studio/Training/walk/README#understanding-engines-builds-and-jobs)
 
 In this unit, we'll build on these concepts in order to show how to create your own flows that use cognition with custom business logic.
 We'll cover, among other things:
 
 * [Creating a subflow](#convert-the-email-flow-to-a-subflow)
-* [Invoking a subflow](#using-the-subflow)
+* [Adding Cognition and Using a subflow](#adding-cognition-and-using-the-subflow)
 * [How to use 'aiware out' nodes](#adding-aposaiware-outapos-nodes)
 * [How to use 'link in' and 'link out' nodes to simply a flow](#use-aposlink-inapos-and-aposlink-outapos-to-simplify-the-flow)
 * [How to add basic error handling](#add-basic-error-handling)
@@ -89,7 +89,7 @@ Find and click the '1' next to **inputs**. This will drop a small **input** node
 
 ![complete subflow](complete-subflow.png)
 
-## Using the Subflow
+## Adding Cognition and Using the Subflow
 
 Now let's see how to use the subflow from our main flow.
 
@@ -105,7 +105,7 @@ Now let's see how to use the subflow from our main flow.
 }
 ```
 
-4\. Click the blue **Done** button (once in the JSON editor, and again in Properties) to save the change.
+4\. Click the blue **Done** button (once in the JSON editor, and again in Properties) to save your changes to the **aiware  in** node.
 
 5\. Double-click your flow's **cognition** node to open up its Properties pane. Make the following changes:
     

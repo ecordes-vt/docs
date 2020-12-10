@@ -7,10 +7,10 @@
 Welcome to the second unit of Automate Studio training. In this unit, we'll go into more depth on how to work with nodes; best practices for flow design; and concepts related to aiWARE integration. We'll cover:
 
 * [Flow Creation Strategy](#flow-creation-strategy)
-* [Understanding the `msg` object](#understanding-the-msg-object)
-* [Working with the Change node](#working-with-the-change-node-nbspnbspimg-srcdocsautomate-studiotrainingwalknode-changepng-styleheight40pxvertical-align-middle)
-* [Working with the Function node](#working-with-the-function-node-nbspnbspimg-srcdocsautomate-studiotrainingwalknode-functionpng-styleheight40pxvertical-align-middle)
-* [How to use GraphQL in the API node](#working-with-the-aiware-api-node-nbspnbspimg-srcdocsautomate-studiotrainingwalknode-apipng-styleheight40pxvertical-align-middle)
+* [Understanding the `msg` object](#understanding-the-aposmsgapos-object)
+* [Working with the Change node](#working-with-the-change-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-changepng-styleheight40pxvertical-align-middle)
+* [Working with the Function node](#working-with-the-function-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-functionpng-styleheight40pxvertical-align-middle)
+* [How to use GraphQL in the API node](#working-with-the-aposapiapos-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-apipng-styleheight40pxvertical-align-middle)
 * [Understanding engines, builds, and jobs](#understanding-engines-builds-and-jobs)
 
 While it's not strictly necessary for you to have already worked through the [previous training unit](automate-studio/Training/crawl), we will assume you're familiar with basic terminology around flows, like _nodes_, _wires_, _sidebar_, etc.; and we'll assume you've already created your free Automate Studio account. 
@@ -49,7 +49,7 @@ While the open-source [Node-RED](https://nodered.org/) app on which Automate Stu
 ?> If your flow falls into the first category, the first node in your flow needs to be an **inject** node. (The Properties tab on that node will allow you to set up the flow's invocation interval, the number of desired invocations, and so on.)
 If your flow falls into the second category, the first node in your flow needs to be an **aiware-in** node. (We'll talk about how to use that kind of node in the next unit.)
 
-## Understanding the 'msg' Object
+## Understanding the &apos;msg&apos; Object
 
 Every flow in Automate Studio relies on a `msg` object to pass information from node to node. You do not need to do anything special to make the `msg` object come into existence. It is created automatically by Automate Studio.
 
@@ -104,9 +104,9 @@ if (msg.topic === "translation") {
 
 For more information on the Function node, be sure to consult the [Node-RED documentation](https://nodered.org/docs/user-guide/writing-functions).
 
-## Working with the aiWARE API Node &nbsp;&nbsp; <img src="docs/automate-studio/Training/walk/node-api.png" style="height:40px;vertical-align: middle;"/>
+## Working with the &apos;api&apos; Node &nbsp;&nbsp; <img src="docs/automate-studio/Training/walk/node-api.png" style="height:40px;vertical-align: middle;"/>
 
-Unlike the Change and Function nodes, which are core Node-RED nodes, the **aiWARE api** node is a custom Automate Studio node. It allows you to provide a GraphQL query or mutation that will be submitted to the aiWARE server at runtime.
+Unlike the Change and Function nodes, which are core Node-RED nodes, the **api** node is a custom Automate Studio node. It allows you to provide a GraphQL query or mutation that will be submitted to the aiWARE server at runtime.
 
 An example of the kind of query (or mutation) you can submit is shown below.
 
@@ -121,7 +121,7 @@ mutation createTDO {
 
 This mutation asks the server to create an empty [Temporal Data Object (TDO)](apis/jobs-tasks-tdos?id=tdo-temporal-data-object), and return its `id` and `status`.
 
-?> The TDO is aiWARTE's general-purpose container object for passing job data around. A TDO contains information about media files, and after a job is run, it will contain one or more entries in an `assets` array. The entries associate job data (by reference, using `signedUri` fields that point to the stored cognition results) with the TDO in question. Read more about TDOs [here](apis/jobs-tasks-tdos?id=tdo-temporal-data-object).
+?> The TDO is aiWARE's general-purpose container object for passing job data around. A TDO contains information about media files, and after a job is run, it will contain one or more entries in an `assets` array. The entries associate job data (by reference, using `signedUri` fields that point to the stored cognition results) with the TDO in question. Read more about TDOs [here](apis/jobs-tasks-tdos?id=tdo-temporal-data-object).
 
 You can use the **aiWARE api** node to execute any of the more than 200 API calls available in aiWARE's GraphQL API. The return value will be a JSON object, which can be accessed as the value of `msg.payload`.
 
