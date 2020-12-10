@@ -219,6 +219,7 @@
   - Training
     - [The Basics](automate-studio/Training/crawl)
     - [Working with Flows](automate-studio/Training/walk/README.md)
+    - [Cognition within a Flow](automate-studio/Training/run/run)
   - [Tutorials](automate-studio/tutorials/automate-tutorials)
     - [Orchestrating AI with a Flow](automate-studio/tutorials/orchestrating-ai.md)
     - [Create aiWARE Custom API Endpoints](automate-studio/tutorials/your-ai-flow.md)

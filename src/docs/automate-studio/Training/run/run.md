@@ -25,59 +25,179 @@ In the two preceding lessons in this series, we've covered:
 * [How to use GraphQL in the API node](automate-studio/Training/walk/walk.md#working-with-the-aiware-api-node-nbspnbsp-img-srcdocsautomate-studiotrainingwalknode-apipng-styleheight40pxvertical-align-middle)
 * [Understanding engines, builds, and jobs](automate-studio/Training/walk/walk.md#understanding-engines-builds-and-jobs)
 
-In this unit, we'll build on these concepts in order to show how to create your own flows that combine cognition with business logic.
+In this unit, we'll build on these concepts in order to show how to create your own flows that use cognition with custom business logic.
 We'll cover, among other things:
 
-* The engine-job node
-* Using the api node to fetch engine results --  including how to use JavaScript in a GraphQL field value
-* Dealing with errors
-* Using custom logic to process engine results
-* How to create a subflow
-* How to deploy your flow into the aiWARE platform
+* [Creating a subflow](#convert-the-email-flow-to-a-subflow)
+* [Invoking a subflow](#using-the-subflow)
+* [How to use 'aiware out' nodes](#adding-aposaiware-outapos-nodes)
+* [How to use 'link in' and 'link out' nodes to simply a flow](#use-aposlink-inapos-and-aposlink-outapos-to-simplify-the-flow)
+* [How to add basic error handling](#add-basic-error-handling)
 
-Follow along as we show the steps needed to create a simple flow that can obtain the transcribed text of a video's soundtrack.
+Follow along as we show the steps needed to create a simple flow that can obtain and process the transcribed text of a video's soundtrack.
 
-> Note that there's almost always more than one way to achieve a desired outcome in Automate Studio. The example we'll be showing below represents just _one way_ to do a transcription job.
+> Note that there's almost always more than one way to achieve a desired outcome in Automate Studio. The example we'll be showing below represents just _one way_ to do a transcription job. The end result is similar to the result obtained in the sample transcription flow discussed in our [Getting Started guide](automate-studio/getting-started/README), but with some important changes to illustrate specific techniques and best practices.
 
-## Using the 'engine-job' node
+## Create a Simple Email Flow
 
-On a fresh canvas, drag out an Inject node, then drag out a Debug node. Connect the two nodes with a wire; then go into the Properties panel of the Debug node and set the Output to  'complete msg object' (using the handy dropdown control).
+1\.  On a fresh canvas, drag out an **inject** node, a **user details** node, and an **aiware email** node. Connect the nodes by dragging out wires between neighboring nodes' input and output ports.
 
-Now go back to the node palette and drag an Engine Job node onto the wire connecting your two existing nodes. The wire will become a dotted line; at that point, release the mouse button to drop the node onto the wire. It automatically becomes wired into the flow, with input coming from the Inject node and output going to the Debug node.
+![Email flow](inject-and-email.png)
 
-![Engine Job node inside a flow](engine-job.png)
+2\. Double-click the **aiware email** node to open its Properties. Use the dropdown control to set the "To Email" field to use `msg.` Then type `payload.aiware.user.name` into the text field alongside it.
 
-> A blue dot will appear (briefly) on the upper right edge of the Engine Job node, indicating that the flow has changed but has not yet been auto-saved. The dot will go away after a few seconds.
+![Email properties](email.png)
 
-Double-click the Engine Job node to open its Properties. The Job Definition field should say "Engine selector" (the default).
+3. Set the other properties to any convenient string values. Then click the blue **Done** button to save your properties and dismiss the edit pane.
 
-* Change the **Name** field to some appropriate name, like "Transcription."
+### Test it
 
-* Check the **WaitForResults** checkbox. This will cause the cognition job to run _synchronously_. (The default is asynchronous.) Running the job synchronously means the flow will not resume execution until this node has finished processing.
- 
-* For the field **Media URL or Recording ID**, enter the value https://www.nasa.gov/62282main_countdown_launch.wav (or, supply the URL to any .mp3, .mp4, or .wav file on the web; but try to pick a fairly _short-duration_ video or audio file, for testing). This will be the test file we will use at design time.
+Click the ballot-box tab on the left side of the first node (the **inject** node) to kick off the flow. Within a few seconds, you should receive an e-mail at the address you used when you signed up for your Automate account.
 
-* For the **Cluster** field, use the picker control to select any available aiWARE Edge instance.
+## Convert the Email Flow to a Subflow
 
-* For **Category**, use the picker to select Transcription. After a few seconds, the **Engine** picker (the next control) will populate.
+Sometimes it can be useful to package a flow into a _subflow_. (Subflows are like subroutines that can be invoked within the context of flow. You can have multiple subflows within a flow, or none at all. It's  up to you.)
 
-* Use the **Engine** picker to select "Speechmatics Transcription - English (Global) V3."
+To create a subflow:
 
-* Important: Click the blue **Done** button (top right of panel) to save your Properties settings.
+1\. Drag out a selection rectangle around the nodes you want to include in your subflow. In this case, you want to select all three nodes.
+When you let go of the mouse, your selected nodes will be outlined in red:
 
-* You may also want to click the **Save** link at the top left of the main canvas, to persist your flow as a _build_, so that you can come back later and work on the flow some more, picking up exactly where you left off.
+![Selected nodes](selected-nodez.png)
 
-**What we did**: We just set up a flow containing a "cognition job" that will execute (using the Engine Job node), running against a test file (at the URL you specified in the Engine Job node's **Media URL or Recording ID** property).
+2\. Type Command-X (or Control-X) to Cut the nodes to the Clipboard. A popup says "3 nodes copied."
 
-If you were to run the flow right now (by clicking the tab on the left edge of the Inject node), it would run, taking a minute or two to process your test file, but the transcription results would not automatically show up in your flow, because the results must be fetched separately.
+3\. Using the Menu, find and choose the **Create Subflow** command. A new tab opens in the canvas called "Subflow 1."
 
-Try it, if you like. Run the flow, and (when it finishes) notice the JSON object that shows up in the Debug pane of your Debug node:
+4\. Type Command-V (or Control-V) to Paste nodes from the Clipboard. A popup appears, saying "Imported: 3 nodes."
 
-![Job message in Debug node](job-run-1.png)
+5\. Double-click the tab where it says "Subflow 1" to open the Properties editor for the tab. Change the name of the tab by typing "SEND EMAIL" in the **Name** property. Then click the blue **Done** button to save your changes.
 
-While a great deal of useful debugging info is available in the various properties of the `msg` object after the flow runs, the most useful value, for us, right now, is the one associated with the `msg.payload.aiwareJobId` field. (It's highlighted in the above screen shot.) We can use that ID to look up the results of the transcription job.
+> Notice that not only does the name of the subflow's tab update, but you can also now see your renamed subflow in the Node Palette, under **subflows**.
 
-Let's see one way we can do that &mdash; using an API node.
+6\. Single-click the first node (the **inject** node, which has a default name of "timestamp"), _then backspace to delete it_. (The **inject** node cannot be used in a subflow, since subflows cannot run on their own.)
+
+7\. At the top edge of the subflow canvas, notice the row of buttons.
+
+![inputs and outputs buttons](inputs-outputs.png)
+
+Find and click the '1' next to **inputs**. This will drop a small **input** node onto the canvas. Wire it to the **user details** node.
+
+![input node](input.png)
+
+8\. Find the '+' button next to **outputs** and click it twice to drop two **output** nodes onto the canvas. Wire the first one to the uppermost output port of the **aiware email** node, and wire the second one to the lowermost port of that node.
+
+![complete subflow](complete-subflow.png)
+
+## Using the Subflow
+
+Now let's see how to use the subflow from our main flow.
+
+1\. Click on the **Main flow** tab, at the top of the canvas, to bring that tab to the front. The main flow's canvas should be empty.
+
+2\. Drag out an **aiware in** node, a **cognition** node, and an **aiware out** node onto the canvas. Wire them sequentially.
+
+3\. Open the **aiware in** node's Properties. Under **Test Options**, set **Inject Mock Data** to:
+
+```json
+{
+    "url": "https://www.nasa.gov/mp3/591240main_JFKmoonspeech.mp3"
+}
+```
+
+4\. Click the blue **Done** button (once in the JSON editor, and again in Properties) to save the change.
+
+5\. Double-click your flow's **cognition** node to open up its Properties pane. Make the following changes:
+    
+ * Ensure the **Job Definition** field says "Engine selector" (the default).
+ * Under Choose Engine, set **Cluster** to any available aiWARE Edge instance (such as "PROD-V3," if available).
+ * Use the Category picker control to set the **Category** to "Transcription."
+ * Use the Engine picker to select the **Engine** named "Speechmatics Transcription - English (Global) V3."
+ * Find the **WaitForResults** checkbox and check it. (This is important, because you want cognition to be _complete_ before the flow proceeds to the next node.)
+ * Set **Job Priority** to "Very High."
+ * (Recommended) Change the **Name** field to have a value of "Transcription."
+    
+6\. Click the blue **Done** button to close and save the node's Properties.
+
+7\. Now drag out a custom **SEND EMAIL** node from the **subflows** section at the top of the Node Palette, and drop it onto the wire that connects the output side of your Transcription node to the input of your final (**aiware out**) node. (Before you release the mouse, the wire will become a dotted line.)
+
+8\. Before we run this flow, we need to make a simple change to the SEND EMAIL subflow so that our engine results appear in the email. Start by double-clicking the **SEND EMAIL** node in your flow to open its Properties.
+Near the top left of the Properties pane, find the **Edit subflow template** button, and click it. The subflow opens in its own frontmost tab.
+
+9\. In the subflow, open the **aiware email** node's Properties and change the **Message Body** to use a message of `msg.payload.aiware.engineResultSimple`. (First use the dropdown control on the left to select `msg.`, then type or paste text into the field to complete it.)
+
+![Email node message](email-edited.png)
+
+10\. Click the blue **Done** button to save the change. Then go back to the main flow.
+
+## Adding &apos;aiware out&apos; Nodes
+
+You should always add at least two **aiware out** nodes to any flow (representing Success and Failure responses). The **aiware out** node fulfills the important function of telling the aiWARE platform "This flow can be considered complete."
+
+The flow we've been building already has one **aiware out** node. It's the final node in the flow, and we accepted its default of "success." But we should also add a "failure" node, to handle situations where a flow aborts or encounters server-related problems. Do this:
+
+1\. Drag a new **aiware out** node onto the canvas. Open its Properties and change the **Output Status** to "Failure."
+
+![aiware-out set to Failure](failure.png)
+
+2\. Click the blue **Done** button to save the change.
+
+## Use &apos;link in&apos; and &apos;link out&apos; to Simplify the Flow
+
+1\. Find **link in** (under the **common** section of the Node Palette) and drag a node out onto the canvas. Wire it to the **aiware out** "failure" node.
+
+2\. Find **link out** in the Node Palette. Drag two **link out** nodes on the canvas.
+Drag out a wire from the lowermost output port of the **cognition** ("Transcription") node, to the input port of a **link out** node. Drag out a wire from the lowermost output port of the **SEND EMAIL** node, to the input of the second **link out** node.
+
+3\. With a **link out** node _selected_ (so that its little round output port becomes visible), drag out a wire from the _output_ (right) side of the **link out** node, and join it to the _input_ (left) side of the **link in** node.
+In similar manner, join the _other_ **link out** node to the input of the **link in** node. When you select (single-click) your flow's *link in** node, dotted lines will appear between all "link" nodes, and the flow will look similar to this:
+
+![Flow with error pipeline](flow-with-link-nodes.png)
+
+> Note that when the **link in** node is _not_ selected, _no_ wires will be visible between  **link in** and **link out** nodes.
+
+Your flow now has **aiware  out** nodes that can report Success _or_ Failure back to the aiWARE platform at runtime.
+
+Because a failure could, in theory, happen during the cognition process _or_ in the email notification subflow, it's necessary to have multiple flow paths to the **aiware out** "failure" node.
+
+> It's possible to hard-wire the bottom ports of the cognition and SEND EMAIL nodes directly to the **aiware out** "failure" node, and there's nothing wrong with that. But in a large flow, hardwired many-to-many connections quickly create a spaghetti maze. The thoughtful use of **link in** and **link out** nodes (and subflows!) can help you avoid that situation.
+
+You can test your flow now by kicking it off manually clicking the ballot-box tab on the left side of the **aiware in** node (the first node). The flow will pause momentarily at the cognition node, while transcription processing takes place, before proceeding to completion. Depending on how big the audio (or video) input file is, this could mean a delay of a few seconds to a few minutes. But eventually, you should see an email appear in your inbox, containing the plaintext transcription of the input file.
+
+## Add Basic Error Handling
+
+Drag a **catch** node (from the **common** section of the Node Palette) onto the canvas. Wire its output port to the input port of your **aiware out** "failure" node.
+
+By default, the **catch** node will catch errors thrown by any node on the same tab. Alternatively, you can adjust the node's Properties so that it responds only to errors produced by specific nodes.
+
+When an error is thrown, all matching catch nodes will receive the message. The message is in a `msg.error` object, which has several  fields.
+
+| field | meaning |
+| -- | --- |
+| `error.message` | the error message |
+| `error.source.id` | the id of the node that threw the error |
+| `error.source.type` | the type of the node that threw the error |
+| `error.source.name` | the name, if set, of the node that threw the error |
+
+If an error is thrown within a subflow, the error will get handled by any catch nodes within the subflow. If none exists, the error will be propagated up to the tab the subflow instance is on.
+
+
+## Save Your Build
+
+You've done a lot of work on your flow. And your work has been auto-saved, all along, by Automate. But it might be a good idea, at this point, to version and persist this flow as a new _build_. To do this, find and click the **Build** link, in the upper left of the workspace, next to the main Menu button.
+
+The screen will show a "Saving" toast message, then refresh. The new build number will be displayed in a badge next  to  the flow's name at the top left of the workspace.
+
+## Explore Further
+
+To learn how to deploy your flow to aiWARE, see [Deploy and Run Your Automation Engine](automate-studio/getting-started/README?id=step-5-deploy-and-run-your-automation-engine) in our [Getting Started guide](automate-studio/getting-started/README).
+
+
+
+
+<!--
+
+
 
 ## Using an 'api' node to fetch results
 
@@ -238,7 +358,7 @@ return msg;
 **What's happening here:** At runtime, an 'aiware-in' node receives a payload (which can come in the form of an HTTP body), which is in `msg.payload.aiwareChunk`.
 By default, this payload is a Buffer object. 
 
-
+-->
 
 
 
