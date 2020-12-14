@@ -328,7 +328,7 @@ pipeline {
                 success {
                     slackSend(
                         color: '#00FF00',
-                        channel: '#prod_deploy',
+                        channel: '#deploy_aws-prod',
                         message: "DEPLOYED: ${GIT_REPO_NAME} [${BRANCH_NAME}] [${BUILD_NUMBER}] (<${env.RUN_DISPLAY_URL}|job url>) (<${PULL_REQUEST_URL}|pr url>)",
                         tokenCredentialId: 'slack-prod-deploy-channel'
                     )
