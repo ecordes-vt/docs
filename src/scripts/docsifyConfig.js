@@ -24,6 +24,7 @@ const docsifyConfig = {
   loadSidebar: true,
   auto2top: true,
   coverpage: true,
+  relativePath: true,
   
   // notFoundPage: {
   //   '\/(.*)(?<!\/)$': '1$/'
