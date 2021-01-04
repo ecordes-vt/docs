@@ -92,12 +92,10 @@ An example of a schema suitable for use in a correlation engine is:
 
 ?> The `dateTime` and `geoPoint` types referenced in this example are custom aiWARE extensions to the json-schema specification.
 
-<!-- WE ARE KILLING THIS UI
 The process of defining a schema is straightforward.
 Consult the [Structured Data Quick Start](developer/data/quick-start/) for a detailed introduction to schema creation.
 Also on that page you'll find a step-by-step guide to deploying your schema through Veritone Developer.
 Be sure to read that guide to understand not only how to deploy and update a schema, but how to control versioning.
--->
 
 !> All schemas deployed to aiWARE are public. (Data will be private, but the schema describing the data structure will not be.)
 

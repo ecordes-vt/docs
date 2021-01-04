@@ -1,0 +1,14 @@
+# LaunchJobTemplateRequest
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**IsInternal** | **bool** | Whether to launch the job template within the edge cluster or back to core | [optional] 
+**PayloadJSON** | **string** | This is the payload encoded as a JSON string.  This will be used | [optional] 
+**ScheduledJobID** | **string** | the scheduled job id that started the pipeline involving this template | [optional] 
+**SourceID** | **string** | the source Id that associated with the pipeline involving this template | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
