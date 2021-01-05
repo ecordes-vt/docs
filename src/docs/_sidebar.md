@@ -57,7 +57,7 @@
       - [Step 4: Run Object Detection on a Video](/developer/applications/app-tutorial/app-tutorial-step-4.md)
     - [Application Integration](/developer/applications/integration/)
     - [Context Menu Extensions](/developer/applications/context-menu-extensions.md)
-    - [OAuth](d/eveloper/applications/oauth.md)
+    - [OAuth](/developer/applications/oauth.md)
     - [Resources](/developer/applications/resources.md)
     - [FAQ](/developer/applications/faq.md)
     - [Build Your Own Engine](/developer/engines/tutorial/)
