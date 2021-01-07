@@ -150,8 +150,8 @@ The flow we've been building already has one **aiware out** node. It's the final
 Drag out a wire from the lowermost output port of the **cognition** ("Transcription") node, to the input port of a **link out** node. Drag out a wire from the lowermost output port of the **SEND EMAIL** node, to the input of the second **link out** node.
 
 3\. With a **link out** node _selected_ (so that its little round output port becomes visible), drag out a wire from the _output_ (right) side of the **link out** node, and join it to the _input_ (left) side of the **link in** node.
-In similar manner, join the _other_ **link out** node to the input of the **link in** node. When you select (single-click) your flow's *link in** node, dotted lines will appear between all "link" nodes, and the flow will look similar to this:
-
+In similar manner, join the _other_ **link out** node to the input of the **link in** node. When you select (single-click) your flow's **link in** node, dotted lines will appear between all "link" nodes, and the flow will look similar to this:
+ 
 ![Flow with error pipeline](flow-with-link-nodes.png)
 
 > Note that when the **link in** node is _not_ selected, _no_ wires will be visible between  **link in** and **link out** nodes.
