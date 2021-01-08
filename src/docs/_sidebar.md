@@ -227,6 +227,7 @@
     - [Sentiment Analysis on Helpdesk Tickets](/automate-studio/tutorials/sentiment-analysis.md)
     - [Creating new training data with a flow](/automate-studio/tutorials/automate-tutorial-6-flow-face-libraries.md)
     - [Automate Studio and Flow Engines](/automate-studio/tutorials/automate-tutorial-7-flow-engines.md)
+    - [Alteryx Tools](automate-studio/alteryx/)
   - [Get Paid!](/automate-studio/flow-bounties/README)
 - [Machine Box](/developer/machine-box/)
   - [Getting Started](/developer/machine-box/setup/)
