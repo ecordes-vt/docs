@@ -2064,6 +2064,9 @@ components:
           description: JSON Data for fields
           format: json
           type: string
+        getWorkInterval:
+          format: int64
+          type: integer
         internalOrganizationID:
           format: uuid
           type: string
@@ -2071,6 +2074,9 @@ components:
           description: JSON Data for jwt_rights
           format: json
           type: string
+        maxRunning:
+          format: int64
+          type: integer
         minAvailable:
           format: int64
           type: integer
@@ -2918,6 +2924,9 @@ components:
           description: JSON Data for fields
           format: json
           type: string
+        getWorkInterval:
+          format: int64
+          type: integer
         idleTimeout:
           format: int32
           type: integer
@@ -2930,6 +2939,9 @@ components:
           type: string
         maxProcessingSecondsPerWorkItem:
           format: int32
+          type: integer
+        maxRunning:
+          format: int64
           type: integer
         maxWaitSecondsForChunk:
           format: int32
@@ -7486,6 +7498,9 @@ components:
           description: JSON Data for fields
           format: json
           type: string
+        getWorkInterval:
+          format: int64
+          type: integer
         idleTimeout:
           format: int32
           type: integer
@@ -7498,6 +7513,9 @@ components:
           type: string
         maxProcessingSecondsPerWorkItem:
           format: int32
+          type: integer
+        maxRunning:
+          format: int64
           type: integer
         maxWaitSecondsForChunk:
           format: int32
@@ -7935,7 +7953,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 1.0.3
+  version: 3.13.2.1953
 openapi: 3.0.1
 paths:
   /admin/applications:
