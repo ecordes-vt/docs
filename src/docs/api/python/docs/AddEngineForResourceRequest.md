@@ -1,0 +1,13 @@
+# AddEngineForResourceRequest
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**engine_id** | **str** | Engine ID | [optional] 
+**pg_pass** | **str** | Optional the user password for the Postgres resource. | [optional] 
+**pg_user** | **str** | Optional the user name for the Postgres resource. | [optional] 
+**redis_token** | **str** | Optional Redis token. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

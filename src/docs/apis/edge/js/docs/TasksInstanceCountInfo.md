@@ -1,0 +1,13 @@
+# AiwareJsClient.TasksInstanceCountInfo
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**count** | **Number** | (TODO:Remove this field) Total instance by category and host | [optional] 
+**engineCategoryID** | **String** | Engine category ID | [optional] 
+**engineCategoryName** | **String** | Engine category name | [optional] 
+**hostID** | **String** | (TODO:Remove this field) Host ID | [optional] 
+**values** | **[Number]** | Total instance by host for the current category | [optional] 
+
+

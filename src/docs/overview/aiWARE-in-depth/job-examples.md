@@ -632,8 +632,7 @@ This job assumes the engine's `libraryEngineModel` has already been trained, and
         <ul>
             <li>
                 <input type="checkbox" id="list-item-4">
-                <label for="list-item-4"><span class="expandText">Show code for Running Facebox against a Single Frame</span>
-                <span class="collpaseText">Hide code for Running Facebox against a Single Frame</span></label>
+                <label for="list-item-4"><span class="expandText">Show code for Running Facebox against a Single Frame</span><span class="collpaseText">Hide code for Running Facebox against a Single Frame</span></label>
                 <ul>
                     <li>
                     <p>Input: A JPEG file at a publilc URL.</p><br/>
@@ -732,8 +731,7 @@ This example shows how to do it. The source text is English; it will be translat
         <ul>
             <li>
                 <input type="checkbox" id="list-item-5">
-                <label for="list-item-5"><span class="expandText">Show code for Running Translation on Text</span>
-                <span class="collpaseText">Hide code for Running Translation on Text</span></label>
+                <label for="list-item-5"><span class="expandText">Show code for Running Translation on Text</span><span class="collpaseText">Hide code for Running Content Classification on Text</span></label>
                 <ul>
                     <li>
                     <p>Input: A text file at a publilc URL.</p><br/>
@@ -826,10 +824,8 @@ Text files are processed by chunk engines. The DAG looks like:
 <div class="collapse-accordion">
         <ul>
             <li>
-                <input type="checkbox" id="list-item-6">
-                <label for="list-item-6"><span class="expandText">
-                Show code for Running Content Classification on Text</span>
-                <span class="collpaseText">Hide code for Running Content Classification on Text</span></label>
+                <input type="checkbox" id="list-item-5">
+                <label for="list-item-5"><span class="expandText">Show code for Running Content Classification on Text</span><span class="collpaseText">Hide code for Running Content Classification on Text</span></label>
                 <ul>
                     <li>
                     <p>Input: A text file at a publilc URL.</p><br/>
@@ -964,9 +960,8 @@ This job processes a video (at a public URL) to obtain VTN Standard output that 
 <div class="collapse-accordion">
         <ul>
             <li>
-                <input type="checkbox" id="list-item-7">
-                <label for="list-item-7"><span class="expandText">Show code for Object Detection Using Tagbox</span>
-                <span class="collpaseText">Hide code for Object Detection Using Tagbox</span></label>
+                <input type="checkbox" id="list-item-6">
+                <label for="list-item-6"><span class="expandText">Show code for Object Detection Using Tagbox</span><span class="collpaseText">Hide code for Object Detection Using Tagbox</span></label>
                 <ul>
                     <li>
                     <p>Input: *.mp4 file at a publilc URL.</p><br/>
@@ -1102,7 +1097,7 @@ This job processes a video (at a public URL) to obtain VTN Standard output that 
 </div>
 
 
-<!--    ANOTHE         kR BLOCK 
+<!--    ANOTEHR BLOCK 
 <div class="collapse-accordion">
         <ul>
             <li>
@@ -1117,7 +1112,8 @@ This job processes a video (at a public URL) to obtain VTN Standard output that 
              </li>           
          </ul>
 </div>
---> 
+-->
+
 <!-- TEMPLATE 
 ## Another div
 

@@ -141,13 +141,12 @@
     <br>
     <a href="/#/apis" id="explore-api-basics-btn">EXPLORE API BASICS</a>
 </div>
+-->
 
 </div>
--->
 
 ## What is Veritone aiWARE? <!-- {docsify-ignore} -->
 Veritone aiWARE is a production-proven AI platform that lets you harness the power of AI anywhere, any time. Cognitively enable new or existing apps rapidly, using a unified API for more than 300 engines available on the aiWARE platform. Deploy enterprise-grade solutions at scale, using our infrastructure or your own. Process massive amounts of data — audio, video, image, text, and more — to extract actionable intelligence. Boost the productivity of your business and IT teams by intelligently automating manual, repetitive, and data-driven tasks — no in-depth coding skills or AI expertise required.
-
 
 <hr>
 
@@ -347,8 +346,9 @@ Veritone aiWARE is a production-proven AI platform that lets you harness the pow
     </div>
 </div>
 
-<!-- DISABLE FOR NOW
-## Whats New
+
+<!-- DISABLE THIS FOR NOW
+## Whats New 
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
         <div class="date-text">
