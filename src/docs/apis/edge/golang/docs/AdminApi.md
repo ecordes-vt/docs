@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**CreateRole**](AdminApi.md#CreateRole) | **Post** /admin/users/role/create | This creates a new role
 [**CreateServerType**](AdminApi.md#CreateServerType) | **Post** /admin/server_types/create | This creates a new server type
 [**CreateServerTypeEngineRunning**](AdminApi.md#CreateServerTypeEngineRunning) | **Post** /admin/server_types/running_engine/create | This creates a new server_type_engine_running
+[**CreateService**](AdminApi.md#CreateService) | **Post** /admin/service/create | This API creates a new service definition.
 [**CreateToken**](AdminApi.md#CreateToken) | **Post** /admin/tokens/create | This creates a new token
 [**CreateUser**](AdminApi.md#CreateUser) | **Post** /admin/users/create | This creates a new user
 [**DeleteApplication**](AdminApi.md#DeleteApplication) | **Post** /admin/applications/{ApplicationID}/delete | This deletes an application
@@ -733,6 +734,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateServerTypeEngineRunningResponse**](CreateServerTypeEngineRunningResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateService
+
+> CreateServiceResponse CreateService(ctx, createServiceRequest, optional)
+
+This API creates a new service definition.
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**createServiceRequest** | [**CreateServiceRequest**](CreateServiceRequest.md)| The fields for a service definition | 
+ **optional** | ***CreateServiceOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a CreateServiceOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xCorrelationId** | **optional.String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | 
+
+### Return type
+
+[**CreateServiceResponse**](CreateServiceResponse.md)
 
 ### Authorization
 
