@@ -14,6 +14,8 @@ The process is typically to create a branch, work on new content, push a commit,
 
 Veritone engineers may consult [this page](https://steel-ventures.atlassian.net/wiki/spaces/VT/pages/888279528/Contribute+to+docs.veritone.com) for detailed information on how best to submit content, however this not required in order to contribute content.
 
+If this is related to aiware, then veritone/realtime repo docs directory is the master for this content.
+
 ## Overview
 
 Veritone Docs is a static site built using Markdown files and powered by [Docsify][docsify].
