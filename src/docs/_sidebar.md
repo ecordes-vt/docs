@@ -117,8 +117,7 @@
       - [DB](/config/db.md)
       - [NFS](/config/nfs.md)
       - [Registry](/config/registry.md)
-    - [DB](/db/tables.md)
-    - [Filesystem Structure](/fs/REDME.md)
+    <!-- - [Filesystem Structure](/fs/REDME.md) -->
   - [Engines](/developer/engines/)
     - [Getting Started with Engines](/developer/engines/getting-started/)
     - [Partner with Veritone](/developer/benefits.md)
