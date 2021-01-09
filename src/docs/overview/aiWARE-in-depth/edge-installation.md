@@ -322,6 +322,45 @@ These variables (created by aiWARE) will exist after installation:
 | AIWARE\_AWSLOGS\_GROUP | aiware | Log group for the logs |
 | AIWARE\_AWSLOGS\_STREAM | v3f | Log stream to use |
 
+
+## Installing aiWARE Tool Set
+
+Please follow the steps below to install an engine locally in your aiWARE Edge server.  If you are using the "Two Nodes" run mode, you will need to follow these steps on the Admin Node server only.
+
+### Step 1: Download aiware.tar
+
+This aiWARE Engine Tool Set will be provided by Veritone prior to the installation 
+
+### Step 2: Copy aiware.tar from your local machine to VM
+
+
+`scp -r /Users/{User}/aiware.tar ssh:/home/ubuntu`
+
+
+### Step 3: Unzip aiware.tar
+
+
+`tar xvf aiware.tar`
+
+
+### Step 4: Move to /aiware/sql
+
+`cd /aiware/sql`
+
+### Step 5: Add engines
+
+```bash
+./db.sh 01-add-wsa.ec.sql
+./db.sh 02-add-wsa.sql
+./db.sh 03-add-si2.sql
+./db.sh 04-add-ow.sql
+./db.sh 05-add-transcription.sql
+./db.sh 06-add-spanish.sql
+./db.sh 07-engine-preload.sql
+```
+
+Following the engine-preload.sql, the images of each engine will begin dowloading on to your VM. 
+
 ## How to Update Edge Instance to Latest Build
 
 The following steps will update the local aiWARE Edge instance with the latest build.
@@ -414,320 +453,6 @@ Then copy the `/opt/aiware/reports/reports-*.tgz` file to a computer and email t
 Remove the old reports
 
 `rm /opt/aiware/reports/*.out`
-
-
-## Installing an Engine Locally
-
-Please follow the steps below to install an engine locally in your aiWARE Edge server.  If you are using the "Two Nodes" run mode, you will need to follow these steps on the Admin Node server only.
-
-### Translation
-
-This example uses a translation engine (Pangeanic Spanish-to-English), but the procedure is the same for other cognitive engines.
-
-<style>
-.markdown-section pre>code.lang-sql {
-  color:white;
-  background-color:black;
-  font-size: .75rem;
-  line-height: 120%;
-}
-</style>
-
-### Step 1: Create a File Named 'add-spanish.sql' with the Following Contents
-
-```sql
-INSERT INTO edge.engine_category (
-    engine_category_id,
-    engine_category_name,
-    engine_category_type
-  )
-VALUES (
-    '3b2b2ff8-44aa-4db4-9b71-ff96c3bf5923',
-    'Translate',
-    'Cognition'
-  ) ON CONFLICT (engine_category_id) DO NOTHING;
-INSERT INTO edge.engine (
-    internal_organization_id,
-    engine_id,
-    engine_name,
-    engine_state,
-    engine_type,
-    engine_output_type,
-    engine_category_id,
-    dependency,
-    core_job_data,
-    fields,
-    validation,
-    application_id,
-    jwt_rights,
-    parallel_processing,
-    parent_complete_before_processing,
-    edge_version,
-    dontrun_complete,
-    priority_adjustment,
-    child_priority_adjustment_on_complete,
-    replacement_engine_id,
-    created_date_time,
-    modified_date_time,
-    cpu_shares,
-    idle_timeout,
-    update_status_interval
-  )
-VALUES (
-    (
-      SELECT internal_organization_id
-      FROM edge.organization
-      limit 1
-    ), '95c910f6-4a26-4b66-96cb-488befa86466', 'Spanish-to-English', 'active', 'batch', 'chunk', '3b2b2ff8-44aa-4db4-9b71-ff96c3bf5923', '{}', '{}', '{}', '{}', '{}', '{}', false, false, 0, false, 0, 0, NULL,
-    0,
-    0,
-    1024,
-    0,
-    10
-  ) ON CONFLICT (engine_id) DO NOTHING;
-INSERT INTO edge.build (
-    build_id,
-    engine_id,
-    "version",
-    build_state,
-    docker_image,
-    mf_engine_name,
-    mf_engine_mode,
-    mf_cluster_size,
-    mf_custom_profile,
-    mf_gpu_supported,
-    mf_require_ec2,
-    soft_vcpu_limit,
-    soft_gpu_limit,
-    soft_mem_bytes_limit,
-    disk_free_bytes,
-    license_expiration_timestamp,
-    build_default_ttl,
-    runtime
-  )
-VALUES (
-    '66a6088b-d49e-4bc5-b9a7-4fa17af57b7e',
-    '95c910f6-4a26-4b66-96cb-488befa86466',
-    29,
-    'deployed',
-    '026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:95c910f6-4a26-4b66-96cb-488befa86466-66a6088b-d49e-4bc5-b9a7-4fa17af57b7e',
-    'Spanish-to-English',
-    'batch',
-    'large',
-    '',
-    'none',
-    false,
-    1024,
-    0,
-    1073741824,
-    1073741824,
-    0,
-    21600,
-    '{"edge": {}}'
-  ) ON CONFLICT (build_id) DO NOTHING;
-  ```
-  
-### Step 2: Create a File Named 'add-ow.sql' with the Following Contents
-
-This SQL script will add Output Writer to the system. (Output Writer is a necessary component for most aiWARE jobs.)
-  
-  ```sql
-  INSERT INTO "edge"."build"(
-      "build_id",
-      "engine_id",
-      "version",
-      "build_state",
-      "docker_image",
-      "mf_engine_name",
-      "mf_engine_mode",
-      "mf_cluster_size",
-      "mf_custom_profile",
-      "mf_gpu_supported",
-      "mf_require_ec2",
-      "soft_vcpu_limit",
-      "soft_gpu_limit",
-      "soft_mem_bytes_limit",
-      "disk_free_bytes",
-      "license_expiration_timestamp",
-      "build_default_ttl",
-      "created_date_time",
-      "modified_date_time",
-      "runtime"
-    )
-  VALUES (
-      '89599c9c-209f-4d8a-af02-0ab9e104f689',
-      '8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3',
-      16,
-      'deployed',
-      '026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3-89599c9c-209f-4d8a-af02-0ab9e104f689',
-      '',
-      'chunk',
-      'small',
-      '',
-      'none',
-      FALSE,
-      1024,
-      0,
-      1073741824,
-      1073741824,
-      0,
-      21600,
-      1583276111,
-      1583276111,
-      '{"edge": {}}'
-    );
-  ```
-
-### Step 3: Turn Preload On
-    
-You need to do this each time you upload a new engine to your Edge installation.
-
-Run this SQL:
-
-```sql
-update edge.engine SET preload = true;
-```
-
-### Step 4: Run 'cat' in Terminal to Insert the Relevant Records into the Edge Database
-
-```bash
-cat add-spanish.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
-cat add-ow.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
-cat engines-preload.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
-```
-
-### Transcription
-
-This example uses an English Transcription engine,  but the procedure is the same for other cognitive engines.
-
-<style>
-.markdown-section pre>code.lang-sql {
-  color:white;
-  background-color:black;
-  font-size: .75rem;
-  line-height: 120%;
-}
-</style>
-
-### Step 1: Create a File Named 'add-transcription.sql' with the Following Contents
-
-```sql
-INSERT INTO edge.engine_category (engine_category_id,engine_category_name,engine_category_type,created_date_time,modified_date_time,cpu_shares) VALUES 
-('67cd4dd0-2f75-445d-a6f0-2f297d6cd182','Transcription','Cognition',1584577152,1584577152,1024)
-ON CONFLICT (engine_category_id) DO NOTHING;
-INSERT INTO edge.engine (internal_organization_id,engine_id,engine_name,engine_state,engine_type,engine_output_type,engine_category_id,dependency,core_job_data,fields,validation,application_id,jwt_rights,parallel_processing,parent_complete_before_processing,edge_version,dontrun_complete,priority_adjustment,child_priority_adjustment_on_complete,replacement_engine_id,created_date_time,modified_date_time,cpu_shares,idle_timeout,num_chunks_per_work_item,update_status_interval,max_processing_seconds_per_work_item,max_wait_seconds_for_chunk) VALUES 
-((SELECT internal_organization_id
-FROM edge.organization limit 1)
-,'c0e55cde-340b-44d7-bb42-2e0d65e98255','English Transcription','active','chunk','chunk','67cd4dd0-2f75-445d-a6f0-2f297d6cd182','{}','{}','{}','{}','{}','{}',false,false,0,false,0,0,NULL,0,0,1024,0,1,10,900,0)
-ON CONFLICT (engine_id) DO NOTHING;
-INSERT INTO edge.build (build_id,engine_id,"version",build_state,docker_image,mf_engine_name,mf_engine_mode,mf_cluster_size,mf_custom_profile,mf_gpu_supported,mf_require_ec2,soft_vcpu_limit,soft_gpu_limit,soft_mem_bytes_limit,disk_free_bytes,license_expiration_timestamp,build_default_ttl,created_date_time,modified_date_time,runtime) VALUES 
-('f1b7d811-8803-4331-a40d-a65c97d98946','c0e55cde-340b-44d7-bb42-2e0d65e98255',11,'deployed','026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:c0e55cde-340b-44d7-bb42-2e0d65e98255-f1b7d811-8803-4331-a40d-a65c97d98946','English Transcription','chunk','custom','speechmatics','none',false,1024,0,1073741824,1073741824,0,21600,1584577152,1584577152,'{"edge": {}}')
-ON CONFLICT (build_id) DO NOTHING;
-  ```
-  
-### Step 2: Create a File Named 'add-wsa.sql' with the Following Contents
-
-  
-  ```sql
-  INSERT INTO "edge"."engine"("internal_organization_id","engine_id","engine_name","engine_state","engine_type","engine_output_type","engine_category_id","dependency","core_job_data","fields","validation","application_id","jwt_rights","parallel_processing","parent_complete_before_processing","edge_version","dontrun_complete","priority_adjustment","child_priority_adjustment_on_complete","replacement_engine_id","created_date_time","modified_date_time","cpu_shares","idle_timeout","num_chunks_per_work_item","update_status_interval","max_processing_seconds_per_work_item","max_wait_seconds_for_chunk")
-VALUES
-((SELECT internal_organization_id
-FROM edge.organization limit 1)
-,E'9e611ad7-2d3b-48f6-a51b-0a1ba40fe255',E'Webstream Adapter V3F',E'active',E'stream',E'chunk',E'4b150c85-82d0-4a18-b7fb-63e4a58dfcce',E'{}',E'{}',E'{}',E'{}',E'{}',E'{}',FALSE,FALSE,0,FALSE,-100,0,NULL,0,1583211280,4096,0,1,10,900,0);
-INSERT INTO "edge"."build"("build_id","engine_id","version","build_state","docker_image","mf_engine_name","mf_engine_mode","mf_cluster_size","mf_custom_profile","mf_gpu_supported","mf_require_ec2","soft_vcpu_limit","soft_gpu_limit","soft_mem_bytes_limit","disk_free_bytes","license_expiration_timestamp","build_default_ttl","created_date_time","modified_date_time","runtime")
-VALUES
-(E'fcd98c2e-8547-4fe9-86ab-b94f6e35468e',E'9e611ad7-2d3b-48f6-a51b-0a1ba40fe255',17,E'deployed',E'026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:9e611ad7-2d3b-48f6-a51b-0a1ba40fe255-fcd98c2e-8547-4fe9-86ab-b94f6e35468e',E'Webstream Adapter V3F',E'stream',E'custom',E'webstream-adapter',E'none',FALSE,500,0,1073741824,1073741824,0,21600,1583202045,1583210842,E'{"edge": {}}');
-  ```
-
-  ### Step 3: Create a File Named 'add-wsa-ec.sql' with the Following Contents
-  
-  ```sql
-INSERT INTO "edge"."engine_category"("engine_category_id","engine_category_name","engine_category_type","created_date_time","modified_date_time","cpu_shares")
-VALUES
-(E'4b150c85-82d0-4a18-b7fb-63e4a58dfcce',E'Pull',E'Ingestion',1583200492,1583200492,1024);
-  ```
-
-### Step 4: Create a File Named 'add-ow.sql' with the Following Contents
-
-This SQL script will add Output Writer to the system. (Output Writer is a necessary component for most aiWARE jobs.) If already added to your Edge, you do not need to do this step.
-  
-  ```sql
-  INSERT INTO "edge"."build"(
-      "build_id",
-      "engine_id",
-      "version",
-      "build_state",
-      "docker_image",
-      "mf_engine_name",
-      "mf_engine_mode",
-      "mf_cluster_size",
-      "mf_custom_profile",
-      "mf_gpu_supported",
-      "mf_require_ec2",
-      "soft_vcpu_limit",
-      "soft_gpu_limit",
-      "soft_mem_bytes_limit",
-      "disk_free_bytes",
-      "license_expiration_timestamp",
-      "build_default_ttl",
-      "created_date_time",
-      "modified_date_time",
-      "runtime"
-    )
-  VALUES (
-      '89599c9c-209f-4d8a-af02-0ab9e104f689',
-      '8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3',
-      16,
-      'deployed',
-      '026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:8eccf9cc-6b6d-4d7d-8cb3-7ebf4950c5f3-89599c9c-209f-4d8a-af02-0ab9e104f689',
-      '',
-      'chunk',
-      'small',
-      '',
-      'none',
-      FALSE,
-      1024,
-      0,
-      1073741824,
-      1073741824,
-      0,
-      21600,
-      1583276111,
-      1583276111,
-      '{"edge": {}}'
-    );
-  ```
-
-  ### Step 5: Create a File Named 'add-si2-ec.sql' with the Following Contents
-
-This SQL script will add Output Writer to the system. (Output Writer is a necessary component for most aiWARE jobs.)
-  
-  ```sql
-  INSERT INTO "edge"."build"("build_id","engine_id","version","build_state","docker_image","mf_engine_name","mf_engine_mode","mf_cluster_size","mf_custom_profile","mf_gpu_supported","mf_require_ec2","soft_vcpu_limit","soft_gpu_limit","soft_mem_bytes_limit","disk_free_bytes","license_expiration_timestamp","build_default_ttl","created_date_time","modified_date_time","runtime")
-VALUES
-(E'179bb1df-844a-4988-a030-03e2a84b219e',E'8bdb0e3b-ff28-4f6e-a3ba-887bd06e6440',16,E'deployed',E'026972849384.dkr.ecr.us-east-1.amazonaws.com/prod-validated:8bdb0e3b-ff28-4f6e-a3ba-887bd06e6440-179bb1df-844a-4988-a030-03e2a84b219e',E'',E'chunk',E'small',E'',E'none',FALSE,1024,0,1073741824,1073741824,0,21600,1583276111,1583276111,E'{"edge": {}}');
-  ```
-
-### Step 6: Turn Preload On
-    
-You need to do this each time you upload a new engine to your Edge installation.
-
-Run this SQL:
-
-```sql
-update edge.engine SET preload = true;
-```
-
-### Step 7: Run 'cat' in Terminal to Insert the Relevant Records into the Edge Database
-
-```bash
-cat add-transcription.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
-cat add-wsa-ec.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
-cat add-wsa.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
-cat add-ow.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
-cat add-si2-ec.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
-cat engines-preload.sql | docker container exec -i aiware-postgres /usr/bin/psql -U postgres -f -
-```
 
 ## Update Engine Build
 
