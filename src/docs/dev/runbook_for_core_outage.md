@@ -40,7 +40,106 @@ table for the clusters -- note that this will need to be set across ALL clusters
 | ??? | `controller`, `primary.engine_launch.enabled` | ??? |
 | ??? | `controller`, `primary.update_stats.enabled` | ??? |
 | ??? | `controller`, `task_status.enable` | ??? |
+| Set amount of funcs for syncing task statuses | `controller`, `primary.updatetasks.num_funcs`| defaults to 5 | | 0
 
+
+
+### UK 
+
+#### 2021/01/08 Preparation
+
+<table>
+	<tr>
+		<th>config_section</th>
+		<th>config_key</th>
+		<th>config_value</th>
+		<th>kvp</th>
+		<th>created_date_time</th>
+		<th>modified_date_time</th>
+		<th>service_id</th>
+		<th>engine_id</th>
+	</tr>
+	<tr>
+		<td>controller</td>
+		<td>task.reprocessing.delay_in_seconds</td>
+		<td>1800</td>
+		<td>{}</td>
+		<td>1610157550</td>
+		<td>1610157550</td>
+		<td><i>NULL</i></td>
+		<td><i>NULL</i></td>
+	</tr>
+	<tr>
+		<td>controller</td>
+		<td>primary.cron.enabled</td>
+		<td>false</td>
+		<td>{}</td>
+		<td>1610156320</td>
+		<td>1610157406</td>
+		<td><i>NULL</i></td>
+		<td><i>NULL</i></td>
+	</tr>
+	<tr>
+		<td>controller</td>
+		<td>primary.updatetasks.num_funcs</td>
+		<td>0</td>
+		<td>{}</td>
+		<td>1610157228</td>
+		<td>1610157228</td>
+		<td><i>NULL</i></td>
+		<td><i>NULL</i></td>
+	</tr>
+	<tr>
+		<td>controller</td>
+		<td>primary.cron.job_creation_enabled</td>
+		<td>false</td>
+		<td>{}</td>
+		<td>1589809858</td>
+		<td>1610157031</td>
+		<td><i>NULL</i></td>
+		<td><i>NULL</i></td>
+	</tr>
+	<tr>
+		<td>controller</td>
+		<td>primary.cron.adhoc_enabled</td>
+		<td>false</td>
+		<td>{}</td>
+		<td>1597727031</td>
+		<td>1610156954</td>
+		<td><i>NULL</i></td>
+		<td><i>NULL</i></td>
+	</tr>
+	<tr>
+		<td>controller</td>
+		<td>primary.cron.scheduler_enabled</td>
+		<td>false</td>
+		<td>{}</td>
+		<td>1610156289</td>
+		<td>1610156289</td>
+		<td><i>NULL</i></td>
+		<td><i>NULL</i></td>
+	</tr>
+	<tr>
+		<td>controller</td>
+		<td>cron.interval_scheduler_enabled</td>
+		<td>false</td>
+		<td>{}</td>
+		<td>1610156248</td>
+		<td>1610156248</td>
+		<td><i>NULL</i></td>
+		<td><i>NULL</i></td>
+	</tr>
+	<tr>
+		<td>controller</td>
+		<td>primary.cron.sched_job_downloader_enabled</td>
+		<td>false</td>
+		<td>{}</td>
+		<td>1600366373</td>
+		<td>1610156188</td>
+		<td><i>NULL</i></td>
+		<td><i>NULL</i></td>
+	</tr>
+</table>
 
 
 
