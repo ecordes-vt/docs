@@ -130,7 +130,7 @@
       - [Segment Engine Processing](/developer/engines/processing-modes/segment-processing/)
       - [Stream Engine Processing](/developer/engines/processing-modes/stream-processing/)
     - [Engine Standards](/developer/engines/standards/)
-      - [Engine Output (vtn-standard)](d/eveloper/engines/standards/engine-output/)
+      - [Engine Output (vtn-standard)](/developer/engines/standards/engine-output/)
       - [Engine Manifest](/developer/engines/standards/engine-manifest/)
         <!-- - [Message Types](developer/engines/standards/message-types/)-->
     - [Custom Fields](/developer/engines/custom-fields/)
@@ -226,7 +226,7 @@
     - [Sentiment Analysis on Helpdesk Tickets](/automate-studio/tutorials/sentiment-analysis.md)
     - [Creating new training data with a flow](/automate-studio/tutorials/automate-tutorial-6-flow-face-libraries.md)
     - [Automate Studio and Flow Engines](/automate-studio/tutorials/automate-tutorial-7-flow-engines.md)
-    - [Alteryx Tools](automate-studio/alteryx/)
+  - [Alteryx Tools](/automate-studio/alteryx/)
   - [Get Paid!](/automate-studio/flow-bounties/README)
 - [Machine Box](/developer/machine-box/)
   - [Getting Started](/developer/machine-box/setup/)
