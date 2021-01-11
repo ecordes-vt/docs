@@ -31,7 +31,7 @@
     - [Machine Learning Integrator](/quickstart/ml-integrator/)
     - [Machine Learning Explorer](/quickstart/ml-explorer/)
     - [Engine Developer](/quickstart/engine-developer/)
-  - Quickstarts
+  - [Quickstarts](/apis/jobs-tasks-tdos.md)
     - [Jobs, Tasks, and TDOs](/apis/jobs-tasks-tdos.md)
     - [Job Quickstart Guide](/apis/job-quickstart/)
     - [Search Quickstart Guide](/apis/search-quickstart/)
@@ -44,12 +44,6 @@
     - [Asset Types](/apis/tutorials/asset-types.md)
   - [Tutorials](/apis/tutorials/)
     - [Building Applications](/developer/applications/)
-<!--    - [Quickstart](developer/applications/quick-start/)
-      - [Step 1 - Register Your Application](developer/applications/quick-start/step-1.md)
-      - [Step 2 - Set Up Authentication](developer/applications/quick-start/step-2.md)
-      - [Step 3 - Add APIs and Components](developer/applications/quick-start/step-3.md)
-      - [Step 4 - Submit Your Application](developer/applications/quick-start/step-4.md)
-      - [Step 5 - Deploy Your Application](developer/applications/quick-start/step-5.md) -->
     - [Tutorial: Build Your Own AI App](/developer/applications/app-tutorial/)
       - [Step 1: Register Your App](/developer/applications/app-tutorial/app-tutorial-step-1.md)
       - [Step 2: Set Up Authentication](/developer/applications/app-tutorial/app-tutorial-step-2.md)
@@ -132,7 +126,6 @@
     - [Engine Standards](/developer/engines/standards/)
       - [Engine Output (vtn-standard)](/developer/engines/standards/engine-output/)
       - [Engine Manifest](/developer/engines/standards/engine-manifest/)
-        <!-- - [Message Types](developer/engines/standards/message-types/)-->
     - [Custom Fields](/developer/engines/custom-fields/)
     - [Polling](/developer/engines/polling/)
     - [Callbacks](/developer/engines/callbacks/)
