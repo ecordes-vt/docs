@@ -13,6 +13,7 @@
         font-size: 80%;
         display: flex;
         background: #FAFAFA;
+        margin: 15px 0px;
     }
 
     a.in-text-link {
@@ -55,14 +56,13 @@
     }
 
     div.newsSectionColumn{
-        width: 975px;
         position:relative;
         left:10px;
         display: flex
     }
     
     div.newsDateColumn {
-        width: 175px
+        width: 175px;
     }
 
     div.newsColumn {
@@ -70,11 +70,8 @@
     }
 
     div.buttonColumn {
-        width: 760px;
         display: flex;
-        margin: 0;
-        position: absolute;
-        left: 365px;
+        justify-content: center;
     }
 
     #view-more-templates-btn {
@@ -83,11 +80,9 @@
         border: 1px solid #2F80ED;
         width: 250px;
         height: 30px;
-        position: relative;
         left: 15px;
         text-align: center;
         padding: 5px;
-        position: relative;
         text-decoration: none;
     }
 
@@ -120,16 +115,17 @@
         width: 110px;
         border-radius: 10px;
         font-size: 95%;
+        margin-right: 10px;
         padding: 4px 6px;  
         text-align: center
     }
 
 </style>
 
-<div style="display:flex;">
-<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/388620185?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="display:flex; align-items:center; justify-content: space-evenly; flex-wrap: wrap;">
+<div style="width: 650px; height: 300px; margin-bottom: 20px;"><iframe src="https://player.vimeo.com/video/388620185?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;margin:0px;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
-<div style="float:right; width: 200px; padding-top: 125px">
+<div>
     <a href="#/automate-studio/getting-started/README" id="learn-automate-studio-btn">LEARN HOW TO USE AUTOMATE STUDIO</a>
     <br>
     <a href="https://automate.veritone.com/flow_template_gallery" id="explore-templates-btn" target="_blank">EXPLORE THE TEMPLATES</a>
@@ -144,55 +140,45 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
 
 ## Explore Automate Studio Templates <!-- {docsify-ignore} -->
 
-
-
-<div style="display: flex">
-    <div class="featureColumn">
-        <div class="featureBox"> 
-            <div class="featureText">
-                <h3>Estimation of Customer’s Intent</h3>
-                <div>Identify caller intent to improve business metrics such as churn or customer satisfaction.</div>
-                <a class="link" target="_blank" href="https://automate.veritone.com/flow_template_gallery"> EXPLORE</a>
-            </div>
-            <div class= "featureImage">
-                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
-            </div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+    <div class="featureBox"> 
+        <div class="featureText">
+            <h3>Estimation of Customer’s Intent</h3>
+            <div>Identify caller intent to improve business metrics such as churn or customer satisfaction.</div>
+            <a class="link" target="_blank" href="https://automate.veritone.com/flow_template_gallery"> EXPLORE</a>
         </div>
-        </br>
-        </br>
-        <div class="featureBox"> 
-            <div class="featureText">
-                <h3>Ad Tracker Summarization</h3>
-                <div>Calculate the amount of time an advertiser’s logo spends on the TV screen and email a report.</div>
-                <a class="link" target="_blank" href="https://automate.veritone.com/flow_template_gallery" > EXPLORE</a>
-            </div>
-            <div class= "featureImage">
-                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
-            </div>
+        <div class= "featureImage">
+            <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
         </div>
     </div>
-    <div class="featureColumn">
-        <div class="featureBox"> 
-            <div class= "featureText">
-                <h3>Content Moderation</h3>
-                <div>Identify media containing a sensitive material such as profanity, weapons, nudity or violence.</div>
-                <a class="link" target="_blank" href="https://automate.veritone.com/flow_template_gallery"> EXPLORE</a>
-            </div>
-            <div class= "featureImage">
-                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
-            </div>
+    <div class="featureBox"> 
+        <div class="featureText">
+            <h3>Ad Tracker Summarization</h3>
+            <div>Calculate the amount of time an advertiser’s logo spends on the TV screen and email a report.</div>
+            <a class="link" target="_blank" href="https://automate.veritone.com/flow_template_gallery" > EXPLORE</a>
         </div>
-        </br>
-        </br>
-        <div class="featureBox">  
-            <div class= "featureText">
-                <h3>Dynamic Language Translation</h3>
-                <div>Translate text or audio files that source/target languages are config parameters. </div>
-                <a class="link" target="_blank" href="https://automate.veritone.com/flow_template_gallery" > EXPLORE</a>
-            </div>
-            <div class= "featureImage">
-                <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
-            </div>
+        <div class= "featureImage">
+            <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+        </div>
+    </div>
+    <div class="featureBox"> 
+        <div class= "featureText">
+            <h3>Content Moderation</h3>
+            <div>Identify media containing a sensitive material such as profanity, weapons, nudity or violence.</div>
+            <a class="link" target="_blank" href="https://automate.veritone.com/flow_template_gallery"> EXPLORE</a>
+        </div>
+        <div class= "featureImage">
+            <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
+        </div>
+    </div>
+    <div class="featureBox">  
+        <div class= "featureText">
+            <h3>Dynamic Language Translation</h3>
+            <div>Translate text or audio files that source/target languages are config parameters. </div>
+            <a class="link" target="_blank" href="https://automate.veritone.com/flow_template_gallery" > EXPLORE</a>
+        </div>
+        <div class= "featureImage">
+            <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
         </div>
     </div>
 </div>
@@ -203,7 +189,7 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
 </div>
 
 ## Whats New <!-- {docsify-ignore} -->
-<div class= "newsSectionColumn">
+<div class="newsSectionColumn">
     <div class="newsDateColumn">
         <div class="date-text">
             06/22/2020
@@ -217,6 +203,7 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
         - New <a class="in-text-link" href="/#/overview/aiWARE-in-depth/edge/logs"> "How to view job and task logs"</a> guide.
     </div>
 </div>
+
 <br>
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
@@ -232,6 +219,7 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
         - New Automate Studio <a class="in-text-link" href="/#/automate-studio/faq"> FAQ</a>.
     </div>
 </div>
+
 <br>
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
