@@ -2176,6 +2176,27 @@ components:
       required:
       - internalOrganizationID
       type: object
+    CreateJobForEngineRequest:
+      properties:
+        contentType:
+          description: mimetype of the input file
+          type: string
+        fileName:
+          description: the input file contents
+          format: binary
+          type: string
+        inputFileName:
+          description: the original filename of the input file
+          type: string
+        templateName:
+          description: the engine job template to process the input file
+          type: string
+      type: object
+    CreateJobForEngineResponse:
+      properties:
+        internalJobId:
+          type: string
+      type: object
     CreateJobRequest:
       properties:
         jobs:
@@ -7953,7 +7974,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.13.2.1976
+  version: 3.13.2.1977
 openapi: 3.0.1
 paths:
   /admin/applications:
@@ -22973,6 +22994,128 @@ paths:
       security:
       - api_key: []
       summary: This API provides the engine detail result
+      tags:
+      - engine
+  /engine/{EngineID}/createjob:
+    parameters:
+    - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/EngineID'
+    post:
+      operationId: create_job_for_engine
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CreateJobForEngineRequest'
+        description: Create job for engine using its defined template
+        required: true
+      responses:
+        204:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateJobForEngineResponse'
+          description: Returns job ID
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid argument.  Please see the error response for more information.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        401:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not authorized
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        403:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        405:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request is not allowed.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        429:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        501:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Implemented
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        503:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: System Unavailable
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+      security:
+      - api_key: []
+      summary: This API create a job for the engine
       tags:
       - engine
   /engine/{EngineID}/instances:
