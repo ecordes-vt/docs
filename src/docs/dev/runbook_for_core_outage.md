@@ -22,6 +22,13 @@ For example playback and output writer tasks can be retried at a later time; tho
 may be too small for extended outage.  All the configuration items are expected to be set in the `edge.config`
 table for the clusters -- note that this will need to be set across ALL clusters that connected to the same core.
 
+## ACTION ITEMS
+
+1.  Disable services by setting corresponding values in `edge.config`
+1.  ASG management for engine clusters
+
+
+### edge.config 
  
 
 | Function | Configuration Item | Note | Setting to prepare for outage | Reset after outage is finished |
@@ -43,10 +50,34 @@ table for the clusters -- note that this will need to be set across ALL clusters
 | Set amount of funcs for syncing task statuses | `controller`, `primary.updatetasks.num_funcs`| defaults to 5 | | 0
 
 
+## ASG management
 
-### UK 
 
-#### 2021/01/08 Preparation
+1. Scale down engine nodes
+
+
+
+
+## Notes
+
+#### PROD
+
+The following clusters need to be prepared:
+
+
+| cluster | Notes |
+|---------|-------|
+| prd1 ||
+| prd3 ||
+| prd5 ||
+| bmg || 
+| iheart ||
+| prd4 ? ||
+
+
+#### UK 
+
+##### 2021/01/08 Preparation
 
 <table>
 	<tr>
