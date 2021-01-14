@@ -210,8 +210,9 @@ sample = {
       "type": "mouth",
 
       // Clockwise ordered array of (x,y) coordinates as percentage of axis:
-      //        top-left (0.0, 0.0) ┌──┐ (1.0, 0.0) top-right
-      //     bottom-left (0.0, 1.0) └──┘ (1.0, 1.0) bottom-right
+      //        top-left (0.0, 0.0)     (1.0, 0.0) top-right
+      //                            ███ 
+      //     bottom-left (0.0, 1.0)     (1.0, 1.0) bottom-right
       // There is an implicit line from last to first point to close the polygon.
       "locationPoly": [{
         "x": 0.1,
@@ -232,8 +233,9 @@ sample = {
 
     // Bounding polygon (optional)
     // Clockwise ordered array of (x,y) coordinates as percentage of axis:
-    //        top-left (0.0, 0.0) ┌──┐ (1.0, 0.0) top-right
-    //     bottom-left (0.0, 1.0) └──┘ (1.0, 1.0) bottom-right
+    //        top-left (0.0, 0.0)     (1.0, 0.0) top-right
+    //                            ███ 
+    //     bottom-left (0.0, 1.0)     (1.0, 1.0) bottom-right
     // There is an implicit line from last to first point to close the polygon.
     "boundingPoly": [{
       "x": 0.1,
@@ -434,8 +436,9 @@ sample = {
         "type": "mouth",
 
         // Clockwise ordered array of (x,y) coordinates as percentage of axis:
-        //        top-left (0.0, 0.0) ┌──┐ (1.0, 0.0) top-right
-        //     bottom-left (0.0, 1.0) └──┘ (1.0, 1.0) bottom-right
+        //        top-left (0.0, 0.0)     (1.0, 0.0) top-right
+        //                            ███ 
+        //     bottom-left (0.0, 1.0)     (1.0, 1.0) bottom-right
         // There is an implicit line from last to first point to close the polygon.
         "locationPoly": [{
           "x": 0.1,
@@ -456,8 +459,9 @@ sample = {
 
       // Bounding polygon (optional)
       // Clockwise ordered array of (x,y) coordinates as percentage of axis:
-      //        top-left (0.0, 0.0) ┌──┐ (1.0, 0.0) top-right
-      //     bottom-left (0.0, 1.0) └──┘ (1.0, 1.0) bottom-right
+      //        top-left (0.0, 0.0)     (1.0, 0.0) top-right
+      //                            ███ 
+      //     bottom-left (0.0, 1.0)     (1.0, 1.0) bottom-right
       // There is an implicit line from last to first point to close the polygon.
       "boundingPoly": [{
         "x": 0.1,
