@@ -68,13 +68,18 @@ The following clusters need to be prepared:
 
 | cluster | Notes |
 |---------|-------|
-| prd1 ||
-| prd3 ||
-| prd5 ||
-| bmg || 
-| iheart ||
+| prd1 |will start disconnection from core 30m prior to start of upgrade|
+| prd3 |will start disconnection from core at 3pm prep meeting|
+| prd5 |will start disconnection from core at 3pm prep meeting|
+| bmg |will start disconnection from core at 3pm prep meeting| 
+| iheart |will start disconnection from core at 3pm prep meeting|
 | prd4 ? ||
 
+### Process for prd3, prd5, bmg, ihrt clusters
+1. Disconnect from core setting above config parameters and disable auto-scale
+1. Cycle primary
+1. Set AWS ASG for engine to not launch terminated engine hosts
+1. When backlog is gone, drain all engines
 
 #### UK 
 
