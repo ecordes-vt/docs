@@ -41,7 +41,8 @@ table for the clusters -- note that this will need to be set across ALL clusters
 | Enable/disable adhoc job downloader | `controller` section, `primary.cron.adhoc_enabled` | should be set to true |||
 | Enable/disable all of CRON | `controller`, `primary.cron.enabled` | should be set to true |||
 | Enable/disable CRON job creation | `controller`, `primary.cron.job_creation_enabled` | should be set to true |||
-| Set CRON job creation SLOW channel plan ahead minutes | `controller`, `primary.cron.job_creation_slow_plan_ahead_min` | defaults to 180 (3h) |||
+| Set CRON job creation SLOW channel plan ahead minutes | `controller`, `primary.cron.job_creation_slow_plan_ahead_min` | defaults to 180 (3h) |1440|180|
+| Set CRON job creation SLOW channel plan ahead minutes | `controller`, `primary.cron.job_creation_slow_workers` | defaults to 20 |40|24|
 | Set CRON job creation FAST channel plan ahead minutes | `controller`, `primary.cron.job_creation_fast_plan_ahead_min` | defaults to 30 (30m) |||
 | Set CRON legacy scheduler plan ahead minutes | `controller`, `primary.cron.scheduler.plan_ahead_min` | defaults to 180 (3h) |
 | ??? | `controller`, `primary.engine_launch.enabled` | ??? |
