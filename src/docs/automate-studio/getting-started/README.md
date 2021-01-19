@@ -221,11 +221,11 @@ Your flow will be auto-saved every few seconds. You don't have to do periodic sa
 
 > Note that if a particular node in your flow diagram contains unsaved changes, it will appear with a small blue-filled circle above it. The circle disappears after an auto-save.
 
-When you want to save a _particular version_ of your flow so you can find it and load it again later, use the **Save** button near the Menu icon in the upper left corner of the editor window.
+When you want to save a _particular version_ of your flow so you can find it and load it again later, use the **Build** button near the Menu icon in the upper left corner of the editor window.
 
-Clicking **Save** causes the flow to be persisted as a numbered _Build_. A toast notification will appear at the bottom of the screen, saying that the Save was successful; then the editor will refresh.
+Clicking **Build** causes the flow to be persisted as a numbered _Build_. A toast notification will appear at the bottom of the screen, saying that the save was successful; then the editor will refresh.
 
-### Open a Saved Build
+### Open a Build
 
 To visit your flows at any time, use the **Menu** at the top left and select **My Flows**. A new window will open, containing a list of flows you have created. Click the name of a flow to open the **latest** build of that flow in the flow editor. To open a specifc build, click the link under Flow Detail at the far right side of the row. This will open the list of Builds (for that flow) in the Flow Details page, from which you can open any Build by clicking the link under **Open in Automate Studio**.
 

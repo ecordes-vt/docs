@@ -139,7 +139,7 @@ In aiWARE, _jobs_ are composed of _tasks_ that call on [_engines_](developer/eng
 
 When you create a flow in Automate Studio, your edits are silently auto-saved (as you work) into the current _Build_ of your flow. Think of your flow as an application, which you are building a _version_ of. You might work on a particular version of your flow over a period of days, across multiple Automate Studio sessions. It might contain dozens (or even hundreds) of auto-saves, but you are still working on a particular flow version &mdash; a particular Build.
 
-Auto-saves are (of cuorse) automatic, but sometimes you will proactively initiate a Save with the Save button at the top of the canvas UI. Clicking this button tells Automate Studio that you wish to save your work _as a distinct Build_.
+Auto-saves are (of course) automatic, but sometimes you will proactively initiate a save with the Build button at the top of the canvas UI. Clicking this button tells Automate Studio that you wish to save your work _as a distinct, versioned Build_.
 
 Any Build you create can be selected for deployment into aiWARE. You can initiate deployment using the Deploy button at the top of the canvas UI.
 

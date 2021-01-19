@@ -64,7 +64,7 @@
     - [Customizing Engine Output](/developer/engines/tutorial/customizing-engine-output.md)
     - [Customizing Engine Input](/developer/engines/tutorial/engine-custom-fields)
     - [Training an Engine](/developer/engines/tutorial/engine-training-tutorial)
-  - Reference
+  - [Reference](/apis/using-graphql.md)
     - Core APIs
      - [GraphQL](/apis/using-graphql.md)
        - [Mutation Methods](/apis/reference/mutation/)
@@ -111,7 +111,6 @@
       - [DB](/config/db.md)
       - [NFS](/config/nfs.md)
       - [Registry](/config/registry.md)
-    <!-- - [Filesystem Structure](/fs/REDME.md) -->
   - [Engines](/developer/engines/)
     - [Getting Started with Engines](/developer/engines/getting-started/)
     - [Partner with Veritone](/developer/benefits.md)
