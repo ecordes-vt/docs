@@ -75,8 +75,18 @@ The following clusters need to be prepared:
 | iheart |will start disconnection from core at 3pm prep meeting|
 | prd4 ? ||
 
-### Process for prd3, prd5, bmg, ihrt clusters
+### Process for prd3, prd5, bmg clusters
 1. Disconnect from core setting above config parameters and disable auto-scale
+1. Cycle primary
+1. Set AWS ASG for engine to not launch terminated engine hosts
+1. When backlog is gone, drain all engines
+
+### Process for ihrt cluster
+1. Disconnect from core setting above config parameters and disable auto-scale
+1. `Abort all existing scheduled jobs from edge.job` (possibly `queued` jobs as well)
+1. `Abort all existing scheduled tasks from edge.task and edge.task_route` (possibly `queued` tasks as well)
+	1. Increasing plan ahead won't work for ihrt because iHeart adapter is getting segment time from Core and then update Core. There will be issues when multiple scheduled tasks for the same source get picked up around the same time 
+	1. iHeart adapter will pick up where it was left automatically when new tasks are scheduled
 1. Cycle primary
 1. Set AWS ASG for engine to not launch terminated engine hosts
 1. When backlog is gone, drain all engines
