@@ -12,6 +12,7 @@
 | *license* | string |  | _AIWARE_LICENSE_ | The aiWARE LICENSE to use for the system |
 | *log_level* | string | info | _AIWARE_LOG_LEVEL_ | The log level to use for the system. Valid values - trace, debug, info, warn, error, fatal |
 | *log_shipper* | string |  | _AIWARE_LOG_SHIPPER_ | The log shipper to use. Valid values - Filebeat |
+| *shutdown_grace_period_sec* | int64 | 360 |  | The shutdown grace period before a host gets terminated |
 | *slack_channel* | string |  | _AIWARE_SLACK_CHANNEL_ | The channel to use for notifications for slack |
 | *slack_url* | string | no_url | _AIWARE_SLACK_URL_ | The url to use for notifications |
 | *storage.type* | string | nfs |  | Type of the storage |
