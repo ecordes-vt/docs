@@ -184,9 +184,11 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
 </div>
 <br>
 <br>
-<div class="buttonColumn">
+
+<!-- Comment out the view more templates button for this branch -->
+<!-- <div class="buttonColumn">
     <a href="https://automate.veritone.com/flow_template_gallery" id="view-more-templates-btn">VIEW MORE TEMPLATES</a>
-</div>
+</div> -->
 
 ## Whats New <!-- {docsify-ignore} -->
 <div class="newsSectionColumn">
