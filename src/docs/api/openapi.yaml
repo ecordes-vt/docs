@@ -2188,6 +2188,10 @@ components:
         inputFileName:
           description: the original filename of the input file
           type: string
+        parameterJSON:
+          description: JSON stringified of map of field names and values if specified
+            in job template
+          type: string
         templateName:
           description: the engine job template to process the input file
           type: string
@@ -7974,7 +7978,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.13.4.2014
+  version: 3.13.4.2016
 openapi: 3.0.1
 paths:
   /admin/applications:
