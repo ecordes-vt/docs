@@ -9,6 +9,7 @@
 | *awslogs_stream* | string | computed | _AIWARE_AWSLOGS_GROUP_ | Stream for AWSLOGS.  For containers that are part of the agent role, this must be set as environment variables on agent startup. |
 | *controller_urls* | string | http://localhost:9000/edge/v1 | _AIWARE_CONTROLLER_ | The URLs to use for controllers for the agents to connect with the aiWARE System |
 | *environment* | string | aiware | _AIWARE_ENVIRONMENT_ | The environment name for this aiWARE edge install |
+| *job_pruning_max_age_secs* | int64 | 432000 |  | The max age of a job after which a job will be pruned |
 | *license* | string |  | _AIWARE_LICENSE_ | The aiWARE LICENSE to use for the system |
 | *log_level* | string | info | _AIWARE_LOG_LEVEL_ | The log level to use for the system. Valid values - trace, debug, info, warn, error, fatal |
 | *log_shipper* | string |  | _AIWARE_LOG_SHIPPER_ | The log shipper to use. Valid values - Filebeat |

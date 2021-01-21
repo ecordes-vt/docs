@@ -53,12 +53,12 @@
 | *primary.alloc_task.size* | int64 | 1500 |  | The size for the alloc tasks |
 | *primary.autoscale.interval* | int64 | 300 |  | The interval for autoscale |
 | *primary.autoscale.scan_period* | int64 | 900 |  | The period autoscale will use to analyze |
+| *primary.cleansystem.default_grace_secs* | int64 | 432000 |  | How long to keep jobs and tasks |
 | *primary.cleansystem.enabled* | bool | true |  | This enables or disables the processing of cleaning up the system |
 | *primary.cleansystem.engine_instance_grace_secs* | int64 | 86400 |  | How long to keep  engine_instance |
 | *primary.cleansystem.engine_instance_set_termination_grace_secs* | int64 | 180 |  | How long since the last the last update to set status to termination. |
 | *primary.cleansystem.host_status_grace_secs* | int64 | 86400 |  | How long to keep  host_status |
 | *primary.cleansystem.interval* | int64 | 900 |  | The time to clean the system in seconds. This value should >= 120 seconds |
-| *primary.cleansystem.prune_jobs_grace_secs* | int64 | 259200 |  | How long to keep jobs |
 | *primary.cleansystem.task_status_grace_secs* | int64 | 82800 |  | How long to keep task_status |
 | *primary.cleansystem.task_status_limit* | int64 | 10000 |  | How many task status to clean |
 | *primary.cleansystem.task_status_loop_val* | int64 | 5 |  | How many task status loops to try |
