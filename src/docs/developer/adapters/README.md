@@ -201,19 +201,19 @@ The build state allows you easily identify and track a build's progression throu
 
 When developing your adapter, you'll work locally, package and upload your build as a Docker image, then deploy your approved container to production.
 
-1. [Register your adapter](https://docs.veritone.com/#/developer/adapters/quick-start/step-1) by specifying basic information about your adapter, including the name, type, description, logo, and deployment model.
+1. [Register your adapter](https://docs.veritone.com/#/adapters/quick-start/step-1) by specifying basic information about your adapter, including the name, type, description, logo, and deployment model.
 
-2. Add APIs and [configure your code](https://docs.veritone.com/#/developer/adapters/quick-start/step-2) to support Veritone's task processing flow and your adapter’s specific input/output fields.
+2. Add APIs and [configure your code](https://docs.veritone.com/#/adapters/quick-start/step-2) to support Veritone's task processing flow and your adapter’s specific input/output fields.
 
-3. [Create your manifest file](https://docs.veritone.com/#/developer/adapters/quick-start/step-3) with details about your adapter and how it will run.
+3. [Create your manifest file](https://docs.veritone.com/#/adapters/quick-start/step-3) with details about your adapter and how it will run.
 
-4. [Build a Dockerfile](https://docs.veritone.com/#/developer/adapters/quick-start/step-4) that packages your code, dependencies, and manifest, and use it to create a Docker image. Then push your Docker image to Veritone's Docker Registry and initiate the compliance testing process.
+4. [Build a Dockerfile](https://docs.veritone.com/#/adapters/quick-start/step-4) that packages your code, dependencies, and manifest, and use it to create a Docker image. Then push your Docker image to Veritone's Docker Registry and initiate the compliance testing process.
 
-5. [Submit your build for approval](https://docs.veritone.com/#/developer/adapters/quick-start/step-5) by a member of our team.
+5. [Submit your build for approval](https://docs.veritone.com/#/adapters/quick-start/step-5) by a member of our team.
 
-6. [Deploy your approved adapter](https://docs.veritone.com/#/developer/adapters/quick-start/step-6) adapter to production in the Veritone Platform.
+6. [Deploy your approved adapter](https://docs.veritone.com/#/adapters/quick-start/step-6) adapter to production in the Veritone Platform.
 
-Our [Quickstart](https://docs.veritone.com/#/developer/adapters/quick-start/) is designed to take you through the development workflow as quickly as possible. By the end, you'll have created and deployed a custom adapter in the Veritone Platform.
+Our [Quickstart](https://docs.veritone.com/#/adapters/quick-start/) is designed to take you through the development workflow as quickly as possible. By the end, you'll have created and deployed a custom adapter in the Veritone Platform.
 
 ### Help and Resources
 
