@@ -3387,7 +3387,7 @@ components:
       description: Use as request or response to engine template APIs
       properties:
         template:
-          $ref: '#/components/schemas/JobDetail'
+          $ref: '#/components/schemas/CreateJobDetail'
       type: object
     EngineTypeEnum:
       description: These are the different types of engines on what they can consume.  Chunk
@@ -7991,7 +7991,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.13.4.2033
+  version: 3.13.4.2034
 openapi: 3.0.1
 paths:
   /admin/applications:
