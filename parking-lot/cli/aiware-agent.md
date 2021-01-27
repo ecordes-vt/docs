@@ -41,6 +41,7 @@ aiware-agent [flags]
 * [aiware-agent engine](/cli/aiware-agent_engine.md)	 - Contains subcommands get and alter engine information.
 * [aiware-agent engine-category](/cli/aiware-agent_engine-category.md)	 - Contains subcommands to list, delete and load engine categories.
 * [aiware-agent engine-instance](/cli/aiware-agent_engine-instance.md)	 - Contains subcommands for engine instances.
+* [aiware-agent engine-template](/cli/aiware-agent_engine-template.md)	 - Contains subcommands to list, delete and load engine templates.
 * [aiware-agent host](/cli/aiware-agent_host.md)	 - Contains subcommands to assign, terminate, reboot, drain and show statistics of a host
 * [aiware-agent job](/cli/aiware-agent_job.md)	 - Contains subcommands to create, update, get and delete jobs
 * [aiware-agent license](/cli/aiware-agent_license.md)	 - Contains subcommands to manipulate licenses.
