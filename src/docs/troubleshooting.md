@@ -5,6 +5,8 @@
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 
+# edit /etc/systemd/system/aiaware-agent.service.env as appropriate
+vi /etc/systemd/system/aiaware-agent.service.env
 export $(cat /etc/systemd/system/aiware-agent.service.env | xargs)
 
 # Please validate there is AIWARE_CONTROLLER
