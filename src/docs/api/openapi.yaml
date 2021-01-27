@@ -3386,8 +3386,19 @@ components:
     EngineTemplate:
       description: Use as request or response to engine template APIs
       properties:
+        engineID:
+          type: string
         template:
           $ref: '#/components/schemas/CreateJobDetail'
+        templateName:
+          type: string
+      type: object
+    EngineTemplates:
+      properties:
+        templates:
+          items:
+            $ref: '#/components/schemas/EngineTemplate'
+          type: array
       type: object
     EngineTypeEnum:
       description: These are the different types of engines on what they can consume.  Chunk
@@ -7991,7 +8002,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.13.4.2035
+  version: 3.13.4.2036
 openapi: 3.0.1
 paths:
   /admin/applications:
@@ -23500,8 +23511,8 @@ paths:
     - $ref: '#/components/parameters/Orderby_Query_Optional'
     - $ref: '#/components/parameters/Direction_Query_Optional'
   /engine/{EngineID}/template/{EngineTemplateName}:
-    get:
-      operationId: get_engine_template
+    delete:
+      operationId: delete_engine_template
       responses:
         200:
           content:
@@ -23608,7 +23619,119 @@ paths:
               $ref: '#/components/headers/CorrelationId'
       security:
       - api_key: []
-      summary: Get the template of the engine given its ID and template name
+      summary: Delete the template of the engine given its ID and template name
+      tags:
+      - engine
+    get:
+      operationId: get_engine_template
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EngineTemplates'
+          description: Successful operation
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid argument.  Please see the error response for more information.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        401:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not authorized
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        403:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        405:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request is not allowed.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        429:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        501:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Implemented
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        503:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: System Unavailable
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+      security:
+      - api_key: []
+      summary: Get the template of the engine given its ID and template name -- if
+        EngineTeamplateName==`all`, all the templates for the engines will be returned
       tags:
       - engine
     parameters:
