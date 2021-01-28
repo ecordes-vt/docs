@@ -492,6 +492,14 @@ components:
       schema:
         format: uuid
         type: string
+    ResourceMappingID_Path_Required:
+      description: ID of Resource Mapping
+      in: path
+      name: ResourceMappingID
+      required: true
+      schema:
+        format: uuid
+        type: string
     ResourceType_Query_Optional:
       description: Filter by resourceType
       in: query
@@ -678,16 +686,8 @@ components:
       properties:
         engineId:
           $ref: '#/components/schemas/EngineID'
-        pgPass:
-          description: Optional the user password for the Postgres resource.
-          format: password
-          type: string
-        pgUser:
-          description: Optional the user name for the Postgres resource.
-          type: string
-        redisToken:
-          description: Optional Redis token.
-          type: string
+        resourceType:
+          $ref: '#/components/schemas/ResourceTypeEnum'
       type: object
     AddEngineForResourceResponse:
       properties:
@@ -710,16 +710,8 @@ components:
       type: object
     AddServiceForResourceRequest:
       properties:
-        pgPass:
-          description: Optional the user password for the Postgres resource.
-          format: password
-          type: string
-        pgUser:
-          description: Optional the user name for the Postgres resource.
-          type: string
-        redisToken:
-          description: Optional Redis token.
-          type: string
+        resourceType:
+          $ref: '#/components/schemas/ResourceTypeEnum'
         serviceId:
           $ref: '#/components/schemas/ServiceID'
       type: object
@@ -4036,6 +4028,18 @@ components:
         success:
           $ref: '#/components/schemas/OperationSuccess'
       type: object
+    GetMappingsForResourceResponse:
+      description: This is the response for get_mappings_for_resource request
+      properties:
+        error:
+          $ref: '#/components/schemas/Error'
+        result:
+          items:
+            $ref: '#/components/schemas/ResourceMappingDetail'
+          type: array
+        success:
+          $ref: '#/components/schemas/OperationSuccess'
+      type: object
     GetRatePendingScheduledJobsResponse:
       properties:
         counts:
@@ -6110,6 +6114,54 @@ components:
         resourceType:
           $ref: '#/components/schemas/ResourceTypeEnum'
       type: object
+    ResourceMappingDetail:
+      description: This is the resource mapping object
+      properties:
+        createdDateTime:
+          description: This is the datetime the core was created
+          example: '2018-03-20T09:12:28Z'
+          format: date-time
+          type: string
+        engineID:
+          format: uuid
+          type: string
+        modifiedDateTime:
+          description: This is the datetime the core was last modified.
+          example: '2018-03-20T09:12:28Z'
+          format: date-time
+          type: string
+        pgPass:
+          description: If postgres, this is the user password.  This will be encrypted
+            in storage
+          format: password
+          type: string
+        pgUser:
+          description: If postgres, this is the user name
+          type: string
+        redisToken:
+          description: If Redis, this is the Redis token.
+          type: string
+        resourceID:
+          description: Resource ID
+          format: uuid
+          type: string
+        resourceMappingID:
+          description: Resource Mapping ID
+          format: uuid
+          type: string
+        resourceMappingState:
+          $ref: '#/components/schemas/ResourceMappingStateEnum'
+        serviceID:
+          format: uuid
+          type: string
+      type: object
+    ResourceMappingStateEnum:
+      description: Resource Mapping State
+      enum:
+      - created
+      - active
+      - deleted
+      type: string
     ResourceStateEnum:
       description: Resource State
       enum:
@@ -7721,6 +7773,18 @@ components:
         resourceType:
           $ref: '#/components/schemas/ResourceTypeEnum'
       type: object
+    UpdateResourceMappingStateRequest:
+      properties:
+        resourceMappingState:
+          $ref: '#/components/schemas/ResourceMappingStateEnum'
+      type: object
+    UpdateResourceMappingStateResponse:
+      properties:
+        error:
+          $ref: '#/components/schemas/Error'
+        success:
+          $ref: '#/components/schemas/OperationSuccess'
+      type: object
     UpdateResourceRequest:
       properties:
         resource:
@@ -7744,8 +7808,6 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/Error'
-        result:
-          $ref: '#/components/schemas/ResourceDetail'
         success:
           $ref: '#/components/schemas/OperationSuccess'
       type: object
@@ -8002,7 +8064,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.13.4.2044
+  version: 3.13.4.2045
 openapi: 3.0.1
 paths:
   /admin/applications:
@@ -14564,6 +14626,240 @@ paths:
       security:
       - api_key: []
       summary: Get list of engines for resource
+      tags:
+      - admin
+    parameters:
+    - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/ResourceID_Path_Required'
+  /admin/resource/{ResourceID}/mapping/{ResourceMappingID}/updatestate:
+    parameters:
+    - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/ResourceID_Path_Required'
+    - $ref: '#/components/parameters/ResourceMappingID_Path_Required'
+    post:
+      operationId: update_resource_mapping_state
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateResourceMappingStateRequest'
+        description: Update Resource Mapping State
+        required: true
+      responses:
+        200:
+          description: Result of the Update Resource Mapping State API
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid argument.  Please see the error response for more information.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        401:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not authorized
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        403:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        405:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request is not allowed.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        429:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        501:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Implemented
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        503:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: System Unavailable
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+      security:
+      - api_key: []
+      summary: This API updates the state of the specified resource mapping state
+      tags:
+      - admin
+  /admin/resource/{ResourceID}/mappings:
+    get:
+      operationId: get_mappings_for_resource
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMappingsForResourceResponse'
+          description: This returns a set of resource mappings
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid argument.  Please see the error response for more information.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        401:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not authorized
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        403:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        405:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request is not allowed.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        429:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        501:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Implemented
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        503:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: System Unavailable
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+      security:
+      - api_key: []
+      summary: Get list of mappings for resource
       tags:
       - admin
     parameters:
