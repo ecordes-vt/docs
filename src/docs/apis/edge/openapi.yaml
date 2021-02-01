@@ -2844,6 +2844,7 @@ components:
       - deploying
       - deploy-validation
       - deploy-validating
+      - deploy-validated
       type: string
     EngineCategoryDetail:
       properties:
@@ -3519,18 +3520,6 @@ components:
         result:
           items:
             $ref: '#/components/schemas/CoreDetail'
-          type: array
-        success:
-          $ref: '#/components/schemas/OperationSuccess'
-      type: object
-    GetEngineBuildByStateResponse:
-      description: This is the response for get_engine_builds_by_state request
-      properties:
-        error:
-          $ref: '#/components/schemas/Error'
-        result:
-          items:
-            $ref: '#/components/schemas/BuildDetail'
           type: array
         success:
           $ref: '#/components/schemas/OperationSuccess'
@@ -7529,15 +7518,9 @@ components:
       type: object
     UpdateEngineBuildState:
       properties:
-        buildID:
-          format: uuid
-          type: string
         buildState:
           $ref: '#/components/schemas/EngineBuildStateEnum'
           description: Build State
-        engineID:
-          format: uuid
-          type: string
       type: object
     UpdateEngineBuildStateRequest:
       properties:
@@ -8064,7 +8047,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.13.4.2051
+  version: 3.14.1.2057
 openapi: 3.0.1
 paths:
   /admin/applications:
@@ -21653,7 +21636,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetEngineBuildByStateResponse'
+                $ref: '#/components/schemas/GetEngineBuildsResponse'
           description: Valid status request
           headers:
             X-Aiware-Version:
@@ -21759,11 +21742,134 @@ paths:
       - engine
     parameters:
     - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/Offset_Query_Optional'
+    - $ref: '#/components/parameters/Limit_Query_Optional'
     - description: Filter data by build state
       in: query
       name: state
       schema:
         type: string
+  /engine/builds/downloads:
+    get:
+      operationId: get_engine_builds_to_download
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetEngineBuildsResponse'
+          description: Valid status request
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid argument.  Please see the error response for more information.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        401:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not authorized
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        403:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        405:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request is not allowed.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        429:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        501:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Implemented
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        503:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: System Unavailable
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+      security:
+      - api_key: []
+      summary: The api returns latest downloadable engine build records for each engine
+      tags:
+      - engine
+    parameters:
+    - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/Offset_Query_Optional'
+    - $ref: '#/components/parameters/Limit_Query_Optional'
+    - description: Filter data by runtime
+      in: query
+      name: includeRuntime
+      schema:
+        type: boolean
   /engine/container_count:
     get:
       operationId: get_engine_container_count

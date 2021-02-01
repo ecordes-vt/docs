@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 <a name="getEngineBuildsByState"></a>
 # **getEngineBuildsByState**
-> GetEngineBuildByStateResponse getEngineBuildsByState(X-Correlation-Id, state)
+> GetEngineBuildsResponse getEngineBuildsByState(X-Correlation-Id, state)
 
 The api returns engine build records by build state
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetEngineBuildByStateResponse**](../Models/GetEngineBuildByStateResponse.md)
+[**GetEngineBuildsResponse**](../Models/GetEngineBuildsResponse.md)
 
 ### Authorization
 
