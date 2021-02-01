@@ -106,7 +106,7 @@
 | *primary.enginebuilds.all_engines* | bool | true |  | If true, download all engines and builds available |
 | *primary.enginebuilds.interval_seconds* | int64 | 900 |  | The interval to update the engine builds (sec). This value should >= 5 minutes |
 | *primary.enginebuilds.page_size* | int64 | 30 |  | The number of engine builds in a call to graphql to get engine builds |
-| *primary.enginebuilds.validation_enabled* | bool | true |  | If true, validate engines before marking it deployed |
+| *primary.enginebuilds.validation_enabled* | bool | false |  | If true, validate engines before marking it deployed |
 | *primary.job_statuscheck.interval* | int64 | 30 |  | The interval to update jobs' status |
 | *primary.job_statuscheck.limit* | int64 | 500 |  | The limit of jobs to check per iteration |
 | *primary.slow_queries_interval_list* | string | 1,5,30,120,300 |  | Comma separated list of slow queries interval check |
