@@ -2363,6 +2363,9 @@ components:
         redisToken:
           description: If Redis, this is the Redis token.
           type: string
+        redisUser:
+          description: If Redis, this is the user name.
+          type: string
         resourceState:
           $ref: '#/components/schemas/ResourceStateEnum'
         resourceType:
@@ -6094,6 +6097,9 @@ components:
         redisToken:
           description: If Redis, this is the Redis token.
           type: string
+        redisUser:
+          description: If Redis, this is the user name.
+          type: string
         resourceID:
           description: Resource ID
           format: uuid
@@ -6129,6 +6135,9 @@ components:
           type: string
         redisToken:
           description: If Redis, this is the Redis token.
+          type: string
+        redisUser:
+          description: If Redis, this is the user name.
           type: string
         resourceID:
           description: Resource ID
@@ -7747,6 +7756,9 @@ components:
         redisToken:
           description: If Redis, this is the Redis token.
           type: string
+        redisUser:
+          description: If Redis, this is the user name.
+          type: string
         resourceID:
           description: Resource ID
           format: uuid
@@ -8047,7 +8059,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.14.1.2062
+  version: 3.14.1.2063
 openapi: 3.0.1
 paths:
   /admin/applications:
