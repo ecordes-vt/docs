@@ -1,11 +1,13 @@
 # Asset Types
 
-When you create assets on a temporal data object (TDO), you are required to specify a `type`.
-aiWARE supports the following values for the `type` field:
+When you create assets on a temporal data object (TDO), you are required to specify an `assetType`.
+aiWARE supports the following values for the `assetType` field:
 
-| Type | Meaning |
+| Asset Type | Meaning |
 | ---- | ------- |
 | `media` | Used for anything that’s a file that could be processed. A TDO can have more than one `media` asset to represent various copies of the file or ancillary versions of the original file. When a TDO is processed, the asset that will be used for processing is determined by which of the `media` assets is identified as the `primaryMedia(type: "asset")`. |
+| `media-mdp` | This is the HLS or MPEG-DASH format of the media. |
+| `text` | This is a text file.  This will be used for translation. A TDO can have more than one `text` asset to represent various copies of the file or ancillary versions of the original file. |
 | `vtn-standard` | Used for engine output documents. See the [engine output standard](/developer/engines/standards/engine-output/) section for information. |
 | `thumbnail` | Used for storing lower-resolution image thumbnail previews of media files.  The default thumbnail that is displayed in CMS and other apps is based on the value of the TDO's `thumbnailUrl` property. |
 | `content-template` | TDO content templates are extra metadata appended to a TDO. The contents of each `content-template` asset will conform to a particular schema designated by `asset.sourceData.schema`. |
@@ -16,6 +18,10 @@ aiWARE supports the following values for the `type` field:
 You can define your own custom asset types by simply writing an asset with a type value beginning with `x-` (e.g. `x-my-asset-type`).
 This will allow you to save asset types specific to your custom workflows and applications.
 No special handling will be applied to assets whose type begins with `x-`.
+
+## Content Types
+
+Content Types are the Media Types that are defined by IANA at [https://www.iana.org/assignments/media-types/media-types.xhtml](https://www.iana.org/assignments/media-types/media-types.xhtml)
 
 ## Reading Assets
 
