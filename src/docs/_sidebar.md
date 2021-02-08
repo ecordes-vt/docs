@@ -147,7 +147,6 @@
       - [Training Engines](/developer/libraries/training.md)
       - [Running Engines](/developer/libraries/running.md)
     - [Resources: Data Science](/developer/resources/)
-    - [Developer Terms & Conditions](/developer/terms-and-conditions.md)
   - [More About aiWARE](/overview/aiware-features.md)
     - [aiWARE Architecture](/overview/architecture-overview/)
     - [Build with aiWARE](/developer/)
@@ -237,3 +236,4 @@
     - [Objectbox](/developer/machine-box/boxes/objectbox)
     - [Fakebox](/developer/machine-box/boxes/fakebox)
 - [Benchmark (BETA)](/benchmark/)
+- [Developer Terms & Conditions](https://s3.amazonaws.com/static.veritone.com/terms/VDA+Terms+and+Conditions+(20210125).pdf)
