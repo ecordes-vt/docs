@@ -564,7 +564,6 @@ Class | Method | HTTP request | Description
  - [TotalPendingScheduledJobInfo](./Models/TotalPendingScheduledJobInfo.md)
  - [UpdateApplicationDetail](./Models/UpdateApplicationDetail.md)
  - [UpdateBuildResponse](./Models/UpdateBuildResponse.md)
- - [UpdateEngineBuildState](./Models/UpdateEngineBuildState.md)
  - [UpdateEngineBuildStateRequest](./Models/UpdateEngineBuildStateRequest.md)
  - [UpdateEngineCategoryResponse](./Models/UpdateEngineCategoryResponse.md)
  - [UpdateEngineDetail](./Models/UpdateEngineDetail.md)
