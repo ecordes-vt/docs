@@ -361,7 +361,6 @@ Models/TokenTypeEnum.md
 Models/TotalPendingScheduledJobInfo.md
 Models/UpdateApplicationDetail.md
 Models/UpdateBuildResponse.md
-Models/UpdateEngineBuildState.md
 Models/UpdateEngineBuildStateRequest.md
 Models/UpdateEngineCategoryResponse.md
 Models/UpdateEngineDetail.md

@@ -7525,16 +7525,15 @@ components:
         success:
           $ref: '#/components/schemas/OperationSuccess'
       type: object
-    UpdateEngineBuildState:
-      properties:
-        buildState:
-          $ref: '#/components/schemas/EngineBuildStateEnum'
-          description: Build State
-      type: object
     UpdateEngineBuildStateRequest:
       properties:
-        build:
-          $ref: '#/components/schemas/UpdateEngineBuildState'
+        failureReason:
+          description: The reason why build is failed
+          type: string
+        newState:
+          $ref: '#/components/schemas/EngineBuildStateEnum'
+        oldState:
+          $ref: '#/components/schemas/EngineBuildStateEnum'
       type: object
     UpdateEngineCategoryResponse:
       properties:
@@ -8059,7 +8058,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.14.2.2091
+  version: 3.14.2.2092
 openapi: 3.0.1
 paths:
   /admin/applications:
