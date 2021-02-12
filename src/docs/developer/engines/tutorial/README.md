@@ -11,6 +11,7 @@ display: inline-block; line-height:80%;
               border-width: 1.2px;
               padding:1px 10px 0px 15px;">
               
+
 **Goal:** Create a custom chunk-mode (stateless) cognitive engine and onboard it so it can be used in aiWARE.
 
 **Technology Stack:** NodeJS, Veritone Engine Toolkit, Docker on Mac or Linux.
@@ -175,11 +176,11 @@ At runtime, the platform will call the Toolkit (over HTTP), and the Toolkit will
 At a high level, the steps you need to carry out in order to create and onboard an engine include:
 
 * **Step 0** (this page, below): Set up your project &mdash; create all artifacts except the `manifest.json` file
-* **[Step 1](developer/engines/tutorial/engine-tutorial-step-1)**: Register your project with Veritone &dash; During this step, you'll generate a `manifest.json` file, then add it to your project
-* **[Step 2](developer/engines/tutorial/engine-tutorial-step-2)**: Customize your Dockerfile and use it to create an engine build
-* **[Step 3](developer/engines/tutorial/engine-tutorial-step-3)**: Test your build locally
-* **[Step 4](developer/engines/tutorial/engine-tutorial-step-4)**: Push your build to Veritone &mdash; and when it's Approved, use the online UI to Deploy it
-* **[Step 5](developer/engines/tutorial/engine-tutorial-step-5)**: Test your engine in aiWARE, and debug as necessary 
+* **[Step 1](/developer/engines/tutorial/engine-tutorial-step-1)**: Register your project with Veritone &dash; During this step, you'll generate a `manifest.json` file, then add it to your project
+* **[Step 2](/developer/engines/tutorial/engine-tutorial-step-2)**: Customize your Dockerfile and use it to create an engine build
+* **[Step 3](/developer/engines/tutorial/engine-tutorial-step-3)**: Test your build locally
+* **[Step 4](/developer/engines/tutorial/engine-tutorial-step-4)**: Push your build to Veritone &mdash; and when it's Approved, use the online UI to Deploy it
+* **[Step 5](/developer/engines/tutorial/engine-tutorial-step-5)**: Test your engine in aiWARE, and debug as necessary 
 
 ![](EngineDevJourney.svg)
 
