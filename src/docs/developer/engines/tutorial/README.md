@@ -169,7 +169,7 @@ You'll build your own engine (as described below) as a Docker image, using the T
 The Toolkit binary acts as a driver-like intermediary between your code and the aiWARE platform.
 At runtime, the platform will call the Toolkit (over HTTP), and the Toolkit will call your engine (also over HTTP).
 
-> By acting as a go-between, the Toolkit binary takes care of low-level aiWARE interactions, so your code can focus more on AI, and less on ceremony.
+> By acting as a go-between, the Toolkit takes care of low-level aiWARE interactions, so your code can focus more on AI, and less on ceremony.
  
 ## 'Hello World' Engine: High-Level Overview <!-- {docsify-ignore} -->
 
