@@ -158,7 +158,7 @@ Also, it's not always obvious which adapter to use for which type of input. The 
 
 * Refer to [Working with Jobs](quickstart/jobs/?id=working-with-jobs) for crucial information about tokens, clusters, notifications, and other topics.
 
-* Check out [Adapters](developer/engines/adapters/) for more information about how to create the _ingestion_ tasks in your job.
+* Check out [Adapters](/developer/engines/adapters/) for more information about how to create the _ingestion_ tasks in your job.
 
 ## Transcription from Video (.mp4)
 

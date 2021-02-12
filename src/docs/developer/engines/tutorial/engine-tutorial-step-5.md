@@ -79,7 +79,7 @@ This query will show you the status of each build of your engine. If one of your
 
 The query should produce a familiar-looking set of fields and values. If not &mdash; if you get an error of some kind &mdash; don't try to run the engine until the error has been addressed. 
 
-> If the error message is `"The requested object was not found"`, chances are your engine is not in a Deployed state. (Go into the engine Builds list for your engine (in the Veritone Developer web UI) and Deploy the engine, if need be, or Unpause it if it was paused. See [Step 4](developer/engines/tutorial/engine-tutorial-step-4) for a refresher on how to use the Builds UI.) 
+> If the error message is `"The requested object was not found"`, chances are your engine is not in a Deployed state. (Go into the engine Builds list for your engine (in the Veritone Developer web UI) and Deploy the engine, if need be, or Unpause it if it was paused. See [Step 4](/developer/engines/tutorial/engine-tutorial-step-4) for a refresher on how to use the Builds UI.) 
 
 ## Run a Job and Inspect the Results
 
@@ -268,7 +268,7 @@ For our Hello World engine, results will typically look similar to this:
 
 We hope you've enjoyed this tutorial. Be sure to check out some of these other greeat resources:
 
-- Learn how to [customize engine output](developer/engines/tutorial/customizing-engine-output)
+- Learn how to [customize engine output](/developer/engines/tutorial/customizing-engine-output)
 - See our API documentation: <https://docs.veritone.com/#/apis/>
 - API examples that you can run in the live Sandbox: <https://docs.veritone.com/#/apis/examples>
 - Veritone's Data Model: <https://docs.veritone.com/#/apis/data-model>
@@ -277,9 +277,9 @@ We hope you've enjoyed this tutorial. Be sure to check out some of these other g
 - Other tutorials: <https://docs.veritone.com/#/apis/tutorials> 
 
 ### Review What We Did in This Tutorial:
-* [Step 0 &mdash; Set up your project](developer/engines/tutorial/)
-* [Step 1 &mdash; Register your project with Veritone](developer/engines/tutorial/engine-tutorial-step-1)
-* [Step 2 &mdash; Use Docker to create a build](developer/engines/tutorial/engine-tutorial-step-2)
-* [Step 3 &mdash; Test your build locally](developer/engines/tutorial/engine-tutorial-step-3) using the Engine Developer Toolkit's Test Console App
-* [Step 4 &mdash; Push your engine build to Veritone](developer/engines/tutorial/engine-tutorial-step-4) 
-* [Step 5 &mdash; Test your engine in aiWARE](developer/engines/tutorial/engine-tutorial-step-5) and, if necessary, debug/rebuild/re-deploy
+* [Step 0 &mdash; Set up your project](/developer/engines/tutorial/)
+* [Step 1 &mdash; Register your project with Veritone](/developer/engines/tutorial/engine-tutorial-step-1)
+* [Step 2 &mdash; Use Docker to create a build](/developer/engines/tutorial/engine-tutorial-step-2)
+* [Step 3 &mdash; Test your build locally](/developer/engines/tutorial/engine-tutorial-step-3) using the Engine Developer Toolkit's Test Console App
+* [Step 4 &mdash; Push your engine build to Veritone](/developer/engines/tutorial/engine-tutorial-step-4) 
+* [Step 5 &mdash; Test your engine in aiWARE](/developer/engines/tutorial/engine-tutorial-step-5) and, if necessary, debug/rebuild/re-deploy

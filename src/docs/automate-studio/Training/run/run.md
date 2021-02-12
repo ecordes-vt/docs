@@ -284,7 +284,7 @@ When our GraphQL query executes, we'll get back a fairly large JSON object conta
               } # truncated for space reasons...
 ```
 
-This snippet is truncated but shows what a raw transcript looks like in Veritone's [VTN Standard format](developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard).
+This snippet is truncated but shows what a raw transcript looks like in Veritone's [VTN Standard format](/developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard).
 As you can see, each word of the transcript comes with a start time and a stop time in milliseconds, plus other metadata, like a `confidence` value. You might need this kind of detailed info if you are building an interactive UI that displays text progressively, as a video (or audio file) plays.
 
 But sometimes, you just want the text of the transcript, and nothing else. In that case, you need to harvest the words programmatically with custom logic. We can do that pretty easily, it turns out, using a Function node.

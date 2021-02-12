@@ -35,7 +35,7 @@ For technical and business-related questions, please reach out to us on [Slack](
 
 ### Machine Learning
 
-See our [Getting Started in Data Science](developer/resources/) page.
+See our [Getting Started in Data Science](/developer/resources/) page.
 
 ### APIs and Standards
 

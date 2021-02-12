@@ -6,11 +6,11 @@
 
 Veritone aiWARE allows you to ingest both public and private content and media through various adapters from virtually any source, including user computers and network-accessible drives, RSS, Amazon Web Services, YouTube, Google Drive, Dropbox, Vimeo, and FTP.
 The architecture inherently supports simple and rapid addition of new ingestion adapters.
-You can even [write your own](developer/adapters/).
+You can even [write your own](/developer/adapters/).
 
 ### Developer Platform and Ecosystem
 
-[Veritone Developer](developer/) - aiWARE's developer portal - allows developers to bring their ideas to life.
+[Veritone Developer](/developer/) - aiWARE's developer portal - allows developers to bring their ideas to life.
 Veritone Developer connects developers with resources to create, submit, and deploy custom adapters, applications, cognitive engines, and data products into aiWARE.
 
 #### A Broad and Growing Cognitive Spectrum
@@ -45,7 +45,7 @@ Users can stream live content through the platform, run cognitive engines on the
 
 ### Expand Your Insights with Structured Data
 
-aiWARE allows you to ingest [structured data](developer/data/), either as standalone content or to match up with and enhance another data source.
+aiWARE allows you to ingest [structured data](/developer/data/), either as standalone content or to match up with and enhance another data source.
 Ingest the contents of your private database or use a third-party data feed.
 Use text data to correlate with what's being shown in a video by time.
 The possibilities are within reach.

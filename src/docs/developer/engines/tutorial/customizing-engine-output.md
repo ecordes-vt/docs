@@ -2,12 +2,12 @@
 
 # Deeper Dive: Customizing Engine Output
 
-To achieve high levels of interoperability, Veritone requires all cognitive engines to produce [standardized output](developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard).
+To achieve high levels of interoperability, Veritone requires all cognitive engines to produce [standardized output](/developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard).
 Nevertheless, it's easily possible to customize an engine's output to contain additional data beyond the minimum requirements of the `vtn-standard` schema.
 
 In the mini-tutorial below, we'll look at how to customize an engine's output data. The technique shown here allows your additional data to become fully searchable in the aiWARE platform using the [Search API](apis/search-quickstart/).
 
-?> Other techniques exist for customizing engine output, but some of them do not result in _searchable_ data. See the full discussion under [Extending the Standard](developer/engines/standards/engine-output/?id=extending-the-standard).
+?> Other techniques exist for customizing engine output, but some of them do not result in _searchable_ data. See the full discussion under [Extending the Standard](/developer/engines/standards/engine-output/?id=extending-the-standard).
 
 <div style="width: 35%"><iframe src="https://player.vimeo.com/video/378596549?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:75%;height:75%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
@@ -15,7 +15,7 @@ In the mini-tutorial below, we'll look at how to customize an engine's output da
 
 A common requirement is that you need to include a summary block of data as part of your engine's output. This can be done in a couple of ways.
 
-The fast, schemaless way to do it is to include a `jsondata` blob (arbitrary JSON data of your choosing) under a `vendor` field, as described in [Extending the Standard](developer/engines/standards/engine-output/?id=extending-the-standard).
+The fast, schemaless way to do it is to include a `jsondata` blob (arbitrary JSON data of your choosing) under a `vendor` field, as described in [Extending the Standard](/developer/engines/standards/engine-output/?id=extending-the-standard).
 The disadvantage of this approach is that your summary data will not be indexed and (therefore) will not be searchable.
 
 Another approach is to define a JSON schema for your summary blob, register that schema with Veritone (so that you obtain a schema ID for it), then include a properly structured summary blob in your final output, _along with the schema ID._ This allows aiWARE to validate your engine's _entire_ output and index everything (for searchability).
@@ -23,7 +23,7 @@ This is the approach we'll show below.
 
 ### Step 1: Create the Summary Schema
 
-In our [Build Your Own Engine](developer/engines/tutorial/) tutorial, we created a simple cognitive engine that  extracts vocabulary from text.
+In our [Build Your Own Engine](/developer/engines/tutorial/) tutorial, we created a simple cognitive engine that  extracts vocabulary from text.
 It would be nice to include some summary stats for the job, like this:
 
 ```json
@@ -133,7 +133,7 @@ The schema ID, in this case, is `1842b38c-ab34-401f-9715-d668f0c6ebd3`. Copy you
 
 The easiest way to insert our custom data into our engine's output is just to append an extra element to the keyword `object` array.
 
-?> For this example, we'll modify the `keyword-extraction.js` file used in the [Build Your Own Engine](developer/engines/tutorial/) tutorial, complete code for which can be found at [the repo for that project](https://github.com/veritone/V3-Engine-Examples). Please refer to that code.
+?> For this example, we'll modify the `keyword-extraction.js` file used in the [Build Your Own Engine](/developer/engines/tutorial/) tutorial, complete code for which can be found at [the repo for that project](https://github.com/veritone/V3-Engine-Examples). Please refer to that code.
 
 In order for our `stats` object to show up properly in our data, it needs to be wrapped in a way that allows aiWARE to recognize it; and it needs to reference the schema ID of the schema we created earlier. Bottom line, we need to insert a Structured Data Object, in our engine's data array, that looks like this:
 
@@ -186,7 +186,7 @@ return output;
 
 to support the use of our timing variable, `_startTime`, and a new global `_words` (for word count), in this snippet.
 
-At this point, you can Save the file, re-build the engine, and test it locally (using Test Mode, as described in the [earlier tutorial]((developer/engines/tutorial/)). Once you've verified that the engine produces the desired output, deploy it to Veritone.
+At this point, you can Save the file, re-build the engine, and test it locally (using Test Mode, as described in the [earlier tutorial]((/developer/engines/tutorial/)). Once you've verified that the engine produces the desired output, deploy it to Veritone.
 
 When we ran the modified `hello-world` engine on a large text file, we got a vocabulary-extraction dataset that ended with:
 
@@ -200,4 +200,4 @@ Sometimes, you might have a need to add an extra field to each data item in a se
 
 This is easy to do. Just insert a Structured Data Object (having its own schema ID) into _every item in the data series_. Follow the procedure outlined above for creating and registering your custom schema. Then modify your engine's code to output data array elements that contain the corresponding Structured Data Object (one per array element).
 
-See the discussion at [Extending the Standard](developer/engines/standards/engine-output/?id=extending-the-standard) for more information.
+See the discussion at [Extending the Standard](/developer/engines/standards/engine-output/?id=extending-the-standard) for more information.

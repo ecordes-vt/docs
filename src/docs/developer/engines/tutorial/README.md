@@ -20,7 +20,7 @@ display: inline-block; line-height:80%;
 </div>
 
 In aiWARE, _engines_ afford a modular way to provide different types of cognitive processing.
-Cognitive engines process the data brought in by [adapters](developer/engines/?id=adapters-aka-ingestion-engines) and use sophisticated algorithms to extract additional data from which you can derive actionable insights.
+Cognitive engines process the data brought in by [adapters](/developer/engines/?id=adapters-aka-ingestion-engines) and use sophisticated algorithms to extract additional data from which you can derive actionable insights.
 Examples of what a cognition engine does include: 
 
 * Natural language processing (NLP)
@@ -52,15 +52,15 @@ This is a noteworthy benefit of using Docker.
 
 Another benefit of Docker containerization is that if your engine can be implemented in such a way as to process a file in chunks (without respect to the _ordering_ of chunks), aiWARE can carry out horizontal scaling of your processing automatically.
 
-In aiWARE, stateless engines that can be scaled horizontally are called [segment engines](developer/engines/processing-modes/?id=segment-engines) (or "chunk" engines).
-Stateful engines that require contextual knowledge based on the _order_ of data frames are called [stream engines](developer/engines/processing-modes/?id=stream-engines).
+In aiWARE, stateless engines that can be scaled horizontally are called [segment engines](/developer/engines/processing-modes/?id=segment-engines) (or "chunk" engines).
+Stateful engines that require contextual knowledge based on the _order_ of data frames are called [stream engines](/developer/engines/processing-modes/?id=stream-engines).
 
 Regardless of engine type, an engine's "contract" with aiWARE is quite simple:
 
 * When the engine receives a GET request on a route of `/ready` (or the route you specify in the environment variable called `VERITONE_WEBHOOK_READY`), the engine should respond with HTTP status `200 OK` if the engine is ready to begin, or else `503 Service Unavailable` if it is not ready.
 * When the engine receives a POST (of `ContentType` `multipart/form-data`) on a route of `/process` (or the route you specify in `VERITONE_WEBHOOK_PROCESS`), your engine should process the incoming data chunk, then respond with status `200 OK` while sending output formatted as `application/json` data.
 
- > Your engine's output needs to conform to Veritone's [vtn-standard](developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard) (specifically, the portion of that schema that applies to your engine's particular [cognitive capability](developer/engines/cognitive/?id=capabilities)).
+ > Your engine's output needs to conform to Veritone's [vtn-standard](/developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard) (specifically, the portion of that schema that applies to your engine's particular [cognitive capability](/developer/engines/cognitive/?id=capabilities)).
 
 When your engine receives the `/process` request, it will be able to inspect various fields of the incoming chunk's `multipart/form-data` (see below) to obtain information about the chunk.
 The actual _raw data_ of the chunk will be in a file-upload stream associated with the `chunk` field.
@@ -161,9 +161,9 @@ More information on these items can be found in the Engine Developer's Toolkit (
 
 If you're interested in building a cognitive engine, you will need Veritone's [Engine Developer Toolkit](https://hub.docker.com/r/veritone/aiware-engine-toolkit).
 
-> Note that while you can certainly download the Toolkit via a Docker pull, we recommend you simply build it into your project using the FROM command in your Dockerfile, as shown in [Step 2](developer/engines/tutorial/engine-tutorial-step-2) of this tutorial.
+> Note that while you can certainly download the Toolkit via a Docker pull, we recommend you simply build it into your project using the FROM command in your Dockerfile, as shown in [Step 2](/developer/engines/tutorial/engine-tutorial-step-2) of this tutorial.
 
-The Toolkit is packaged as a Docker image. Its use is covered in [Step 2](developer/engines/tutorial/engine-tutorial-step-2) of this tutorial.
+The Toolkit is packaged as a Docker image. Its use is covered in [Step 2](/developer/engines/tutorial/engine-tutorial-step-2) of this tutorial.
 You'll build your own engine (as described below) as a Docker image, using the Toolkit as the base image. With multiple FROM statements in your Docker file, you can include other base images as well. We'll be covering that in a little while.
 
 The Toolkit binary acts as a driver-like intermediary between your code and the aiWARE platform.
@@ -184,7 +184,7 @@ At a high level, the steps you need to carry out in order to create and onboard 
 
 ![](EngineDevJourney.svg)
 
-In the steps that follow, we'll build a simple text-processing engine that extracts vocabulary words from a file. The JSON output produced by the engine follows the structure shown in the example at [Building a Keyword extraction Engine](developer/engines/cognitive/text/keyword-extraction/?id=engine-output).
+In the steps that follow, we'll build a simple text-processing engine that extracts vocabulary words from a file. The JSON output produced by the engine follows the structure shown in the example at [Building a Keyword extraction Engine](/developer/engines/cognitive/text/keyword-extraction/?id=engine-output).
 
 > While the example that follows uses Node.JS, you should note that it's possible to use _any_ programming language to create a cognitive engine, as long as the runtimes can be packaged into a Docker image.
 
@@ -194,13 +194,13 @@ The purpose of this tutorial is to show you (using actual code and build artifac
 
 Here's a short checklist of prerequisites:
 
-&#x2714; 1\. **Decide which kind of cognitive capability your engine will support** (and therefore, what the _output_ of your engine needs to look like). Your engine will likely support one of the preexisting capabilities shown in our [Capabilities chart](developer/engines/cognitive/?id=capabilities). (Note that for each entry in the chart, there's a link to a more detailed page showing what the _output_ for the type of engine in querstion should look like.) If your engine supports an entirely new type of capability that's not in our system, by all means contact us. We'll work with you!
+&#x2714; 1\. **Decide which kind of cognitive capability your engine will support** (and therefore, what the _output_ of your engine needs to look like). Your engine will likely support one of the preexisting capabilities shown in our [Capabilities chart](/developer/engines/cognitive/?id=capabilities). (Note that for each entry in the chart, there's a link to a more detailed page showing what the _output_ for the type of engine in querstion should look like.) If your engine supports an entirely new type of capability that's not in our system, by all means contact us. We'll work with you!
 
 &#x2714; 2\. **Determine which MIME type(s) your engine needs to support** in terms of data _input._
 
 &#x2714; 3\. **Understand whether your engine will be _stateless_ (segment; "chunk"), or _stateful_ ("stream")** with regard to the processing of chunks of data. (If your engine can process data chunks in any order, without knowing a chunk's sequence number, it's likely stateless.)
 
-&#x2714; 4\. **Know whether your engine will be [network-isolated](developer/engines/deployment-model/?id=network-isolated), or need [external access](developer/engines/deployment-model/?id=external-access).**
+&#x2714; 4\. **Know whether your engine will be [network-isolated](/developer/engines/deployment-model/?id=network-isolated), or need [external access](/developer/engines/deployment-model/?id=external-access).**
 
 &#x2714; 5\. **Obtain your (free) Veritone system [login](https://www.veritone.com/onboarding/#/signUp),** if you have not already done so.
 
@@ -264,7 +264,7 @@ Let's talk quickly about the project files.
 
 ### Dockerfile
 
-For now, you can just create an empty file named `Dockerfile` (using, for example, the `touch` command in `bash`). We will talk about this file's contents in [Step 2](developer/engines/tutorial/engine-tutorial-step-2).
+For now, you can just create an empty file named `Dockerfile` (using, for example, the `touch` command in `bash`). We will talk about this file's contents in [Step 2](/developer/engines/tutorial/engine-tutorial-step-2).
 
 ### index.js and keyword-extraction.js
 
@@ -367,7 +367,7 @@ module.exports = {
 ### manifest.json
 
 Because the `manifest.json` file needs to contain the Veritone-assigned ID of your engine (which you don't have yet!), *don't* simply use the `manifest.json` file that comes in the repository version of this project.
-In [Step 1](developer/engines/tutorial/engine-tutorial-step-1), we'll show you how to use Veritone's online UI to generate a `manifest.json` file (including the proper engine ID) automatically. Use _that_ file in your project.
+In [Step 1](/developer/engines/tutorial/engine-tutorial-step-1), we'll show you how to use Veritone's online UI to generate a `manifest.json` file (including the proper engine ID) automatically. Use _that_ file in your project.
 
 ### package.json
 
@@ -396,8 +396,8 @@ Although, strictly speaking, a `package.json` file isn't mandatory, we've provid
 
 Ready to begin? Learn how to:
 
-* [Register your project with Veritone](developer/engines/tutorial/engine-tutorial-step-1) &mdash; **Step 1**
-* [Use Docker to create a build](developer/engines/tutorial/engine-tutorial-step-2) &mdash; **Step 2**
-* [Test your build locally](developer/engines/tutorial/engine-tutorial-step-3) using the Engine Developer Toolkit's Test Console App &mdash; **Step 3**
-* [Push your engine build to Veritone](developer/engines/tutorial/engine-tutorial-step-4) &mdash; **Step 4**
-* [Test your engine in aiWARE](developer/engines/tutorial/engine-tutorial-step-5) and, if necessary, debug/rebuild/re-deploy &mdash; **Step 5**
+* [Register your project with Veritone](/developer/engines/tutorial/engine-tutorial-step-1) &mdash; **Step 1**
+* [Use Docker to create a build](/developer/engines/tutorial/engine-tutorial-step-2) &mdash; **Step 2**
+* [Test your build locally](/developer/engines/tutorial/engine-tutorial-step-3) using the Engine Developer Toolkit's Test Console App &mdash; **Step 3**
+* [Push your engine build to Veritone](/developer/engines/tutorial/engine-tutorial-step-4) &mdash; **Step 4**
+* [Test your engine in aiWARE](/developer/engines/tutorial/engine-tutorial-step-5) and, if necessary, debug/rebuild/re-deploy &mdash; **Step 5**

@@ -2,7 +2,7 @@
 
 # Building Correlation Engines
 
-A [Correlation Engine](developer/engines/cognitive/data/correlation/?id=building-a-data-correlation-engine) identifies relationships between two objects by comparing fields and finding matches that occur in both datasets.
+A [Correlation Engine](/developer/engines/cognitive/data/correlation/?id=building-a-data-correlation-engine) identifies relationships between two objects by comparing fields and finding matches that occur in both datasets.
 
 For example, a TV or radio station may have playout data indicating that certain broadcast events were scheduled to take place at certain times.
 If the broadcasts were processed by aiWARE, the resulting assets can be examined for the relevant dates/times, and matching can be done to ensure the aired spots agree with the playout logs.
@@ -30,9 +30,9 @@ Create Asset API | API to write a SDO (Structured Data Object) asset that contai
 
 **See also:**
 
-- [Working with Structured Data](developer/data/)
-- [Getting Started with Engines](developer/engines/getting-started/)
-- [Using the Engine Toolkit](developer/engines/toolkit/)
+- [Working with Structured Data](/developer/data/)
+- [Getting Started with Engines](/developer/engines/getting-started/)
+- [Using the Engine Toolkit](/developer/engines/toolkit/)
 
 ## Correlation Engine Workflow
 
@@ -93,7 +93,7 @@ An example of a schema suitable for use in a correlation engine is:
 ?> The `dateTime` and `geoPoint` types referenced in this example are custom aiWARE extensions to the json-schema specification.
 
 The process of defining a schema is straightforward.
-Consult the [Structured Data Quick Start](developer/data/quick-start/) for a detailed introduction to schema creation.
+Consult the [Structured Data Quick Start](/developer/data/quick-start/) for a detailed introduction to schema creation.
 Also on that page you'll find a step-by-step guide to deploying your schema through Veritone Developer.
 Be sure to read that guide to understand not only how to deploy and update a schema, but how to control versioning.
 
@@ -104,16 +104,16 @@ Be sure to read that guide to understand not only how to deploy and update a sch
 In this step, you’ll register your correlation engine in Veritone Developer &mdash; which serves as a container for your builds.
 Registering an engine involves specifying some high-level details, including important information about how your engine expects to work, such as the Engine Category and Deployment Model.
 
-?> Since this engine is implemented as an _adapter_ (ingestion engine), you should review the [Adapter Quick Start](developer/adapters/) before proceeding.
+?> Since this engine is implemented as an _adapter_ (ingestion engine), you should review the [Adapter Quick Start](/developer/adapters/) before proceeding.
 
 #### Enter Basic Engine Details
 
 When creating your engine, it's important to provide details that accurately and describe your engine.
 The information you enter is what users will see in aiWARE when they are selecting engines for processing.
 
-> The process for registering an adapter is covered in the [Adapter Quick Start](developer/adapters/quick-start/step-1?id=_1-enter-basic-adapter-details).
+> The process for registering an adapter is covered in the [Adapter Quick Start](/developer/adapters/quick-start/step-1?id=_1-enter-basic-adapter-details).
 >
-> See [Choosing a Deployment Model](developer/adapters/quick-start/step-1?id=_2-choose-a-deployment-model) for details on which deployment model is applicable for your adapter.
+> See [Choosing a Deployment Model](/developer/adapters/quick-start/step-1?id=_2-choose-a-deployment-model) for details on which deployment model is applicable for your adapter.
 
 ### 3. Construct Your Code to Process Correlation Tasks
 
@@ -137,7 +137,7 @@ At a high level, your engine needs to:
 
 7\. Handle task failure (if applicable).
 
-> All of these steps, except for Step 4 (the correlation logic), are discussed in detail in [Constructing a Batch Pull Adapter](developer/adapters/guidelines?id=constructing-a-batch-pull-adapter). Correlation logic is discussed below under [Correlation Logic](#correlation-logic).
+> All of these steps, except for Step 4 (the correlation logic), are discussed in detail in [Constructing a Batch Pull Adapter](/developer/adapters/guidelines?id=constructing-a-batch-pull-adapter). Correlation logic is discussed below under [Correlation Logic](#correlation-logic).
 
 #### Data Residency
 
@@ -224,15 +224,15 @@ The search is based in part on start and stop times contained in the passed-in T
 
 [](correlation-example.js ':include :type=code javascript')
 
-More information on how to output the data as an asset in a TDO can be seen in Step 3 of [Constructing a Batch Pull Adapter](developer/adapters/guidelines?id=constructing-a-batch-pull-adapter).
+More information on how to output the data as an asset in a TDO can be seen in Step 3 of [Constructing a Batch Pull Adapter](/developer/adapters/guidelines?id=constructing-a-batch-pull-adapter).
 
 ### 4. Configure Your Engine Manifest File
 
 Every engine in aiWARE is built as a Docker container, and every container uploaded to aiWARE must include a `manifest.json` file, which contains important information about your engine and build.
 aiWARE relies on the information in the manifest to correctly operate the engine on our platform, so it's important that you be as accurate and comprehensive as you can when creating the manifest.
 
-> A complete description of the manifest format can be found in the [Create Your Manifest File](developer/adapters/quick-start/step-3) section of the [Building Adapters](developer/adapters/) discussion.
-Also see the [Adapter Manifest](developer/adapters/manifest) section for a complete breakout of fields.
+> A complete description of the manifest format can be found in the [Create Your Manifest File](/developer/adapters/quick-start/step-3) section of the [Building Adapters](/developer/adapters/) discussion.
+Also see the [Adapter Manifest](/developer/adapters/manifest) section for a complete breakout of fields.
 
 Here is an example of a correlation engine manifest:
 
@@ -334,7 +334,7 @@ A build in the *Available* state is ready to be submitted to Veritone for final 
 |--------|--------|
 |Under the adapter's *Builds,* click the **vertical ellipsis** ("kabob menu") on the right of the build in the list and select **Download Build Report** from the drop-down list. The Build Report downloads to your computer.| <div style="width: 500px">![download build report](VDA-Download-Build-Report.png)</div>|
 
-To understand build reports, be sure to look at [Reading a Build Report](developer/adapters/quick-start/step-4?id=reading-a-build-report).
+To understand build reports, be sure to look at [Reading a Build Report](/developer/adapters/quick-start/step-4?id=reading-a-build-report).
 
 ### 6. Submit Your Build for Approval
 

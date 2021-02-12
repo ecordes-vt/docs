@@ -96,7 +96,7 @@ The two most common ways to ingest a media file for processing in aiWARE are:
 
 1\. Create a TDO and pull the media asset into it, in one operation, using `createTDOWithAsset()`. (See [this example](apis/examples?id=create-tdo-and-upload-asset) in our API docs.)
 
-2\. Create a TDO manually and then run an ingestion job on it using `createJob()` in conjunction with an appropriate ingestion engine (also called an [adapter](developer/adapters/?id=adapter-workflow)).
+2\. Create a TDO manually and then run an ingestion job on it using `createJob()` in conjunction with an appropriate ingestion engine (also called an [adapter](/developer/adapters/?id=adapter-workflow)).
 Veritone aiWARE offers many ready-to-use ingestion engines tailored to various intake scenarios, such as pulling videos (or other files) from YouTube, Google Drive, Dropbox, etc.
 To see a list of the available ingestion engines (adapters) in aiWARE, run the following GraphQL query:
 

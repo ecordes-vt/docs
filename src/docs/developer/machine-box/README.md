@@ -23,7 +23,7 @@ on-prem, or in the cloud.
 
 Without further ado, why don't you spin up an instance of a box now and see it running for yourself.
 
-We've put together a [very simple tutorial](developer/machine-box/boxes/tagbox/recognizing-images) where you will
+We've put together a [very simple tutorial](/developer/machine-box/boxes/tagbox/recognizing-images) where you will
 use tagbox to identify the content of images - yes, it feels like magic and lies, but wait until you see what it can do.
 
 ## Meet the boxes <!-- {docsify-ignore} -->
