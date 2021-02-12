@@ -94,7 +94,7 @@
 | *primary.cron.sched_job_downloader_loop_min* | int64 | 5 |  | On primary, cron sched job downloading service loop sleep minutes |
 | *primary.cron.sched_job_downloader_mark_inactive* | bool | true |  | On primary, cron sched job downloading mark the jobs inactive for realz. |
 | *primary.cron.sched_job_downloader_window_min* | int64 | 10080 |  | On primary, cron sched job downloading service download window from core in minutes |
-| *primary.cron.scheduler.plan_ahead_min* | int64 | 180 |  | On primary, this controls how far the scheduler will create jobs |
+| *primary.cron.scheduler.plan_ahead_min* | int64 | 120 |  | On primary, this controls how far the scheduler will create jobs |
 | *primary.cron.scheduler_enabled* | bool | true |  | On primary, cron scheduled job processing enabled. |
 | *primary.cron.transform_interval* | bool | true |  | Transform interval schedules to day of week. |
 | *primary.cron.use_v3_job_storage* | bool | true |  | If true, store job in v3 format |
