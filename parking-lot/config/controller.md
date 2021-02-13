@@ -89,6 +89,8 @@
 | *primary.cron.job_creation_slow_workers* | int64 | 4 |  | On primary, is cron job creation services number of slow workers. |
 | *primary.cron.job_creation_validate_minutes* | int64 | 5 |  | On primary, cron job creation validate the asOf timestamp within these minutes. |
 | *primary.cron.run_job_launch* | bool | true |  | Run Primary CRON Job launch service. |
+| *primary.cron.sched_job_download_max_inactive_percent* | int64 | 50 |  | On primary, cron sched job downloading maximum percent of jobs that can be marked inactive on a given loop. |
+| *primary.cron.sched_job_download_page_size* | int64 | 200 |  | On primary, cron sched job downloading service download from core page size |
 | *primary.cron.sched_job_downloader_do_update* | bool | true |  | On primary, cron sched job downloading update the scheduled job table. |
 | *primary.cron.sched_job_downloader_enabled* | bool | true |  | On primary, cron sched job downloading enabled. |
 | *primary.cron.sched_job_downloader_loop_min* | int64 | 5 |  | On primary, cron sched job downloading service loop sleep minutes |
