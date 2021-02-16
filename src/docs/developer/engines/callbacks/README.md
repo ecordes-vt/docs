@@ -41,10 +41,10 @@ but in reality there is no requirement for human involvement _per se_.
 ## When to Use This Pattern
 
 If your engine needs to call out to an external service,
-you can choose to [poll the external service](developer/engines/polling/), or (alternatively) follow the callback pattern described here.
+you can choose to [poll the external service](/developer/engines/polling/), or (alternatively) follow the callback pattern described here.
 The choice of pattern is at the developer's discretion, but as a rule,
 if you expect the external service to return results fairly quickly (e.g., in less than a minute),
-you should probably consider [polling](developer/engines/polling/). If, on the other hand, the external service might take many minutes or hours to do its work,
+you should probably consider [polling](/developer/engines/polling/). If, on the other hand, the external service might take many minutes or hours to do its work,
 you should consider the callback mechanism.
 
 ## Implementing the Callback Pattern

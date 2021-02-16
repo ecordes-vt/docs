@@ -154,4 +154,4 @@ If there are no media files in your CMS, you can easily upload files to the syst
 </div>
 </div><br/>
 
-[Learn how to add Authentication ⇨](developer/applications/app-tutorial/app-tutorial-step-2)
+[Learn how to add Authentication ⇨](/developer/applications/app-tutorial/app-tutorial-step-2)

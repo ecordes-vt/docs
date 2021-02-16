@@ -45,7 +45,7 @@ The [passport-veritone](https://github.com/veritone/veritone-sdk/tree/master/pac
 
 [veritone-oauth-helpers](https://github.com/veritone/veritone-sdk/tree/master/packages/veritone-oauth-helpers) implements the client-side portion of the OAuth2 flow, with simple login() and logout() functions.
 
-For an example of how to implement the Implicit Grant flow, check out the [JavaScript example code for OAuth](developer/applications/app-tutorial/app-tutorial-step-2?id=authentication-option-2-oauth) in our [Build Your Own AI App](developer/applications/app-tutorial/) tutorial.
+For an example of how to implement the Implicit Grant flow, check out the [JavaScript example code for OAuth](/developer/applications/app-tutorial/app-tutorial-step-2?id=authentication-option-2-oauth) in our [Build Your Own AI App](/developer/applications/app-tutorial/) tutorial.
 
 ## Flow Options
 

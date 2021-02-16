@@ -469,4 +469,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4YTEwZ
 
 Access tokens expire after seven days. Unlike the Authorization Code Flow, _Refresh Tokens_ are not issued with the Implicit Flow. Refreshing a token requires use of the Client Secret, which cannot safely be stored with the Implicit Flow. If your application does not store the _Access Token_, users will be required to log in each time they use your app. If your application stores the token, you can use it to perform API calls immediately without requiring any additional action from the user. API calls made with an expired or invalid token will result in an error.
 
-[Continue to Step 3: Add APIs and Components](developer/applications/quick-start/step-3)
+[Continue to Step 3: Add APIs and Components](/developer/applications/quick-start/step-3)

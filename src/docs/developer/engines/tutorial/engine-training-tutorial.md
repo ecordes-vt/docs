@@ -16,9 +16,9 @@ We'll use GraphQL mutations and queries to create library objects; populate them
 
 Veritone's aiWARE platform exposes more than a dozen face detection engines, which vary in terms of configuration options (e.g. confidence-thresholding) and other characteristics.
 One general-purpose face detection engine that's easy to use "out of the box" is the engine with ID `dcef5300-5cc1-4fe3-bd8f-5c4d3a09b281`, which is named "Face Recognition - I - V2F."
-This engine uses Veritone's [Facebox](developer/machine-box/boxes/facebox-overview) technology to carry out face recognition.
+This engine uses Veritone's [Facebox](/developer/machine-box/boxes/facebox-overview) technology to carry out face recognition.
 
-> If you want to run Facebox locally, or bundle a licensed version of it into your own standalone (non-aiWARE) app, you can easily do so. To learn more about using Facebox offline, see our tutorial called [Teaching  Facebox](developer/machine-box/boxes/teaching-facebox).
+> If you want to run Facebox locally, or bundle a licensed version of it into your own standalone (non-aiWARE) app, you can easily do so. To learn more about using Facebox offline, see our tutorial called [Teaching  Facebox](/developer/machine-box/boxes/teaching-facebox).
 
 The tutorial that follows assumes you will be using the _online_ (aiWARE-deployed) version of this engine. All interactions with aiWARE will be done through the online GraphQL Sandbox IDE. Accordingly, the only prerequisite for this tutorial is a Veritone login.
 
@@ -28,7 +28,7 @@ The tutorial that follows assumes you will be using the _online_ (aiWARE-deploye
 
 To train a cognitive engine in aiWARE, you need to:
 
-1\. Create an empty [Library](developer/libraries/engines?id=library-enabled-engines).
+1\. Create an empty [Library](/developer/libraries/engines?id=library-enabled-engines).
 
 2\. Create an empty [Entity](https://api.veritone.com/v3/graphqldocs/entity.doc.html) in that Library.
 
@@ -121,7 +121,7 @@ To see how your Library looks in Veritone's Library app, head over to [https://l
 
 As it turns out, aiWARE is set up so that when you _publish_ a Library, all applicable engines (i.e., all engines that _can_ be trained using such a library) are automatically assigned training tasks targeting that library; and those tasks are immediately queued &mdash; and run, in the background &mdash; automatically. Thus, traininng is largely automated.
 
-> If you want to have greater control over the  training process, see our discussion of [Training Library-Enabled Engines](developer/libraries/training?id=training-library-enabled-engines).
+> If you want to have greater control over the  training process, see our discussion of [Training Library-Enabled Engines](/developer/libraries/training?id=training-library-enabled-engines).
 
 To publish your Library, and kick off training of all applicable engines, run the following mutation (substituting your own `libraryId`):
 
@@ -377,7 +377,7 @@ Want to know more about Libraries and training? You may want to take a look at:
 
 * [Library-Related API Examples](apis/examples?id=library) &mdash; Queries and mutations you can run interactively in the Sandbox
 * [Library GraphQL Schema](https://api.veritone.com/v3/graphqldocs/library.doc.html) &mdash; Our schema documentation
-* [Training Library-Enabled Engines](developer/libraries/training?id=training-library-enabled-engines) &mdash; How to schedule training jobs manually.
-* [Running Library-Enabled Engines](developer/libraries/running) &mdash; More information on library-enabled engines
-* [Training Facebox](developer/machine-box/boxes/facebox-overview) &mdash; How to train Facebox offline (running locally)
-* [Build Your Own Cognitive Engine](developer/engines/tutorial/) &mdash; How to write and deploy your own engine to aiWARE
+* [Training Library-Enabled Engines](/developer/libraries/training?id=training-library-enabled-engines) &mdash; How to schedule training jobs manually.
+* [Running Library-Enabled Engines](/developer/libraries/running) &mdash; More information on library-enabled engines
+* [Training Facebox](/developer/machine-box/boxes/facebox-overview) &mdash; How to train Facebox offline (running locally)
+* [Build Your Own Cognitive Engine](/developer/engines/tutorial/) &mdash; How to write and deploy your own engine to aiWARE

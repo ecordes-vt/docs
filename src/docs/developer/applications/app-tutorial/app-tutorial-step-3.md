@@ -82,7 +82,7 @@ When our app loads, we need to know if it was called from our Veritone context m
 We can determine that by inspecting `location.href` at load time.
 If the URL contains a parameter string with a `tdoId` in it, we know the app was invoked from the CME.
 
-To do this bit of inspection, we can add the following lines of code to our [`load` event handler](developer/applications/app-tutorial/app-tutorial-step-2?id=_39onload39-handler).
+To do this bit of inspection, we can add the following lines of code to our [`load` event handler](/developer/applications/app-tutorial/app-tutorial-step-2?id=_39onload39-handler).
 
 ```javascript
 let TDO_MARKER = 'tdoId=';
@@ -243,7 +243,7 @@ and (in a `<pre>` block) the TDO's stringified JSON representation. The user see
 
 ## What's Next?
 
-Now that you know how to [authenticate to Veritone](developer/applications/app-tutorial/app-tutorial-step-2) (to get the API token), [create custom menu extensions](developer/applications/app-tutorial/app-tutorial-step-1?id=create-a-context-menu-extension) in the Veritone CMS, and [run GraphQL queries](developer/applications/app-tutorial/app-tutorial-step-2?id=communicating-with-the-server) in response to a custom menu command, it's a simple matter to run an AI job (say, an _object detection_ job) on a given media file.
+Now that you know how to [authenticate to Veritone](/developer/applications/app-tutorial/app-tutorial-step-2) (to get the API token), [create custom menu extensions](/developer/applications/app-tutorial/app-tutorial-step-1?id=create-a-context-menu-extension) in the Veritone CMS, and [run GraphQL queries](/developer/applications/app-tutorial/app-tutorial-step-2?id=communicating-with-the-server) in response to a custom menu command, it's a simple matter to run an AI job (say, an _object detection_ job) on a given media file.
 So let's do that! Let's see how to run an AI job using the Veritone aiWARE platform.
 
-[Run Object Detection on a Video ⇨](developer/applications/app-tutorial/app-tutorial-step-4)
+[Run Object Detection on a Video ⇨](/developer/applications/app-tutorial/app-tutorial-step-4)

@@ -83,13 +83,13 @@ Our app can be built in just a few steps:
 
 * **Step 0\: Get the code** (See this page, further below.)
 
-* **Step 1\:** [Register your app with Veritone](developer/applications/app-tutorial/app-tutorial-step-1) (10 minutes)
+* **Step 1\:** [Register your app with Veritone](/developer/applications/app-tutorial/app-tutorial-step-1) (10 minutes)
 
-* **Step 2\:** [Set up authentication](developer/applications/app-tutorial/app-tutorial-step-2) (10 minutes)
+* **Step 2\:** [Set up authentication](/developer/applications/app-tutorial/app-tutorial-step-2) (10 minutes)
 
-* **Step 3\:** [Add custom logic](developer/applications/app-tutorial/app-tutorial-step-3) (15 minutes)
+* **Step 3\:** [Add custom logic](/developer/applications/app-tutorial/app-tutorial-step-3) (15 minutes)
 
-* **Step 4\:** [Test the app (run object detection against a video)](developer/applications/app-tutorial/app-tutorial-step-4) (30 minutes)
+* **Step 4\:** [Test the app (run object detection against a video)](/developer/applications/app-tutorial/app-tutorial-step-4) (30 minutes)
 
 ![App Developer's Journey](_media/AppDevJourney.svg)
 
@@ -130,13 +130,13 @@ We recommend you run through the steps shown below in the order listed:
 <style>a {text-decoration: none;} </style>
 
 1\. **Register your app with Veritone.** (10 minutes) Once your app is part of the Veritone ecosystem, it can integrate easily into powerhouse Veritone platform services like CMS and Discovery.
-[Read more ⇨](developer/applications/app-tutorial/app-tutorial-step-1)
+[Read more ⇨](/developer/applications/app-tutorial/app-tutorial-step-1)
 
 2\. **Set up authentication.** (10 minutes) We'll show you two ways to log in and get an API token.
-We'll also talk about error handling. [Read more ⇨](developer/applications/app-tutorial/app-tutorial-step-2)
+We'll also talk about error handling. [Read more ⇨](/developer/applications/app-tutorial/app-tutorial-step-2)
 
 3\. **Add custom logic** (15 minutes) to make the app respond to a context menu command in Veritone's CMS.
-[Read more ⇨](developer/applications/app-tutorial/app-tutorial-step-3)
+[Read more ⇨](/developer/applications/app-tutorial/app-tutorial-step-3)
 
 4\. **Run Object Detection against a video** (30 minutes) in response to user interaction.
-[Read more ⇨](developer/applications/app-tutorial/app-tutorial-step-4)
+[Read more ⇨](/developer/applications/app-tutorial/app-tutorial-step-4)
