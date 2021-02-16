@@ -81,4 +81,4 @@ So anyone with access to Developer app in your organization will see it in the a
 In draft state, this is usually just for development and testing purposes.
 In order to make that application available to other users of aiWARE (either users of other organizations or non-developers in your organization), the application must be submitted for [review](/developer/applications/quick-start/step-4).
 
-[On to Step 2: Setting Up Authentication](developer/applications/quick-start/step-2)
+[On to Step 2: Setting Up Authentication](/developer/applications/quick-start/step-2)

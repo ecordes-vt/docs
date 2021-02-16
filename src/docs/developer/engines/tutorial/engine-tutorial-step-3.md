@@ -131,4 +131,4 @@ In this lesson, we learned how to:
 
 If your engine can process a known-valid data chunk in test mode (and output proper data to the Test Console web page), without errors, congratulations: You're ready to try deploying the engine to Veritone's aiWARE platform.
 
-**NEXT**: [Push your engine build to Veritone ⇨](developer/engines/tutorial/engine-tutorial-step-4) 
+**NEXT**: [Push your engine build to Veritone ⇨](/developer/engines/tutorial/engine-tutorial-step-4) 

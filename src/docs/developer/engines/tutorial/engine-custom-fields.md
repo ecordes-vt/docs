@@ -2,7 +2,7 @@
 
 ![i/o](io.png)
 
-In a [separate tutorial](developer/engines/tutorial/customizing-engine-output), we looked at how to customize a cognitive engine's _output_.
+In a [separate tutorial](/developer/engines/tutorial/customizing-engine-output), we looked at how to customize a cognitive engine's _output_.
 Below, we'll look at how to customize an engine's _input_, so that if your engine requires that the user specify custom configuration parameters, it becomes possible to do that.
 
 Your engine might need custom input parameters in order to:
@@ -47,7 +47,7 @@ mutation runMyEngineJob {
 }
 ```
 
-At runtime, the engine will receive a variety of form fields (more fully documented [here](developer/engines/toolkit/?id=process-webhook)), as part of the request body.
+At runtime, the engine will receive a variety of form fields (more fully documented [here](/developer/engines/toolkit/?id=process-webhook)), as part of the request body.
 The parsed JSON object will look something like this:
 
 ```json
@@ -79,7 +79,7 @@ In this case, the `cutoff` field (our custom input) is the second field listed.
 
 ?> **NOTE:** The discussion shown hereunder is relevant only if you care how your engine appears in the Veritone CMS online UI. It does not affect how custom `payload` properties work (as outlined above). You _need not_ use the Custom Fields UI described below to achieve custom input to your engine. The Custom Fields UI is merely a convenience for users of the Veritone CMS.
 
-When you create and register a new engine in Veritone Developer using the online UI, you are given the opportunity to specify [Custom Fields](developer/adapters/quick-start/step-1?id=_3-add-custom-fields-optional).
+When you create and register a new engine in Veritone Developer using the online UI, you are given the opportunity to specify [Custom Fields](/developer/adapters/quick-start/step-1?id=_3-add-custom-fields-optional).
 If you add one or more Custom Fields to your engine project using this UI, each Field Name you specify will become a property name (key) in the request body that your engine receives at runtime.
 Each Field Label you specify becomes a form-field label in the Advanced Cognitive Workflow UI of the [Veritone CMS](https://cms.veritone.com).
 

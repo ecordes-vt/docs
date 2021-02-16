@@ -141,7 +141,7 @@ It's important to check this response not only for the job status, but for task 
 Let's look at how this is implemented in our 'K2' app.
 
 Since we want a user to be able to designate a media file (in Veritone CMS) for processing, we'll need to create a Context Menu Extension (CME) with an appropriate command.
-All we need to do is repeat the procedure outlined earlier, in [Create a Context Menu Extension](developer/applications/app-tutorial/app-tutorial-step-1?id=create-a-context-menu-extension),
+All we need to do is repeat the procedure outlined earlier, in [Create a Context Menu Extension](/developer/applications/app-tutorial/app-tutorial-step-1?id=create-a-context-menu-extension),
 but using a label string of "K2 -- Run Object Detection" and a target URL of `https://vtn-integration-demo.netlify.com?tdoId=${tdoId}#job` instead of `https://vtn-integration-demo.netlify.com?tdoId=${tdoId}#process`.
 
 The only change to the URL is the hash on the end.
@@ -304,7 +304,7 @@ function createEngineResultsQuery(tdoID, engineID) {
 }
 ```
 
-When we run the query, the results will come back in a (potentially large) JSON blob, in [vtn-standard format](developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard), which our app dutifully displays in the browser window at the DOM node corresponding to `id="job_log"` (CSS selector `#job_log`).
+When we run the query, the results will come back in a (potentially large) JSON blob, in [vtn-standard format](/developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard), which our app dutifully displays in the browser window at the DOM node corresponding to `id="job_log"` (CSS selector `#job_log`).
 
 ![Results shown in the scrolling div](_media/Results.png)
 

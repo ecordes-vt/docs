@@ -13,7 +13,7 @@ Your engine will be checked in terms of:
 
 You will be notified (within 72 hours) as to the status of your engine. If the engine is Approved, you can Deploy it immediately. If it is not Approved, you'll be told the status of the engine, and you can take appropriate steps to address any problems.
 
-> For information on how to build engines that are compatible with the latest aiWARE Edge infrastructure, please refer to [Engines in aiWARE Edge](developer/edge/engines).
+> For information on how to build engines that are compatible with the latest aiWARE Edge infrastructure, please refer to [Engines in aiWARE Edge](/developer/edge/engines).
 
 ## Certification Process
 
@@ -57,12 +57,12 @@ Similarly, processes running inside your container should have the latest securi
 
 ### Network awareness
 
-When you registered your engine with Veritone, you were required to specify whether you engine should be considered network-isolated, or network-aware. (See [Engine Deployment Models](developer/engines/deployment-model/?id=engine-deployment-models) for more information on the choices available.)
+When you registered your engine with Veritone, you were required to specify whether you engine should be considered network-isolated, or network-aware. (See [Engine Deployment Models](/developer/engines/deployment-model/?id=engine-deployment-models) for more information on the choices available.)
 If you specified that your engine is _network-isolated_, and yet it makes calls to an external IP address using a wire protocol, this could result in your engine being marked `disapproved`.
 
 ### Build test
 
-The build test looks to see if your engine produces output that conforms to the [vtn-standard](developer/engines/standards/engine-output/).
+The build test looks to see if your engine produces output that conforms to the [vtn-standard](/developer/engines/standards/engine-output/).
 
 ## Engine Development Best Practices: How to Speed Up Approval
 

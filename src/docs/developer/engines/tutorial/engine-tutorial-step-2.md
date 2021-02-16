@@ -64,7 +64,7 @@ Implementing engines as Docker images brings many benefits, including:
 ## Be Sure Your Project Is Structured Correctly
 
 Take a moment to be sure your project files are in the correct places, so that Docker can find them.
-As mentioned in [the first page of this tutorial](developer/engines/tutorial/), the project files should look like:
+As mentioned in [the first page of this tutorial](/developer/engines/tutorial/), the project files should look like:
 
 <pre>/hello-world
     |&mdash; Dockerfile
@@ -232,7 +232,7 @@ In this lesson, we learned how to:
 * Use the `docker build` command to create an engine's _build_ (the deployable image).
 
 **NEXT:**
-[Test your build locally ⇨](developer/engines/tutorial/engine-tutorial-step-3)
+[Test your build locally ⇨](/developer/engines/tutorial/engine-tutorial-step-3)
           
  
  

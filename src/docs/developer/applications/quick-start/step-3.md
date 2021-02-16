@@ -10,4 +10,4 @@ Veritone provides intelligent APIs that allow you to easily add AI features &mda
 
 Please see our [APIs section](/apis/) for more information.
 
-[Continue to Step 4: Submit Your Application](developer/applications/quick-start/step-4)
+[Continue to Step 4: Submit Your Application](/developer/applications/quick-start/step-4)

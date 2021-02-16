@@ -39,7 +39,7 @@ aside.small {
 <script src="https://player.vimeo.com/api/player.js"></script>
 -->
 
-In [Step 1](developer/engines/tutorial/engine-tutorial-step-1), you learned how to register your project with [Veritone](https://developer.veritone.com/) via a simple setup wizard. Having done that, and having built and tested (locally) your engine, you can now go back to the Veritone Developer site and onboard your engine.
+In [Step 1](/developer/engines/tutorial/engine-tutorial-step-1), you learned how to register your project with [Veritone](https://developer.veritone.com/) via a simple setup wizard. Having done that, and having built and tested (locally) your engine, you can now go back to the Veritone Developer site and onboard your engine.
 
 All you need to do is:
 
@@ -59,7 +59,7 @@ If you **have** uploaded builds before, you will see a list of them, along with 
 > Note that the **Create a New Build** detailed UI (with associated instruction list) can be toggled into or out of view with the &or; or &and; control at the right edge of the content widget.
  
 4\. The **Create a New Build** checklist starts with "Include your manifest with your build" &mdash; but note, _we already did this._ 
-We built the manifest into the engine image in [the last lesson](developer/engines/tutorial/engine-tutorial-step-3).
+We built the manifest into the engine image in [the last lesson](/developer/engines/tutorial/engine-tutorial-step-3).
 Therefore we can safely skip down to the checklist item that says "Log into the Veritone Docker server." Do this now, by executing the following command in a terminal console:
 
 ```bash
@@ -140,4 +140,4 @@ In this lesson, we learned how to:
 * Promote an Approved build to Deployed.
 * Pause and Delete builds.
 
-**NEXT**: [Test your engine in aiWARE ⇨](developer/engines/tutorial/engine-tutorial-step-5) 
+**NEXT**: [Test your engine in aiWARE ⇨](/developer/engines/tutorial/engine-tutorial-step-5) 

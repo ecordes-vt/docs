@@ -39,7 +39,7 @@ aside.small {
 <script src="https://player.vimeo.com/api/player.js"></script>
 -->
 
-Assuming you've already accomplished the prerequisites outlined in [Before You Begin](developer/engines/tutorial/?id=before-you-begin), your first step in creating an engine (yes, even before writing any code!) should be to register the engine with Veritone.
+Assuming you've already accomplished the prerequisites outlined in [Before You Begin](/developer/engines/tutorial/?id=before-you-begin), your first step in creating an engine (yes, even before writing any code!) should be to register the engine with Veritone.
 
 > In this step, you'll obtain a Veritone-assigned Engine ID, and generate your `manifest.json` file using a simple online UI.
 
@@ -60,13 +60,13 @@ In our case, the Hello World engine is a **Text** engine with **Keyword Extracti
 
 ![Select the input content types](NewEngine-MIME-type.png)
 
-6\. If your engine requires custom input options at runtime (for example, if your engine needs to know a 2-letter ISO 639-1 language code on a per-job basis; or any other custom config options), use the **ADD CUSTOM FIELD** button under **Custom Fields** to set this up. (Read more about [Custom Fields](developer/engines/custom-fields/).)
+6\. If your engine requires custom input options at runtime (for example, if your engine needs to know a 2-letter ISO 639-1 language code on a per-job basis; or any other custom config options), use the **ADD CUSTOM FIELD** button under **Custom Fields** to set this up. (Read more about [Custom Fields](/developer/engines/custom-fields/).)
 
 7\. Click the **NEXT** button (lower right corner of page) to proceed to the next page of the wizard. (This is the Testing Detail page.)
 
 ![Select deployment model](NewEngine-Testing.png)
 
-8\. Enter an e-mail address where certification test results can be sent. (The [engine certification and approval process](developer/engines/approval/?id=engine-certification-and-approval-process) is automatic.) Optionally specify the public URL of any media file that should be used for testing of your engine. Also, optionally provide information about any Custom Payload Fields your engine will rely on.
+8\. Enter an e-mail address where certification test results can be sent. (The [engine certification and approval process](/developer/engines/approval/?id=engine-certification-and-approval-process) is automatic.) Optionally specify the public URL of any media file that should be used for testing of your engine. Also, optionally provide information about any Custom Payload Fields your engine will rely on.
 
 > If you see a prompt of "Are you sure you want to continue?", click **CONTINUE ANYWAY**. You can come back later to supply default job mutations. (Your engine will work fine without them.)
 
@@ -109,7 +109,7 @@ Now that you've registered your project with Veritone Developer, you can generat
 
 3\. Download the `manifest.json` file into your project directory (or use the copy-to-clipboard button and paste it into a file called `manifest.json` in your project).
 
-4\. Edit the manifest as necessary to amend any fields that might not be accurate or complete. (For more information: Read about [Engine Manifests](developer/engines/standards/engine-manifest/?id=engine-manifest).)
+4\. Edit the manifest as necessary to amend any fields that might not be accurate or complete. (For more information: Read about [Engine Manifests](/developer/engines/standards/engine-manifest/?id=engine-manifest).)
 
 ## Recap and Cheat Sheet
 
@@ -122,4 +122,4 @@ In this lesson, we learned how to:
 * Specify the engine's Name, and other metadata.
 * Use the UI at [https://developer.veritone.com/](https://developer.veritone.com/) to generate a `manifest.json` file for your engine.
 
-**NEXT**: [Use Docker to create an engine build ⇨](developer/engines/tutorial/engine-tutorial-step-2)
+**NEXT**: [Use Docker to create an engine build ⇨](/developer/engines/tutorial/engine-tutorial-step-2)

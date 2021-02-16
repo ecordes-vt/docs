@@ -187,7 +187,7 @@ function getOAuthLink() {
 }
 ```
 
-Recall that when we [registered our app with Veritone](developer/applications/app-tutorial/app-tutorial-step-1?id=register-the-app), we obtained an ID for our app, which (in our case) looks something like `0f905d85-9235-4746-90d1-76afa2a305c0`.
+Recall that when we [registered our app with Veritone](/developer/applications/app-tutorial/app-tutorial-step-1?id=register-the-app), we obtained an ID for our app, which (in our case) looks something like `0f905d85-9235-4746-90d1-76afa2a305c0`.
 That value is the `clientID` needed in our OAuth URL.
 
 On the first screen of our app (see above), there's a line of text: "Or try the _OAuth link_." The link, in that text, points to
@@ -237,4 +237,4 @@ How you decide to store the OAuth token is completely up to you.
 
 But, how do you actually _use_ the security token? That's what we're going to find out next!
 
-[Add processing logic ⇨](developer/applications/app-tutorial/app-tutorial-step-3)
+[Add processing logic ⇨](/developer/applications/app-tutorial/app-tutorial-step-3)
