@@ -133,9 +133,9 @@ Other custom aiWARE nodes exist for convenience purposes, but the **aiWARE api**
 
 ## Understanding Engines, Builds, and Jobs
 
-In aiWARE, _jobs_ are composed of _tasks_ that call on [_engines_](developer/engines/) to do the actual work (of cognition, say). Engines are pluggable processing modules that conform to certain API contracts. Engines run inside Docker containers and are accessed via HTTP. One of the benefits of containerization is that an engine can be implemented in essentially any programming language. It can even be implemented as a Node-RED instance running a flow.
+In aiWARE, _jobs_ are composed of _tasks_ that call on [_engines_](/developer/engines/) to do the actual work (of cognition, say). Engines are pluggable processing modules that conform to certain API contracts. Engines run inside Docker containers and are accessed via HTTP. One of the benefits of containerization is that an engine can be implemented in essentially any programming language. It can even be implemented as a Node-RED instance running a flow.
 
-> When you deploy a flow into the aiWARE platform, you are deploying it as a so-called "chunk engine" (sometimes also called a segment engine). Learn more about chunk engines [here](developer/engines/processing-modes/?id=engine-processing-modes).
+> When you deploy a flow into the aiWARE platform, you are deploying it as a so-called "chunk engine" (sometimes also called a segment engine). Learn more about chunk engines [here](/developer/engines/processing-modes/?id=engine-processing-modes).
 
 When you create a flow in Automate Studio, your edits are silently auto-saved (as you work) into the current _Build_ of your flow. Think of your flow as an application, which you are building a _version_ of. You might work on a particular version of your flow over a period of days, across multiple Automate Studio sessions. It might contain dozens (or even hundreds) of auto-saves, but you are still working on a particular flow version &mdash; a particular Build.
 

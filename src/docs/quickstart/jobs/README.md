@@ -32,7 +32,7 @@ mutation userLogin {
 }
 ```
 
-3\. Use OAuth to obtain a token programmatically (as described in our [Build Your Own AI App](developer/applications/app-tutorial/app-tutorial-step-2?id=authentication-option-2-oauth) tutorial).
+3\. Use OAuth to obtain a token programmatically (as described in our [Build Your Own AI App](/developer/applications/app-tutorial/app-tutorial-step-2?id=authentication-option-2-oauth) tutorial).
 
 Use the first option if you need a long-lasting token (i.e., one that will not expire in a day). Take care to store it properly.
 

@@ -70,7 +70,7 @@ mutation createEvents{
 }
 ```
 
-You can learn more about creating and modifying your own Application packages [here](developer/applications/app-tutorial/).
+You can learn more about creating and modifying your own Application packages [here](/developer/applications/app-tutorial/).
 
 ### Event Subscriptions
 

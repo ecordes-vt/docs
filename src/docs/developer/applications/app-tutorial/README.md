@@ -12,6 +12,7 @@ display: inline-block; line-height:80%;
               border-width: 1.2px;
               padding:1px 10px 0px 15px;">
               
+
 **Goal:** Create a single-page web app that can detect objects in a video,
 using the Veritone platform's GraphQL-based API.
 The app will allow the user to log in to Veritone via OAuth,

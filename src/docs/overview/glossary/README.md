@@ -8,7 +8,7 @@ This section includes definitions of common words and phrases that you will enco
 
 > A [docker](#docker) container that ingests data from an external source and provides the extract, transform, load (ETL) logic to import that data into aiWARE.
 Data may be in the form of a file or [stream](#stream-engine-mode).
-More information can be found in the [adapters](developer/adapters/) section of this site.
+More information can be found in the [adapters](/developer/adapters/) section of this site.
 
 #### Aggregator Engine
 
@@ -31,7 +31,7 @@ More information can be found in the [APIs](apis/) section of this site.
 > In aiWARE, a bundle of software that can be installed into an organization and provisioned to users.
 An application usually has a URL, may call aiWARE's [API](#api), may process ingest data using [adapters](#adapter) or process data using [engines](#engine),
 and may define particular data structures through [schemas](#schema).
-More information can be found in the [applications](developer/applications/) section of this site.
+More information can be found in the [applications](/developer/applications/) section of this site.
 
 #### Build
 
@@ -106,7 +106,7 @@ Data may be in the form of a file or [stream](#stream-engine-mode).
 > A collection of named [entities](#entity), along with files that act as identifiers for those entities.
 Libraries allow engines to tag their results with entity IDs that point to a specific person, place, thing, etc. rather than just using textual descriptions.
 To make an engine aware of a library, it must be [trained](#training) against that library.
-More information can be found in the [libraries](developer/libraries/) section of this site.
+More information can be found in the [libraries](/developer/libraries/) section of this site.
 
 #### Manifest
 
@@ -143,7 +143,7 @@ This is distinct from [detection](#detection) which determines where an object i
 
 > A definition of the structure a piece of structured data must conform to.
 In aiWARE, schemas can be registered in Veritone Developer and are written using [json-schema](https://json-schema.org/).
-See the [data](developer/data/) section of this documentation for more information.
+See the [data](/developer/data/) section of this documentation for more information.
 
 #### Segment Engine Mode
 

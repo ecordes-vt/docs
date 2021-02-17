@@ -36,11 +36,11 @@ transform-origin: top left; "><div class="topruled"><br/></div>
 
 - [GraphQL API Basics](apis/tutorials/graphql-basics.md) &mdash; Start here if you're new to GraphQL.
 - [API Examples](apis/examples.md) &mdash;  GraphQL-based API tips and tricks, as runnable queries.
-- [Build Your Own AI App](developer/applications/app-tutorial/) &mdash; A step-by-step guide to building an AI-powered web app.
-- [Build Your Own Cognitive Engine](developer/engines/tutorial/) &mdash; Step-by-step instructions for building a cognitive engine.
-- [Customizing Engine Output](developer/engines/tutorial/customizing-engine-output) &mdash; Extend the VTN Standard schema for custom output data.
-- [Customizing Engine Input](developer/engines/tutorial/engine-custom-fields) &mdash; Learn how to pass custom data in to your engine.
-- [How to Train a Cognitive Engine](developer/engines/tutorial/engine-training-tutorial) &mdash; A tutorial that shows how to train an engine to recognize faces.
+- [Build Your Own AI App](/developer/applications/app-tutorial/) &mdash; A step-by-step guide to building an AI-powered web app.
+- [Build Your Own Cognitive Engine](/developer/engines/tutorial/) &mdash; Step-by-step instructions for building a cognitive engine.
+- [Customizing Engine Output](/developer/engines/tutorial/customizing-engine-output) &mdash; Extend the VTN Standard schema for custom output data.
+- [Customizing Engine Input](/developer/engines/tutorial/engine-custom-fields) &mdash; Learn how to pass custom data in to your engine.
+- [How to Train a Cognitive Engine](/developer/engines/tutorial/engine-training-tutorial) &mdash; A tutorial that shows how to train an engine to recognize faces.
 - [Clean up TDO data](apis/tutorials/cleanup-tdo.md) &mdash; Learn how to clean up and reuse Temporal Data Objects.
 - [Creating Export Requests](apis/tutorials/create-export-request/) &mdash; Export data out of aiWARE in specific formats.
 - [Posting Engine Results](apis/tutorials/engine-results.md) &mdash; If you're building a `batch` engine, read this.

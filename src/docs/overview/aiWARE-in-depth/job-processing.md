@@ -13,7 +13,7 @@ Fundamental to the value of Veritone aiWARE Edge is the ability to ingest and pr
 Each Job can be represented by a _Directed Acyclic Graph_ (DAG) that defines the path along which data will flow from ingestion to final Engine execution. Each node on the graph is a Task and represents an Engine (or Adapter) on Edge. Each output of one engine can become the input of another.
 This is called _chain cognition_ and requires engines to adhere to a standard data format for ingestion and output. Engines that support Veritone's [VTN standard format](https://www.npmjs.com/package/veritone-json-schemas) become interoperable within a class with given capabilities.
  
-> More on VTN standards can be found [here](developer/engines/standards/engine-output/).
+> More on VTN standards can be found [here](/developer/engines/standards/engine-output/).
 
 Each Job is associated with a static DAG, defined _a priori_ to execution on Edge; however, the architecture and Edge APIs also support dynamic DAGs (modified during runtime, while the data is being routed through the DAG).
 

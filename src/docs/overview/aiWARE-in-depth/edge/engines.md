@@ -45,7 +45,7 @@ Engine Toolkit (ET) abstracts the input/output layer between the Engine and Veri
 Chunk engines continue to provide the `/process` webhook endpoint. 
 The input chunk is provided in the `cacheUri` parameter.  The chunk result can be returned in the response for the `/process` call, or it can be sent asynchronously at a later time. (In the latter case, chunk engines act like stream engines for one chunk.)
 
-Stream engines should also expose the `/process` webhook endpoint. Its input data will also be from `cacheURI`, and produces either [VTN Standard](developer/engines/standards/engine-output/) or other format(s) as task outputs back to ET using the heartbeat/callback endpoint.  Naturally, stream engines will respond almost immediately in handling the `/process` webhook, providing some ACK on the response or other informative response to ET.
+Stream engines should also expose the `/process` webhook endpoint. Its input data will also be from `cacheURI`, and produces either [VTN Standard](/developer/engines/standards/engine-output/) or other format(s) as task outputs back to ET using the heartbeat/callback endpoint.  Naturally, stream engines will respond almost immediately in handling the `/process` webhook, providing some ACK on the response or other informative response to ET.
 
 Batch engines are similarly invoked and are required to provide heartbeats back to ET for status update with a completion status (per discussion further below). Batch engines can be used to perform their own business logic, and produce the results in a freeform fashion, e.g., producing assets directly to the TDO associated with the job that the task is in. However, they can also produce task outputs for downstream tasks in the job by following the pattern of chunk or stream engines -- producing output results by posting back to ET's `/callback` endpoint. Naturally, this should be set up as part of the job DAG with output of the engine defined in the task routes and I/Os.
 
@@ -395,7 +395,7 @@ RUN ["chmod", "+x", "/app/index.js"]
 ENTRYPOINT [ "/opt/aiware/engine", "node", "index.js" ]
 ```
 
-> See [Create Your Dockerfile](developer/engines/tutorial/engine-tutorial-step-2?id=create-your-dockerfile) for an in-depth explanation of how and why this file is coded the way it is.
+> See [Create Your Dockerfile](/developer/engines/tutorial/engine-tutorial-step-2?id=create-your-dockerfile) for an in-depth explanation of how and why this file is coded the way it is.
 
 The most common commands in a `Dockerfile` are:
 
@@ -641,7 +641,7 @@ created by Engine Toolkit and given to the engine as the value of the
 field `libraryModelDirectory`. This is to optimize the loading of the
 library model and is not a replacement for cloud storage; the library engine model
 should be persisted back to Veritone core using the GraphQL API.
-See the [Training](developer/libraries/training) discussion for information on how to persist training data programmatically.
+See the [Training](/developer/libraries/training) discussion for information on how to persist training data programmatically.
 
 ### Consuming Training Libraries
 

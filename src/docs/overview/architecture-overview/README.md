@@ -130,7 +130,7 @@ Time correlation based on the media run-time is required to facilitate
 effective multi-variant search by Veritone's suite of end-user
 applications.
 
-> For more information on the types of data available to be indexed, see the [engine output specifications](developer/engines/standards/engine-output/).
+> For more information on the types of data available to be indexed, see the [engine output specifications](/developer/engines/standards/engine-output/).
 
 ## API Layer
 
