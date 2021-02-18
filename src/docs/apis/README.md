@@ -6,12 +6,12 @@ Veritone's full suite of APIs enables you to easily add cognitive functionality 
 
 ## The Best of Both Worlds <!-- {docsify-ignore} -->
 
-Veritone's aiWARE platform exposes a comprehensive set of [GraphQL APIs](apis/reference/mutation/), as well as a route-based [HTTP API](apis/edge/index.html) for customers who prefer a more RESTful approach.
+Veritone's aiWARE platform exposes a comprehensive set of [GraphQL APIs](/apis/reference/mutation/), as well as a route-based [HTTP API](/apis/edge/index.html) for customers who prefer a more RESTful approach.
 You can mix and match API styles to suit your need.
 
 ### GraphQL API
 
-Our extensive GraphQL API (containing [mutations](apis/reference/mutation/) as well as [queries](apis/reference/query/)) provides a powerful, flexible, and efficient way to access and aggregate data, allowing you to fetch exactly the data you need (as ready-to-use JSON), with a single query.
+Our extensive GraphQL API (containing [mutations](/apis/reference/mutation/) as well as [queries](/apis/reference/query/)) provides a powerful, flexible, and efficient way to access and aggregate data, allowing you to fetch exactly the data you need (as ready-to-use JSON), with a single query.
 GraphQL is a powerful query language that operates via a single endpoint using conventional HTTP POST requests.
 Its JSON-based structure not only lets you call multiple nested resources in a single query, it also allows you to shape requests so as to specify the _exact data_ you want sent back.
 (No more sifting through a "kitchen sink" REST response.
@@ -19,7 +19,7 @@ Its JSON-based structure not only lets you call multiple nested resources in a s
 
 ### HTTP API
 
-For even greater flexibility, you can (optionally) use Veritone's [aiWARE Edge HTTP API](apis/edge/index.html) to achieve your integration goals using standard HTTP verbs like PUT, POST, and GET.
+For even greater flexibility, you can (optionally) use Veritone's [aiWARE Edge HTTP API](/apis/edge/index.html) to achieve your integration goals using standard HTTP verbs like PUT, POST, and GET.
 The HTTP API is especially useful for customers who wish to manage their own on-premise instance(s) of Veritone aiWARE Edge, or who may have complex deployment requirements involving hybrid on-prem/virtual-private-cloud architectures.
 
 ## Base URL <!-- {docsify-ignore} -->
@@ -58,9 +58,9 @@ Veritone’s Sandbox interface is the recommended client for ad-hoc API requests
 For full Veritone API documentation, see:
 
 * [GraphQL Schema](https://api.veritone.com/v3/graphqldocs/) &mdash; Veritone's GraphQL Schema
-* [Mutations](apis/reference/mutation/) &mdash; the complete GraphQL Mutations API
-* [Queries](apis/reference/query/) &mdash; the complete GraphQL Query API
-* [aiWARE Edge HTTP API](apis/edge/index.html) &mdash; REST-style API
+* [Mutations](/apis/reference/mutation/) &mdash; the complete GraphQL Mutations API
+* [Queries](/apis/reference/query/) &mdash; the complete GraphQL Query API
+* [aiWARE Edge HTTP API](/apis/edge/index.html) &mdash; REST-style API
 
 ### We’re Here to Help!
 

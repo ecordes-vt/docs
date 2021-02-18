@@ -5,7 +5,7 @@
 To achieve high levels of interoperability, Veritone requires all cognitive engines to produce [standardized output](/developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard).
 Nevertheless, it's easily possible to customize an engine's output to contain additional data beyond the minimum requirements of the `vtn-standard` schema.
 
-In the mini-tutorial below, we'll look at how to customize an engine's output data. The technique shown here allows your additional data to become fully searchable in the aiWARE platform using the [Search API](apis/search-quickstart/).
+In the mini-tutorial below, we'll look at how to customize an engine's output data. The technique shown here allows your additional data to become fully searchable in the aiWARE platform using the [Search API](/apis/search-quickstart/).
 
 ?> Other techniques exist for customizing engine output, but some of them do not result in _searchable_ data. See the full discussion under [Extending the Standard](/developer/engines/standards/engine-output/?id=extending-the-standard).
 

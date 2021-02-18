@@ -375,7 +375,7 @@ The data in the hit includes an `entityId` that clearly identifies this face as 
 
 Want to know more about Libraries and training? You may want to take a look at:
 
-* [Library-Related API Examples](apis/examples?id=library) &mdash; Queries and mutations you can run interactively in the Sandbox
+* [Library-Related API Examples](/apis/examples?id=library) &mdash; Queries and mutations you can run interactively in the Sandbox
 * [Library GraphQL Schema](https://api.veritone.com/v3/graphqldocs/library.doc.html) &mdash; Our schema documentation
 * [Training Library-Enabled Engines](/developer/libraries/training?id=training-library-enabled-engines) &mdash; How to schedule training jobs manually.
 * [Running Library-Enabled Engines](/developer/libraries/running) &mdash; More information on library-enabled engines

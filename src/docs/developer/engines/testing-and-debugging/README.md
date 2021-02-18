@@ -342,7 +342,7 @@ query {
 
 ### Task Output
 
-The task output tab displays your engine results. Take a look [here](apis/tutorials/engine-results?id=uploading-engine-results) for more information about engine results.
+The task output tab displays your engine results. Take a look [here](/apis/tutorials/engine-results?id=uploading-engine-results) for more information about engine results.
 
 You can view your task output via graphql by using the snippet below:
 

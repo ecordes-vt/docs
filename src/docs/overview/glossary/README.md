@@ -24,7 +24,7 @@ More information can be found in the [adapters](/developer/adapters/) section of
 > An API specifies how software components can be interacted with programmatically.
 Veritone's primary application programming interface (API) is a [GraphQL](#graphql) interface.
 It is located at https://api.veritone.com/v3/graphql and can be accessed just like other HTTP APIs (e.g. REST) with POST requests.
-More information can be found in the [APIs](apis/) section of this site.
+More information can be found in the [APIs](/apis/) section of this site.
 
 #### Application
 

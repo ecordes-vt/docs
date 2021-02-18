@@ -12,7 +12,7 @@ As with any Pub-Sub technology, the advantages of using aiWARE Eventing to is to
 
 The aiWARE Eventing system enables you to configure flexible and powerful notifications to your applications through a few GraphQL API actions. (See below.)
 
-However, if you’re looking for real-time (2-second-and-under response time) status notifications from cognitive engine jobs, please see our [aiWARE Edge APIs](apis/edge/index.html).
+However, if you’re looking for real-time (2-second-and-under response time) status notifications from cognitive engine jobs, please see our [aiWARE Edge APIs](/apis/edge/index.html).
 
 As a quick note, a useful rule of thumb is that if your application does not need 2-second-and-under reporting, the aiWARE Core Eventing system will be effective for notifying your application of desired events occurring in your Veritone organization.
 

@@ -37,7 +37,7 @@ available adapters include:
 - More coming soon!
 
 Once ingested, source data is stored securely in aiWARE and accessible
-via the [GraphQL API](apis/).
+via the [GraphQL API](/apis/).
 
 For customers who require it, the aiWARE platform can optionally be deployed as an on-premise
 solution, replacing cloud storage of the source data files with local
@@ -137,7 +137,7 @@ applications.
 ![Integration](stack-integration.svg)
 
 Near the top of the stack, the Integration (API) Layer affords access (via HTTP) to the other underlayers,
-via a rich [GraphQL](apis/using-graphql.md)-based Application Programming Interface.
+via a rich [GraphQL](/apis/using-graphql.md)-based Application Programming Interface.
 
 > Read more about our APIs [here](../apis/)
 
@@ -160,4 +160,4 @@ Veritone search features include:
 - Faceted search options refine results by attributes such as watchlists, faces, locations, objects, and tags.
 - Result ranking logic returns the most relevant results by default or can be fine-tuned for specific queries.
 
-> For more information on the search API, see the [search quickstart guide](apis/search-quickstart/).
+> For more information on the search API, see the [search quickstart guide](/apis/search-quickstart/).

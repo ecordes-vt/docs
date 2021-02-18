@@ -684,9 +684,9 @@ Response:
 
 ### For More Information
 
-* [Jobs, Tasks, and TDOs](apis/jobs-tasks-tdos)
+* [Jobs, Tasks, and TDOs](/apis/jobs-tasks-tdos)
 * [Job Processing](https://docs.veritone.com/#/overview/aiWARE-in-depth/job-processing)
-* [Using GraphQL](apis/using-graphql)
-* All supported [Mutations](apis/reference/mutation/) and [Queries](apis/reference/query/)
-* [GraphQL API Examples](apis/examples)
-* [Edge REST API](apis/edge/index.html)
+* [Using GraphQL](/apis/using-graphql)
+* All supported [Mutations](/apis/reference/mutation/) and [Queries](/apis/reference/query/)
+* [GraphQL API Examples](/apis/examples)
+* [Edge REST API](/apis/edge/index.html)

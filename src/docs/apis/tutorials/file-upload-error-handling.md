@@ -2,7 +2,7 @@
 
 Veritone supports a number of methods for easily and securely uploading files, however there are certain conditions that can cause an upload to fail. If you encounter an error when uploading a file, review the information provided below to help determine the cause and find suggested courses of action you can take to resolve it.
 
-To learn more about uploading content to Veritone, including supported upload methods, source types, and size limits, see our [Uploading Large Files](apis/tutorials/uploading-large-files.md) tutorial.
+To learn more about uploading content to Veritone, including supported upload methods, source types, and size limits, see our [Uploading Large Files](/apis/tutorials/uploading-large-files.md) tutorial.
 
 ## Local System File Upload Error
 

@@ -6,7 +6,7 @@
 
 One of the main benefits of AIWare is the ability to run engines from different providers to process your media. With this choice comes the problem: _How do I know which engines will provide the best results?_ Benchmark is designed to make it easy for you to compare results of engines against each other, allowing you to visualize engine performance over time, and see apples-to-apples comparisons of engines against one another.
 
-> **What is an asset?** An asset is simply a piece of data on a [TDO](apis/tutorials/upload-and-process?id=_1-create-a-temporal-data-object-tdo). Most of the time an asset will be the result from a specific run of a cognitive engine for a specific engine capability. For example, a transcription job will produce a _transcript_ as an asset on the appropriate TDO.
+> **What is an asset?** An asset is simply a piece of data on a [TDO](/apis/tutorials/upload-and-process?id=_1-create-a-temporal-data-object-tdo). Most of the time an asset will be the result from a specific run of a cognitive engine for a specific engine capability. For example, a transcription job will produce a _transcript_ as an asset on the appropriate TDO.
 
 ## Where Can I Find Benchmark?
 

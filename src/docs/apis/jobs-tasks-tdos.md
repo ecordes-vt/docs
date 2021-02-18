@@ -12,15 +12,15 @@ Important facts to know about TDOs are:
 
 * You will generally need to manage the lifecycle of a TDO yourself. Although some engines may create a TDO on their own, it is far more common that you will submit a TDO &mdash; that _you_ created &mdash; when kicking off a Job with `createJob()`.
 
-* When you no longer need a TDO, you can [delete it programmatically](apis/job-quickstart/?id=delete-a-tdo-andor-its-content), or you can [purge its contents](apis/job-quickstart/?id=remove-tdo-content). Otherwise, it lives forever.
+* When you no longer need a TDO, you can [delete it programmatically](/apis/job-quickstart/?id=delete-a-tdo-andor-its-content), or you can [purge its contents](/apis/job-quickstart/?id=remove-tdo-content). Otherwise, it lives forever.
 
 * TDOs you create are generally visible (and thus usable) only by members of your Organization.
 
-* You will often [create an empty TDO programmatically](apis/job-quickstart/?id=create-a-tdo), then run an ingestion task on it to populate it with a media asset.
+* You will often [create an empty TDO programmatically](/apis/job-quickstart/?id=create-a-tdo), then run an ingestion task on it to populate it with a media asset.
 
 * When processing a media file referenced in your TDO, an engine will produce its own output (e.g., transcription output) in the form of a `vtn-standard` asset, which will be attached to your TDO _by reference_.
 
-* A TDO can contain multiple assets of multiple types. (See [Asset Types](apis/tutorials/asset-types?id=asset-types) for more information.)
+* A TDO can contain multiple assets of multiple types. (See [Asset Types](/apis/tutorials/asset-types?id=asset-types) for more information.)
 
 ## Task
 
@@ -69,7 +69,7 @@ Things to remember:
 
 * The order in which you list Tasks, in your call to `createJob()`, is important. If your Job needs to ingest a media file, the ingestion-engine task should be the first Task in your list of Tasks.
 
-* You can (and should) check a Job's status using the Job ID returned by `createJob()`. (See [Check the Job Status](apis/job-quickstart/?id=check-the-job-status) for an example of how to do this.)
+* You can (and should) check a Job's status using the Job ID returned by `createJob()`. (See [Check the Job Status](/apis/job-quickstart/?id=check-the-job-status) for an example of how to do this.)
 
 * A Job can have any of the status values shown below.
 
@@ -84,7 +84,7 @@ enum JobStatus {
 }
 ```
 
-> Be sure to consult the [Job Quickstart Guide](apis/job-quickstart/) for a more complete discussion of how to create, run, monitor, and obtain data from Jobs.
+> Be sure to consult the [Job Quickstart Guide](/apis/job-quickstart/) for a more complete discussion of how to create, run, monitor, and obtain data from Jobs.
 
 ## Ingestion
 
@@ -94,7 +94,7 @@ When a file is ingested, it is generally copied to a secure location, registered
 In Veritone's aiWARE system, a file can undergo cognitive processing if and only if it has been ingested.
 The two most common ways to ingest a media file for processing in aiWARE are:
 
-1\. Create a TDO and pull the media asset into it, in one operation, using `createTDOWithAsset()`. (See [this example](apis/examples?id=create-tdo-and-upload-asset) in our API docs.)
+1\. Create a TDO and pull the media asset into it, in one operation, using `createTDOWithAsset()`. (See [this example](/apis/examples?id=create-tdo-and-upload-asset) in our API docs.)
 
 2\. Create a TDO manually and then run an ingestion job on it using `createJob()` in conjunction with an appropriate ingestion engine (also called an [adapter](/developer/adapters/?id=adapter-workflow)).
 Veritone aiWARE offers many ready-to-use ingestion engines tailored to various intake scenarios, such as pulling videos (or other files) from YouTube, Google Drive, Dropbox, etc.

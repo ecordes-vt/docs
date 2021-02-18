@@ -119,9 +119,9 @@ mutation createTDO {
 }
 ```
 
-This mutation asks the server to create an empty [Temporal Data Object (TDO)](apis/jobs-tasks-tdos?id=tdo-temporal-data-object), and return its `id` and `status`.
+This mutation asks the server to create an empty [Temporal Data Object (TDO)](/apis/jobs-tasks-tdos?id=tdo-temporal-data-object), and return its `id` and `status`.
 
-?> The TDO is aiWARTE's general-purpose container object for passing job data around. A TDO contains information about media files, and after a job is run, it will contain one or more entries in an `assets` array. The entries associate job data (by reference, using `signedUri` fields that point to the stored cognition results) with the TDO in question. Read more about TDOs [here](apis/jobs-tasks-tdos?id=tdo-temporal-data-object).
+?> The TDO is aiWARTE's general-purpose container object for passing job data around. A TDO contains information about media files, and after a job is run, it will contain one or more entries in an `assets` array. The entries associate job data (by reference, using `signedUri` fields that point to the stored cognition results) with the TDO in question. Read more about TDOs [here](/apis/jobs-tasks-tdos?id=tdo-temporal-data-object).
 
 You can use the **aiWARE api** node to execute any of the more than 200 API calls available in aiWARE's GraphQL API. The return value will be a JSON object, which can be accessed as the value of `msg.payload`.
 
