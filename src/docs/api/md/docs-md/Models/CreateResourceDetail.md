@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **params** | [**String**](string.md) | JSON encoded field | [optional] [default to null]
 **pgDatabase** | [**String**](string.md) | If postgres, this is the name of the postgres database | [optional] [default to null]
 **pgPass** | [**String**](string.md) | If postgres, this is the user password.  This will be encrypted in storage | [optional] [default to null]
-**pgSchema** | [**String**](string.md) | If postgres, this is the name of the schema | [optional] [default to null]
 **pgUser** | [**String**](string.md) | If postgres, this is the user name | [optional] [default to null]
 **redisDB** | [**Long**](long.md) | This is the redis DB number. | [optional] [default to null]
 **redisToken** | [**String**](string.md) | If Redis, this is the Redis token. | [optional] [default to null]
+**redisUser** | [**String**](string.md) | If Redis, this is the user name. | [optional] [default to null]
 **resourceState** | [**ResourceStateEnum**](ResourceStateEnum.md) |  | [optional] [default to null]
 **resourceType** | [**ResourceTypeEnum**](ResourceTypeEnum.md) |  | [optional] [default to null]
 

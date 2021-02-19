@@ -7,11 +7,14 @@ Method | HTTP request | Description
 [**createBuild**](EngineApi.md#createBuild) | **POST** /admin/build/create | This API creates a new engine build
 [**createEngine**](EngineApi.md#createEngine) | **POST** /admin/engine/create | This API creates a new engine
 [**createEngineCategory**](EngineApi.md#createEngineCategory) | **POST** /admin/engine/category/create | This API creates a new engine category
+[**createJobForEngine**](EngineApi.md#createJobForEngine) | **POST** /engine/{EngineID}/createjob | This API create a job for the engine
 [**deleteBuildPost**](EngineApi.md#deleteBuildPost) | **POST** /engine/{EngineID}/build/{BuildID}/delete | This API provides the engine detail result
 [**deleteEnginePost**](EngineApi.md#deleteEnginePost) | **POST** /admin/engine/{EngineID}/delete | This API delets an engine
+[**deleteEngineTemplate**](EngineApi.md#deleteEngineTemplate) | **DELETE** /engine/{EngineID}/template/{EngineTemplateName} | Delete the template of the engine given its ID and template name
 [**getEngineBuild**](EngineApi.md#getEngineBuild) | **GET** /admin/build/{BuildID}/detail | This gets a particular build
 [**getEngineBuilds**](EngineApi.md#getEngineBuilds) | **GET** /admin/engine/{EngineID}/builds | Get the list of builds deployed and available on aiWARE for a particular engine
 [**getEngineBuildsByState**](EngineApi.md#getEngineBuildsByState) | **GET** /engine/builds | The api returns engine build records by build state
+[**getEngineBuildsToDownload**](EngineApi.md#getEngineBuildsToDownload) | **GET** /engine/builds/downloads | The api returns latest downloadable engine build records for each engine
 [**getEngineCategories**](EngineApi.md#getEngineCategories) | **GET** /admin/engine/categories | This provides a list of engine categories
 [**getEngineCategoryDetail**](EngineApi.md#getEngineCategoryDetail) | **GET** /admin/engine/category/{EngineCategoryID}/detail | This provides detail for an engine category
 [**getEngineContainerCount**](EngineApi.md#getEngineContainerCount) | **GET** /engine/container_count | Get engine container count
@@ -25,6 +28,7 @@ Method | HTTP request | Description
 [**getEngineInstances**](EngineApi.md#getEngineInstances) | **GET** /engine/{EngineID}/instances | Get information about the instances of an engine
 [**getEngineLaunchDetail**](EngineApi.md#getEngineLaunchDetail) | **GET** /engine/{EngineID}/launch/{LaunchID}/detail | This API returns the list of launches for this engine
 [**getEngineLaunches**](EngineApi.md#getEngineLaunches) | **GET** /engine/{EngineID}/launches | This API returns the list of launches for this engine
+[**getEngineTemplate**](EngineApi.md#getEngineTemplate) | **GET** /engine/{EngineID}/template/{EngineTemplateName} | Get the template of the engine given its ID and template name -- if EngineTeamplateName&#x3D;&#x3D;&#x60;all&#x60;, all the templates for the engines will be returned
 [**getEngines**](EngineApi.md#getEngines) | **GET** /admin/engines | Get the list of engines deployed and available on aiWARE
 [**getJobsBacklogCountByEngine**](EngineApi.md#getJobsBacklogCountByEngine) | **POST** /proc/jobs/backlog_count_by_engine | Get backlog count by engine
 [**getResourcesForEngineInstance**](EngineApi.md#getResourcesForEngineInstance) | **GET** /engine/instance/{EngineInstanceID}/resources | Get resources for engine instance
@@ -40,6 +44,7 @@ Method | HTTP request | Description
 [**updateEngineBuildState**](EngineApi.md#updateEngineBuildState) | **POST** /engine/build/{BuildID}/state | Update the Engine Build State
 [**updateEngineCategory**](EngineApi.md#updateEngineCategory) | **POST** /admin/engine/category/{EngineCategoryID}/update | This updates the specified engine category
 [**updateEngineInstanceStatus**](EngineApi.md#updateEngineInstanceStatus) | **POST** /engine/instance/{EngineInstanceID}/updatestatus | Update the Engine Instance Status.  Heartbeat to communicate back to controller both aggregated work and delta work from last heartbeat
+[**upsertEngineTemplate**](EngineApi.md#upsertEngineTemplate) | **POST** /engine/{EngineID}/template/{EngineTemplateName} | Create or Update the template of the engine given its ID and template name
 
 
 <a name="createBuild"></a>
@@ -120,6 +125,37 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+<a name="createJobForEngine"></a>
+# **createJobForEngine**
+> CreateJobForEngineResponse createJobForEngine(EngineID, X-Correlation-Id, contentType, fileName, inputFileName, parameterJSON, templateName)
+
+This API create a job for the engine
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **EngineID** | **String**| EngineID of node-red container request | [default to null]
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+ **contentType** | **String**| mimetype of the input file | [optional] [default to null]
+ **fileName** | **File**| the input file contents | [optional] [default to null]
+ **inputFileName** | **String**| the original filename of the input file | [optional] [default to null]
+ **parameterJSON** | **String**| JSON stringified of map of field names and values if specified in job template | [optional] [default to null]
+ **templateName** | **String**| the engine job template to process the input file | [optional] [default to null]
+
+### Return type
+
+[**CreateJobForEngineResponse**](../Models/CreateJobForEngineResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
+
 <a name="deleteBuildPost"></a>
 # **deleteBuildPost**
 > AdminOperationResponse deleteBuildPost(EngineID, BuildID, X-Correlation-Id)
@@ -163,6 +199,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AdminOperationResponse**](../Models/AdminOperationResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+<a name="deleteEngineTemplate"></a>
+# **deleteEngineTemplate**
+> EngineTemplate deleteEngineTemplate(EngineID, EngineTemplateName, X-Correlation-Id)
+
+Delete the template of the engine given its ID and template name
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **EngineID** | **String**| EngineID of node-red container request | [default to null]
+ **EngineTemplateName** | **String**| name of the engine template | [default to null]
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+
+### Return type
+
+[**EngineTemplate**](../Models/EngineTemplate.md)
 
 ### Authorization
 
@@ -228,7 +291,7 @@ Name | Type | Description  | Notes
 
 <a name="getEngineBuildsByState"></a>
 # **getEngineBuildsByState**
-> GetEngineBuildsResponse getEngineBuildsByState(X-Correlation-Id, state)
+> GetEngineBuildsResponse getEngineBuildsByState(X-Correlation-Id, offset, limit, state)
 
 The api returns engine build records by build state
 
@@ -237,7 +300,37 @@ The api returns engine build records by build state
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+ **offset** | **Long**| the number of data to skip before getting the result set | [optional] [default to null]
+ **limit** | **Long**| the number of items to return. | [optional] [default to 10]
  **state** | **String**| Filter data by build state | [optional] [default to null]
+
+### Return type
+
+[**GetEngineBuildsResponse**](../Models/GetEngineBuildsResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+<a name="getEngineBuildsToDownload"></a>
+# **getEngineBuildsToDownload**
+> GetEngineBuildsResponse getEngineBuildsToDownload(X-Correlation-Id, offset, limit, includeRuntime)
+
+The api returns latest downloadable engine build records for each engine
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+ **offset** | **Long**| the number of data to skip before getting the result set | [optional] [default to null]
+ **limit** | **Long**| the number of items to return. | [optional] [default to 10]
+ **includeRuntime** | **Boolean**| Filter data by runtime | [optional] [default to null]
 
 ### Return type
 
@@ -617,6 +710,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetEngineLaunchResponse**](../Models/GetEngineLaunchResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+<a name="getEngineTemplate"></a>
+# **getEngineTemplate**
+> EngineTemplates getEngineTemplate(EngineID, EngineTemplateName, X-Correlation-Id)
+
+Get the template of the engine given its ID and template name -- if EngineTeamplateName&#x3D;&#x3D;&#x60;all&#x60;, all the templates for the engines will be returned
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **EngineID** | **String**| EngineID of node-red container request | [default to null]
+ **EngineTemplateName** | **String**| name of the engine template | [default to null]
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+
+### Return type
+
+[**EngineTemplates**](../Models/EngineTemplates.md)
 
 ### Authorization
 
@@ -1030,6 +1150,34 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+<a name="upsertEngineTemplate"></a>
+# **upsertEngineTemplate**
+> EngineTemplate upsertEngineTemplate(EngineID, EngineTemplateName, EngineTemplate, X-Correlation-Id)
+
+Create or Update the template of the engine given its ID and template name
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **EngineID** | **String**| EngineID of node-red container request | [default to null]
+ **EngineTemplateName** | **String**| name of the engine template | [default to null]
+ **EngineTemplate** | [**EngineTemplate**](../Models/EngineTemplate.md)| Engine Template |
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+
+### Return type
+
+[**EngineTemplate**](../Models/EngineTemplate.md)
 
 ### Authorization
 

@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**createRole**](AdminApi.md#createRole) | **POST** /admin/users/role/create | This creates a new role
 [**createServerType**](AdminApi.md#createServerType) | **POST** /admin/server_types/create | This creates a new server type
 [**createServerTypeEngineRunning**](AdminApi.md#createServerTypeEngineRunning) | **POST** /admin/server_types/running_engine/create | This creates a new server_type_engine_running
+[**createService**](AdminApi.md#createService) | **POST** /admin/service/create | This API creates a new service definition.
 [**createToken**](AdminApi.md#createToken) | **POST** /admin/tokens/create | This creates a new token
 [**createUser**](AdminApi.md#createUser) | **POST** /admin/users/create | This creates a new user
 [**deleteApplication**](AdminApi.md#deleteApplication) | **POST** /admin/applications/{ApplicationID}/delete | This deletes an application
@@ -43,7 +44,7 @@ Method | HTTP request | Description
 [**getAdminServiceConfig**](AdminApi.md#getAdminServiceConfig) | **GET** /admin/service/{ServiceID}/config | This provides all the config for the service
 [**getAdminServiceConfigSection**](AdminApi.md#getAdminServiceConfigSection) | **GET** /admin/service/{ServiceID}/config/{ConfigSection} | This provides all the config for the service
 [**getAdminServiceConfigSectionKey**](AdminApi.md#getAdminServiceConfigSectionKey) | **GET** /admin/service/{ServiceID}/config/{ConfigSection}/{ConfigKey} | This provides a config section key for the service
-[**getAdminServiceInstances**](AdminApi.md#getAdminServiceInstances) | **GET** /admin/service/instance/{HostID} | This lists the service instances available for a system
+[**getAdminServiceInstances**](AdminApi.md#getAdminServiceInstances) | **GET** /admin/service/instances | This lists the service instances available for a system
 [**getAdminStatus**](AdminApi.md#getAdminStatus) | **GET** /admin/status | This provides information on the status of the aiWARE edge
 [**getAdminTokenDetail**](AdminApi.md#getAdminTokenDetail) | **GET** /admin/token/{TokenID}/detail | Get the token info by ID
 [**getAdminTokenPermissions**](AdminApi.md#getAdminTokenPermissions) | **GET** /admin/token/{TokenID}/permissions | This provides a list of all token permissions for a token by TokenID
@@ -62,9 +63,11 @@ Method | HTTP request | Description
 [**getEnginesForResource**](AdminApi.md#getEnginesForResource) | **GET** /admin/resource/{ResourceID}/engines | Get list of engines for resource
 [**getLicenseDetail**](AdminApi.md#getLicenseDetail) | **GET** /admin/licenses/{LicenseID}/detail | This gets detail on a license key
 [**getLicenses**](AdminApi.md#getLicenses) | **GET** /admin/licenses | This provides a licenses on the system
+[**getMappingsForResource**](AdminApi.md#getMappingsForResource) | **GET** /admin/resource/{ResourceID}/mappings | Get list of mappings for resource
 [**getResource**](AdminApi.md#getResource) | **GET** /admin/resource/{ResourceID} | Get a resource definition
 [**getResources**](AdminApi.md#getResources) | **GET** /admin/resources | Get the list of resources
 [**getResourcesForEngine**](AdminApi.md#getResourcesForEngine) | **GET** /admin/engine/{EngineID}/resources | Get list of resources for engine
+[**getResourcesForHost**](AdminApi.md#getResourcesForHost) | **GET** /admin/host/{HostID}/resources | Get list of resources for host
 [**getResourcesForService**](AdminApi.md#getResourcesForService) | **GET** /admin/service/{ServiceID}/resources | Get list of resources for service
 [**getServerType**](AdminApi.md#getServerType) | **GET** /admin/server_type/{ServerTypeID}/detail | This provides detail on the server type
 [**getServerTypeEngineRunning**](AdminApi.md#getServerTypeEngineRunning) | **GET** /admin/server_types/running_engines | This lists the running engine with server types
@@ -85,6 +88,8 @@ Method | HTTP request | Description
 [**updateOrganization**](AdminApi.md#updateOrganization) | **POST** /admin/organization/{OrganizationID}/update | This updates a organization
 [**updatePermission**](AdminApi.md#updatePermission) | **POST** /admin/users/permission/{PermissionID}/update | This updates a permission
 [**updateResource**](AdminApi.md#updateResource) | **POST** /admin/resource/{ResourceID}/update | This API updates the specified resource
+[**updateResourceMappingState**](AdminApi.md#updateResourceMappingState) | **POST** /admin/resource/{ResourceID}/mapping/{ResourceMappingID}/updatestate | This API updates the state of the specified resource mapping state
+[**updateResourceState**](AdminApi.md#updateResourceState) | **POST** /admin/resource/{ResourceID}/updatestate | This API updates the state of the specified resource
 [**updateRole**](AdminApi.md#updateRole) | **POST** /admin/users/role/{RoleID}/update | This updates a role
 [**updateServerType**](AdminApi.md#updateServerType) | **POST** /admin/server_type/{ServerTypeID}/update | This API updates the specified server type
 [**updateServerTypeEngineRunning**](AdminApi.md#updateServerTypeEngineRunning) | **POST** /admin/server_type/{ServerTypeID}/engine/{EngineID}/update | This API updates the specified server type-running engine
@@ -483,6 +488,32 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateServerTypeEngineRunningResponse**](../Models/CreateServerTypeEngineRunningResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+<a name="createService"></a>
+# **createService**
+> CreateServiceResponse createService(CreateServiceRequest, X-Correlation-Id)
+
+This API creates a new service definition.
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **CreateServiceRequest** | [**CreateServiceRequest**](../Models/CreateServiceRequest.md)| The fields for a service definition |
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+
+### Return type
+
+[**CreateServiceResponse**](../Models/CreateServiceResponse.md)
 
 ### Authorization
 
@@ -1131,7 +1162,7 @@ Name | Type | Description  | Notes
 
 <a name="getAdminServiceInstances"></a>
 # **getAdminServiceInstances**
-> List getAdminServiceInstances(HostID, X-Correlation-Id)
+> GetAdminServiceInstancesResponse getAdminServiceInstances(X-Correlation-Id)
 
 This lists the service instances available for a system
 
@@ -1139,12 +1170,11 @@ This lists the service instances available for a system
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **HostID** | [**UUID**](../Models/.md)| ID of Host | [default to null]
  **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
 
 ### Return type
 
-[**List**](../Models/ServiceInstanceDetail.md)
+[**GetAdminServiceInstancesResponse**](../Models/GetAdminServiceInstancesResponse.md)
 
 ### Authorization
 
@@ -1659,6 +1689,32 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+<a name="getMappingsForResource"></a>
+# **getMappingsForResource**
+> GetMappingsForResourceResponse getMappingsForResource(ResourceID, X-Correlation-Id)
+
+Get list of mappings for resource
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ResourceID** | [**UUID**](../Models/.md)| ID of Resource | [default to null]
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+
+### Return type
+
+[**GetMappingsForResourceResponse**](../Models/GetMappingsForResourceResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
 <a name="getResource"></a>
 # **getResource**
 > GetResourceResponse getResource(ResourceID, X-Correlation-Id)
@@ -1732,6 +1788,32 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetResourcesForEngineResponse**](../Models/GetResourcesForEngineResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+<a name="getResourcesForHost"></a>
+# **getResourcesForHost**
+> GetResourcesForHostResponse getResourcesForHost(HostID, X-Correlation-Id)
+
+Get list of resources for host
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **HostID** | [**UUID**](../Models/.md)| ID of Host | [default to null]
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+
+### Return type
+
+[**GetResourcesForHostResponse**](../Models/GetResourcesForHostResponse.md)
 
 ### Authorization
 
@@ -2271,6 +2353,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateResourceResponse**](../Models/UpdateResourceResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+<a name="updateResourceMappingState"></a>
+# **updateResourceMappingState**
+> updateResourceMappingState(ResourceID, ResourceMappingID, UpdateResourceMappingStateRequest, X-Correlation-Id)
+
+This API updates the state of the specified resource mapping state
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ResourceID** | [**UUID**](../Models/.md)| ID of Resource | [default to null]
+ **ResourceMappingID** | [**UUID**](../Models/.md)| ID of Resource Mapping | [default to null]
+ **UpdateResourceMappingStateRequest** | [**UpdateResourceMappingStateRequest**](../Models/UpdateResourceMappingStateRequest.md)| Update Resource Mapping State |
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+<a name="updateResourceState"></a>
+# **updateResourceState**
+> updateResourceState(ResourceID, UpdateResourceStateRequest, X-Correlation-Id)
+
+This API updates the state of the specified resource
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ResourceID** | [**UUID**](../Models/.md)| ID of Resource | [default to null]
+ **UpdateResourceStateRequest** | [**UpdateResourceStateRequest**](../Models/UpdateResourceStateRequest.md)| Update Resource State |
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

@@ -22,6 +22,7 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**createRole**](Apis/AdminApi.md#createrole) | **POST** /admin/users/role/create | This creates a new role
 *AdminApi* | [**createServerType**](Apis/AdminApi.md#createservertype) | **POST** /admin/server_types/create | This creates a new server type
 *AdminApi* | [**createServerTypeEngineRunning**](Apis/AdminApi.md#createservertypeenginerunning) | **POST** /admin/server_types/running_engine/create | This creates a new server_type_engine_running
+*AdminApi* | [**createService**](Apis/AdminApi.md#createservice) | **POST** /admin/service/create | This API creates a new service definition.
 *AdminApi* | [**createToken**](Apis/AdminApi.md#createtoken) | **POST** /admin/tokens/create | This creates a new token
 *AdminApi* | [**createUser**](Apis/AdminApi.md#createuser) | **POST** /admin/users/create | This creates a new user
 *AdminApi* | [**deleteApplication**](Apis/AdminApi.md#deleteapplication) | **POST** /admin/applications/{ApplicationID}/delete | This deletes an application
@@ -46,7 +47,7 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**getAdminServiceConfig**](Apis/AdminApi.md#getadminserviceconfig) | **GET** /admin/service/{ServiceID}/config | This provides all the config for the service
 *AdminApi* | [**getAdminServiceConfigSection**](Apis/AdminApi.md#getadminserviceconfigsection) | **GET** /admin/service/{ServiceID}/config/{ConfigSection} | This provides all the config for the service
 *AdminApi* | [**getAdminServiceConfigSectionKey**](Apis/AdminApi.md#getadminserviceconfigsectionkey) | **GET** /admin/service/{ServiceID}/config/{ConfigSection}/{ConfigKey} | This provides a config section key for the service
-*AdminApi* | [**getAdminServiceInstances**](Apis/AdminApi.md#getadminserviceinstances) | **GET** /admin/service/instance/{HostID} | This lists the service instances available for a system
+*AdminApi* | [**getAdminServiceInstances**](Apis/AdminApi.md#getadminserviceinstances) | **GET** /admin/service/instances | This lists the service instances available for a system
 *AdminApi* | [**getAdminStatus**](Apis/AdminApi.md#getadminstatus) | **GET** /admin/status | This provides information on the status of the aiWARE edge
 *AdminApi* | [**getAdminTokenDetail**](Apis/AdminApi.md#getadmintokendetail) | **GET** /admin/token/{TokenID}/detail | Get the token info by ID
 *AdminApi* | [**getAdminTokenPermissions**](Apis/AdminApi.md#getadmintokenpermissions) | **GET** /admin/token/{TokenID}/permissions | This provides a list of all token permissions for a token by TokenID
@@ -65,9 +66,11 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**getEnginesForResource**](Apis/AdminApi.md#getenginesforresource) | **GET** /admin/resource/{ResourceID}/engines | Get list of engines for resource
 *AdminApi* | [**getLicenseDetail**](Apis/AdminApi.md#getlicensedetail) | **GET** /admin/licenses/{LicenseID}/detail | This gets detail on a license key
 *AdminApi* | [**getLicenses**](Apis/AdminApi.md#getlicenses) | **GET** /admin/licenses | This provides a licenses on the system
+*AdminApi* | [**getMappingsForResource**](Apis/AdminApi.md#getmappingsforresource) | **GET** /admin/resource/{ResourceID}/mappings | Get list of mappings for resource
 *AdminApi* | [**getResource**](Apis/AdminApi.md#getresource) | **GET** /admin/resource/{ResourceID} | Get a resource definition
 *AdminApi* | [**getResources**](Apis/AdminApi.md#getresources) | **GET** /admin/resources | Get the list of resources
 *AdminApi* | [**getResourcesForEngine**](Apis/AdminApi.md#getresourcesforengine) | **GET** /admin/engine/{EngineID}/resources | Get list of resources for engine
+*AdminApi* | [**getResourcesForHost**](Apis/AdminApi.md#getresourcesforhost) | **GET** /admin/host/{HostID}/resources | Get list of resources for host
 *AdminApi* | [**getResourcesForService**](Apis/AdminApi.md#getresourcesforservice) | **GET** /admin/service/{ServiceID}/resources | Get list of resources for service
 *AdminApi* | [**getServerType**](Apis/AdminApi.md#getservertype) | **GET** /admin/server_type/{ServerTypeID}/detail | This provides detail on the server type
 *AdminApi* | [**getServerTypeEngineRunning**](Apis/AdminApi.md#getservertypeenginerunning) | **GET** /admin/server_types/running_engines | This lists the running engine with server types
@@ -88,6 +91,8 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**updateOrganization**](Apis/AdminApi.md#updateorganization) | **POST** /admin/organization/{OrganizationID}/update | This updates a organization
 *AdminApi* | [**updatePermission**](Apis/AdminApi.md#updatepermission) | **POST** /admin/users/permission/{PermissionID}/update | This updates a permission
 *AdminApi* | [**updateResource**](Apis/AdminApi.md#updateresource) | **POST** /admin/resource/{ResourceID}/update | This API updates the specified resource
+*AdminApi* | [**updateResourceMappingState**](Apis/AdminApi.md#updateresourcemappingstate) | **POST** /admin/resource/{ResourceID}/mapping/{ResourceMappingID}/updatestate | This API updates the state of the specified resource mapping state
+*AdminApi* | [**updateResourceState**](Apis/AdminApi.md#updateresourcestate) | **POST** /admin/resource/{ResourceID}/updatestate | This API updates the state of the specified resource
 *AdminApi* | [**updateRole**](Apis/AdminApi.md#updaterole) | **POST** /admin/users/role/{RoleID}/update | This updates a role
 *AdminApi* | [**updateServerType**](Apis/AdminApi.md#updateservertype) | **POST** /admin/server_type/{ServerTypeID}/update | This API updates the specified server type
 *AdminApi* | [**updateServerTypeEngineRunning**](Apis/AdminApi.md#updateservertypeenginerunning) | **POST** /admin/server_type/{ServerTypeID}/engine/{EngineID}/update | This API updates the specified server type-running engine
@@ -99,11 +104,14 @@ Class | Method | HTTP request | Description
 *EngineApi* | [**createBuild**](Apis/EngineApi.md#createbuild) | **POST** /admin/build/create | This API creates a new engine build
 *EngineApi* | [**createEngine**](Apis/EngineApi.md#createengine) | **POST** /admin/engine/create | This API creates a new engine
 *EngineApi* | [**createEngineCategory**](Apis/EngineApi.md#createenginecategory) | **POST** /admin/engine/category/create | This API creates a new engine category
+*EngineApi* | [**createJobForEngine**](Apis/EngineApi.md#createjobforengine) | **POST** /engine/{EngineID}/createjob | This API create a job for the engine
 *EngineApi* | [**deleteBuildPost**](Apis/EngineApi.md#deletebuildpost) | **POST** /engine/{EngineID}/build/{BuildID}/delete | This API provides the engine detail result
 *EngineApi* | [**deleteEnginePost**](Apis/EngineApi.md#deleteenginepost) | **POST** /admin/engine/{EngineID}/delete | This API delets an engine
+*EngineApi* | [**deleteEngineTemplate**](Apis/EngineApi.md#deleteenginetemplate) | **DELETE** /engine/{EngineID}/template/{EngineTemplateName} | Delete the template of the engine given its ID and template name
 *EngineApi* | [**getEngineBuild**](Apis/EngineApi.md#getenginebuild) | **GET** /admin/build/{BuildID}/detail | This gets a particular build
 *EngineApi* | [**getEngineBuilds**](Apis/EngineApi.md#getenginebuilds) | **GET** /admin/engine/{EngineID}/builds | Get the list of builds deployed and available on aiWARE for a particular engine
 *EngineApi* | [**getEngineBuildsByState**](Apis/EngineApi.md#getenginebuildsbystate) | **GET** /engine/builds | The api returns engine build records by build state
+*EngineApi* | [**getEngineBuildsToDownload**](Apis/EngineApi.md#getenginebuildstodownload) | **GET** /engine/builds/downloads | The api returns latest downloadable engine build records for each engine
 *EngineApi* | [**getEngineCategories**](Apis/EngineApi.md#getenginecategories) | **GET** /admin/engine/categories | This provides a list of engine categories
 *EngineApi* | [**getEngineCategoryDetail**](Apis/EngineApi.md#getenginecategorydetail) | **GET** /admin/engine/category/{EngineCategoryID}/detail | This provides detail for an engine category
 *EngineApi* | [**getEngineContainerCount**](Apis/EngineApi.md#getenginecontainercount) | **GET** /engine/container_count | Get engine container count
@@ -117,6 +125,7 @@ Class | Method | HTTP request | Description
 *EngineApi* | [**getEngineInstances**](Apis/EngineApi.md#getengineinstances) | **GET** /engine/{EngineID}/instances | Get information about the instances of an engine
 *EngineApi* | [**getEngineLaunchDetail**](Apis/EngineApi.md#getenginelaunchdetail) | **GET** /engine/{EngineID}/launch/{LaunchID}/detail | This API returns the list of launches for this engine
 *EngineApi* | [**getEngineLaunches**](Apis/EngineApi.md#getenginelaunches) | **GET** /engine/{EngineID}/launches | This API returns the list of launches for this engine
+*EngineApi* | [**getEngineTemplate**](Apis/EngineApi.md#getenginetemplate) | **GET** /engine/{EngineID}/template/{EngineTemplateName} | Get the template of the engine given its ID and template name -- if EngineTeamplateName==`all`, all the templates for the engines will be returned
 *EngineApi* | [**getEngines**](Apis/EngineApi.md#getengines) | **GET** /admin/engines | Get the list of engines deployed and available on aiWARE
 *EngineApi* | [**getJobsBacklogCountByEngine**](Apis/EngineApi.md#getjobsbacklogcountbyengine) | **POST** /proc/jobs/backlog_count_by_engine | Get backlog count by engine
 *EngineApi* | [**getResourcesForEngineInstance**](Apis/EngineApi.md#getresourcesforengineinstance) | **GET** /engine/instance/{EngineInstanceID}/resources | Get resources for engine instance
@@ -132,6 +141,7 @@ Class | Method | HTTP request | Description
 *EngineApi* | [**updateEngineBuildState**](Apis/EngineApi.md#updateenginebuildstate) | **POST** /engine/build/{BuildID}/state | Update the Engine Build State
 *EngineApi* | [**updateEngineCategory**](Apis/EngineApi.md#updateenginecategory) | **POST** /admin/engine/category/{EngineCategoryID}/update | This updates the specified engine category
 *EngineApi* | [**updateEngineInstanceStatus**](Apis/EngineApi.md#updateengineinstancestatus) | **POST** /engine/instance/{EngineInstanceID}/updatestatus | Update the Engine Instance Status.  Heartbeat to communicate back to controller both aggregated work and delta work from last heartbeat
+*EngineApi* | [**upsertEngineTemplate**](Apis/EngineApi.md#upsertenginetemplate) | **POST** /engine/{EngineID}/template/{EngineTemplateName} | Create or Update the template of the engine given its ID and template name
 *FlowApi* | [**cleanAutomateRequests**](Apis/FlowApi.md#cleanautomaterequests) | **GET** /flowaction/requests/clean | Clean old automate requests.
 *FlowApi* | [**createNodeRedContainerInfo**](Apis/FlowApi.md#createnoderedcontainerinfo) | **POST** /flow/nrcontainer/create | Create node-red container infomation
 *FlowApi* | [**deleteAutomateContainer**](Apis/FlowApi.md#deleteautomatecontainer) | **POST** /flow/delete/{ContainerID} | Delete automate container.
@@ -198,6 +208,10 @@ Class | Method | HTTP request | Description
 *ProcessApi* | [**recheckJobStatus**](Apis/ProcessApi.md#recheckjobstatus) | **GET** /proc/job/{JobID}/recheck_status | Recheck Job Status
 *ProcessApi* | [**tasksStatusExport**](Apis/ProcessApi.md#tasksstatusexport) | **GET** /proc/tasks/stats/export | Export a task status report as a excel file
 *ProcessApi* | [**updateTaskStatus**](Apis/ProcessApi.md#updatetaskstatus) | **POST** /proc/tasks/update_status | This updates the status for a bulk of tasks by taskID
+*ProxyApi* | [**proxyGetWorkForEngineInstances**](Apis/ProxyApi.md#proxygetworkforengineinstances) | **POST** /proxy/{HostID}/getwork | Get work for engine instances running on the host
+*ProxyApi* | [**proxyRegisterEngineInstances**](Apis/ProxyApi.md#proxyregisterengineinstances) | **POST** /proxy/{HostID}/register | Register engine instances running on the host
+*ProxyApi* | [**proxyTerminateEngineInstances**](Apis/ProxyApi.md#proxyterminateengineinstances) | **POST** /proxy/{HostID}/terminate | Terminate engine instances running on this host.
+*ProxyApi* | [**proxyUpdateEngineInstanceStatuses**](Apis/ProxyApi.md#proxyupdateengineinstancestatuses) | **POST** /proxy/{HostID}/update | Update statuses of engine instances running on the host
 *ServiceApi* | [**createServiceInstance**](Apis/ServiceApi.md#createserviceinstance) | **POST** /service/instance/create | This creates a new service instance
 *ServiceApi* | [**deleteServiceInstance**](Apis/ServiceApi.md#deleteserviceinstance) | **POST** /service/instance/{ServiceInstanceID}/delete | This deletes a service instance
 *ServiceApi* | [**getResourcesForServiceInstance**](Apis/ServiceApi.md#getresourcesforserviceinstance) | **GET** /service/instance/{ServiceInstanceID}/resources | Get resources for service instance
@@ -321,6 +335,8 @@ Class | Method | HTTP request | Description
  - [CreateEngineRequest](./Models/CreateEngineRequest.md)
  - [CreateEngineResponse](./Models/CreateEngineResponse.md)
  - [CreateJobDetail](./Models/CreateJobDetail.md)
+ - [CreateJobForEngineRequest](./Models/CreateJobForEngineRequest.md)
+ - [CreateJobForEngineResponse](./Models/CreateJobForEngineResponse.md)
  - [CreateJobRequest](./Models/CreateJobRequest.md)
  - [CreateJobResponse](./Models/CreateJobResponse.md)
  - [CreateJobsAction](./Models/CreateJobsAction.md)
@@ -338,7 +354,10 @@ Class | Method | HTTP request | Description
  - [CreateServerTypeEngineRunningResponse](./Models/CreateServerTypeEngineRunningResponse.md)
  - [CreateServerTypeRequest](./Models/CreateServerTypeRequest.md)
  - [CreateServerTypeResponse](./Models/CreateServerTypeResponse.md)
+ - [CreateServiceDetail](./Models/CreateServiceDetail.md)
  - [CreateServiceInstanceDetail](./Models/CreateServiceInstanceDetail.md)
+ - [CreateServiceRequest](./Models/CreateServiceRequest.md)
+ - [CreateServiceResponse](./Models/CreateServiceResponse.md)
  - [CreateTDODetail](./Models/CreateTDODetail.md)
  - [CreateTaskDetail](./Models/CreateTaskDetail.md)
  - [CreateTaskIOInfo](./Models/CreateTaskIOInfo.md)
@@ -371,16 +390,18 @@ Class | Method | HTTP request | Description
  - [EngineRegistrationActionEnum](./Models/EngineRegistrationActionEnum.md)
  - [EngineStateEnum](./Models/EngineStateEnum.md)
  - [EngineStatusEnum](./Models/EngineStatusEnum.md)
+ - [EngineTemplate](./Models/EngineTemplate.md)
+ - [EngineTemplates](./Models/EngineTemplates.md)
  - [EngineTypeEnum](./Models/EngineTypeEnum.md)
  - [EnvKeyValue](./Models/EnvKeyValue.md)
  - [Error](./Models/Error.md)
  - [FailureReasonEnum](./Models/FailureReasonEnum.md)
  - [GPUEnum](./Models/GPUEnum.md)
+ - [GetAdminServiceInstancesResponse](./Models/GetAdminServiceInstancesResponse.md)
  - [GetAdminServicesResponse](./Models/GetAdminServicesResponse.md)
  - [GetApplicationsResponse](./Models/GetApplicationsResponse.md)
  - [GetBacklogSummaryResponse](./Models/GetBacklogSummaryResponse.md)
  - [GetCoresResponse](./Models/GetCoresResponse.md)
- - [GetEngineBuildByStateResponse](./Models/GetEngineBuildByStateResponse.md)
  - [GetEngineBuildResponse](./Models/GetEngineBuildResponse.md)
  - [GetEngineBuildsResponse](./Models/GetEngineBuildsResponse.md)
  - [GetEngineCategoriesResponse](./Models/GetEngineCategoriesResponse.md)
@@ -410,11 +431,13 @@ Class | Method | HTTP request | Description
  - [GetJobsStatsResponse](./Models/GetJobsStatsResponse.md)
  - [GetJobsTimeRangesStatsResponse](./Models/GetJobsTimeRangesStatsResponse.md)
  - [GetLicensesResponse](./Models/GetLicensesResponse.md)
+ - [GetMappingsForResourceResponse](./Models/GetMappingsForResourceResponse.md)
  - [GetRatePendingScheduledJobsResponse](./Models/GetRatePendingScheduledJobsResponse.md)
  - [GetResourceResponse](./Models/GetResourceResponse.md)
  - [GetResourcesForEngineInstanceResponse](./Models/GetResourcesForEngineInstanceResponse.md)
  - [GetResourcesForEngineInstanceResponseResult](./Models/GetResourcesForEngineInstanceResponseResult.md)
  - [GetResourcesForEngineResponse](./Models/GetResourcesForEngineResponse.md)
+ - [GetResourcesForHostResponse](./Models/GetResourcesForHostResponse.md)
  - [GetResourcesForServiceInstanceResponse](./Models/GetResourcesForServiceInstanceResponse.md)
  - [GetResourcesForServiceResponse](./Models/GetResourcesForServiceResponse.md)
  - [GetResourcesResponse](./Models/GetResourcesResponse.md)
@@ -506,6 +529,8 @@ Class | Method | HTTP request | Description
  - [ReplaceEngineRequest](./Models/ReplaceEngineRequest.md)
  - [ResourceBindingTypeEnum](./Models/ResourceBindingTypeEnum.md)
  - [ResourceDetail](./Models/ResourceDetail.md)
+ - [ResourceMappingDetail](./Models/ResourceMappingDetail.md)
+ - [ResourceMappingStateEnum](./Models/ResourceMappingStateEnum.md)
  - [ResourceStateEnum](./Models/ResourceStateEnum.md)
  - [ResourceTypeEnum](./Models/ResourceTypeEnum.md)
  - [ResumeEngineRequest](./Models/ResumeEngineRequest.md)
@@ -575,8 +600,12 @@ Class | Method | HTTP request | Description
  - [UpdateOrganizationDetail](./Models/UpdateOrganizationDetail.md)
  - [UpdatePermissionDetail](./Models/UpdatePermissionDetail.md)
  - [UpdateResourceDetail](./Models/UpdateResourceDetail.md)
+ - [UpdateResourceMappingStateRequest](./Models/UpdateResourceMappingStateRequest.md)
+ - [UpdateResourceMappingStateResponse](./Models/UpdateResourceMappingStateResponse.md)
  - [UpdateResourceRequest](./Models/UpdateResourceRequest.md)
  - [UpdateResourceResponse](./Models/UpdateResourceResponse.md)
+ - [UpdateResourceStateRequest](./Models/UpdateResourceStateRequest.md)
+ - [UpdateResourceStateResponse](./Models/UpdateResourceStateResponse.md)
  - [UpdateRoleDetail](./Models/UpdateRoleDetail.md)
  - [UpdateServerTypeEngineRunningRequest](./Models/UpdateServerTypeEngineRunningRequest.md)
  - [UpdateServerTypeEngineRunningResponse](./Models/UpdateServerTypeEngineRunningResponse.md)
