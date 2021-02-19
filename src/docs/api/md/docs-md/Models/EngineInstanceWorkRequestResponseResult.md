@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **action** | [**EngineInstanceActionEnum**](EngineInstanceActionEnum.md) |  | [optional] [default to null]
+**engineInstanceID** | [**UUID**](UUID.md) |  | [optional] [default to null]
 **workItem** | [**List**](EngineInstanceWorkItem.md) |  | [optional] [default to null]
 **workRequestID** | [**UUID**](UUID.md) |  | [optional] [default to null]
 

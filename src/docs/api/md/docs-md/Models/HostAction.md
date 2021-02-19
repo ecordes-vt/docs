@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**agentProxyEnabled** | [**Boolean**](boolean.md) |  | [optional] [default to null]
 **launchContainer** | [**List**](HostActionLaunch.md) |  | [optional] [default to null]
 **launchNodeRedContainer** | [**List**](HostActionNodeRedLaunch.md) |  | [optional] [default to null]
 **mode** | [**HostActionModeEnum**](HostActionModeEnum.md) |  | [optional] [default to null]

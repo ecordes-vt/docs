@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **containerStatus** | [**ContainerStatus**](ContainerStatus.md) |  | [optional] [default to null]
+**engineInstanceID** | [**UUID**](UUID.md) |  | [optional] [default to null]
 **engineToolkitVersion** | [**String**](string.md) | The version of engine toolkit format to be gitbranch:gitcommit:epochBuildDate | [optional] [default to null]
 **hostAction** | [**HostActionEnum**](HostActionEnum.md) |  | [optional] [default to null]
 **hostID** | [**UUID**](UUID.md) |  | [optional] [default to null]
