@@ -7074,6 +7074,13 @@ components:
       type: object
     TaskRouteDetail:
       properties:
+        chunkCallbackEnabled:
+          description: If true then the call back for a syncEnabled endpoint will
+            come from the child engine of the route with this field set. If sync is
+            enabled and no routes have this field set to true, the callback will default
+            to come from the route with syncEnabled set to true.
+          example: false
+          type: boolean
         endpoint:
           description: This is endpoint to be used for this route.  This does not
             have to be unique.
@@ -7089,6 +7096,19 @@ components:
           example: '2018-03-20T09:12:28Z'
           format: date-time
           type: string
+        syncEnabled:
+          description: If true, then the call to the specified endpoint will be synchronous
+            and the engine results will be provided in the response. If false or not
+            set, the call will be asynchronous. This field has no effect if endpoint
+            is not set on the same TaskRouteDetail.
+          example: false
+          type: boolean
+        syncTimeoutInSeconds:
+          description: The number of seconds to wait for a synchronous call to the
+            specified endpoint to complete before timing out. No effect if syncEnabled
+            is false or not set. Default is 120 seconds.
+          example: 120
+          type: integer
         taskChildId:
           description: This is the task child id.  On create, this is the taskCorrelationId
           type: string
@@ -8094,7 +8114,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.14.4.2139
+  version: 3.14.4.2140
 openapi: 3.0.1
 paths:
   /admin/applications:
