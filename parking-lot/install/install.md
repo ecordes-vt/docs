@@ -56,19 +56,9 @@ docker run -d --name fluent-bit -v /var/lib/docker/containers:/var/lib/docker/co
 ### Node Exporter (Recommended)
 
 This is used to provide OS level information about the host.
+
 ```bash
-#!/bin/bash
-export AIWARE_MODE="nfs"
-export INSTALL_AIWARE_CHANNEL=prod
-export AIWARE_SERVERTYPE=62f55bfd-e2f8-4c90-8d1c-84c52a144a43
-mkfs -t ext4 /dev/xvdd
-mkdir -p /opt/aiware
-mount /dev/xvdd /opt/aiware
-mkswap /dev/xvdc
-swapon /dev/xvdc
-export AIWARE_CONTROLLER="https://edge-prod.aws-prod-rt.veritone.com/edge/v1"
-apt-get update && apt-get upgrade -y && apt-get install -y docker.io awscli nfs-common nfs-kernel-server prometheus-node-exporter
-cd /tmp
+apt-get install -y prometheus-node-exporter
 wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
 tar -xzf node_exporter-0.18.1.linux-amd64.tar.gz
 service prometheus-node-exporter stop
@@ -76,9 +66,16 @@ cp node_exporter-0.18.1.linux-amd64/node_exporter /usr/bin/prometheus-node-expor
 curl https://get.aiware.com/files/nfs-prometheus-node-exporter -o prometheus-node-exporter
 cp prometheus-node-exporter /etc/default
 service prometheus-node-exporter start
+```
 
-
-curl -sfL https://get.aiware.com | bash -
+Sample /etc/default/nfs-prometheus-node-exporter.  This is what is persisted at [https://get.aiware.com/files/nfs-prometheus-node-exporter](https://get.aiware.com/files/nfs-prometheus-node-exporter)
+```bash
+ARGS="--collector.diskstats.ignored-devices=^(ram|loop|fd|(h|s|v|xv)d[a-z]|nvme\\d+n\\d+p)\\d+$ \
+      --collector.filesystem.ignored-mount-points=^/(sys|proc|dev|run)($|/) \
+      --collector.netdev.ignored-devices=^lo$ \
+      --collector.textfile.directory=/var/lib/prometheus/node-exporter \
+      --collector.nfs \
+      "
 ```
 
 ### Example User Data
