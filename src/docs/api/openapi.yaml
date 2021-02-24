@@ -2381,6 +2381,8 @@ components:
         pgUser:
           description: If postgres, this is the user name
           type: string
+        recoveryStrategy:
+          $ref: '#/components/schemas/ResourceRecoveryStrategyEnum'
         redisDB:
           description: This is the redis DB number.
           format: int64
@@ -6126,6 +6128,8 @@ components:
         pgUser:
           description: If postgres, this is the user name
           type: string
+        recoveryStrategy:
+          $ref: '#/components/schemas/ResourceRecoveryStrategyEnum'
         redisDB:
           description: This is the redis DB number.
           format: int64
@@ -6195,6 +6199,13 @@ components:
       - created
       - active
       - deleted
+      - failed
+      type: string
+    ResourceRecoveryStrategyEnum:
+      description: Resource Recovery Strategy
+      enum:
+      - reassign
+      - fail
       type: string
     ResourceStateEnum:
       description: Resource State
@@ -6202,6 +6213,7 @@ components:
       - created
       - active
       - deleted
+      - failed
       type: string
     ResourceTypeEnum:
       description: Resource Types
@@ -7804,6 +7816,8 @@ components:
         pgUser:
           description: If postgres, this is the user name
           type: string
+        recoveryStrategy:
+          $ref: '#/components/schemas/ResourceRecoveryStrategyEnum'
         redisDB:
           description: This is the redis DB number.
           format: int64
@@ -8114,7 +8128,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.14.4.2150
+  version: 3.14.4.2151
 openapi: 3.0.1
 paths:
   /admin/applications:

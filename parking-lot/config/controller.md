@@ -5,6 +5,7 @@
 | *auth.check_enable_sec* | int64 | 300 |  | How often controller checks the authorization is enabled or not (sec) |
 | *auth.enabled* | bool | false |  | If enabled, this flag enables controller authentication/authorization functionality |
 | *auth.redis_watcher.enabled* | bool | true |  | If enabled, casbin enforcer will use redis watcher to synchronize casbin policy across multiple controllers |
+| *auth.redis_watcher.mode* | string | host |  | Redis watcher mode (host or resource) |
 | *auth.refresh_sec* | int64 | 300 |  | How often controller updates the authorization policy (sec) |
 | *auth.token_types_tocheck_permission_on_orgs* | string | user |  | List of token types that needs to check permission on organizations, it should be separated by commas, looks like: engine_instance, host, api, user |
 | *automate.automate_response_timeout* | int64 | 45 |  | The max wait response time in seconds of node-red request |
@@ -134,7 +135,7 @@
 | *report.from_email* | string |  |  | The email to send the task report from |
 | *report.interval_sec* | int64 | 43200 |  | Time interval for the task report (sec) |
 | *report.to_email* | string |  |  | The email to send the task report to |
-| *resource.planner.enabled* | bool | false |  | Whether resource planner is enabled |
+| *resource.planner.enabled* | bool | true |  | Whether resource planner is enabled |
 | *resource.planner.frequency_sec* | int64 | 120 |  | The interval for resource planner in sec |
 | *task.reprocessing.delay_in_seconds* | int64 | 300 |  | The amount of seconds to delay task reprocessing |
 | *task.reprocessing.max_retries* | int64 | 3 |  | The maximum number of retries to reprocess tasks |
