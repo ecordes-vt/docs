@@ -3,6 +3,7 @@ aiWARE requires a Linux box or Linux VM running on a supported chipset (ARM64 or
 
 # Network
 
+## Connections within aiWARE cluster
 | Source Run Mode | Target Run Mode | Port | Description |
 | --- | --- | --- | --- |
 | DB | Controller | 9000 | HTTP/HTTPS, can be changed |
@@ -24,6 +25,36 @@ aiWARE requires a Linux box or Linux VM running on a supported chipset (ARM64 or
 | DB | Controller | 9000 | HTTP/HTTPS, can be changed |
 | DB | Registry | 5000 | HTTP, this is used to pull engines and other containers |
 | DB | NFS | 2049 | TCP - Access to /cache |
+
+## Outgoing connections
+| Type | Source | Target | Port(s) | Description
+| ---- | ----- | ----- | ----- | ----- |
+| Installation | VM | get.aiware.com | 443 | This is part of the installation scripts which retrieves install.sh and a binary for the agent.  This is hosted by cloudfront and s3. |
+| Docker Registry | Registry, Engine | registry.central.aiware.com | 443 | his hosts the aiware docker images and engines.  This is hosted behind an ALB. |
+
+To get the temporary IPs to whitelist and then remove, please whitelist the IPs from the `host` command.
+```bash
+host get.aiware.com
+host registry.central.aiware.com
+```
+
+Example of the host command for `get.aiware.com`
+```bash
+host get.aiware.com                                                                                                                                                                                                                195ms  Wed Feb 24 14:14:28 2021
+get.aiware.com is an alias for d1tukvcgurukjs.cloudfront.net.
+d1tukvcgurukjs.cloudfront.net has address 99.84.79.126
+d1tukvcgurukjs.cloudfront.net has address 99.84.79.26
+d1tukvcgurukjs.cloudfront.net has address 99.84.79.35
+d1tukvcgurukjs.cloudfront.net has address 99.84.79.52
+d1tukvcgurukjs.cloudfront.net has IPv6 address 2600:9000:2163:e200:e:c4fd:a200:93a1
+d1tukvcgurukjs.cloudfront.net has IPv6 address 2600:9000:2163:7600:e:c4fd:a200:93a1
+d1tukvcgurukjs.cloudfront.net has IPv6 address 2600:9000:2163:6a00:e:c4fd:a200:93a1
+d1tukvcgurukjs.cloudfront.net has IPv6 address 2600:9000:2163:3e00:e:c4fd:a200:93a1
+d1tukvcgurukjs.cloudfront.net has IPv6 address 2600:9000:2163:2200:e:c4fd:a200:93a1
+d1tukvcgurukjs.cloudfront.net has IPv6 address 2600:9000:2163:5800:e:c4fd:a200:93a1
+d1tukvcgurukjs.cloudfront.net has IPv6 address 2600:9000:2163:3800:e:c4fd:a200:93a1
+d1tukvcgurukjs.cloudfront.net has IPv6 address 2600:9000:2163:3400:e:c4fd:a200:93a1
+```
 
 ## Exposed ports to clients
 
