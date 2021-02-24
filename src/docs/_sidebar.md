@@ -64,6 +64,15 @@
     - [Customizing Engine Output](/developer/engines/tutorial/customizing-engine-output.md)
     - [Customizing Engine Input](/developer/engines/tutorial/engine-custom-fields)
     - [Training an Engine](/developer/engines/tutorial/engine-training-tutorial)
+  - Install aiWARE
+    - [Prerequisites](/install/prereq.md)
+    - [Sizing](/install/sizing.md)
+    - [Install Environment Variables](/install/envs.md)
+    - [Install](/install/install.md)
+    - [Install Single Computer](/install/mode_single.md)
+    - [Install Cluster](/install/mode_two_node.md)
+    - [Validate Install](/install/validate.md)
+    - [Usage Reporting](/install/usage.md)
   - [Reference](/apis/using-graphql.md)
     - Core APIs
      - [GraphQL](/apis/using-graphql.md)
