@@ -3400,6 +3400,7 @@ components:
       enum:
       - launch
       - terminate
+      - wait
       type: string
     EngineStateEnum:
       description: This describes the different states of the engine.  If paused,
@@ -8128,7 +8129,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.15.1.2181
+  version: 3.15.1.2183
 openapi: 3.0.1
 paths:
   /admin/applications:
