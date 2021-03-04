@@ -565,6 +565,12 @@ components:
       schema:
         format: uuid
         type: string
+    ServiceName_Query_Optional:
+      description: service name
+      in: query
+      name: serviceName
+      schema:
+        type: string
     StartCreatedTime:
       description: The unix timestamp
       explode: true
@@ -6737,6 +6743,8 @@ components:
         serviceInstanceID:
           format: uuid
           type: string
+        serviceName:
+          type: string
       type: object
     ServiceTypeEnum:
       enum:
@@ -8145,7 +8153,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.15.1.2203
+  version: 3.15.1.2204
 openapi: 3.0.1
 paths:
   /admin/applications:
@@ -17337,6 +17345,7 @@ paths:
       - admin
     parameters:
     - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/ServiceName_Query_Optional'
   /admin/service/{ServiceID}/config:
     get:
       operationId: getAdminServiceConfig
